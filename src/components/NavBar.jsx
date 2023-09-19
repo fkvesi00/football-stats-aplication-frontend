@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+
 function NavBar({klubovi}) {
   return (
     <div className="navbar bg-base-100 mb" data-theme="retro" >
@@ -20,6 +21,7 @@ function NavBar({klubovi}) {
         </ul>
       </li>
       <li><Link to='/ '>Liga</Link></li>
+      <li><Link to='/signIn'>Admin</Link></li>
     </ul>
   </div>
 </div>
