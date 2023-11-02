@@ -20,7 +20,6 @@ function SignIn() {
                     <input type="password" placeholder="Enter Password"
                         className="w-full input input-bordered" />
                 </div>
-                <a href="#" className="text-xs text-gray-600 hover:underline hover:text-blue-600">Forget Password?</a>
                 <div>
                     <Link to='/adminPage' className="btn btn-ghost normal-case text-xl">
                         Login

@@ -11,9 +11,8 @@ import ListaIgraca from "./components/ListaIgraca";
 import UtakmicaStatistika from "./components/UtakmicaStatistika";
 import ListaUtakmica from "./components/ListaUtakmica";
 import IgracStatistika from "./components/IgracStatistika";
-import SignIn from "./components/SignIn";
-import AdminPage from "./components/AdminPage";
-
+import SignIn from "./components/adminPage/SignIn";
+import AdminPage from "./components/adminPage/AdminPage";
 function App() {
   const [klubovi, setKlubovi] = useState([]);
    const [raspored, setRaspored] = useState([]);
