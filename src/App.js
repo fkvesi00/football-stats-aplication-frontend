@@ -81,11 +81,13 @@ const matchFormat = utakmica => {
 };
   
   const matches = matchFormat(raspored)
+  //console.log(raspored)
 
 
 //u sljedece dvije linije nalazimo utakmice koje su odigrane i koje ce se odigrati
 const matchesplayed = matches.filter(utakmica => utakmica.score !== null)
 const matchesToPlay = matches.filter(utakmica => utakmica.score == null)
+//console.log(matchesToPlay)
 //console.log(matchesplayed)
 //ovdje cemo stvorit legendarni objekt sa teamid i teamname i svim utakmicama tog tima
 const teamMatches = (teams, allMatches) => {
@@ -121,7 +123,8 @@ const teamMatches = (teams, allMatches) => {
       gf: 0,
       ga: 0,
       pm: 0,
-      name: ''
+      name: '',
+      rank:''
     }
     
   clubStats.id = club.id
@@ -162,7 +165,8 @@ const teamMatches = (teams, allMatches) => {
   })
 
   const sortedStats = stats.sort((a, b) => b.points - a.points)
-
+  sortedStats.map((club,i) => club.rank=i)
+  
 
   return (
     <Router>
@@ -177,7 +181,7 @@ const teamMatches = (teams, allMatches) => {
         }/>
         <Route exact path={`/utakmice`} element={<ListaUtakmica />}/>
         <Route exact path={`/utakmica/:id`} element={<UtakmicaStatistika />}/>
-        <Route exact path={`/klub/:id`} element={<Klub />}/>
+        <Route exact path={`/klub/:id`} element={<Klub clubRanks={sortedStats}/>}/>
         <Route exact path={`/klubovi`} element={<ListaKlubova/>}/>
         <Route exact path={`/igraci`} element={<ListaIgraca />}/>
         <Route exact path={`/igrac/:id`} element={<IgracStatistika />}/>

@@ -1,19 +1,23 @@
 import React from 'react'
 import {useParams } from "react-router-dom";
 import { useState,useEffect } from 'react';
-
+import Table from './Table';
 import Raspored from './Raspored';
 import Utakmice from './Utakmice';
-import Points from './calculations/Points';
 import PlayerCard from '../shared/PlayerCard';
+import StandingsTable from './StandingsTable';
 
-function Klub() {
+function Klub({clubRanks}) {
   
   const [igraci, setIgraci] = useState([]);
   const [utakmice, setUtakmice] = useState([])
   const {id} = useParams();
-  
-  
+  //console.log(clubRanks)
+  const clubStats1 = clubRanks.filter(club => id == club.id)
+  const clubStats2= clubStats1[0]
+  console.log(clubStats2)
+
+
   //ucitaj raspored tima i njegove igrace, cinimo to pomocu id kluba, koji se nalazi u parametru stranice
   useEffect(()=>{
     const fetchData = async () => {
@@ -54,7 +58,8 @@ const clubStats = {
   gf: 0,
   ga: 0,
   pm: 0,
-  name: ''
+  name: '',
+  rank: ''
 }
   //stavramo listu igraca koji su nastupili za taj klub
   
@@ -113,7 +118,7 @@ const clubStats = {
   //u sljedece dvije linije nalazimo utakmice koje su odigrane i koje ce se odigrati
   const matchesplayed = matches.filter(utakmica => utakmica.score !== null)
   const matchesToPlay = matches.filter(utakmica => utakmica.score == null)
-  console.log(matchesplayed)
+  //console.log(matchesplayed)
   //pronalazimo ime tima preko id, i racunamo pobjede i ostalu statistiku(koristit useState umjesto globalne varijable)
   if(matchesplayed[0] !== undefined){
       matchesplayed[0].h_id == id ? clubStats.name=matchesplayed[0].h_team : clubStats.name=matchesplayed[0].a_team
@@ -171,7 +176,28 @@ const clubStats = {
       <div className='flex justify-center flex-wrap' >
        {listaIgraca}
       </div>
-      <Points clubStats={clubStats}/>
+      <div className='header'>TABLICA</div>
+      <table className="table table-compact mx-auto" style={{width:"60%"}} data-theme='night' >
+      <thead>
+      <tr>
+        <th>#</th> 
+        <th>Name</th> 
+        <th>P</th>
+        <th>W</th> 
+        <th>D</th> 
+        <th>L</th> 
+        <th>GF</th> 
+        <th>GA</th>
+        <th>+-</th>
+        <th>Pts</th>
+      </tr>
+    </thead> 
+      <Table rank={clubStats2.rank+1} name={clubStats2.name} played={clubStats2.won+clubStats2.lost+clubStats2.draw} 
+      w={clubStats2.won} d={clubStats2.draw} l={clubStats2.lost}
+      gf={clubStats2.gf} ga={clubStats2.ga} points={clubStats2.points}  id={clubStats2.id}
+    />
+   
+    </table>
       <Raspored raspored={matchesToPlay} />
       <Utakmice utakmice={matchesplayed} />
     </div>

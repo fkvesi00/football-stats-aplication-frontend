@@ -12,7 +12,7 @@ function IgracStatistika() {
     useEffect(()=>{
         const fetchData = async () => {
          
-          const utakmice = await fetch("http://localhost:3000/playerStats",{
+          const nastupi = await fetch("http://localhost:3000/playerStats",{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({
@@ -37,7 +37,7 @@ function IgracStatistika() {
             })
           })
           const json2 = await igrac.json()
-          const json1 = await utakmice.json()
+          const json1 = await nastupi.json()
           const json3 = await golovi.json()
 
           setIgrac(json2)
@@ -48,10 +48,10 @@ function IgracStatistika() {
         
        },[])
 
-       const mergedArray = nastupi.map((item) => {
-  const matchingItem = golovi.find((element) => element.seasonid === item.seasonid && element.teamid === item.teamid);
+       const mergedArray = nastupi.map((nastup) => {
+  const matchingItem = golovi.find((gol) => gol.seasonid === nastup.seasonid && gol.teamid === nastup.teamid);
   return {
-    ...item,
+    ...nastup,
     ...(matchingItem && { goals: matchingItem.goals })
   };
 });

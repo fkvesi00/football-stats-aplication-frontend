@@ -4,7 +4,7 @@ import Utakmica from './Utakmica'
 function Utakmice({utakmice}) {
 
   const nizUtakmica = utakmice.map((utakmica,i)=>{
-    console.log(utakmica)
+    //console.log(utakmica)
     const birthDate = new Date(utakmica.date);
     const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
     const formattedDate = birthDate.toLocaleDateString('en-US', options);
@@ -19,15 +19,9 @@ function Utakmice({utakmice}) {
     <div className="overflow-x-auto mt-20 mb-10" >
       <div className='flex gap-4 justify-center p-10'>
         <h2 className="header">Utakmice</h2>
-   {/*        <select className='select'>
-            <option value="option1">Kolo 1</option>
-            <option value="option2">Kolo 2</option>
-            <option value="option3">Kolo 3</option>
-         </select> */}
       </div>
     <div className="table-responsive">
     <table className="table table-compact mx-auto" style={{width:"50%"}} data-theme="retro">
-      {/* head */}
       <thead>
         <tr>
           <th>Date</th>
