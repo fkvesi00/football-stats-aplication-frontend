@@ -16,11 +16,7 @@ const MyComponent = ({homePlayers, awayPlayers}) => {
     setIsVisible((prevVisibility) => !prevVisibility);
   };
 
-  function filterArray(arr1, arr2) {
-    // Use filter to keep elements from arr1 that are not in arr2
-    const result = arr1.filter((element) => !arr2.includes(element.playerid));
-    return result;
-  }
+  
 
   const handleSelectChange = (index, selectedValue) => {
     // Update the selected value at the given index
@@ -33,7 +29,7 @@ const MyComponent = ({homePlayers, awayPlayers}) => {
     // You can perform any other actions with the selected value here
     console.log('Selected value:', selectedValue);
     
-    const ap  = filterArray(awayPlayers, selectedPlayers)
+    
     
   };
 

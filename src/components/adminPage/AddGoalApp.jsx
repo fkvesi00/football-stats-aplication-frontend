@@ -4,13 +4,21 @@ import MyComponent from './MyComponent';
 
 function AddGoalApp() {
     const [matches, setMatches] = useState([]);
-    const [matchid, setMatchid] = useState(0);
-    const [homeTeamid, setHomeTeamid] = useState(0);
-    const [awayTeamid, setAwayTeamid] = useState(0)
+    const [matchid, setMatchid] = useState('');
+    const [homeTeamid, setHomeTeamid] = useState('');
+    const [awayTeamid, setAwayTeamid] = useState('')
     const [playersOfHomeTeam, setPlayerOfHomeTeam] = useState([])
     const [playersOfAwayTeam, setPlayersOfAwayTeam] = useState([])
     const [currentIndex, setCurrentIndex] = useState(0);
     
+
+    const handleNext = () => {
+      setCurrentIndex(currentIndex+ 1);
+    };
+  
+    const handlePrev = () => {
+      setCurrentIndex(currentIndex - 1);
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,40 +38,47 @@ function AddGoalApp() {
       }, []);
 
       useEffect(() => {
-         
         if (matches && matches.length > 0) {
-            const fetchData = async () => {
-     
-              //dohavti igrace domaceg tima
-              const homePlayers = await fetch("http://localhost:3000/players",{ 
-                method:'post',
-                headers:{'Content-Type':'application/json'},
-                body:JSON.stringify({
-                  teamID:Number(homeTeamid)
-                })
-              })
-              
-              //dohvati igrace gostujuceg tima
-              const awayPlayers = await fetch("http://localhost:3000/players",{ 
-                method:'post',
-                headers:{'Content-Type':'application/json'},
-                body:JSON.stringify({
-                  teamID:Number(awayTeamid)
-                })
-              })
-
-        
-              const json1 = await homePlayers.json();
-              const json2 = await awayPlayers.json();
-             
+          const fetchData = async () => {
+            // Capture the current values of currentIndex, matches, and playersOfHomeTeam
+            const currentIndexSnapshot = currentIndex;
+            const matchesSnapshot = matches;
+      
+            // Set state values directly using the captured values
+            setMatchid(matchesSnapshot[currentIndexSnapshot].match_id);
+            setHomeTeamid(matchesSnapshot[currentIndexSnapshot].h_id);
+            setAwayTeamid(matchesSnapshot[currentIndexSnapshot].a_id);
+      
+            // Fetch data using the captured values
+            const homePlayers = await fetch("http://localhost:3000/players", {
+              method: 'post',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                teamID: Number(matchesSnapshot[currentIndexSnapshot].h_id),
+              }),
+            });
+      
+            const awayPlayers = await fetch("http://localhost:3000/players", {
+              method: 'post',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                teamID: Number(matchesSnapshot[currentIndexSnapshot].a_id),
+              }),
+            });
+      
+            const json1 = await homePlayers.json();
+            const json2 = await awayPlayers.json();
+      
+            // Check if currentIndex and matches haven't changed since the fetch
+            if (currentIndexSnapshot === currentIndex && matchesSnapshot === matches) {
               setPlayerOfHomeTeam(json1);
               setPlayersOfAwayTeam(json2);
-              
-              
             }
-           fetchData()
-          }
-      },[matchid])
+          };
+      
+          fetchData();
+        }
+      }, [currentIndex, matches]);
 
 
       const nizRasporeda = matches.map((raspored, i) => {
@@ -73,26 +88,6 @@ function AddGoalApp() {
         return <GamesToModify key={i} date={formattedDate} time={raspored.time} home={raspored.h_team}  away={raspored.a_team} h_id={raspored.h_id} a_id={raspored.a_id} matchid={raspored.match_id}/>     
     })
 
-    useEffect(() => {
-      if (matches && matches.length > 0) {
-          const matchId = matches[0].match_id
-          const homeTeamId = matches[0].h_id
-          const awayTeamId = matches[0].a_id
-
-          setMatchid(matchId)
-          setHomeTeamid(homeTeamId)
-          setAwayTeamid(awayTeamId)
-      }
-    },[matches])
-
-    const handleNext = () => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % nizRasporeda.length);
-    };
-  
-    const handlePrev = () => {
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + nizRasporeda.length) % nizRasporeda.length);
-    };
-  
 
   return (
     <div style={{ width: "60%" }} className="flex flex-wrap justify-center mx-1 border border-solid border-black p-4 mb-10 mt-10 mx-auto">
@@ -126,8 +121,6 @@ function AddGoalApp() {
         </tbody>
       </table>
       <MyComponent homePlayers={playersOfHomeTeam} awayPlayers={playersOfAwayTeam}/>
-      {console.log('Away',playersOfAwayTeam)}
-      {console.log('Home', playersOfHomeTeam)}
     </div>
   </div>
 </div>
