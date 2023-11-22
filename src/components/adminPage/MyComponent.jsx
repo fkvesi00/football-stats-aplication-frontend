@@ -3,15 +3,9 @@ import { Container } from '@mui/material';
 import SelectComponent from './SelectComponent';
 import ButtonComponent from './ButtonComponent';
 
-const MyComponent = () => {
-  const [valuesArray, setValuesArray] = useState([
-    'Value 1', 'Value 2', 'Value 3', 'Value 4', 'Value 5',
-    'Value 6', 'Value 7', 'Value 8', 'Value 9', 'Value 10',
-    'Value 11', 'Value 12', 'Value 13', 'Value 14', 'Value 15',
-    'Value 16', 'Value 17', 'Value 18', 'Value 19', 'Value 20',
-    'Value 21', 'Value 22', 'Value 23', 'Value 24',
-  ]);
-
+const MyComponent = ({homePlayers, awayPlayers}) => {
+  
+  
   const [selectedValues, setSelectedValues] = useState(Array(24).fill(''));
   const [isVisible, setIsVisible] = useState(false);
 
@@ -22,14 +16,25 @@ const MyComponent = () => {
     setIsVisible((prevVisibility) => !prevVisibility);
   };
 
+  function filterArray(arr1, arr2) {
+    // Use filter to keep elements from arr1 that are not in arr2
+    const result = arr1.filter((element) => !arr2.includes(element.playerid));
+    return result;
+  }
+
   const handleSelectChange = (index, selectedValue) => {
     // Update the selected value at the given index
     const updatedSelectedValues = [...selectedValues];
     updatedSelectedValues[index] = selectedValue;
+    const selectedPlayers = []
+    selectedPlayers.push(selectedValue)
     setSelectedValues(updatedSelectedValues);
-
+    
     // You can perform any other actions with the selected value here
     console.log('Selected value:', selectedValue);
+    
+    const ap  = filterArray(awayPlayers, selectedPlayers)
+    
   };
 
   return (
@@ -37,7 +42,8 @@ const MyComponent = () => {
       <ButtonComponent onClick={handleButtonClick} isVisible={isVisible} />
       {isVisible && (
         <SelectComponent
-          valuesArray={valuesArray}
+          homePlayers={homePlayers}
+          awayPlayers={awayPlayers}
           selectedValues={selectedValues}
           handleSelectChange={handleSelectChange}
         />

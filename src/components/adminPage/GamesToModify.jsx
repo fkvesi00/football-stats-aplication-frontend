@@ -1,6 +1,9 @@
-import React from 'react'
+import React,{useState} from 'react'
 
-function GamesToModify({time,date,home,away,id}) {
+function GamesToModify({time,date,home,away, h_id, a_id, match_id}) {
+  const [home_id, seth_id] = useState(h_id)
+  const [away_id, seta_id] = useState(a_id)
+  const [m_id, setm_id] = useState(match_id)
   return (
        <tr>
             <td>{date}</td>
