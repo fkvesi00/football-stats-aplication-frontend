@@ -71,6 +71,7 @@ useEffect(() => {
 }, [formData]);
   return (
     <div style={{width:"60%"}} className="flex flex-wrap justify-center mx-1 border border-solid border-black p-4 mb-10 mt-10 mx-auto">
+      <div className='header'>Add player to club</div>
       <form onSubmit={handleSubmit} className="flex flex-wrap w-full max-w-lg">
          <select className="select select-bordered w-full max-w-xs" defaultValue={formData.teamid} onChange={(e) => handleSelectChange('teamid', parseInt(e.target.value,10))} >
          <option disabled selected>Izaberi klub</option>

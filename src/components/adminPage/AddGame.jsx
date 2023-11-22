@@ -46,6 +46,7 @@ function AddGame() {
 
   return (
     <div style={{width:"60%"}} className="flex flex-wrap justify-center mx-1 border border-solid border-black p-4 mb-10 mt-10 mx-auto">
+      <div className='header'>Add Match</div>
         <form onSubmit={handleSubmit} className="flex flex-wrap w-full max-w-lg">
         <div className="w-full md:w-1/5 mb-2 md:mb-0 text-center border p-1">
           <label htmlFor="date">MatchID:</label>

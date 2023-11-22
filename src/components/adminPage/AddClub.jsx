@@ -41,7 +41,7 @@ function AddClub() {
 
     return (
         <div  style={{width:"60%"}} className="flex flex-wrap justify-center mx-1 border border-solid border-black p-4 mb-10 mt-10 mx-auto" >
-            
+            <div className='header'>Add Club</div>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="clubID">Club ID:</label>
                 <input

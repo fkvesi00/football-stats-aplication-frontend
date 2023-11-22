@@ -4,9 +4,10 @@ import AddGame from './AddGame';
 import AddPlayer from './AddPlayer';
 import AddPlayerToClub from './AddPlayerToClub';
 import AddGoalApp from './AddGoalApp';
-import MyComponent from './MyComponent';
+
 
 function AdminPage() {
+  
 
   return (
     <div >
@@ -15,8 +16,6 @@ function AdminPage() {
       <AddPlayer/>
       <AddPlayerToClub/>
       <AddGoalApp />
-      {/*<Exapmle/> */}
-      <MyComponent/>
     </div>
   )
 }

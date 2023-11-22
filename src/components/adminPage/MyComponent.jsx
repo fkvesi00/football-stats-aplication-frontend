@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Select, Grid, Container, Paper, Divider } from '@mui/material';
+import { Container } from '@mui/material';
+import SelectComponent from './SelectComponent';
+import ButtonComponent from './ButtonComponent';
 
 const MyComponent = () => {
   const [valuesArray, setValuesArray] = useState([
@@ -32,35 +34,13 @@ const MyComponent = () => {
 
   return (
     <Container>
-      <Button variant="contained" onClick={handleButtonClick} style={{ marginBottom: '20px' }}>
-        {isVisible ? 'Hide Selects' : 'Open Selects'}
-      </Button>
+      <ButtonComponent onClick={handleButtonClick} isVisible={isVisible} />
       {isVisible && (
-        <Grid container spacing={2}>
-          {selectedValues.map((selectedValue, index) => (
-            <Grid item key={index} xs={6} sm={6} md={4} lg={3} xl={2}>
-              <Paper style={{ padding: '10px', position: 'relative' }}>
-                <Select
-                  value={selectedValue}
-                  onChange={(e) => handleSelectChange(index, e.target.value)}
-                  fullWidth
-                >
-                  <option value="" disabled>Select a value</option>
-                  {valuesArray.map((value) => (
-                    <option key={value} value={value}>{value}</option>
-                  ))}
-                </Select>
-                {index === 11 && (
-                  <Divider
-                    orientation="vertical"
-                    flexItem
-                    style={{ position: 'absolute', top: '0', bottom: '0', right: '-1px', backgroundColor: 'red' }}
-                  />
-                )}
-              </Paper>
-            </Grid>
-          ))}
-        </Grid>
+        <SelectComponent
+          valuesArray={valuesArray}
+          selectedValues={selectedValues}
+          handleSelectChange={handleSelectChange}
+        />
       )}
     </Container>
   );
