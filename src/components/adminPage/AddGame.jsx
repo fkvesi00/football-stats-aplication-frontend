@@ -11,7 +11,7 @@ function AddGame() {
         Away: ''
       });
 
-
+      const [counterID, setCounterID] = ([30])
     const handleInputChange = (key, value) => {
         setFormData({
             ...formData,
@@ -47,7 +47,10 @@ function AddGame() {
   return (
     <div style={{width:"60%"}} className="flex flex-wrap justify-center mx-1 border border-solid border-black p-4 mb-10 mt-10 mx-auto">
       <div className='header'>Add Match</div>
-        <form onSubmit={handleSubmit} className="flex flex-wrap w-full max-w-lg">
+      <div className="text-xs bg-gray-300 p-1 rounded">
+  {counterID}
+</div>
+        <form onSubmit={ handleSubmit } className="flex flex-wrap w-full max-w-lg" >
         <div className="w-full md:w-1/5 mb-2 md:mb-0 text-center border p-1">
           <label htmlFor="date">MatchID:</label>
           <input type="number" id="MatchID" name="MatchID" className="w-full" onChange={(e) => handleInputChange('MatchID', e.target.value)} />
@@ -72,7 +75,7 @@ function AddGame() {
           <label htmlFor="time">Time:</label>
           <input type="time" id="time" name="time" className="w-full" onChange={(e) => handleInputChange('Time', e.target.value)}/>
         </div>
-        <button type="submit" className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+        <button type="submit" className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" >
           Submit
         </button>
       </form>

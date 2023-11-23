@@ -8,7 +8,7 @@ function Table({rank,name,played,w,d,l,gf,ga,points,id}) {
   const c = <td className='bg-error text-white w-8 h-8 rounded-full flex items-center justify-center'>{rank}</td>
   return (
     <tr data-theme='fantasy'>
-      {rank === 1 ? a : rank===5 ? c : b}
+      {rank === 1 ? a : rank===7 ? c : b}
       <td><Link to={`klub/${id}`}>{name}</Link></td>
       <td>{played}</td>
       <td>{w}</td>

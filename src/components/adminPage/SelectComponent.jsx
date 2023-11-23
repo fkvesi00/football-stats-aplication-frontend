@@ -1,11 +1,12 @@
 // SelectComponent.js
 import React from 'react';
-import { Select, Grid, Paper, Divider } from '@mui/material';
+import { Grid, Paper, Divider } from '@mui/material';
 
 const SelectComponent = ({ homePlayers, awayPlayers, selectedValues, handleSelectChange }) => {
   const handleChange = (index, e) => {
     console.log('Handle change called:', index, e.target.value);
-    handleSelectChange(index, e.target.key);
+    handleSelectChange(index, e.target.value);
+    
   };
 
     

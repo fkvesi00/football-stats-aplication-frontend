@@ -10,15 +10,11 @@ function AddGoalApp() {
     const [playersOfHomeTeam, setPlayerOfHomeTeam] = useState([])
     const [playersOfAwayTeam, setPlayersOfAwayTeam] = useState([])
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [selectedValues, setSelectedValues] = useState(Array(24).fill(''));
+    const [isVisible, setIsVisible] = useState(false);
+    const [homeScore, setHomeScore] = useState('')
+    const [awayScore, setAwayScore] = useState('')
     
-
-    const handleNext = () => {
-      setCurrentIndex(currentIndex+ 1);
-    };
-  
-    const handlePrev = () => {
-      setCurrentIndex(currentIndex - 1);
-    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -81,11 +77,94 @@ function AddGoalApp() {
       }, [currentIndex, matches]);
 
 
+      const handleNext = () => {
+        setCurrentIndex(currentIndex+ 1);
+      };
+    
+      const handlePrev = () => {
+        setCurrentIndex(currentIndex - 1);
+      };
+
+      const handleInputHomeScore = (e) => {
+        setHomeScore(e.target.value)
+      }
+
+      const handleInputAwayScore = (e) => {
+        setAwayScore(e.target.value)
+      }
+
+
+      const handleSelectChange = (index, selectedValue) => {
+        // Update the selected value at the given index
+        
+        const updatedSelectedValues = [...selectedValues];
+        updatedSelectedValues[index] = selectedValue;
+        
+        setSelectedValues(updatedSelectedValues);
+        
+        // You can perform any other actions with the selected value here
+        console.log('Selected value:', selectedValue);
+        console.log('Izabrane vrijednosti', updatedSelectedValues);
+        
+      };
+
+   
+      const handleButtonClick = () => {
+        // Reset the selected values
+        setSelectedValues(Array(24).fill(''));
+        // Toggle the visibility of selects
+        setIsVisible((prevVisibility) => !prevVisibility);
+      };
+
+      const handleSubmit = () => {
+        const homePlayers = selectedValues.slice(0,11);
+        const filterHomePlayers= homePlayers.filter(player => player !== '');
+
+        const awayPlayers = selectedValues.slice(12,24);
+        const filterAwayPlayers = awayPlayers.filter(player => player !== '');
+
+        const postDataToBackend = async () => {
+          try {
+            const url = 'http://localhost:3000/addTeamMatchPlayer'; // Replace with your actual backend URL
+        
+            const data = {
+              matchid: matchid,
+              hometeamid: homeTeamid,
+              awayteamid: awayTeamid,
+              homePlayersIds: filterHomePlayers,
+              awayPlayersIds: filterAwayPlayers,
+              homeScore: homeScore,
+              awayScore: awayScore
+            };
+  
+            const response = await fetch(url, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data),
+            });
+        
+            if (response.ok) {
+              console.log('Data sent successfully');
+              // Additional handling if needed
+            } else {
+              console.error('Failed to send data to the backend');
+              // Handle errors accordingly
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            // Handle errors accordingly
+          }
+        };
+        postDataToBackend()
+      }
+
       const nizRasporeda = matches.map((raspored, i) => {
         const birthDate = new Date(raspored.date);
         const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
         const formattedDate = birthDate.toLocaleDateString('en-US', options);
-        return <GamesToModify key={i} date={formattedDate} time={raspored.time} home={raspored.h_team}  away={raspored.a_team} h_id={raspored.h_id} a_id={raspored.a_id} matchid={raspored.match_id}/>     
+        return <GamesToModify key={i} date={formattedDate} time={raspored.time} home={raspored.h_team}  away={raspored.a_team} handleInputHomeScore={handleInputHomeScore} handleInputAwayScore={handleInputAwayScore}/>     
     })
 
 
@@ -93,7 +172,6 @@ function AddGoalApp() {
     <div style={{ width: "60%" }} className="flex flex-wrap justify-center mx-1 border border-solid border-black p-4 mb-10 mt-10 mx-auto">
       <div className='header'>Edit game score and apperances</div>
       <div className="overflow-x-auto m-0 mb-10 mt-10" style={{ width: "100%" }}>
-        <div className="table-responsive" style={{ width: "100%" }}>
         <div className="border p-4 mb-4">
         <button onClick={handlePrev} disabled={currentIndex === 0} className="bg-blue-500 text-white p-2 mr-2">
           Previous
@@ -101,8 +179,11 @@ function AddGoalApp() {
         <button onClick={handleNext} disabled={currentIndex === nizRasporeda.length - 1} className="bg-blue-500 text-white p-2">
           Next
         </button>
-      </div>
-         <table className="table table-compact mx-auto" style={{ width: "100%" }} data-theme="dark">
+      </div >
+      
+      <div className="overflow-x-auto m-0 mb-10 mt-10" style={{ width: "100%" }}>
+      <div className="table-responsive" style={{ width: "100%" }}>
+         <table className="table table-compact mx-auto" style={{width:"70%"}} data-theme="dark">
         {/* head */}
         <thead>
           <tr>
@@ -117,15 +198,17 @@ function AddGoalApp() {
         </thead>
         <tbody>
          {nizRasporeda[currentIndex]}
-
         </tbody>
       </table>
-      <MyComponent homePlayers={playersOfHomeTeam} awayPlayers={playersOfAwayTeam}/>
+      </div>
+      <MyComponent homePlayers={playersOfHomeTeam} awayPlayers={playersOfAwayTeam} handleSelectChange={handleSelectChange} handleButtonClick={handleButtonClick} isVisible={isVisible} selectedValues={selectedValues}/>
     </div>
+    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleSubmit}>
+  Submit
+</button>
   </div>
 </div>
   )
 }
 
 export default AddGoalApp
-

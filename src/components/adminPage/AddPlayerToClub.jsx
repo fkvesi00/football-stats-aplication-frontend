@@ -65,10 +65,6 @@ const handleSubmit = (event) => {
 // Reset the form fields if needed
 
 }
-
-useEffect(() => {
-  console.log(formData);
-}, [formData]);
   return (
     <div style={{width:"60%"}} className="flex flex-wrap justify-center mx-1 border border-solid border-black p-4 mb-10 mt-10 mx-auto">
       <div className='header'>Add player to club</div>
