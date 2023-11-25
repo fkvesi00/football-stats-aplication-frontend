@@ -1,46 +1,44 @@
 // SelectComponent.js
-import React from 'react';
-import { Grid, Paper, Divider } from '@mui/material';
-
 const SelectComponent = ({ homePlayers, awayPlayers, selectedValues, handleSelectChange }) => {
-  const handleChange = (index, e) => {
-    console.log('Handle change called:', index, e.target.value);
-    handleSelectChange(index, e.target.value);
-    
+  const handleChange = (index, e, isGoal) => {
+    console.log('Handle change of player :', index, e, isGoal);
+    handleSelectChange(index, e.target.value, isGoal);
   };
 
-    
-
   return (
-    <Grid container spacing={2}>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
       {selectedValues.map((selectedValue, index) => (
-        <Grid item key={index} xs={6} sm={6} md={4} lg={3} xl={2}>
-          <Paper style={{ padding: '10px', position: 'relative' }}>
-            <select value={selectedValue} onChange={(e) => handleChange(index, e)}>
-              <option value="" disabled>Select a value</option>
-              {index < 12
-                ? homePlayers.map((value) => (
-                    <option key={value.playerid} value={value.playerid}>
-                      {value.playername}
-                    </option>
-                  ))
-                : awayPlayers.map((value) => (
-                    <option key={value.playerid} value={value.playerid}>
-                      {value.playername}
-                    </option>
-                  ))}
-            </select>
-            {index === 11 && (
-              <Divider
-                orientation="vertical"
-                flexItem
-                style={{ position: 'absolute', top: '0', bottom: '0', right: '-1px', backgroundColor: 'red' }}
-              />
-            )}
-          </Paper>
-        </Grid>
+        <div key={index} className="p-4 relative border border-gray-300">
+          <select
+            value={selectedValue.playerid || ''}
+            onChange={(e) => handleChange(index, e, false)}
+            className="w-full p-2 border border-gray-300 rounded"
+          >
+            <option value="">
+              Select a player
+            </option>
+            {index < 12
+              ? homePlayers.map((value) => (
+                  <option key={value.playerid} value={value.playerid}>
+                    {value.playername}
+                  </option>
+                ))
+              : awayPlayers.map((value) => (
+                  <option key={value.playerid} value={value.playerid}>
+                    {value.playername}
+                  </option>
+                ))}
+          </select>
+          <input
+            type="number"
+            placeholder="Enter a number"
+            className="w-full mt-2 p-2 border border-gray-300 rounded"
+            min="0"
+            onChange={(e) => handleChange(index, e, true)}
+          />
+        </div>
       ))}
-    </Grid>
+    </div>
   );
 };
 

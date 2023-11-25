@@ -10,12 +10,20 @@ function AddGoalApp() {
     const [playersOfHomeTeam, setPlayerOfHomeTeam] = useState([])
     const [playersOfAwayTeam, setPlayersOfAwayTeam] = useState([])
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [selectedValues, setSelectedValues] = useState(Array(24).fill(''));
+    const [selectedAppValues, setSelectedAppValues] = useState( Array(24).fill(''));
     const [isVisible, setIsVisible] = useState(false);
     const [homeScore, setHomeScore] = useState('')
     const [awayScore, setAwayScore] = useState('')
-    
-
+    const [seletedGoalValues,setseletedGoalValues] = useState( Array(24).fill(''));
+    const [stateObject, setStateObject] = useState({ app: '', goal: '' });
+    const [selectedValues, setSelectedValues] = useState(
+      Array(24).fill().map(() => ({ playerid: '', goals: '' }))
+    );
+  
+    const updateState = () => {
+      setStateObject({ app: 'yourAppValue', goal: 'yourGoalValue' });
+    };
+  
     useEffect(() => {
         const fetchData = async () => {
           try {
@@ -93,21 +101,21 @@ function AddGoalApp() {
         setAwayScore(e.target.value)
       }
 
-
-      const handleSelectChange = (index, selectedValue) => {
-        // Update the selected value at the given index
-        
-        const updatedSelectedValues = [...selectedValues];
-        updatedSelectedValues[index] = selectedValue;
-        
-        setSelectedValues(updatedSelectedValues);
-        
-        // You can perform any other actions with the selected value here
-        console.log('Selected value:', selectedValue);
-        console.log('Izabrane vrijednosti', updatedSelectedValues);
-        
+      const handleSelectChange = (index, value, isGoal) => {
+        setSelectedValues((prevSelectedValues) => {
+          const updatedValues = [...prevSelectedValues];
+          const updatedPlayer = { ...updatedValues[index] }; // create a new object
+          if (isGoal) {
+            updatedPlayer.goals = value;
+          } else {
+            updatedPlayer.playerid = value;
+          }
+          updatedValues[index] = updatedPlayer;
+          console.log(updatedValues);
+          return updatedValues;
+        });
       };
-
+      
    
       const handleButtonClick = () => {
         // Reset the selected values
@@ -118,10 +126,10 @@ function AddGoalApp() {
 
       const handleSubmit = () => {
         const homePlayers = selectedValues.slice(0,11);
-        const filterHomePlayers= homePlayers.filter(player => player !== '');
+        const filterHomePlayers= homePlayers.filter(item => item !== '' && item !== null && item !== undefined);
 
         const awayPlayers = selectedValues.slice(12,24);
-        const filterAwayPlayers = awayPlayers.filter(player => player !== '');
+        const filterAwayPlayers = awayPlayers.filter(item => item !== '' && item !== null && item !== undefined);
 
         const postDataToBackend = async () => {
           try {
