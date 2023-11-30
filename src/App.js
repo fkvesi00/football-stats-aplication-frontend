@@ -22,7 +22,7 @@ function App() {
   useEffect(()=>{
     const fetchData = async () => {
      
-      const raspored = await fetch("http://localhost:3000/matchesBySeason",{
+      const raspored = await fetch("http://localhost:3000/matches/allMatches",{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
@@ -30,7 +30,7 @@ function App() {
         })
       })
       
-      const team = await fetch("http://localhost:3000/teamBySeason",{
+      const team = await fetch("http://localhost:3000/clubs/season",{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({

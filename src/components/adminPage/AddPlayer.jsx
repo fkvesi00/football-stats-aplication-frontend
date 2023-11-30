@@ -39,7 +39,7 @@ function AddPlayer() {
     };
     console.log(typeof playerID, typeof playerName, typeof playerBirth, typeof playerNationality)
     // Send a POST request to your Node.js server
-    fetch('http://localhost:3000/addPlayer', {
+    fetch('http://localhost:3000/players/addPlayer', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

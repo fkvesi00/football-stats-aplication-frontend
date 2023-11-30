@@ -12,7 +12,7 @@ function IgracStatistika() {
     useEffect(()=>{
         const fetchData = async () => {
          
-          const nastupi = await fetch("http://localhost:3000/playerStats",{
+          const nastupi = await fetch("http://localhost:3000/players/playerApp",{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({
@@ -21,7 +21,7 @@ function IgracStatistika() {
           })
           
           
-          const igrac = await fetch("http://localhost:3000/player",{
+          const igrac = await fetch("http://localhost:3000/players/player",{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({
@@ -29,7 +29,7 @@ function IgracStatistika() {
             })
           })
 
-          const golovi = await fetch("http://localhost:3000/playerGoals",{
+          const golovi = await fetch("http://localhost:3000/goals/player",{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({

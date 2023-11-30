@@ -21,7 +21,7 @@ function AddClub() {
         };
         console.log(typeof clubID, typeof teamName)
         // Send a POST request to your Node.js server
-        fetch('http://localhost:3000/addClub', {
+        fetch('http://localhost:3000/clusb/addClub', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

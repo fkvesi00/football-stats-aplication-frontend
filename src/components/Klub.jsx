@@ -7,15 +7,15 @@ import Utakmice from './Utakmice';
 import PlayerCard from '../shared/PlayerCard';
 import StandingsTable from './StandingsTable';
 
-function Klub({clubRanks}) {
+function Klub() {
   
   const [igraci, setIgraci] = useState([]);
   const [utakmice, setUtakmice] = useState([])
   const {id} = useParams();
   //console.log(clubRanks)
-  const clubStats1 = clubRanks.filter(club => id == club.id)
-  const clubStats2= clubStats1[0]
-  console.log(clubStats2)
+  //const clubStats1 = clubRanks.filter(club => id == club.id)
+  //const clubStats2= clubStats1[0]
+  //console.log(clubStats2)
 
 
   //ucitaj raspored tima i njegove igrace, cinimo to pomocu id kluba, koji se nalazi u parametru stranice
@@ -23,7 +23,7 @@ function Klub({clubRanks}) {
     const fetchData = async () => {
       
       
-      const igraci = await fetch("http://localhost:3000/players",{ 
+      const igraci = await fetch("http://localhost:3000/players/clubPlayers",{ 
         method:'post',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
@@ -31,7 +31,7 @@ function Klub({clubRanks}) {
         })
       })
 
-      const utakmice = await fetch('http://localhost:3000/clubGames',{ 
+      const utakmice = await fetch('http://localhost:3000/clubs/games',{ 
         method:'post',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
@@ -192,10 +192,10 @@ const clubStats = {
         <th>Pts</th>
       </tr>
     </thead> 
-      <Table rank={clubStats2.rank+1} name={clubStats2.name} played={clubStats2.won+clubStats2.lost+clubStats2.draw} 
+    {/*   <Table rank={clubStats2.rank+1} name={clubStats2.name} played={clubStats2.won+clubStats2.lost+clubStats2.draw} 
       w={clubStats2.won} d={clubStats2.draw} l={clubStats2.lost}
       gf={clubStats2.gf} ga={clubStats2.ga} points={clubStats2.points}  id={clubStats2.id}
-    />
+    /> */}
    
     </table>
       <Raspored raspored={matchesToPlay} />

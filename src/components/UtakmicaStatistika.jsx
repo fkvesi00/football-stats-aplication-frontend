@@ -48,7 +48,7 @@ function UtakmicaStatistika() {
   useEffect(()=>{
     const fetchData = async () => {
      
-      const utakmica = await fetch("http://localhost:3000/specificMatch",{
+      const utakmica = await fetch("http://localhost:3000/matches/:id",{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
@@ -64,7 +64,7 @@ function UtakmicaStatistika() {
         })
       })
 
-      const golovi = await fetch("http://localhost:3000/matchGoals", {
+      const golovi = await fetch("http://localhost:3000/goals/matchGoals", {
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
@@ -157,8 +157,6 @@ function UtakmicaStatistika() {
       <tr>
         <th style={{textAlign:'center'}}> Igrac</th>
         <th style={{textAlign:'center'}}>  Gol </th>
-        <th style={{textAlign:'center'}}> Žuti </th>
-        <th style={{textAlign:'center'}}>Crveni</th>
       </tr>
     </thead>
     <tbody>

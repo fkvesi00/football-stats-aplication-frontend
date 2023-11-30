@@ -23,7 +23,7 @@ function AddGame() {
         event.preventDefault();
         console.log(formData);
        
-        fetch('http://localhost:3000/addMatch', {
+        fetch('http://localhost:3000/matches/addMatch', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
