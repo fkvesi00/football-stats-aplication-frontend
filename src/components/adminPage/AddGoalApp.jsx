@@ -27,7 +27,7 @@ function AddGoalApp() {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await fetch('http://localhost:3000/getMatches');
+            const response = await fetch('http://localhost:3000/matches/getMatchesFormatted');
             if (!response.ok) {
               throw new Error('Network response was not ok');
             }
@@ -54,7 +54,7 @@ function AddGoalApp() {
             setAwayTeamid(matchesSnapshot[currentIndexSnapshot].a_id);
       
             // Fetch data using the captured values
-            const homePlayers = await fetch("http://localhost:3000/players", {
+            const homePlayers = await fetch("http://localhost:3000/players/clubPlayers", {
               method: 'post',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
@@ -62,7 +62,7 @@ function AddGoalApp() {
               }),
             });
       
-            const awayPlayers = await fetch("http://localhost:3000/players", {
+            const awayPlayers = await fetch("http://localhost:3000/players/clubPlayers", {
               method: 'post',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
@@ -133,7 +133,7 @@ function AddGoalApp() {
 
         const postDataToBackend = async () => {
           try {
-            const url = 'http://localhost:3000/addTeamMatchPlayer'; // Replace with your actual backend URL
+            const url = 'http://localhost:3000/teamPlayerMatch/addAppGoals'; // Replace with your actual backend URL
         
             const data = {
               matchid: matchid,

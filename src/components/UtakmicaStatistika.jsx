@@ -56,7 +56,7 @@ function UtakmicaStatistika() {
         })
       })
     
-      const igraci = await fetch("http://localhost:3000/teammatchplayer", {
+      const igraci = await fetch("http://localhost:3000/teamPlayerMatch/getApp", {
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({

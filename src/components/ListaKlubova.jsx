@@ -18,11 +18,11 @@ function ListaKlubova() {
     }
 
     fetchClubs()
-  })
-  
-  const listaKlubova = clubs.map((klub,id) => {
-        return <KlubCard key={id} id={klub.teamid} ime={klub.teamname}/> //logo={klub.team_logo}
-    })
+  },[])
+
+  const listaKlubova = clubs.map((klub, id) => {
+      return <KlubCard key={id} id={klub.teamid} ime={klub.teamname} logo={klub.logo} />;
+  });
 
     return (
     <div data-theme='garden'>

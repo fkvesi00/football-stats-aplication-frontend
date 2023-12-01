@@ -45,7 +45,7 @@ const handleSubmit = (event) => {
   event.preventDefault();
   console.log(formData);
  
-  fetch('http://localhost:3000/addPlayerToClub', {
+  fetch('http://localhost:3000/player/addPlayerToClub', {
   method: 'POST',
   headers: {
       'Content-Type': 'application/json',
