@@ -48,7 +48,7 @@ function UtakmicaStatistika() {
   useEffect(()=>{
     const fetchData = async () => {
      
-      const utakmica = await fetch("http://localhost:3000/matches/:id",{
+      const utakmica = await fetch("http://localhost:3000/matches/id",{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
@@ -102,11 +102,26 @@ function UtakmicaStatistika() {
             score: utakmica1[0].score,
             a_team: utakmica1[1].teamname,
             a_id: utakmica1[1].teamid
+        
           };
           setMatches([lima]);
+        }else{
+          const birthDate = new Date(utakmica1[0].date);
+          const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
+          const formattedDate = birthDate.toLocaleDateString('en-US', options);
+          const lima = {
+            match_id: utakmica1[0].matchid,
+            date: formattedDate,
+            time: utakmica1[0].time,
+            h_team: utakmica1[1].teamname,
+            h_id: utakmica1[1].teamid,
+            score: utakmica1[0].score,
+            a_team: utakmica1[0].teamname,
+            a_id: utakmica1[0].teamid
         }
+        setMatches([lima]);
       }
-    }, [utakmica1]);
+    }}, [utakmica1]);
     
 
     useEffect(() => {
@@ -151,7 +166,7 @@ function UtakmicaStatistika() {
 
       <div>
       <div className="overflow-x-auto mt-10 mb-10">
-  <table table className="table table-compact mx-auto" style={{width:"70%"}} data-theme="retro">
+  <table className="table table-compact mx-auto" style={{width:"70%"}} data-theme="retro">
     {/* head */}
     <thead>
       <tr>

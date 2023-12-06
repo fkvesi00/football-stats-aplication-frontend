@@ -9,7 +9,6 @@ function PlayerTable({igrac, gol, zuti, crveni}) {
         <tr data-theme='fantasy' style={{padding:'10px'}} >
           <td style={{borderRight: "1px solid black", textAlign:'center'}}>{igrac}</td>
           <td style={{borderRight: "1px solid black", textAlign:'center'}}>{gol}</td>
-          
         </tr>
       )
 }

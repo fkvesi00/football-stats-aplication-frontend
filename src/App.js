@@ -17,7 +17,17 @@ function App() {
   const [klubovi, setKlubovi] = useState([]);
    const [raspored, setRaspored] = useState([]);
    const stats = []
+   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    // Simulating an asynchronous operation with a 1-second delay
+    const delay = setTimeout(() => {
+      setLoading(false);
+    }, 500);
+
+    // Cleanup function to clear the timeout if the component unmounts
+    return () => clearTimeout(delay);
+  }, []);
 
   useEffect(()=>{
     const fetchData = async () => {
@@ -26,7 +36,7 @@ function App() {
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
-          id:1
+          seasonID:1
         })
       })
       
@@ -171,24 +181,36 @@ const teamMatches = (teams, allMatches) => {
   return (
     <Router>
       <NavBar />
-      <Routes>
-        <Route exact path='/' element={
-        <>
-        <StandingsTable tablica={sortedStats}/>
-        <Utakmice utakmice={matchesplayed}/>
-        <Raspored raspored={matchesToPlay}/>
-        </>
-        }/>
-        <Route exact path={`/utakmice`} element={<ListaUtakmica />}/>
-        <Route exact path={`/utakmica/:id`} element={<UtakmicaStatistika />}/>
-        <Route exact path={`/klub/:id`} element={<Klub clubRanks={sortedStats}/>}/>
-        <Route exact path={`/klubovi`} element={<ListaKlubova/>}/>
-        <Route exact path={`/igraci`} element={<ListaIgraca />}/>
-        <Route exact path={`/igrac/:id`} element={<IgracStatistika />}/>
-        <Route exact path={'/signIn'} element={<SignIn/>} />
-        <Route exact path={'/adminPage'} element={<AdminPage/>} />
-      </Routes>
-      <Footer/>
+      {loading ? (
+        // Loading spinner component
+        <div className="loader-container">
+          <div className="loader"></div>
+        </div>
+      ) : (
+        // Your content once loading is complete
+        <Routes>
+          <Route
+            exact
+            path='/'
+            element={
+              <>
+                <StandingsTable tablica={sortedStats} />
+                <Utakmice utakmice={matchesplayed} />
+                <Raspored raspored={matchesToPlay} />
+              </>
+            }
+          />
+          <Route exact path={`/utakmice`} element={<ListaUtakmica />} />
+          <Route exact path={`/utakmica/:id`} element={<UtakmicaStatistika />} />
+          <Route exact path={`/klub/:id`} element={<Klub clubRanks={sortedStats} />} />
+          <Route exact path={`/klubovi`} element={<ListaKlubova />} />
+          <Route exact path={`/igraci`} element={<ListaIgraca />} />
+          <Route exact path={`/igrac/:id`} element={<IgracStatistika />} />
+          <Route exact path={'/signIn'} element={<SignIn />} />
+          <Route exact path={'/adminPage'} element={<AdminPage />} />
+        </Routes>
+      )}
+      <Footer />
     </Router>
   );
 }
