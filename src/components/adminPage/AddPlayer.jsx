@@ -4,8 +4,8 @@ import  { useState } from 'react';
 function AddPlayer() {
     const [playerID, setPlayerID] = useState('');
     const [playerName, setPlayerName] = useState('');
-    const [playerBirth, setPlayerBirth] = useState('');
-    const [playerNationality, setPlayerNationality] = useState('');
+    const [playerBirth, setPlayerBirth] = useState(new Date().toISOString().split('T')[0]);
+    const [playerNationality, setPlayerNationality] = useState('HR');
   
     const handlePlayerIDChange = (event) => {
       setPlayerID(event.target.value);
@@ -59,8 +59,8 @@ function AddPlayer() {
       // Reset the form fields if needed
       setPlayerID('');
       setPlayerName('');
-      setPlayerBirth('');
-      setPlayerNationality('');
+      setPlayerBirth(new Date().toISOString().split('T')[0]);
+      setPlayerNationality('HR');
     };
   
     return (

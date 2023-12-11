@@ -11,7 +11,7 @@ function ListaKlubova() {
     // Simulating an asynchronous operation with a 1-second delay
     const delay = setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 200);
 
     // Cleanup function to clear the timeout if the component unmounts
     return () => clearTimeout(delay);

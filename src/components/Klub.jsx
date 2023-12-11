@@ -6,6 +6,7 @@ import Raspored from './Raspored';
 import Utakmice from './Utakmice';
 import PlayerCard from '../shared/PlayerCard';
 import StandingsTable from './StandingsTable';
+import { Link } from 'react-router-dom';
 
 function Klub() {
   
@@ -63,14 +64,29 @@ const clubStats = {
 }
   //stavramo listu igraca koji su nastupili za taj klub
   
-  const listaIgraca = igraci.map((igrac,i) => {
+ /*  const listaIgraca = igraci.map((igrac,i) => {
     const {playerid,playername,playerbirth,playernationality,PlayerPhoto} = igrac;
     const birthDate = new Date(playerbirth);
     const today = new Date();
     const diffTime = Math.abs(today.getTime() - birthDate.getTime());
     const playerAge = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.25));
     return <PlayerCard key={i} ime={playername} godine={playerAge} nacionalnost={playernationality} slika={PlayerPhoto} id={playerid}/>
- })
+ }) */
+ const listaIgraca = igraci.map((igrac, i) => {
+  const { playerid, playername, playerbirth, playernationality, PlayerPhoto } = igrac;
+  const birthDate = new Date(playerbirth);
+  const today = new Date();
+  const diffTime = Math.abs(today.getTime() - birthDate.getTime());
+  const playerAge = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.25));
+
+  return (
+    <Link to={`/igrac/${playerid}`} key={i}>
+    <div key={i} className="bg-white p-2 m-2 border border-gray-300 rounded-md shadow-md">
+      <p className="text-lg font-semibold mb-1">{playername}</p>
+    </div>
+    </Link>
+  );
+});
 
 
   //ovdje cemo napravit finalnu verziju kako bi match trebao izgledat(H h_s : a_s A time date)
@@ -173,9 +189,9 @@ const clubStats = {
   </h2>
   <div className='header'>Igraci</div>
 </div>
-      <div className='flex justify-center flex-wrap' >
-       {listaIgraca}
-      </div>
+<div className='flex justify-center flex-wrap' >
+      {listaIgraca}
+    </div>
       <div className='header'>TABLICA</div>
       <table className="table table-compact mx-auto" style={{width:"60%"}} data-theme='night' >
       <thead>

@@ -5,8 +5,8 @@ import Rasporedcic from './Rasporedcic';
 function Raspored({ raspored }) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
-
-  const nizRasporeda = raspored.map((raspored, i) => {
+  
+  const nizRasporeda = raspored.sort((a,b) => a.match_id - b.match_id).map((raspored, i) => {
     const birthDate = new Date(raspored.date);
     const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
     const formattedDate = birthDate.toLocaleDateString('en-US', options);
@@ -20,6 +20,8 @@ function Raspored({ raspored }) {
       />
     );
   });
+
+  
 
   const totalGames = nizRasporeda.length;
   const totalPages = Math.ceil(totalGames / itemsPerPage);

@@ -174,7 +174,17 @@ const teamMatches = (teams, allMatches) => {
     stats.push(clubStats)
   })
 
-  const sortedStats = stats.sort((a, b) => b.points - a.points)
+  const sortedStats = stats.sort((a, b) => {
+    if (b.points !== a.points) {
+      // Sort by points in descending order
+      return b.points - a.points;
+    } else {
+      const clubB = b.gf - b.ga
+      const clubA = a.gf - a.ga
+      // If points are the same, sort by gf in ascending order
+      return clubB - clubA;
+    }
+  });
   sortedStats.map((club,i) => club.rank=i)
   
 
