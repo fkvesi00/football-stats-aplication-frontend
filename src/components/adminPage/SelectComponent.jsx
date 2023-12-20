@@ -17,7 +17,7 @@ const SelectComponent = ({ homePlayers, awayPlayers, selectedValues, handleSelec
             <option value="">
               Select a player
             </option>
-            {index < 12
+            {index < 14
               ? homePlayers.map((value) => (
                   <option key={value.playerid} value={value.playerid}>
                     {value.playername}

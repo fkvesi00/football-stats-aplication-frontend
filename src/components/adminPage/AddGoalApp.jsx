@@ -10,19 +10,14 @@ function AddGoalApp() {
     const [playersOfHomeTeam, setPlayerOfHomeTeam] = useState([])
     const [playersOfAwayTeam, setPlayersOfAwayTeam] = useState([])
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [selectedAppValues, setSelectedAppValues] = useState( Array(24).fill(''));
     const [isVisible, setIsVisible] = useState(false);
     const [homeScore, setHomeScore] = useState('')
     const [awayScore, setAwayScore] = useState('')
-    const [seletedGoalValues,setseletedGoalValues] = useState( Array(24).fill(''));
-    const [stateObject, setStateObject] = useState({ app: '', goal: '' });
     const [selectedValues, setSelectedValues] = useState(
-      Array(24).fill().map(() => ({ playerid: '', goals: '' }))
+      Array(28).fill().map(() => ({ playerid: '', goals: '' }))
     );
   
-    const updateState = () => {
-      setStateObject({ app: 'yourAppValue', goal: 'yourGoalValue' });
-    };
+  
   
     useEffect(() => {
         const fetchData = async () => {
@@ -119,16 +114,16 @@ function AddGoalApp() {
    
       const handleButtonClick = () => {
         // Reset the selected values
-        setSelectedValues(Array(24).fill(''));
+        setSelectedValues(Array(28).fill(''));
         // Toggle the visibility of selects
         setIsVisible((prevVisibility) => !prevVisibility);
       };
 
       const handleSubmit = () => {
-        const homePlayers = selectedValues.slice(0,11);
-        const filterHomePlayers= homePlayers.filter(item => item !== '' && item !== null && item !== undefined);
-
-        const awayPlayers = selectedValues.slice(12,24);
+        const homePlayers = selectedValues.slice(0, 14);
+        const filterHomePlayers = homePlayers.filter(item => item !== '' && item !== null && item !== undefined);
+    
+        const awayPlayers = selectedValues.slice(14, 28);
         const filterAwayPlayers = awayPlayers.filter(item => item !== '' && item !== null && item !== undefined);
 
         const postDataToBackend = async () => {
@@ -156,6 +151,7 @@ function AddGoalApp() {
             if (response.ok) {
               console.log('Data sent successfully');
               // Additional handling if needed
+              window.location.reload(); // Reload the page
             } else {
               console.error('Failed to send data to the backend');
               // Handle errors accordingly

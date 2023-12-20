@@ -43,9 +43,6 @@ function Raspored({ raspored }) {
       <div className="flex gap-4 justify-center p-5">
         <h2 className="header">Raspored</h2>
       </div>
-      <div className="flex gap-4 justify-center p-5">
-      <h3 className="text-lg font-semibold text-gray-600">Kolo {currentPage}</h3>
-    </div>
       <div className="table-responsive">
         <table className="table table-compact mx-auto" style={{ width: '50%' }} data-theme="dark">
           {/* head */}

@@ -8,14 +8,14 @@ import PlayerCard from '../shared/PlayerCard';
 import StandingsTable from './StandingsTable';
 import { Link } from 'react-router-dom';
 
-function Klub() {
+function Klub({clubRanks}) {
   
   const [igraci, setIgraci] = useState([]);
   const [utakmice, setUtakmice] = useState([])
   const {id} = useParams();
   //console.log(clubRanks)
-  //const clubStats1 = clubRanks.filter(club => id == club.id)
-  //const clubStats2= clubStats1[0]
+  const clubStats1 = clubRanks.filter(club => id == club.id)
+  const clubStats2= clubStats1[0]
   //console.log(clubStats2)
 
 
@@ -62,16 +62,7 @@ const clubStats = {
   name: '',
   rank: ''
 }
-  //stavramo listu igraca koji su nastupili za taj klub
-  
- /*  const listaIgraca = igraci.map((igrac,i) => {
-    const {playerid,playername,playerbirth,playernationality,PlayerPhoto} = igrac;
-    const birthDate = new Date(playerbirth);
-    const today = new Date();
-    const diffTime = Math.abs(today.getTime() - birthDate.getTime());
-    const playerAge = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.25));
-    return <PlayerCard key={i} ime={playername} godine={playerAge} nacionalnost={playernationality} slika={PlayerPhoto} id={playerid}/>
- }) */
+
  const listaIgraca = igraci.map((igrac, i) => {
   const { playerid, playername, playerbirth, playernationality, PlayerPhoto } = igrac;
   const birthDate = new Date(playerbirth);
@@ -208,11 +199,10 @@ const clubStats = {
         <th>Pts</th>
       </tr>
     </thead> 
-    {/*   <Table rank={clubStats2.rank+1} name={clubStats2.name} played={clubStats2.won+clubStats2.lost+clubStats2.draw} 
+    {  <Table rank={clubStats2.rank+1} name={clubStats2.name} played={clubStats2.won+clubStats2.lost+clubStats2.draw} 
       w={clubStats2.won} d={clubStats2.draw} l={clubStats2.lost}
       gf={clubStats2.gf} ga={clubStats2.ga} points={clubStats2.points}  id={clubStats2.id}
-    /> */}
-   
+    />     }
     </table>
       <Raspored raspored={matchesToPlay} />
       <Utakmice utakmice={matchesplayed} />
