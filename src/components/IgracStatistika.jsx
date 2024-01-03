@@ -46,7 +46,7 @@ function IgracStatistika() {
         }
         fetchData()
         
-       },[])
+       },[id])
 
        const mergedArray = nastupi.map((nastup) => {
   const matchingItem = golovi.find((gol) => gol.seasonid === nastup.seasonid && gol.teamid === nastup.teamid);

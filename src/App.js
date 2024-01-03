@@ -96,7 +96,7 @@ const matchFormat = utakmica => {
 
 //u sljedece dvije linije nalazimo utakmice koje su odigrane i koje ce se odigrati
 const matchesplayed = matches.filter(utakmica => utakmica.score !== null)
-const matchesToPlay = matches.filter(utakmica => utakmica.score == null)
+const matchesToPlay = matches.filter(utakmica => utakmica.score === null)
 //console.log(matchesToPlay)
 //console.log(matchesplayed)
 //ovdje cemo stvorit legendarni objekt sa teamid i teamname i svim utakmicama tog tima
@@ -141,7 +141,7 @@ const teamMatches = (teams, allMatches) => {
   clubStats.name = club.name
     for (const utakmica of club.matches){
      
-    if(utakmica.h_id == club.id){
+    if(utakmica.h_id === club.id){
       clubStats.gf+=parseInt(utakmica.score[0])
       clubStats.ga+=parseInt(utakmica.score[2])
       clubStats.pm=clubStats.gf-clubStats.ga
