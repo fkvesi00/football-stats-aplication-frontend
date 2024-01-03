@@ -1,5 +1,8 @@
 import React from 'react'
 import { useState, useEffect} from 'react';
+import Utakmice from './Utakmica';
+import Raspored from './Raspored';
+
 function ListaUtakmica() {
 
     const [raspored, setRaspored] = useState([]);
