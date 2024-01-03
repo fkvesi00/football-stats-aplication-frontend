@@ -1,12 +1,8 @@
-import React from 'react'
-import {useParams } from "react-router-dom";
-import { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import Table from './Table';
 import Raspored from './Raspored';
 import Utakmice from './Utakmice';
-import PlayerCard from '../shared/PlayerCard';
-import StandingsTable from './StandingsTable';
-import { Link } from 'react-router-dom';
 
 function Klub({clubRanks}) {
   
@@ -14,7 +10,7 @@ function Klub({clubRanks}) {
   const [utakmice, setUtakmice] = useState([])
   const {id} = useParams();
   //console.log(clubRanks)
-  const clubStats1 = clubRanks.filter(club => id == club.id)
+  const clubStats1 = clubRanks.filter(club => id === club.id)
   const clubStats2= clubStats1[0]
   //console.log(clubStats2)
 
@@ -50,7 +46,7 @@ function Klub({clubRanks}) {
    fetchData()
 
   
-},[])
+},[id])
 const clubStats = {
   won: 0,
   draw: 0,

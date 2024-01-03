@@ -101,23 +101,27 @@ const matchesToPlay = matches.filter(utakmica => utakmica.score === null)
 //console.log(matchesplayed)
 //ovdje cemo stvorit legendarni objekt sa teamid i teamname i svim utakmicama tog tima
 const teamMatches = (teams, allMatches) => {
-  const arrayOfArrays = []
-  teams.map(team =>{
-    const matchesOfTeam = allMatches.map(match => {
-      if((team.teamid === match.a_id) ||  (team.teamid === match.h_id))
-        return match;
-    })
-    const filteredArray = matchesOfTeam.filter(obj => obj !== undefined);
+  const arrayOfArrays = [];
+
+  teams.forEach((team) => {
+    const matchesOfTeam = allMatches.reduce((accumulator, match) => {
+      if (team.teamid === match.a_id || team.teamid === match.h_id) {
+        accumulator.push(match);
+      }
+      return accumulator;
+    }, []);
+
     const object = {
-      id:team.teamid,
-      name:team.teamname,
-      matches:filteredArray
-    }
-    
-    arrayOfArrays.push(object)
-  })
-  return arrayOfArrays
-}
+      id: team.teamid,
+      name: team.teamname,
+      matches: matchesOfTeam,
+    };
+
+    arrayOfArrays.push(object);
+  });
+
+  return arrayOfArrays;
+};
 
   const allGamesByClub = teamMatches(klubovi,matchesplayed)
   
