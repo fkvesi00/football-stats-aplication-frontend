@@ -20,7 +20,7 @@ function ListaKlubova() {
   useEffect(()=>{
     
     const fetchClubs= async () => {
-      const clubs = await fetch("http://localhost:3000/clubs",{ 
+      const clubs = await fetch("http://52.59.252.228:5001/clubs",{ 
         method:'GET',
         headers:{'Content-Type':'application/json'}
       });

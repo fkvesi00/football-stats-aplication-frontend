@@ -128,7 +128,7 @@ function AddGoalApp() {
 
         const postDataToBackend = async () => {
           try {
-            const url = 'http://localhost:3000/teamPlayerMatch/addAppGoals'; // Replace with your actual backend URL
+            const url = 'http://52.59.252.228:5001/teamPlayerMatch/addAppGoals'; // Replace with your actual backend URL
         
             const data = {
               matchid: matchid,

@@ -7,7 +7,7 @@ function ListaUtakmica() {
     useEffect(()=>{
         const fetchData = async () => {
 
-        const raspored = await fetch("http://localhost:3000/matchesBySeason",{
+        const raspored = await fetch("http://52.59.252.228:5001/matchesBySeason",{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({

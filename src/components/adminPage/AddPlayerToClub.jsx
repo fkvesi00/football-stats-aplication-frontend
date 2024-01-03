@@ -41,7 +41,7 @@ function AddPlayerToClub() {
   
     console.log(formData);
   
-    fetch('http://localhost:3000/players/addPlayerToClub', {
+    fetch('http://52.59.252.228:5001/players/addPlayerToClub', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
