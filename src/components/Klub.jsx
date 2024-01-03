@@ -60,11 +60,11 @@ const clubStats = {
 }
 
  const listaIgraca = igraci.map((igrac, i) => {
-  const { playerid, playername, playerbirth, playernationality, PlayerPhoto } = igrac;
+  const { playerid, playername, playerbirth } = igrac;
   const birthDate = new Date(playerbirth);
   const today = new Date();
   const diffTime = Math.abs(today.getTime() - birthDate.getTime());
-  const playerAge = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.25));
+  //const playerAge = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.25));
 
   return (
     <Link to={`/igrac/${playerid}`} key={i}>
@@ -124,10 +124,10 @@ const clubStats = {
   //console.log(matchesplayed)
   //pronalazimo ime tima preko id, i racunamo pobjede i ostalu statistiku(koristit useState umjesto globalne varijable)
   if(matchesplayed[0] !== undefined){
-      matchesplayed[0].h_id == id ? clubStats.name=matchesplayed[0].h_team : clubStats.name=matchesplayed[0].a_team
+      matchesplayed[0].h_id === id ? clubStats.name=matchesplayed[0].h_team : clubStats.name=matchesplayed[0].a_team
 
     for (const utakmica of matchesplayed){
-    if(utakmica.h_id == id){
+    if(utakmica.h_id === id){
       clubStats.gf+=parseInt(utakmica.score[0])
       clubStats.ga+=parseInt(utakmica.score[2])
       clubStats.pm=clubStats.gf-clubStats.ga

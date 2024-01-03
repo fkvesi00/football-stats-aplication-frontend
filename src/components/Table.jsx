@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-import { useState } from 'react';
+
 function Table({rank,name,played,w,d,l,gf,ga,points,id}) {
 
   const a = <td className='bg-success text-white w-8 h-8 rounded-full flex items-center justify-center'>{rank}</td>

@@ -129,7 +129,6 @@ const teamMatches = (teams, allMatches) => {
   allGamesByClub.forEach(club =>{
     const clubStats = {
       id:0,
-      name:'',
       won: 0,
       draw: 0,
       lost: 0,

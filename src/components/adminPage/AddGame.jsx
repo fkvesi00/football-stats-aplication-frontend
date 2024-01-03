@@ -11,7 +11,7 @@ function AddGame() {
         Away: ''
       });
 
-      const [counterID, setCounterID] = ([30])
+  
     const handleInputChange = (key, value) => {
         setFormData({
             ...formData,

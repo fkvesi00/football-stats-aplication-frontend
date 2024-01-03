@@ -1,5 +1,5 @@
 import React from 'react'
-import { useActionData, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import{useState,useEffect} from 'react'
 import Utakmica from './Utakmica';
 import PlayerTable from './PlayerTable';
@@ -14,30 +14,41 @@ function UtakmicaStatistika() {
   const [away, setAway] = useState([]);
   const [golovi, setGolovi] = useState([])
   
-  const homeTeamRows = home.map((igrac,i) => {
-    let playerGoals = 0
-    if(golovi.length>0){
-      golovi.map(gol => {
-        if(gol.playerid === igrac.playerid)
-          playerGoals++
-      })
+  const homeTeamRows = home.map((igrac, i) => {
+    let playerGoals = 0;
+    if (golovi.length > 0) {
+      golovi.forEach((gol) => {
+        if (gol.playerid === igrac.playerid) playerGoals++;
+      });
     }
-    return <PlayerTable key={i} igrac={igrac.playername} gol={playerGoals} zuti={null} crveni={null}
-    />
-  })
-    
-
-  const awayTeamRows = away.map((igrac,i) => {
-    let playerGoals = 0
-    if(golovi.length>0){
-      golovi.map(gol => {
-        if(gol.playerid === igrac.playerid)
-          playerGoals++
-      })
+    return (
+      <PlayerTable
+        key={i}
+        igrac={igrac.playername}
+        gol={playerGoals}
+        zuti={null}
+        crveni={null}
+      />
+    );
+  });
+  
+  const awayTeamRows = away.map((igrac, i) => {
+    let playerGoals = 0;
+    if (golovi.length > 0) {
+      golovi.forEach((gol) => {
+        if (gol.playerid === igrac.playerid) playerGoals++;
+      });
     }
-    return <PlayerTable key={i} igrac={igrac.playername} gol={playerGoals} zuti={null} crveni={null}
-    />
-  })
+    return (
+      <PlayerTable
+        key={i}
+        igrac={igrac.playername}
+        gol={playerGoals}
+        zuti={null}
+        crveni={null}
+      />
+    );
+  });
     
 
 /*   const rows123 = igraci.map((igrac,i) => (
@@ -82,7 +93,7 @@ function UtakmicaStatistika() {
      
     }
    fetchData()
-  },[])
+  },[id])
 
 
     //console.log(utakmica1)
@@ -139,7 +150,7 @@ function UtakmicaStatistika() {
       }
     }
       console.log(home)
-    },[igraci])
+    },[igraci,home,utakmica1])
       
 
 
