@@ -60,10 +60,10 @@ const clubStats = {
 }
 
  const listaIgraca = igraci.map((igrac, i) => {
-  const { playerid, playername, playerbirth } = igrac;
-  const birthDate = new Date(playerbirth);
-  const today = new Date();
-  const diffTime = Math.abs(today.getTime() - birthDate.getTime());
+  const { playerid, playername } = igrac;
+  //const birthDate = new Date(playerbirth);
+  //const today = new Date();
+  //const diffTime = Math.abs(today.getTime() - birthDate.getTime());
   //const playerAge = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.25));
 
   return (
