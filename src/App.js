@@ -32,7 +32,7 @@ function App() {
   useEffect(()=>{
     const fetchData = async () => {
      
-      const raspored = await fetch("http://52.59.252.228:5001/matches/allMatches",{
+      const raspored = await fetch("http://52.59.252.228:5001/api/matches/allMatches",{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
@@ -40,7 +40,7 @@ function App() {
         })
       })
       
-      const team = await fetch("http://52.59.252.228:5001/clubs/season",{
+      const team = await fetch("http://52.59.252.228:5001/api/clubs/season",{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
