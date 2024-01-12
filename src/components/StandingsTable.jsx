@@ -19,13 +19,13 @@ const StandingsTable = ({ tablica }) => {
   ));
 
   return (
-    <div className="overflow-x-auto my-10">
-      <div className="header text-center text-sm mb-2 mt2">TABLICA</div>
+    <div className="overflow-x-auto my-10 mt-5">
+      <div className="header text-center mb-2 mt-2">TABLICA</div>
       <table className="table-auto w-full sm:w-auto md:w-auto lg:w-auto xl:w-auto mx-auto" style={{width:'60&'}} data-theme="night">
         <thead>
           <tr>
-            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Rank</th>
-            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Name</th>
+            <th className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Rank</th>
+            <th className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Name</th>
             <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">P</th>
             <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">W</th>
             <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">D</th>
