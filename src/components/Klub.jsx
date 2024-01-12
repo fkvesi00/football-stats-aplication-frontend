@@ -195,10 +195,6 @@ const clubStats = {
         <th>Pts</th>
       </tr>
     </thead> 
-    {  <Table rank={clubStats2.rank+1} name={clubStats2.name} played={clubStats2.won+clubStats2.lost+clubStats2.draw} 
-      w={clubStats2.won} d={clubStats2.draw} l={clubStats2.lost}
-      gf={clubStats2.gf} ga={clubStats2.ga} points={clubStats2.points}  id={clubStats2.id}
-    />     }
     </table>
       <Raspored raspored={matchesToPlay} />
       <Utakmice utakmice={matchesplayed} />
