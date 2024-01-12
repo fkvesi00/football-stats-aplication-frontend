@@ -20,8 +20,8 @@ const StandingsTable = ({ tablica }) => {
 
   return (
     <div className="overflow-x-auto my-10">
-      <div className="header text-center text-sm mb-2">TABLICA</div>
-      <table className="table-auto w-full sm:w-auto md:w-auto lg:w-auto xl:w-auto mx-auto" data-theme="night">
+      <div className="header text-center text-sm mb-2 mt2">TABLICA</div>
+      <table className="table-auto w-full sm:w-auto md:w-auto lg:w-auto xl:w-auto mx-auto" style={{width:'60&'}} data-theme="night">
         <thead>
           <tr>
             <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Rank</th>
