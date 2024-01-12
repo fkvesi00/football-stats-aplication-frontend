@@ -6,8 +6,8 @@ function Utakmice({utakmice}) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
-  
-  const nizUtakmica = utakmice.map((utakmica,i)=>{
+  const revereGames= utakmice.reverse()
+  const nizUtakmica = revereGames.map((utakmica,i)=>{
     //console.log(utakmica)
     const birthDate = new Date(utakmica.date);
     const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
@@ -26,11 +26,11 @@ function Utakmice({utakmice}) {
   
 
   const handlePrevPage = () => {
-    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+    setCurrentPage((prevPage) => Math.max(prevPage + 1, 1));
   };
 
   const handleNextPage = () => {
-    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+    setCurrentPage((prevPage) => Math.min(prevPage - 1, totalPages));
   };
 
   return (
@@ -39,7 +39,7 @@ function Utakmice({utakmice}) {
       <h2 className="header">Utakmice</h2>
     </div>
     <div className="flex gap-4 justify-center p-5">
-      <h3 className="text-lg font-semibold text-gray-600">Kolo {currentPage}</h3>
+      <h3 className="text-lg font-semibold text-gray-600">Kolo {totalPages}</h3>
     </div>
     <div className="table-responsive">
       <table className="table table-compact mx-auto" style={{ width: '50%' }} data-theme="retro">
