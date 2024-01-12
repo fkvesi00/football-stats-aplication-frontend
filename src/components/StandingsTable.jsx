@@ -19,9 +19,9 @@ const StandingsTable = ({ tablica }) => {
   ));
 
   return (
-    <div className="overflow-x-auto my-10 p-2">
+    <div className="overflow-x-auto my-10 p-2"  style={{width:"60%"}}>
       <div className="header text-center">TABLICA</div>
-      <table className="table table-compact mx-auto w-full" data-theme="night">
+      <table className="table table-compact mx-auto w-full"  data-theme="night">
         <thead>
           <tr>
             <th className="p-2 text-xs">Rank</th>
