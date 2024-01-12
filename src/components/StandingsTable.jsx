@@ -26,14 +26,14 @@ const StandingsTable = ({ tablica }) => {
           <tr>
             <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Rank</th>
             <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Name</th>
-            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">P</th>
-            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">W</th>
-            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">D</th>
-            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">L</th>
-            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">GF</th>
-            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">GA</th>
-            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">±</th>
-            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Pts</th>
+            <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">P</th>
+            <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">W</th>
+            <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">D</th>
+            <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">L</th>
+            <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">GF</th>
+            <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">GA</th>
+            <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">±</th>
+            <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Pts</th>
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-300">{rows}</tbody>
