@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Table from './Table';
 import Raspored from './Raspored';
 import Utakmice from './Utakmice';
 
