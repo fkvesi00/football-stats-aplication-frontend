@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import Raspored from './Raspored';
 import Utakmice from './Utakmice';
 
-function Klub({}) {
+function Klub() {
   
   const [igraci, setIgraci] = useState([]);
   const [utakmice, setUtakmice] = useState([])
