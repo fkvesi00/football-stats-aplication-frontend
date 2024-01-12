@@ -24,16 +24,16 @@ const StandingsTable = ({ tablica }) => {
       <table className="table table-compact mx-auto w-full" data-theme="night">
         <thead>
           <tr>
-            <th className="p-2">#</th>
-            <th className="p-2">Name</th>
-            <th className="p-2">P</th>
-            <th className="p-2">W</th>
-            <th className="p-2">D</th>
-            <th className="p-2">L</th>
-            <th className="p-2">GF</th>
-            <th className="p-2">GA</th>
-            <th className="p-2">+-</th>
-            <th className="p-2">Pts</th>
+            <th className="p-2 text-xs">Rank</th>
+            <th className="p-2 text-xs">Name</th>
+            <th className="p-2 text-xs">P</th>
+            <th className="p-2 text-xs">W</th>
+            <th className="p-2 text-xs">D</th>
+            <th className="p-2 text-xs">L</th>
+            <th className="p-2 text-xs">GF</th>
+            <th className="p-2 text-xs">GA</th>
+            <th className="p-2 text-xs">+-</th>
+            <th className="p-2 text-xs">Pts</th>
           </tr>
         </thead>
         <tbody>{rows}</tbody>
