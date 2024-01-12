@@ -19,7 +19,7 @@ function Klub() {
     const fetchData = async () => {
       
       
-      const igraci = await fetch("hhttps://www.umadomena.com/players/clubPlayers",{ 
+      const igraci = await fetch("https://www.umadomena.com/players/clubPlayers",{ 
         method:'post',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
