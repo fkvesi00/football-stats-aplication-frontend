@@ -6,7 +6,7 @@ import './animation.css'
 function ListaKlubova() {
   const [clubs, setClubs] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const imageUrl = 'https://main--uma-metkovic.netlify.app/api/proxy-image';
   useEffect(() => {
     // Simulating an asynchronous operation with a 1-second delay
     const delay = setTimeout(() => {
@@ -25,14 +25,20 @@ function ListaKlubova() {
         headers:{'Content-Type':'application/json'}
       });
       const clubsJSON = await clubs.json()
-      setClubs(clubsJSON)
+      // Update the logo property with the Netlify function endpoint
+   const clubsWithNetlifyEndpoint = clubsJSON.map((klub) => ({
+    ...klub,
+    logo: imageUrl,
+ }));
+
+ setClubs(clubsWithNetlifyEndpoint);
     }
 
     fetchClubs()
   },[])
 
   const listaKlubova = clubs.map((klub, id) => {
-      return <KlubCard key={id} id={klub.teamid} ime={klub.teamname} logo={klub.logo} />;
+      return <KlubCard key={id} id={klub.teamid} ime={klub.teamname} logo={imageUrl} />;
   });
 
   const renderContent = (
