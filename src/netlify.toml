@@ -3,3 +3,14 @@
   to = "https://www.umadomena.com/:splat"
   status = 200
   force = true
+
+  [[redirects]]
+  from = "/api/proxy-image"
+  to = "/.netlify/functions/proxyImage"
+  status = 200
+  force = true
+
+  [[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
