@@ -10,7 +10,7 @@ function ListaUtakmica() {
     useEffect(()=>{
         const fetchData = async () => {
 
-        const raspored = await fetch("http://52.59.252.228:5001/matchesBySeason",{
+        const raspored = await fetch("https://www.umadomena.com/matchesBySeason",{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({

@@ -59,7 +59,7 @@ function UtakmicaStatistika() {
   useEffect(()=>{
     const fetchData = async () => {
      
-      const utakmica = await fetch("http://52.59.252.228:5001/matches/id",{
+      const utakmica = await fetch("https://www.umadomena.com/matches/id",{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
@@ -67,7 +67,7 @@ function UtakmicaStatistika() {
         })
       })
     
-      const igraci = await fetch("http://52.59.252.228:5001/teamPlayerMatch/getApp", {
+      const igraci = await fetch("https://www.umadomena.com/teamPlayerMatch/getApp", {
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
@@ -75,7 +75,7 @@ function UtakmicaStatistika() {
         })
       })
 
-      const golovi = await fetch("http://52.59.252.228:5001/goals/matchGoals", {
+      const golovi = await fetch("https://www.umadomena.com/goals/matchGoals", {
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({

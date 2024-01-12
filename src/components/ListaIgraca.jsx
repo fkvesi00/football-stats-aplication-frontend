@@ -9,7 +9,7 @@ function ListaIgraca() {
     const [input, setInput] = useState('')
 
     useEffect(()=>{
-        fetch("http://52.59.252.228:5001/players",{ 
+        fetch("https://www.umadomena.com/players",{ 
           method:'get',
           headers:{'Content-Type':'application/json'}
         })

@@ -20,7 +20,7 @@ function Klub({clubRanks}) {
     const fetchData = async () => {
       
       
-      const igraci = await fetch("http://52.59.252.228:5001/players/clubPlayers",{ 
+      const igraci = await fetch("hhttps://www.umadomena.com/players/clubPlayers",{ 
         method:'post',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
@@ -28,7 +28,7 @@ function Klub({clubRanks}) {
         })
       })
 
-      const utakmice = await fetch('http://52.59.252.228:5001/clubs/games',{ 
+      const utakmice = await fetch('https://www.umadomena.com/clubs/games',{ 
         method:'post',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
