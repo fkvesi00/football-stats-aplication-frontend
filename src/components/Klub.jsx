@@ -3,14 +3,14 @@ import { useParams, Link } from 'react-router-dom';
 import Raspored from './Raspored';
 import Utakmice from './Utakmice';
 
-function Klub({clubRanks}) {
+function Klub({}) {
   
   const [igraci, setIgraci] = useState([]);
   const [utakmice, setUtakmice] = useState([])
   const {id} = useParams();
   //console.log(clubRanks)
-  const clubStats1 = clubRanks.filter(club => id === club.id)
-  const clubStats2= clubStats1[0]
+  
+  
   //console.log(clubStats2)
 
 
@@ -178,23 +178,6 @@ const clubStats = {
 <div className='flex justify-center flex-wrap' >
       {listaIgraca}
     </div>
-      <div className='header'>TABLICA</div>
-      <table className="table table-compact mx-auto" style={{width:"60%"}} data-theme='night' >
-      <thead>
-      <tr>
-        <th>#</th> 
-        <th>Name</th> 
-        <th>P</th>
-        <th>W</th> 
-        <th>D</th> 
-        <th>L</th> 
-        <th>GF</th> 
-        <th>GA</th>
-        <th>+-</th>
-        <th>Pts</th>
-      </tr>
-    </thead> 
-    </table>
       <Raspored raspored={matchesToPlay} />
       <Utakmice utakmice={matchesplayed} />
     </div>
