@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/api/*"
+  to = "https://www.umadomena.com/:splat"
+  status = 200
+  force = true
