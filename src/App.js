@@ -32,7 +32,7 @@ function App() {
   useEffect(()=>{
     const fetchData = async () => {
      
-      const raspored = await fetch("https://umadomena.com/",{
+      const raspored = await fetch("http://umadomena.com/matches/allMatches",{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
@@ -40,7 +40,7 @@ function App() {
         })
       })
       
-      const team = await fetch("https://umadomena.com/",{
+      const team = await fetch("http://www.umadomena.com/clubs/season",{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
