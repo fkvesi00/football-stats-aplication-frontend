@@ -19,9 +19,9 @@ const StandingsTable = ({ tablica }) => {
   ));
 
   return (
-    <div className="overflow-x-auto my-10 p-2"  style={{width:"60%"}}>
-      <div className="header text-center">TABLICA</div>
-      <table className="table table-compact mx-auto w-full"  data-theme="night">
+    <div className="overflow-x-auto my-10">
+      <div className="header text-center text-sm">TABLICA</div>
+      <table className="table table-compact mx-auto w-full" data-theme="night">
         <thead>
           <tr>
             <th className="p-2 text-xs">Rank</th>
@@ -32,7 +32,7 @@ const StandingsTable = ({ tablica }) => {
             <th className="p-2 text-xs">L</th>
             <th className="p-2 text-xs">GF</th>
             <th className="p-2 text-xs">GA</th>
-            <th className="p-2 text-xs">+-</th>
+            <th className="p-2 text-xs">±</th>
             <th className="p-2 text-xs">Pts</th>
           </tr>
         </thead>
