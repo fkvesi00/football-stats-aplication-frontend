@@ -17,25 +17,26 @@ function ListaKlubova() {
     return () => clearTimeout(delay);
   }, []);
 
-  useEffect(()=>{
-    
-    const fetchClubs= async () => {
-      const clubs = await fetch("https://www.umadomena.com/clubs",{ 
-        method:'GET',
-        headers:{'Content-Type':'application/json'}
+  useEffect(() => {
+    const fetchClubs = async () => {
+      const clubsResponse = await fetch("https://www.umadomena.com/clubs", {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
       });
-      const clubsJSON = await clubs.json()
+  
+      const clubsJSON = await clubsResponse.json();
+  
       // Update the logo property with the Netlify function endpoint
-   const clubsWithNetlifyEndpoint = clubsJSON.map((klub) => ({
-    ...klub,
-    logo: imageUrl,
- }));
-
- setClubs(clubsWithNetlifyEndpoint);
-    }
-
-    fetchClubs()
-  },[])
+      const clubsWithNetlifyEndpoint = clubsJSON.map((klub) => ({
+        ...klub,
+        logo: `${imageUrl}?url=${encodeURIComponent(klub.logo)}`,
+      }));
+  
+      setClubs(clubsWithNetlifyEndpoint);
+    };
+  
+    fetchClubs();
+  }, []);
 
   const listaKlubova = clubs.map((klub, id) => {
     const clubLogoUrl = `${imageUrl}?url=${encodeURIComponent(klub.logo)}`;
