@@ -20,20 +20,20 @@ const StandingsTable = ({ tablica }) => {
 
   return (
     <div className="overflow-x-auto my-10">
-      <div className="header text-center text-sm">TABLICA</div>
-      <table className="table table-compact mx-auto w-full" data-theme="night">
+      <div className="header text-center text-sm mb-2">TABLICA</div>
+      <table className="table-auto w-full" data-theme="night">
         <thead>
           <tr>
-            <th className="p-2 text-xs">Rank</th>
-            <th className="p-2 text-xs">Name</th>
-            <th className="p-2 text-xs">P</th>
-            <th className="p-2 text-xs">W</th>
-            <th className="p-2 text-xs">D</th>
-            <th className="p-2 text-xs">L</th>
-            <th className="p-2 text-xs">GF</th>
-            <th className="p-2 text-xs">GA</th>
-            <th className="p-2 text-xs">±</th>
-            <th className="p-2 text-xs">Pts</th>
+            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Rank</th>
+            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Name</th>
+            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">P</th>
+            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">W</th>
+            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">D</th>
+            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">L</th>
+            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">GF</th>
+            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">GA</th>
+            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">±</th>
+            <th className="p-2 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Pts</th>
           </tr>
         </thead>
         <tbody>{rows}</tbody>

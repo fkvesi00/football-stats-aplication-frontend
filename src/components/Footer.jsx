@@ -47,7 +47,7 @@ function Footer() {
         </div>
       </div>
       <div>
-        <p>Copyright © 2023 - All right reserved by Filip Kvesić</p>
+        <p>Copyright © 2023 - All right reserved by Kvesić Filip</p>
       </div>
     </footer>
   );
