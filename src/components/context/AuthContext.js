@@ -1,5 +1,4 @@
-// AuthContext.js
-import { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 const AuthContext = createContext();
 
@@ -10,13 +9,23 @@ export const AuthProvider = ({ children }) => {
     setIsLoginValid(value);
   };
 
-  return (
-    <AuthContext.Provider value={{ isLoginValid, setLoginValid }}>
-      {children}
-    </AuthContext.Provider>
-  );
+  const resetLoginValid = () => {
+    setIsLoginValid(false);
+  };
+
+  const value = {
+    isLoginValid,
+    setLoginValid,
+    resetLoginValid,
+  };
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => {
-  return useContext(AuthContext);
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
 };
