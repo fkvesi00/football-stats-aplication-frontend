@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useAuth } from './AuthContext';
+import { useAuth } from '../context/AuthContext';
 import AddClub from './AddClub';
 import AddGame from './AddGame';
 import AddPlayer from './AddPlayer';
