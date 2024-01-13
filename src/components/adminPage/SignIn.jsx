@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 function SignIn() {
+  const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
@@ -23,11 +24,20 @@ function SignIn() {
     setIsButtonDisabled(!(isEmailValid && isPasswordValid));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Only navigate if the form is valid
+    if (!isButtonDisabled) {
+      history.push('/adminPage');
+    }
+  };
+
   return (
     <div className="relative flex flex-col justify-center h-screen overflow-hidden flex justify-center items-center h-screen p-4 m-4">
       <div className="w-full p-6 m-auto bg-white rounded-md shadow-md ring-2 ring-gray-800/50 lg:max-w-lg">
         <h1 className="text-3xl font-semibold text-center text-gray-700">Login</h1>
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
             <label className="label">
               <span className="text-base label-text">Email</span>
@@ -53,9 +63,9 @@ function SignIn() {
             />
           </div>
           <div>
-            <Link to="/adminPage" className={`btn btn-ghost normal-case text-xl ${isButtonDisabled ? 'cursor-not-allowed opacity-50' : ''}`} disabled={isButtonDisabled}>
+            <button type="submit" className={`btn btn-ghost normal-case text-xl ${isButtonDisabled ? 'cursor-not-allowed opacity-50' : ''}`} disabled={isButtonDisabled}>
               Login
-            </Link>
+            </button>
           </div>
         </form>
       </div>
