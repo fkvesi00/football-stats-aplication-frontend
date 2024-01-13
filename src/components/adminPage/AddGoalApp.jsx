@@ -120,6 +120,7 @@ function AddGoalApp() {
       };
 
       const handleSubmit = () => {
+        console.log('Uslo 1')
         const homePlayers = selectedValues.slice(0, 14);
         const filterHomePlayers = homePlayers.filter(item => item !== '' && item !== null && item !== undefined);
     
@@ -139,7 +140,7 @@ function AddGoalApp() {
               homeScore: homeScore,
               awayScore: awayScore
             };
-  
+            console.log(data)
             const response = await fetch(url, {
               method: 'POST',
               headers: {
