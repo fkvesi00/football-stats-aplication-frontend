@@ -1,5 +1,6 @@
 import { HashRouter  as Router,Routes,Route } from "react-router-dom";
 import{useState,useEffect} from 'react'
+import { AuthProvider } from './AuthContext';
 import StandingsTable from "./components/StandingsTable";
 import NavBar from "./components/NavBar";
 import Klub from "./components/Klub";
@@ -192,8 +193,9 @@ const teamMatches = (teams, allMatches) => {
   
 
   return (
-    <Router>
-      <NavBar />
+    <AuthProvider>
+      <Router>
+        <NavBar />
       {loading ? (
         // Loading spinner component
         <div className="loader-container">
@@ -224,7 +226,8 @@ const teamMatches = (teams, allMatches) => {
         </Routes>
       )}
       <Footer />
-    </Router>
+      </Router>
+    </AuthProvider>
   );
 }
 

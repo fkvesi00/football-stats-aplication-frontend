@@ -1,8 +1,11 @@
+// SignIn.js
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from './AuthContext';
 
-function SignIn({ onSuccessfulLogin }) {
+function SignIn() {
   const navigate = useNavigate();
+  const { setLoginValid } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
@@ -29,10 +32,9 @@ function SignIn({ onSuccessfulLogin }) {
 
     // Only navigate if the form is valid
     if (!isButtonDisabled) {
-      // Update the login state
-      onSuccessfulLogin(true);
-
-      // Redirect to the adminPage
+      // Set login state to true when successful login
+      setLoginValid(true);
+      // Redirect to AdminPage
       navigate('/adminPage');
     }
   };
@@ -67,7 +69,11 @@ function SignIn({ onSuccessfulLogin }) {
             />
           </div>
           <div>
-            <button type="submit" className={`btn btn-ghost normal-case text-xl ${isButtonDisabled ? 'cursor-not-allowed opacity-50' : ''}`} disabled={isButtonDisabled}>
+            <button
+              type="submit"
+              className={`btn btn-ghost normal-case text-xl ${isButtonDisabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+              disabled={isButtonDisabled}
+            >
               Login
             </button>
           </div>
