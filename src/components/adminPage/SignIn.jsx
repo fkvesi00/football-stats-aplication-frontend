@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function SignIn() {
+function SignIn({ onSuccessfulLogin }) {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-  const [isLoggedIn, setLoggedIn] = useState(false);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -31,17 +30,12 @@ function SignIn() {
     // Only navigate if the form is valid
     if (!isButtonDisabled) {
       // Update the login state
-      setLoggedIn(true);
+      onSuccessfulLogin(true);
 
       // Redirect to the adminPage
       navigate('/adminPage');
     }
   };
-
-  // If the user is already logged in, redirect to adminPage
-  if (isLoggedIn) {
-    navigate('/adminPage');
-  }
 
   return (
     <div className="relative flex flex-col justify-center h-screen overflow-hidden flex justify-center items-center h-screen p-4 m-4">
