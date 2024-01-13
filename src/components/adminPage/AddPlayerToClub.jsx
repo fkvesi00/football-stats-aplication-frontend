@@ -11,7 +11,7 @@ function AddPlayerToClub() {
 
   useEffect(() => {
     const fetchClubs = async () => {
-      const response = await fetch("http://localhost:3000/clubs", {
+      const response = await fetch("https://www.umadomena.com/clubs", {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
       });
@@ -21,7 +21,7 @@ function AddPlayerToClub() {
 
     fetchClubs();
 
-    fetch("http://localhost:3000/players", {
+    fetch("https://www.umadomena.com/players", {
       method: 'get',
       headers: { 'Content-Type': 'application/json' },
     })
@@ -41,7 +41,7 @@ function AddPlayerToClub() {
   
     console.log(formData);
   
-    fetch('http://52.59.252.228:5001/players/addPlayerToClub', {
+    fetch('https://www.umadomena.com/players/addPlayerToClub', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

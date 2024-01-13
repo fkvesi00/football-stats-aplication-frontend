@@ -23,7 +23,7 @@ function AddGame() {
         event.preventDefault();
         console.log(formData);
        
-        fetch('http://52.59.252.228:5001/matches/addMatch', {
+        fetch('https://www.umadomena.com/matches/addMatch', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

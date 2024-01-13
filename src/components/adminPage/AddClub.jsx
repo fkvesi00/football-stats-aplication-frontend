@@ -21,7 +21,7 @@ function AddClub() {
         };
         console.log(typeof clubID, typeof teamName)
         // Send a POST request to your Node.js server
-        fetch('http://52.59.252.228:5001/clubs/addClub', {
+        fetch('https://www.umadomena.com/clubs/addClub', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

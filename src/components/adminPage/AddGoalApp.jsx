@@ -22,7 +22,7 @@ function AddGoalApp() {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await fetch('http://localhost:3000/matches/getMatchesFormatted');
+            const response = await fetch('https://www.umadomena.com/getMatchesFormatted');
             if (!response.ok) {
               throw new Error('Network response was not ok');
             }
@@ -49,7 +49,7 @@ function AddGoalApp() {
             setAwayTeamid(matchesSnapshot[currentIndexSnapshot].a_id);
       
             // Fetch data using the captured values
-            const homePlayers = await fetch("http://localhost:3000/players/clubPlayers", {
+            const homePlayers = await fetch("https://www.umadomena.com/players/clubPlayers", {
               method: 'post',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
@@ -57,7 +57,7 @@ function AddGoalApp() {
               }),
             });
       
-            const awayPlayers = await fetch("http://localhost:3000/players/clubPlayers", {
+            const awayPlayers = await fetch("https://www.umadomena.com/players/clubPlayers", {
               method: 'post',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
@@ -128,7 +128,7 @@ function AddGoalApp() {
 
         const postDataToBackend = async () => {
           try {
-            const url = 'http://52.59.252.228:5001/teamPlayerMatch/addAppGoals'; // Replace with your actual backend URL
+            const url = 'https://www.umadomena.com/teamPlayerMatch/addAppGoals'; // Replace with your actual backend URL
         
             const data = {
               matchid: matchid,

@@ -39,7 +39,7 @@ function AddPlayer() {
     };
     console.log(typeof playerID, typeof playerName, typeof playerBirth, typeof playerNationality)
     // Send a POST request to your Node.js server
-    fetch('http://52.59.252.228:5001/players/addPlayer', {
+    fetch('https://www.umadomena.com/players/addPlayer', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
