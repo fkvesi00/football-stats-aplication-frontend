@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 
 function SignIn() {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
@@ -30,7 +29,7 @@ function SignIn() {
 
     // Only navigate if the form is valid
     if (!isButtonDisabled) {
-      history.push('/adminPage');
+      navigate('/adminPage');
     }
   };
 
