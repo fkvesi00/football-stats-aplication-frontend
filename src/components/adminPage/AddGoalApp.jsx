@@ -129,7 +129,7 @@ function AddGoalApp() {
 
         const postDataToBackend = async () => {
           try {
-            const url = 'https://www.umadomena.com/teamPlayerMatch/addAppGoals'; // Replace with your actual backend URL
+            
         
             const data = {
               matchid: matchid,
@@ -141,7 +141,7 @@ function AddGoalApp() {
               awayScore: awayScore
             };
             console.log(data)
-            const response = await fetch(url, {
+            const response = await fetch("https://www.umadomena.com/teamPlayerMatch/addAppGoals", {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
