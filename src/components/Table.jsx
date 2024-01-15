@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 function Table({rank,name,played,w,d,l,gf,ga,points,id}) {
   return (
-    <tr data-theme='fantasy' className='mb-7 py-4'>
+    <tr data-theme='fantasy' style={{ marginBottom: '10px', paddingTop: '10px', paddingBottom: '10px' }}>
     <td className='bg-neutral text-white w-8 h-8 rounded-full flex items-center justify-center'>{rank}</td>
     <td ><Link to={`klub/${id}`}>{name}</Link></td>
     <td className='text-center'>{played}</td>
