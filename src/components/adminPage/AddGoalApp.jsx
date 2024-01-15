@@ -148,9 +148,8 @@ function AddGoalApp() {
               },
               body: JSON.stringify(data),
             });
-        
             if (response.ok) {
-              console.log('Data sent successfully');
+              res.json('Data sent successfully');
               // Additional handling if needed
               window.location.reload(); // Reload the page
             } else {

@@ -2,12 +2,8 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 
 function Table({rank,name,played,w,d,l,gf,ga,points,id}) {
-
-  const a = <td className='bg-success text-white w-8 h-8 rounded-full flex items-center justify-center'>{rank}</td>
-  const b = <td className='bg-neutral text-white w-8 h-8 rounded-full flex items-center justify-center'>{rank}</td>
-  const c = <td className='bg-error text-white w-8 h-8 rounded-full flex items-center justify-center'>{rank}</td>
   return (
-    <tr data-theme='fantasy'>
+    <tr data-theme='fantasy' className='mb-3'>
     {rank === 1 ? a : rank === 12 ? c : b}
     <td ><Link to={`klub/${id}`}>{name}</Link></td>
     <td className='text-center'>{played}</td>

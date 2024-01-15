@@ -43,7 +43,7 @@ function Klub() {
       
     }
    fetchData()
-      console.log(id)
+      
   
 },[id])
 const clubStats = {

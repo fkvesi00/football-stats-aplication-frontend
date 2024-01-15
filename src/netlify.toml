@@ -6,5 +6,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "/app.js"  # Adjust this line to match your entry point
+  to = "/app.js" 
   status = 200
