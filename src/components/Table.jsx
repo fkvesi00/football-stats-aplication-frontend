@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 function Table({rank,name,played,w,d,l,gf,ga,points,id}) {
   return (
     <tr data-theme='fantasy' className='p-2 m-2'>
-    <td className='bg-neutral text-white w-4 h-4 rounded-full text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>
+    <td className='bg-neutral text-white w-3 h-3 rounded-full text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>
   <div className="flex items-center justify-center p-2">
     {rank}
   </div>
