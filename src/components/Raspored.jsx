@@ -9,7 +9,7 @@ function Raspored({ raspored }) {
   const nizRasporeda = raspored.sort((a,b) => a.match_id - b.match_id).map((raspored, i) => {
     const birthDate = new Date(raspored.date);
     const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
-    const formattedDate = birthDate.toLocaleDateString('en-US', options);
+    const formattedDate = birthDate.toLocaleDateString('hr-HR', options);
     return (
       <Rasporedcic
         key={i}
