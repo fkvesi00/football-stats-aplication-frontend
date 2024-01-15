@@ -21,7 +21,7 @@ const StandingsTable = ({ tablica }) => {
   return (
     <div className="overflow-x-auto my-10 mt-5 mb-5">
     <div className="header text-center mb-2 mt-2">TABLICA</div>
-    <table className="table-auto w-full md:max-w-2/3 lg:max-w-2/3 xl:max-w-2/3 mx-auto" data-theme="night">
+    <table className="table-auto w-full md:max-w-[2/3] lg:max-w-[2/3] xl:max-w-[2/3] mx-auto" data-theme="night">
         <thead>
           <tr>
             <th className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Rank</th>
