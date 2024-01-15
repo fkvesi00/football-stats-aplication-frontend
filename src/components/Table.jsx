@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 function Table({rank,name,played,w,d,l,gf,ga,points,id}) {
   return (
     <tr data-theme='fantasy' className='p-2 m-2'>
-    <td className='bg-neutral text-white w-8 h-8 rounded-full flex items-center justify-center p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl '>{rank}</td>
+    <td className='bg-neutral text-white w-4 h-4 rounded-full flex items-center justify-center p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl '>{rank}</td>
     <td className='p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'><Link to={`klub/${id}`}>{name}</Link></td>
     <td className='text-center p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{played}</td>
     <td className='text-center p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{w}</td>
