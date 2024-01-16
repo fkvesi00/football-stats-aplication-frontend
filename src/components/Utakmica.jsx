@@ -9,12 +9,12 @@ function Utakmica({ MatchID,Date, HomeTeamID, HomeTeamScore, AwayTeamName, }){
     <tr className="align-middle">
       <td className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{Date}</td>
       <td className="text-center">
-        <div className="p-2" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{HomeTeamID}</div>
-        <div className="p-2" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{AwayTeamName}</div>
+        <div className="p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{HomeTeamID}</div>
+        <div className="p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{AwayTeamName}</div>
       </td>
       <td className="text-center p-1 text-sm sm:text-m md:text-base lg:text-lg xl:text-lg 2xl:text-xl" style={{ backgroundColor: '#130F2A', fontWeight: 'bold', color: 'white' }}>
-        <div className='p-2'>{HomeTeamScore[0]}</div>
-        <div className='p-2'>{HomeTeamScore[2]}</div>
+        <div className='p-1'>{HomeTeamScore[0]}</div>
+        <div className='p-1'>{HomeTeamScore[2]}</div>
       </td>
       <td className="text-center">
         <Link to={`/utakmica/${MatchID}`}>
