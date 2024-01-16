@@ -48,7 +48,6 @@ function Utakmice({utakmice}) {
               <th style={{ textAlign: 'center' }}>Score</th>
               <th style={{ textAlign: 'center' }}>Link</th>
             </tr>
-              <th></th>
             </tr>
           </thead>
           <tbody>{currentGames}</tbody>
