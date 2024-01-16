@@ -6,22 +6,20 @@ function Utakmica({ MatchID,Date, HomeTeamID, HomeTeamScore, AwayTeamName, }){
  
 
   return (
-    <tr>
-      <td className="p-5 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{Date}</td>
-      <td style={{ textAlign: 'center' }}>
-        <div style={{ fontFamily: 'Arial, Helvetica, sans-serif'}}>{HomeTeamID}</div>
-       <div style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{AwayTeamName}</div>
+    <tr className="align-middle">
+      <td className="p-3 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{Date}</td>
+      <td className="text-center">
+        <div style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{HomeTeamID}</div>
+        <div style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{AwayTeamName}</div>
       </td>
-      <td className="text-center p-5 text-center text-sm sm:text-m md:text-base lg:text-lg xl:text-lg 2xl:text-xl " style={{backgroundColor:'#130F2A',fontWeight: 'bold',color:'white',textAlign:'center'}}>
-        <div>{HomeTeamScore[0]}</div>
-        <div>{HomeTeamScore[2]}</div>
+      <td className="text-center p-3 text-sm sm:text-m md:text-base lg:text-lg xl:text-lg 2xl:text-xl" style={{ backgroundColor: '#130F2A', fontWeight: 'bold', color: 'white' }}>
+        <div className='p-2'>{HomeTeamScore[0]}</div>
+        <div className='p-2'>{HomeTeamScore[2]}</div>
       </td>
-      <td style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <div>
-          <Link to={`/utakmica/${MatchID}`}>
-            <FontAwesomeIcon icon={faPlayCircle} />
-          </Link>
-        </div>
+      <td className="text-center">
+        <Link to={`/utakmica/${MatchID}`}>
+          <FontAwesomeIcon icon={faPlayCircle} />
+        </Link>
       </td>
     </tr>
   )
