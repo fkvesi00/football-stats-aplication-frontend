@@ -43,9 +43,9 @@ function Utakmice({utakmice}) {
           <thead>
             <tr>
               <th>Date</th>
-              <th style={{ textAlign: 'center' }}>Matchup</th>
-              <th style={{ textAlign: 'center' }}>Score</th>
-              <th style={{ textAlign: 'center' }}>Link</th>
+              <th className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ textAlign: 'center' }}>Matchup</th>
+              <th className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ textAlign: 'center' }}>Score</th>
+              <th className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ textAlign: 'center' }}>Link</th>
             </tr>
           </thead>
           <tbody>{currentGames}</tbody>

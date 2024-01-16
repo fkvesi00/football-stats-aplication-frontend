@@ -7,16 +7,16 @@ function Utakmica({ MatchID,Date, HomeTeamID, HomeTeamScore, AwayTeamName, }){
 
   return (
     <tr>
-      <td style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontSize: '16px' }}>{Date}</td>
+      <td className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{Date}</td>
       <td style={{ textAlign: 'center' }}>
-        <div style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontSize: '16px' }}>{HomeTeamID}</div>
-       <div style={{ fontFamily: 'Arial, Helvetica, sans-serif', fontSize: '16px' }}>{AwayTeamName}</div>
+        <div style={{ fontFamily: 'Arial, Helvetica, sans-serif'}}>{HomeTeamID}</div>
+       <div style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{AwayTeamName}</div>
       </td>
-      <td style={{backgroundColor:'#130F2A', fontSize:'20px',fontWeight: 'bold',color:'white',textAlign:'center'}}>
+      <td className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{backgroundColor:'#130F2A',fontWeight: 'bold',color:'white',textAlign:'center'}}>
         <div>{HomeTeamScore[0]}</div>
         <div>{HomeTeamScore[2]}</div>
       </td>
-          <td><Link to={`/utakmica/${MatchID}`}><FontAwesomeIcon icon={faPlayCircle} /></Link></td>
+          <td className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"><Link to={`/utakmica/${MatchID}`}><FontAwesomeIcon icon={faPlayCircle} /></Link></td>
     </tr>
   )
 }
