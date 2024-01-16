@@ -42,7 +42,7 @@ function Utakmice({utakmice}) {
        <table className="table table-compact mx-auto sm:w-full lg:w-2/3 m-2 p-2" data-theme="retro">
           <thead>
             <tr>
-              <th>Date</th>
+              <th className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Date</th>
               <th className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ textAlign: 'center' }}>Matchup</th>
               <th className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ textAlign: 'center' }}>Score</th>
               <th className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ textAlign: 'center' }}>Link</th>

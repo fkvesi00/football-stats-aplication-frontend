@@ -16,7 +16,11 @@ function Utakmica({ MatchID,Date, HomeTeamID, HomeTeamScore, AwayTeamName, }){
         <div>{HomeTeamScore[0]}</div>
         <div>{HomeTeamScore[2]}</div>
       </td>
-          <td><Link to={`/utakmica/${MatchID}`}><FontAwesomeIcon icon={faPlayCircle} /></Link></td>
+      <td className="flex justify-center items-center">
+        <Link to={`/utakmica/${MatchID}`}>
+          <FontAwesomeIcon icon={faPlayCircle} />
+        </Link>
+      </td>
     </tr>
   )
 }
