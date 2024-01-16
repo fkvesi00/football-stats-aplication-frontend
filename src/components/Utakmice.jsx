@@ -42,10 +42,10 @@ function Utakmice({utakmice}) {
       <table className="table table-compact mx-auto m-2 p-2 sm:w-4/5 md:w-4/5 lg:w-2/3 " data-theme="retro">
           <thead>
             <tr>
-              <th className="p-3 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Date</th>
-              <th className="p-3 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ textAlign: 'center' }}>Matchup</th>
-              <th className="p-3 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ textAlign: 'center' }}>Score</th>
-              <th className="p-3 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ textAlign: 'center' }}>Link</th>
+              <th className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Date</th>
+              <th className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ textAlign: 'center' }}>Matchup</th>
+              <th className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ textAlign: 'center' }}>Score</th>
+              <th className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ textAlign: 'center' }}>Link</th>
             </tr>
           </thead>
           <tbody>{currentGames}</tbody>
