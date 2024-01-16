@@ -39,7 +39,7 @@ function Utakmice({utakmice}) {
         <h3 className="text-lg font-semibold text-gray-600">Kolo {currentPage}</h3>
       </div>
       <div className="table-responsive">
-        <table className="table table-compact mx-auto" style={{ width: '50%' }} data-theme="retro">
+       <table className="table table-compact mx-auto sm:w-full lg:w-2/3 m-2 p-2" data-theme="retro">
           <thead>
             <tr>
               <th>Date</th>
