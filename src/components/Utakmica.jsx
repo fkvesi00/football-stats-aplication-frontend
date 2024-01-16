@@ -6,7 +6,7 @@ function Utakmica({ MatchID,Date, HomeTeamID, HomeTeamScore, AwayTeamName, }){
  
 
   return (
-    <tr className="align-middle">
+    <tr className="align-middle" data-theme="fantasy">
       <td className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{Date}</td>
       <td className="text-center">
         <div className="p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{HomeTeamID}</div>
