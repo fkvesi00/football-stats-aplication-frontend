@@ -42,11 +42,12 @@ function Utakmice({utakmice}) {
         <table className="table table-compact mx-auto" style={{ width: '50%' }} data-theme="retro">
           <thead>
             <tr>
+            <tr>
               <th>Date</th>
-              <th style={{ textAlign: 'center' }}>Time</th>
-              <th style={{ textAlign: 'end' }}>Home Team</th>
+              <th style={{ textAlign: 'center' }}>Matchup</th>
               <th style={{ textAlign: 'center' }}>Score</th>
-              <th>Away Team</th>
+              <th style={{ textAlign: 'center' }}>Link</th>
+            </tr>
               <th></th>
             </tr>
           </thead>
