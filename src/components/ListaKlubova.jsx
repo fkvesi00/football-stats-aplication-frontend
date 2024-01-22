@@ -6,8 +6,7 @@ import './animation.css'
 function ListaKlubova() {
   const [clubs, setClubs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const logo = '/images/klada.jpg'
-
+  
   useEffect(() => {
     // Simulating an asynchronous operation with a 1-second delay
     const delay = setTimeout(() => {
@@ -37,7 +36,7 @@ function ListaKlubova() {
   }, []);
 
   const listaKlubova = clubs.map((klub, id) => {
-    return <KlubCard key={id} id={klub.teamid} ime={klub.teamname} logo={logo} />;
+    return <KlubCard key={id} id={klub.teamid} ime={klub.teamname} logo={`/images/${klub.id}.jpg`} />;
   });
 
 
