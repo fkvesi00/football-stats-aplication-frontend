@@ -9,6 +9,7 @@ function Rasporedcic({time,date,home,away,id}) {
         <div className="p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{home}</div>
         <div className="p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{away}</div>
       </td>
+      <td className="p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>VS</td>
     </tr>
   )
 }

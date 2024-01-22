@@ -51,6 +51,7 @@ function Raspored({ raspored }) {
               <th>Date</th>
               <th style={{ textAlign: 'center' }}>Time</th>
               <th style={{ textAlign: 'center' }}>Matchup</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>{currentGames}</tbody>
