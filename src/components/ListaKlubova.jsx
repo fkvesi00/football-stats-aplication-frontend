@@ -36,7 +36,7 @@ function ListaKlubova() {
   }, []);
 
   const listaKlubova = clubs.map((klub, id) => {
-    return <KlubCard key={id} id={klub.teamid} ime={klub.teamname} logo={`/images/${klub.id}.jpg`} />;
+    return <KlubCard key={id} id={klub.teamid} ime={klub.teamname} logo={`/images/${klub.teamid}.jpg`} />;
   });
 
 
