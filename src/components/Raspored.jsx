@@ -50,9 +50,7 @@ function Raspored({ raspored }) {
             <tr>
               <th>Date</th>
               <th style={{ textAlign: 'center' }}>Time</th>
-              <th style={{ textAlign: 'end' }}>Home Team</th>
-              <th></th>
-              <th>Away Team</th>
+              <th style={{ textAlign: 'center' }}>Matchup</th>
             </tr>
           </thead>
           <tbody>{currentGames}</tbody>

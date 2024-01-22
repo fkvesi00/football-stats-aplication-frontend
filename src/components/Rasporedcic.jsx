@@ -1,15 +1,14 @@
 import React from 'react'
 
 function Rasporedcic({time,date,home,away,id}) {
-  
-  
   return (
-    <tr>
-          <td>{date}</td>
-          <td style={{textAlign:'center'}}>{time}</td>
-          <td style={{textAlign:'end'}}>{home}</td>
-          <td style={{backgroundColor:'#130F2A', fontSize:'20px',fontWeight: 'bold',color:'white',textAlign:'center'}}> VS </td>
-          <td >{away}</td>
+    <tr className="align-middle" data-theme="fantasy">
+      <td className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{date}</td>
+      <td>{time}</td>
+      <td className="text-center">
+        <div className="p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{home}</div>
+        <div className="p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{away}</div>
+      </td>
     </tr>
   )
 }
