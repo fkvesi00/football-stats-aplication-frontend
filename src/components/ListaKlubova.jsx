@@ -6,7 +6,7 @@ import './animation.css'
 function ListaKlubova() {
   const [clubs, setClubs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const logo = '..\public\images\klada.jpg'
+  const logo = '../public/images/klada.jpg'
 
   useEffect(() => {
     // Simulating an asynchronous operation with a 1-second delay
