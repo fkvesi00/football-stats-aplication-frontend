@@ -1,16 +1,24 @@
-import React from 'react'
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
-function Utakmica({ MatchID,Date, HomeTeamID, HomeTeamScore, AwayTeamName, }){
- 
 
+function Utakmica({ MatchID, Date, HomeTeamID, HomeTeamScore, AwayTeamName, a_id, h_id }) {
+  const h_logo = `/images/${h_id}.jpg`
+  const a_logo = `/images/${a_id}.jpg`
+  
   return (
     <tr className="align-middle" data-theme="fantasy">
       <td className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{Date}</td>
       <td className="text-center">
-        <div className="p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{HomeTeamID}</div>
-        <div className="p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{AwayTeamName}</div>
+        <div className="p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
+          <img src={h_logo} alt={`Logo for ${HomeTeamID}`} width="20" height="20" className="mr-2" />
+          {HomeTeamID}
+        </div>
+        <div className="p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
+          <img src={a_logo} alt={`Logo for ${a_id}`} width="20" height="20" className="mr-2" />
+          {AwayTeamName}
+        </div>
       </td>
       <td className="text-center p-1 text-sm sm:text-m md:text-base lg:text-lg xl:text-lg 2xl:text-xl" style={{ backgroundColor: '#130F2A', fontWeight: 'bold', color: 'white' }}>
         <div className='p-1'>{HomeTeamScore[0]}</div>
@@ -25,4 +33,4 @@ function Utakmica({ MatchID,Date, HomeTeamID, HomeTeamScore, AwayTeamName, }){
   )
 }
 
-export default Utakmica
+export default Utakmica;

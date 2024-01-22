@@ -12,7 +12,7 @@ function Utakmice({utakmice}) {
       const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
       const formattedDate = birthDate.toLocaleDateString('hr-HR', options);
       return <Utakmica key={i} MatchID={utakmica.match_id} Date={formattedDate} Time={utakmica.time}  
-      HomeTeamID= {utakmica.h_team}  HomeTeamScore={utakmica.score} AwayTeamName = {utakmica.a_team} 
+      HomeTeamID= {utakmica.h_team}  HomeTeamScore={utakmica.score} AwayTeamName = {utakmica.a_team} a_id = {utakmica.a_id} h_id = {utakmica.h_id}
       />
     })
     
