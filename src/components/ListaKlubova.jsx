@@ -7,6 +7,15 @@ function ListaKlubova() {
   const [clubs, setClubs] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    // Simulating an asynchronous operation with a 1-second delay
+    const delay = setTimeout(() => {
+      setLoading(false);
+    }, 200);
+
+    // Cleanup function to clear the timeout if the component unmounts
+    return () => clearTimeout(delay);
+  }, []);
 
   useEffect(() => {
     const fetchClubs = async () => {
