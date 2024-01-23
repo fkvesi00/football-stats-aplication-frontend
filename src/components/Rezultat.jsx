@@ -12,7 +12,7 @@ const Rezultat = ({ matchID, date, time, homeTeamName, score, awayTeamName, a_id
                 <img src={h_logo} alt={homeTeamName} className="w-16 sm:w-24 md:w-32 lg:w-40 xl:w-48 rounded-full mx-auto mb-1" />
 
                 {/* Home Team Name (Medium & Centered) */}
-                <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{homeTeamName}</p>
+                <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ fontFamily: 'Lucida Console, Monaco, monospace' }}>{homeTeamName}</p>
             </div>
 
             {/* Score Section (Responsive) */}
@@ -35,7 +35,7 @@ const Rezultat = ({ matchID, date, time, homeTeamName, score, awayTeamName, a_id
                 <img src={a_logo} alt={awayTeamName} className="w-16 sm:w-24 md:w-32 lg:w-40 xl:w-48 rounded-full mx-auto mb-1" />
 
                 {/* Away Team Name (Medium & Centered) */}
-                <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl " style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{awayTeamName}</p>
+                <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl " style={{ fontFamily: 'Lucida Console, Monaco, monospace' }}>{awayTeamName}</p>
             </div>
         </div>
     );
