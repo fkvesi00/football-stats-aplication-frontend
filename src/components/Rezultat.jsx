@@ -12,7 +12,7 @@ const Rezultat = ({ matchID, date, time, homeTeamName, score, awayTeamName, a_id
                 <img src={h_logo} alt={homeTeamName} className="w-16 sm:w-24 md:w-32 lg:w-40 xl:w-48 rounded-full mx-auto mb-1" />
 
                 {/* Home Team Name (Medium & Centered) */}
-                <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">{homeTeamName}</p>
+                <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{homeTeamName}</p>
             </div>
 
             {/* Score Section (Responsive) */}
@@ -20,13 +20,13 @@ const Rezultat = ({ matchID, date, time, homeTeamName, score, awayTeamName, a_id
                   {/* Match Information Section (Small) */}
                   <div className="text-center">
                     {/* Date (Small) */}
-                    <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">{date}</p>
+                    <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{date}</p>
 
                     {/* Time (Small) */}
-                    <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">{time}</p>
+                    <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{time}</p>
                 </div>
                 {/* Score (Extra Large & Centered) */}
-                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-1">{score}</h3>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{score}</h1>
             </div>
 
             {/* Away Team Section */}
@@ -35,7 +35,7 @@ const Rezultat = ({ matchID, date, time, homeTeamName, score, awayTeamName, a_id
                 <img src={a_logo} alt={awayTeamName} className="w-16 sm:w-24 md:w-32 lg:w-40 xl:w-48 rounded-full mx-auto mb-1" />
 
                 {/* Away Team Name (Medium & Centered) */}
-                <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">{awayTeamName}</p>
+                <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl " style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{awayTeamName}</p>
             </div>
         </div>
     );
