@@ -91,42 +91,31 @@ function UtakmicaStatistika() {
   },[id])
 
 
-    useEffect(() => {
-      if (utakmica1.length > 0) {
-        if (utakmica1[0].home) {
-          const birthDate = new Date(utakmica1[0].date);
-          const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
-          const formattedDate = birthDate.toLocaleDateString('en-US', options);
-          const lima = {
-            match_id: utakmica1[0].matchid,
-            date: formattedDate,
-            time: utakmica1[0].time,
-            h_team: utakmica1[0].teamname,
-            h_id: utakmica1[0].teamid,
-            score: utakmica1[0].score,
-            a_team: utakmica1[1].teamname,
-            a_id: utakmica1[1].teamid
-        
-          };
-          setMatches([lima]);
-        }else{
-          const birthDate = new Date(utakmica1[0].date);
-          const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
-          const formattedDate = birthDate.toLocaleDateString('en-US', options);
-          const lima = {
-            match_id: utakmica1[0].matchid,
-            date: formattedDate,
-            time: utakmica1[0].time,
-            h_team: utakmica1[1].teamname,
-            h_id: utakmica1[1].teamid,
-            score: utakmica1[0].score,
-            a_team: utakmica1[0].teamname,
-            a_id: utakmica1[0].teamid
-        }
-        setMatches([lima]);
+  useEffect(() => {
+    function mergeMatches(matches) {
+      let result = {};
+  
+      for (const match of matches) {
+        const isHomeMatch = match.home;
+        const teamKey = isHomeMatch ? 'h' : 'a';
+  
+        result = {
+          ...result,
+          match_id: match.matchid,
+          date: match.date,
+          time: match.time,
+          [`${teamKey}_team`]: match.teamname,
+          [`${teamKey}_id`]: match.teamid,
+          score: match.score
+        };
       }
-    }}, [utakmica1]);
-    
+  
+      return result;
+    }
+  
+    const mergedMatch = mergeMatches(utakmica1); 
+    setMatches([mergedMatch])
+  }, [utakmica1]);
 
     useEffect(() => {
       if (utakmica1.length > 0) {
