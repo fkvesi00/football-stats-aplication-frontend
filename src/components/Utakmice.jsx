@@ -4,7 +4,7 @@ import Utakmica from './Utakmica'
 function Utakmice({utakmice}) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
-  console.log(utakmice)
+  
   const nizUtakmica = utakmice.map((utakmica,i)=>{
     
       //console.log(utakmica)
