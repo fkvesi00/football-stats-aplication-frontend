@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
 
-function Utakmica({ MatchID, Date, HomeTeamID, HomeTeamScore, AwayTeamName, a_id, h_id }) {
+function Utakmica({ MatchID, Date,Time, HomeTeamID, HomeTeamScore, AwayTeamName, a_id, h_id }) {
   const h_logo = `/images/${h_id}.jpg`;
   const a_logo = `/images/${a_id}.jpg`;
 
@@ -11,11 +11,11 @@ function Utakmica({ MatchID, Date, HomeTeamID, HomeTeamScore, AwayTeamName, a_id
     <tr className="align-middle" data-theme="fantasy">
       <td className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{Date}</td>
       <td className="text-center">
-        <div className="flex items-center p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
+        <div className="flex items-center justify-center p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
           <img src={h_logo} alt={`Logo for ${HomeTeamID}`} width="30" height="30" className="mr-2 rounded-full" />
           <span>{HomeTeamID}</span>
         </div>
-        <div className="flex items-center p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
+        <div className="flex items-center  justify-center p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
           <img src={a_logo} alt={`Logo for ${a_id}`} width="30" height="30" className="mr-2 rounded-full" />
           <span>{AwayTeamName}</span>
         </div>
