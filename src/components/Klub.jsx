@@ -172,6 +172,7 @@ const clubStats = {
     marginBottom: '20px'
   }}>
     {clubStats.name}
+    {console.log(clubStats)}
   </h2>
   <div className='header'>Igraci</div>
 </div>
