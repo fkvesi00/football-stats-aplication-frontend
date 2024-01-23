@@ -10,8 +10,9 @@ function NavBar({ klubovi }) {
         </Link>
       </div>
 
-      <div className="flex-1 text-center">
-        <img src="/images/0.jpg" alt="Logo" className="w-12 h-12 rounded-full" />
+      {/* Place for Image */}
+      <div className="flex-1 flex items-center justify-center">
+        <img src="/images/0.jpg" alt="Logo" className="w-16 h-16 rounded-full" />
       </div>
 
       <div className="flex-none">
