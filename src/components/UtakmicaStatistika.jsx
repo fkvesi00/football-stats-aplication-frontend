@@ -1,7 +1,7 @@
 import React from 'react'
 import {  useParams } from 'react-router-dom';
 import{useState,useEffect} from 'react'
-import Utakmica from './Utakmica';
+import Rezultat from './Rezultat';
 import PlayerTable from './PlayerTable';
 
 function UtakmicaStatistika() {
@@ -161,8 +161,8 @@ function UtakmicaStatistika() {
         </tr>
       </thead>
       <tbody>
-        {matches[0] ? <Utakmica MatchID={matches[0].match_id} Date={matches[0].date} Time={matches[0].time}  
-      HomeTeamID= {matches[0].h_team}  HomeTeamScore={matches[0].score} AwayTeamName = {matches[0].a_team} a_id = {matches[0].a_id} h_id = {matches[0].h_id}
+        {matches[0] ? <Utakmica matchID={matches[0].match_id} date={matches[0].date} time={matches[0].time}  
+      homeTeamName= {matches[0].h_team}  score={matches[0].score} awayTeamName = {matches[0].a_team} a_id = {matches[0].a_id} h_id = {matches[0].h_id}
       /> : <tr></tr>}
       </tbody>
       </table>
