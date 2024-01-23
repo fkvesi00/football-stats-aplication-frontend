@@ -10,11 +10,7 @@ function NavBar({ klubovi }) {
         </Link>
       </div>
 
-      {/* Place for Image */}
-      <div className="flex-1 flex items-center justify-center">
-        <img src="/images/0.jpg" alt="Logo" className="w-16 h-16 rounded-full" />
-      </div>
-
+   
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
           <li tabIndex={0}>
