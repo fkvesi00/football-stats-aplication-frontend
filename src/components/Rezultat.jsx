@@ -20,13 +20,13 @@ const Rezultat = ({ matchID, date, time, homeTeamName, score, awayTeamName, a_id
                   {/* Match Information Section (Small) */}
                   <div className="text-center">
                     {/* Date (Small) */}
-                    <p className="text-xs">{date}</p>
+                    <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">{date}</p>
 
                     {/* Time (Small) */}
-                    <p className="text-xs">{time}</p>
+                    <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">{time}</p>
                 </div>
                 {/* Score (Extra Large & Centered) */}
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-1">{score}</p>
+                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-1">{score}</h3>
             </div>
 
             {/* Away Team Section */}
