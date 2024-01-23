@@ -152,11 +152,8 @@ function UtakmicaStatistika() {
       <table className="table table-compact mx-auto mt-10 mb-10" style={{width:"50%"}} data-theme="retro">
       <thead>
         <tr>
-          <th>Date</th>
-          <th>Time</th>
-          <th style={{textAlign:'end'}}>Home Team</th>
-          <th style={{textAlign:'center'}}>Score</th>
-          <th>Away Team</th>
+          <th></th>
+          <th></th>
           <th></th>
         </tr>
       </thead>

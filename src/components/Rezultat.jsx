@@ -1,12 +1,15 @@
 import React from 'react';
 
 const Rezultat = ({ matchID, date, time, homeTeamName, score, awayTeamName, a_id, h_id }) => {
-  return (
+    const h_logo = `/images/${h_id}.jpg`
+    const a_logo = `/images/${a_id}.jpg`
+  
+    return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       {/* Home Team Section */}
       <div style={{ flex: '1', textAlign: 'center', marginRight: '16px' }}>
         {/* Home Team Logo (Large) */}
-        <img src={h_id} alt={homeTeamName} style={{ width: '100px', height: '100px' }} />
+        <img src={h_logo} alt={homeTeamName} style={{ width: '100px', height: '100px' }} />
 
         {/* Home Team Name (Medium) */}
         <p style={{ fontSize: 'medium', marginTop: '8px' }}>{homeTeamName}</p>
@@ -27,7 +30,7 @@ const Rezultat = ({ matchID, date, time, homeTeamName, score, awayTeamName, a_id
       {/* Away Team Section */}
       <div style={{ flex: '1', textAlign: 'center' }}>
         {/* Away Team Logo (Large) */}
-        <img src={a_id} alt={awayTeamName} style={{ width: '100px', height: '100px' }} />
+        <img src={a_logo} alt={awayTeamName} style={{ width: '100px', height: '100px' }} />
 
         {/* Away Team Name (Medium) */}
         <p style={{ fontSize: 'medium', marginTop: '8px' }}>{awayTeamName}</p>
