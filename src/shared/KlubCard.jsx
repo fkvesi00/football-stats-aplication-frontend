@@ -8,7 +8,6 @@ function KlubCard({id,ime,logo}) {
     <div className="card-body" >
     <figure style={{height:"200px"}}><img src={logo} alt={'logo'} /></figure>
       <h2 className="card-title">{ime}</h2>
-      {console.log(id, ime)}
     </div>
   </Link>
   )

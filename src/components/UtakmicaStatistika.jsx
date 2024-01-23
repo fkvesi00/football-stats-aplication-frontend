@@ -50,11 +50,6 @@ function UtakmicaStatistika() {
     );
   });
     
-
-/*   const rows123 = igraci.map((igrac,i) => (
-    <PlayerTable key={i} igrac={igrac.playername} gol={null} zuti={null} crveni={null}
-    />
-  ));  */
   
   useEffect(()=>{
     const fetchData = async () => {
@@ -96,8 +91,6 @@ function UtakmicaStatistika() {
   },[id])
 
 
-    //console.log(utakmica1)
-    //format utakmice
     useEffect(() => {
       if (utakmica1.length > 0) {
         if (utakmica1[0].home) {
@@ -153,9 +146,6 @@ function UtakmicaStatistika() {
     },[igraci,home,utakmica1])
       
 
-/* <Utakmica key={i} MatchID={matches[0].match_id} Date={matches[0].date} Time={matches[0].time}  
-      HomeTeamID= {matches[0].h_team}  HomeTeamScore={matches[0].score} AwayTeamName = {matches[0].a_team} a_id = {matches[0].a_id} h_id = {matches[0].h_id}
-      /> */
 
   return (
     <div>
