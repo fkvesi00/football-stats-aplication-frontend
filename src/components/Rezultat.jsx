@@ -41,3 +41,5 @@ const Rezultat = ({ matchID, date, time, homeTeamName, score, awayTeamName, a_id
         </div>
     );
 };
+
+export default Rezultat;
