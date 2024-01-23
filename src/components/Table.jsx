@@ -20,8 +20,8 @@ function Table({rank,name,played,w,d,l,gf,ga,points,id}) {
     <td className='text-center p-1 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{w}</td>
     <td className='text-center p-1 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{d}</td>
     <td className='text-center p-1 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{l}</td>
-    <td className='text-center p-1 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{gf}</td>
-    <td className='text-center p-1 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{ga}</td>
+    <td className='text-center p-1 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl hidden sm:table-cell'>{gf}</td>
+    <td className='text-center p-1 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl hidden sm:table-cell'>{ga}</td>
     <td className='text-center p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{gf - ga}</td>
     <td data-theme='retro' className='text-center p-2 text-center text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl'>{points}</td>
   </tr>
