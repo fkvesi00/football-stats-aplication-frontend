@@ -149,7 +149,7 @@ function UtakmicaStatistika() {
 
   return (
     <div>
-      <table className="table table-compact mx-auto mt-10 mb-10" style={{width:"50%"}} data-theme="retro">
+      <table className="table table-compact mx-auto mt-10 mb-10" style={{width:"50%"}} data-theme="light">
       <thead>
         <tr>
           <th></th>
