@@ -26,7 +26,7 @@ const Rezultat = ({ matchID, date, time, homeTeamName, score, awayTeamName, a_id
                     <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{time}</p>
                 </div>
                 {/* Score (Extra Large & Centered) */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-1" style={{ fontFamily: 'Courier New, Courier, monospace' }}>{score}</h1>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-1" style={{ fontFamily: 'Courier New, Courier, monospace', fontWeight: 'bold' }}>{score}</h1>
             </div>
 
             {/* Away Team Section */}
