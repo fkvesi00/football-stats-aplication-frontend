@@ -42,17 +42,7 @@ function Klub() {
       
   
 },[id])
-const clubStats = {
-  won: 0,
-  draw: 0,
-  lost: 0,
-  points: 0,
-  gf: 0,
-  ga: 0,
-  pm: 0,
-  name: '',
-  rank: ''
-}
+
 
  const listaIgraca = igraci.map((igrac, i) => {
   const { playerid, playername } = igrac;
@@ -117,59 +107,12 @@ const clubStats = {
   const matchesplayed = matches.filter(utakmica => utakmica.score !== null)
   const matchesToPlay = matches.filter(utakmica => utakmica.score == null)
   //console.log(matchesplayed)
-  //pronalazimo ime tima preko id, i racunamo pobjede i ostalu statistiku(koristit useState umjesto globalne varijable)
-  if(matchesplayed[0] !== undefined){
-      matchesplayed[0].h_id === id ? clubStats.name=matchesplayed[0].h_team : clubStats.name=matchesplayed[0].a_team
+  
 
-    for (const utakmica of matchesplayed){
-    if(utakmica.h_id === id){
-      clubStats.gf+=parseInt(utakmica.score[0])
-      clubStats.ga+=parseInt(utakmica.score[2])
-      clubStats.pm=clubStats.gf-clubStats.ga
-      if(utakmica.score[0] > utakmica.score[2]){
-        clubStats.points+=3
-        clubStats.won++;
-      }
-      else if(utakmica.score[0] < utakmica.score[2]){
-        clubStats.lost++
-      }
-      else {
-        clubStats.draw++;
-        clubStats.points++;
-      }
-    }else{
-      clubStats.gf+=parseInt(utakmica.score[2])
-      clubStats.ga+=parseInt(utakmica.score[0])
-      clubStats.pm= clubStats.gf - clubStats.ga
-      if(utakmica.score[2] > utakmica.score[0]){
-        clubStats.won++;
-        clubStats.points+=3;
-      }else if(utakmica.score[2] < utakmica.score[0]){
-        clubStats.lost++
-      }else{
-        clubStats.draw++;
-        clubStats.points++;
-      }
-    }
-  }
-}
   
   return (
     <div>
       <div style={{ textAlign: 'center' }}>
-  <h2 style={{
-    fontFamily: 'Roboto, sans-serif',
-    fontSize: '3rem',
-    fontWeight: 'bold',
-    color: '#312952',
-    textTransform: 'uppercase',
-    borderBottom: '3px solid #312952',
-    paddingBottom: '5px',
-    marginBottom: '20px'
-  }}>
-    
-    {console.log(clubStats)}
-  </h2>
   <div className='header'>Igraci</div>
 </div>
 <div className='flex justify-center flex-wrap' >
