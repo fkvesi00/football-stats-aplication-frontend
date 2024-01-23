@@ -113,7 +113,8 @@ function UtakmicaStatistika() {
       return result;
     }
   
-    const mergedMatch = mergeMatches(utakmica1); 
+    const mergedMatch = mergeMatches(utakmica1);
+    console.log(mergedMatch) 
     setMatches([mergedMatch])
   }, [utakmica1]);
 
