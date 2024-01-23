@@ -142,7 +142,7 @@ function UtakmicaStatistika() {
         setHome(homeTeam)
       }
     }
-      console.log(home)
+      
     },[igraci,home,utakmica1])
       
 
