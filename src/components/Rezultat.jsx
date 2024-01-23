@@ -5,9 +5,9 @@ const Rezultat = ({ matchID, date, time, homeTeamName, score, awayTeamName, a_id
     const a_logo = `/images/${a_id}.jpg`;
 
     return (
-        <div className="flex flex-row sm:flex-row md:flex-row lg:flex-row xl:flex-row items-center justify-center">
+        <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row items-center justify-between">
             {/* Home Team Section */}
-            <div className="text-center mb-2 sm:mb-0">
+            <div className="text-center mb-2">
                 {/* Home Team Logo (Responsive) */}
                 <img src={h_logo} alt={homeTeamName} className="w-16 sm:w-24 md:w-32 lg:w-40 xl:w-48 rounded-full mx-auto mb-1" />
 
@@ -16,18 +16,18 @@ const Rezultat = ({ matchID, date, time, homeTeamName, score, awayTeamName, a_id
             </div>
 
             {/* Score Section (Responsive) */}
-            <div className="flex flex-row text-center mb-2 sm:mb-0">
-                 {/* Match Information Section (Small) */}
-            <div className="text-center mt-2">
-                {/* Date (Small) */}
-                <p className="text-xs">{date}</p>
-
-                {/* Time (Small) */}
-                <p className="text-xs">{time}</p>
-            </div>
+            <div className="flex flex-col items-center mb-2">
                 {/* Score (Extra Large & Centered) */}
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">{score}</p>
-                
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-1">{score}</p>
+
+                {/* Match Information Section (Small) */}
+                <div className="text-center">
+                    {/* Date (Small) */}
+                    <p className="text-xs">{date}</p>
+
+                    {/* Time (Small) */}
+                    <p className="text-xs">{time}</p>
+                </div>
             </div>
 
             {/* Away Team Section */}
@@ -38,8 +38,6 @@ const Rezultat = ({ matchID, date, time, homeTeamName, score, awayTeamName, a_id
                 {/* Away Team Name (Medium & Centered) */}
                 <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">{awayTeamName}</p>
             </div>
-
-           
         </div>
     );
 };
