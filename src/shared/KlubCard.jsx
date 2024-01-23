@@ -3,8 +3,7 @@ import './card.css'
 import { Link } from 'react-router-dom'
 
 function KlubCard({id,ime,logo}) {
-  {console.log(id)}
-  {console.log(ime)}
+  {console.log(id,ime)}
   return (
     
     <Link to={`/klub/${id}`} className="card w-64 bg-base-100 shadow-xl p-4 m-4 grow-on-hover grow-on-hover:hover" data-theme='light' >
