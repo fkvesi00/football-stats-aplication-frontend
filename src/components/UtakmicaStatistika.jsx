@@ -171,7 +171,7 @@ function UtakmicaStatistika() {
         </tr>
       </thead>
       <tbody>
-        {matches[0] ? <Utakmica key={i} MatchID={matches[0].match_id} Date={matches[0].date} Time={matches[0].time}  
+        {matches[0] ? <Utakmica MatchID={matches[0].match_id} Date={matches[0].date} Time={matches[0].time}  
       HomeTeamID= {matches[0].h_team}  HomeTeamScore={matches[0].score} AwayTeamName = {matches[0].a_team} a_id = {matches[0].a_id} h_id = {matches[0].h_id}
       /> : <tr></tr>}
       </tbody>
