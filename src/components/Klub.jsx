@@ -8,10 +8,6 @@ function Klub() {
   const [igraci, setIgraci] = useState([]);
   const [utakmice, setUtakmice] = useState([])
   const {id} = useParams();
-  //console.log(clubRanks)
-  
-  
-  //console.log(clubStats2)
 
 
   //ucitaj raspored tima i njegove igrace, cinimo to pomocu id kluba, koji se nalazi u parametru stranice
@@ -171,7 +167,7 @@ const clubStats = {
     paddingBottom: '5px',
     marginBottom: '20px'
   }}>
-    {clubStats.name}
+    
     {console.log(clubStats)}
   </h2>
   <div className='header'>Igraci</div>
