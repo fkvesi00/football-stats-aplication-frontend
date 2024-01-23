@@ -17,17 +17,16 @@ const Rezultat = ({ matchID, date, time, homeTeamName, score, awayTeamName, a_id
 
             {/* Score Section (Responsive) */}
             <div className="flex flex-col items-center mb-2 p-4">
-                {/* Score (Extra Large & Centered) */}
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-1">{score}</p>
-
-                {/* Match Information Section (Small) */}
-                <div className="text-center">
+                  {/* Match Information Section (Small) */}
+                  <div className="text-center">
                     {/* Date (Small) */}
                     <p className="text-xs">{date}</p>
 
                     {/* Time (Small) */}
                     <p className="text-xs">{time}</p>
                 </div>
+                {/* Score (Extra Large & Centered) */}
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-1">{score}</p>
             </div>
 
             {/* Away Team Section */}
