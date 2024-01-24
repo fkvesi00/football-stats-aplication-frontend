@@ -159,7 +159,7 @@ function UtakmicaStatistika() {
 
       <div>
       <div className="overflow-x-auto mt-10 mb-10">
-  <table className="table table-compact mx-auto" style={{width:"70%"}} data-theme="norde">
+  <table className="table table-compact mx-auto" style={{width:"70%"}} data-theme="retro">
     {/* head */}
     <thead>
       <tr>
@@ -169,13 +169,13 @@ function UtakmicaStatistika() {
     </thead>
     <tbody>
       <tr>{
-        matches[0] ? <td className='text-center'>{matches[0].h_team}</td> : <></>
+        matches[0] ? <td>{matches[0].h_team}</td> : <></>
         }
       </tr>
        {homeTeamRows}
       <tr >
         {
-          matches[0] ? <td className='text-center'>{matches[0].a_team}</td> : <></>
+          matches[0] ? <td >{matches[0].a_team}</td> : <></>
         }
         
       </tr>
