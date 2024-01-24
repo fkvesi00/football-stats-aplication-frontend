@@ -8,9 +8,6 @@ function NavBar({ klubovi }) {
   };
 
   const containerStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
     marginBottom: '8px',
   };
 
@@ -21,17 +18,17 @@ function NavBar({ klubovi }) {
   };
 
   return (
-    <div className="navbar bg-base-100 mb" data-theme="night">
+    <div className="bg-base-100 mb" data-theme="night">
       {/* First Row */}
-      <div style={containerStyle}>
-        <Link to='/' className="btn btn-ghost normal-case text-xl" style={textStyle}>
+      <div style={{ ...containerStyle, textAlign: 'center' }}>
+        <Link to='/' className="btn btn-ghost normal-case text-xl" style={{color:'white'}}>
           UMA Metković
         </Link>
       </div>
 
       {/* Second Row */}
       <div style={rowStyle}>
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1" style={{textAlign:'center'}}>
           <li><Link to='/klubovi' style={textStyle}>Klubovi</Link></li>
           <li><Link to='/igraci' style={textStyle}>Igrači</Link></li>
           <li><Link to='/signIn' style={textStyle}>Sign In</Link></li>
