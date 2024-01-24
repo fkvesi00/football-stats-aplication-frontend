@@ -7,6 +7,13 @@ function NavBar({ klubovi }) {
     fontFamily: 'Lucida Console, Monaco, monospace',
   };
 
+  const containerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginBottom: '8px',
+  };
+
   const rowStyle = {
     display: 'flex',
     alignItems: 'center',
@@ -16,8 +23,8 @@ function NavBar({ klubovi }) {
   return (
     <div className="navbar bg-base-100 mb" data-theme="night">
       {/* First Row */}
-      <div style={{ ...rowStyle, marginBottom: '8px' }}>
-        <Link to='/' className="btn btn-ghost normal-case text-xl" style={{color:'white'}}>
+      <div style={containerStyle}>
+        <Link to='/' className="btn btn-ghost normal-case text-xl" style={textStyle}>
           UMA Metković
         </Link>
       </div>
