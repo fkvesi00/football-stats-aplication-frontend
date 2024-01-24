@@ -14,7 +14,7 @@ function NavBar({ klubovi }) {
   const rowStyle = {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
   };
 
   return (
