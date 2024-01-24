@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function NavBar({ klubovi }) {
   return (
-    <div className="navbar bg-base-100 mb" data-theme="retro">
+    <div className="navbar bg-base-100 mb" data-theme="night">
       <div className="flex-1">
         <Link to='/' className="btn btn-ghost normal-case text-xl">
           UMA Metković
