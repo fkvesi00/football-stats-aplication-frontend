@@ -10,7 +10,7 @@ function NavBar({ klubovi }) {
   return (
     <div className="navbar bg-base-100 mb" data-theme="night">
       <div className="flex-1">
-        <Link to='/' className="btn btn-ghost normal-case text-xl" style={textStyle}>
+        <Link to='/' className="btn btn-ghost normal-case text-xl" >
           UMA Metković
         </Link>
       </div>
@@ -29,7 +29,7 @@ function NavBar({ klubovi }) {
             </ul>
           </li>
           <li><Link to='/ ' style={textStyle}>Liga</Link></li>
-          <li><Link to='/signIn' style={textStyle}>Admin</Link></li>
+          <li><Link to='/signIn' style={textStyle}>Sign in</Link></li>
         </ul>
       </div>
     </div>
