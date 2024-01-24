@@ -168,12 +168,12 @@ function UtakmicaStatistika() {
       </tr>
     </thead>
     <tbody>
-      <tr >
-        <td>Home</td>
+      <tr>
+        <td className='text-center'>{matches[0].h_team}</td>
       </tr>
        {homeTeamRows}
       <tr >
-        <td>Away</td>
+        <td className='text-center'>{matches[0].a_team}</td>
       </tr>
       {awayTeamRows}
     </tbody>
