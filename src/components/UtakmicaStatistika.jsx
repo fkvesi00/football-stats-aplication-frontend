@@ -177,7 +177,6 @@ function UtakmicaStatistika() {
         {
           matches[0] ? <td >{matches[0].a_team}</td> : <></>
         }
-        
       </tr>
       {awayTeamRows}
     </tbody>
