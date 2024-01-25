@@ -43,7 +43,7 @@ function Raspored({ raspored }) {
   return (
     <div className="overflow-x-auto m-0 mb-10 mt-10">
       <div className="flex gap-4 justify-center p-5">
-        <h2 className="header">{'Raspored'} <FontAwesomeIcon icon={faCalendar} style={{ color: 'white' }}/></h2>
+        <h2 className="header">{'Raspored'} <FontAwesomeIcon icon={faCalendar} style={{ color: 'black' }}/></h2>
       </div>
       <div className="table-responsive">
         <table className="table table-compact mx-auto" style={{ width: '50%' }} data-theme="dark">
