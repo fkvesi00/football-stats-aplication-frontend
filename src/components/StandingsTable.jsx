@@ -1,5 +1,7 @@
 import React from 'react';
 import Table from './Table';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const StandingsTable = ({ tablica }) => {
   const rows = tablica.map((clubStats, i) => (
@@ -21,7 +23,7 @@ const StandingsTable = ({ tablica }) => {
   return (
     <div className="overflow-x-auto my-10 mr-1 ml-1 mt-5 mb-5 mx-auto max-w-[2/3]">
     <div className="header text-center mb-2 mt-2">
-    <i className="fas fa-ranking-star"></i> Tablica
+     {'Tablcica'} <FontAwesomeIcon icon={faStar} />
 </div>
     <table className="table-auto mx-auto" data-theme="night">
         <thead>
