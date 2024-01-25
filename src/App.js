@@ -96,7 +96,8 @@ const matchFormat = utakmica => {
 
 
 //u sljedece dvije linije nalazimo utakmice koje su odigrane i koje ce se odigrati
-const matchesplayed = matches.filter(utakmica => utakmica.score !== null).sort((a,b) => b.date -a.date)
+const matchesplayed = matches.filter(utakmica => utakmica.score !== null)
+matchesplayed.sort((a,b) => b.date - a.date)
 const matchesToPlay = matches.filter(utakmica => utakmica.score === null)
 //console.log(matchesToPlay)
 //console.log(matchesplayed)
