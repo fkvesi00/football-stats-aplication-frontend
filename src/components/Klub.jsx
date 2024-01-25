@@ -27,6 +27,7 @@ function Klub() {
     // Use the functional update form of setFilteredTable
     setFilteredTable(prevFilteredTable => filterTableByTeamId(tablica, id));
     console.log(filteredTable);
+  }, [tablica, id])
 
   //ucitaj raspored tima i njegove igrace, cinimo to pomocu id kluba, koji se nalazi u parametru stranice
   useEffect(()=>{
