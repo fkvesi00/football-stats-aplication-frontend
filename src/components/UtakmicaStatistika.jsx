@@ -159,21 +159,21 @@ function UtakmicaStatistika() {
 
       <div>
       <div className="overflow-x-auto mt-10 mb-10">
-  <table className="table table-compact mx-auto" style={{width:"70%", fontFamily: "Impact, sans-serif;"}} data-theme="retro">
+  <table className="table table-compact mx-auto" style={{width:"70%"}} data-theme="retro">
     {/* head */}
     <thead>
       <tr>
-        <th style={{textAlign:'center'}}> Igrac</th>
-        <th style={{textAlign:'center'}}>  Gol </th>
+        <th style={{textAlign:'center',fontFamily: "Impact, sans-serif;"}}> Igrac</th>
+        <th style={{textAlign:'center',fontFamily: "Impact, sans-serif;"}}>  Gol </th>
       </tr>
     </thead>
     <tbody>
-      <tr>{
+      <tr style={{fontFamily: "Impact, sans-serif;"}}>{
         matches[0] ? <td>{matches[0].h_team}</td> : <></>
         }
       </tr>
        {homeTeamRows}
-      <tr >
+      <tr style={{fontFamily: "Impact, sans-serif;"}}>
         {
           matches[0] ? <td >{matches[0].a_team}</td> : <></>
         }
