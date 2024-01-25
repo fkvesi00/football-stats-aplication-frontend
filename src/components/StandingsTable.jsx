@@ -1,7 +1,7 @@
 import React from 'react';
 import Table from './Table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar ,faTrophy ,faMedal  } from '@fortawesome/free-solid-svg-icons';
+import {  faTrophy   } from '@fortawesome/free-solid-svg-icons';
 
 const StandingsTable = ({ tablica }) => {
   const rows = tablica.map((clubStats, i) => (
