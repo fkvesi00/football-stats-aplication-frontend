@@ -42,15 +42,14 @@ function Klub() {
     
       setIgraci(json1);
       setUtakmice(json3);
-      if (json4) {
-        const filteredData = json4.filter((club) => club.id === Number(id));
+      if (Array.isArray(json4?.table)) {
+        const filteredData = json4.table.filter((club) => club.id === Number(id));
         setTablica(filteredData);
       }
-      
-    }
+    };
+
    fetchData()
-      
-  
+     
 },[id])
 
 
