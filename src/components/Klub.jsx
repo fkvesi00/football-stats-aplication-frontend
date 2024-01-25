@@ -7,13 +7,15 @@ function Klub() {
   
   const [igraci, setIgraci] = useState([]);
   const [utakmice, setUtakmice] = useState([])
+  const [tablica, setTablica] = useState([])
   const {id} = useParams();
+  const [tablicaKluba, setTablicaKluba] = useState([])
+  
 
 
   //ucitaj raspored tima i njegove igrace, cinimo to pomocu id kluba, koji se nalazi u parametru stranice
   useEffect(()=>{
     const fetchData = async () => {
-      
       
       const igraci = await fetch("https://www.umadomena.com/players/clubPlayers",{ 
         method:'post',
@@ -30,18 +32,31 @@ function Klub() {
           teamID:Number(id)
         })
       });
+
+      const tablica = await fetch('https://www.umadomena.com/calculations/formatedTable',{ 
+        method:'post',
+        headers:{'Content-Type':'application/json'},
+      });
       
       const json1 = await igraci.json();
       const json3 = await utakmice.json();
+      const json4 = await tablica.json()
     
       setIgraci(json1);
       setUtakmice(json3);
+      setTablica(json4);
       
     }
    fetchData()
       
   
 },[id])
+
+
+useEffect(() => {
+  tablicaKluba=tablica.filter((klub => klub.teamid !== id))
+  setTablicaKluba(tablicaKluba)
+},[tablica])
 
 
  const listaIgraca = igraci.map((igrac, i) => {
