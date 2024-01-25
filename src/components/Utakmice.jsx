@@ -32,10 +32,10 @@ function Utakmice({utakmice}) {
   
     return (
       <div className="overflow-x-auto m-0 mt-20 mb-10">
-      <div className="flex gap-4 justify-center p-5">
+      <div className="flex gap-4 justify-center p-3">
         <h2 className="header">Utakmice</h2>
       </div>
-      <div className="flex gap-4 justify-center p-5">
+      <div className="flex gap-4 justify-center p-2">
         <h3 className="text-lg font-semibold text-gray-600">Kolo {currentPage}</h3>
       </div>
       <div className="table-responsive">
