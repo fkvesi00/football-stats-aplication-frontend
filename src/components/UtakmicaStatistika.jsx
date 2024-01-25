@@ -159,7 +159,7 @@ function UtakmicaStatistika() {
 
       <div>
       <div className="overflow-x-auto mt-10 mb-10">
-  <table className="table table-compact mx-auto btn btn-ghost normal-case text-xl" style={{ width: "70%", backgroundColor: "rgb(0, 30, 40)", color: "white" }}>
+  <table className="table table-compact mx-auto " style={{ width: "70%", backgroundColor: "rgb(0, 30, 40)", color: "white" }}>
     {/* head */}
     <thead>
       <tr>
@@ -168,12 +168,12 @@ function UtakmicaStatistika() {
       </tr>
     </thead>
     <tbody>
-      <tr>{
+      <tr className='btn btn-ghost normal-case text-xl'>{
         matches[0] ? <td>{matches[0].h_team}</td> : <></>
         }
       </tr>
        {homeTeamRows}
-      <tr >
+      <tr className='btn btn-ghost normal-case text-xl'>
         {
           matches[0] ? <td >{matches[0].a_team}</td> : <></>
         }
