@@ -23,8 +23,8 @@ function Klub() {
       return filteredData;
     };
   
-    // Use the filter function and update state inside the useEffect hook
-    setTablica(filterTableByTeamId(tablica, id));
+    // Use a functional update to avoid the missing dependency warning
+    setTablica((prevTablica) => filterTableByTeamId(prevTablica, id));
   
     // Log the updated tablica
     console.log(tablica);
