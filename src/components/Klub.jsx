@@ -8,23 +8,30 @@ function Klub() {
   const [igraci, setIgraci] = useState([]);
   const [utakmice, setUtakmice] = useState([])
   const [tablica, setTablica] = useState([])
+  const [filteredTable, setFilteredTable] = useState([]);  
   const {id} = useParams();
   
-  if(tablica){
+  useEffect(() => {
     const filterTableByTeamId = (tableData, teamId) => {
       // Ensure that tableData is an array and has elements
       if (!Array.isArray(tableData) || tableData.length === 0) {
         return [];
       }
-    
+  
       // Use filter to keep only the information related to the provided teamId
       const filteredData = tableData.filter((club) => club.id === teamId);
-    
+  
       return filteredData;
     };
-    setTablica(filterTableByTeamId(tablica,id))
-    console.log(tablica)
-  }
+  
+    // Use a functional update to avoid the missing dependency warning
+    setTablica((prevTablica) => filterTableByTeamId(prevTablica, id));
+  
+    // Log the updated tablica
+    console.log(tablica);
+  
+    // Add dependencies if needed
+  }, [id]); // Only include id as a dependency
 
   //ucitaj raspored tima i njegove igrace, cinimo to pomocu id kluba, koji se nalazi u parametru stranice
   useEffect(()=>{
