@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import Utakmica from './Utakmica'
 
 function Utakmice({utakmice}) {
-  const [currentPage, setCurrentPage] = useState(11);
+  const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   
   const nizUtakmica = utakmice.map((utakmica,i)=>{
@@ -23,11 +23,11 @@ function Utakmice({utakmice}) {
     const currentGames = nizUtakmica.slice(startIndex, endIndex)
   
     const handlePrevPage = () => {
-      setCurrentPage((prevPage) => Math.max(prevPage + 1, currentPage));
+      setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
     };
   
     const handleNextPage = () => {
-      setCurrentPage((prevPage) => Math.min(prevPage -1  , totalPages));
+      setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
     };
   
     return (
