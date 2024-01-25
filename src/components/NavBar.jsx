@@ -22,7 +22,7 @@ function NavBar({ klubovi }) {
     <div className="bg-base-100 mb" data-theme="night">
       {/* First Row */}
       <div style={{ ...containerStyle, textAlign: 'center' }}>
-        <Link to='/' className="btn btn-ghost normal-case text-xl" style={{color:'white',fontSize: '1.2rem', fontWeight: 'bold' }}>
+        <Link to='/' className="btn btn-ghost normal-case text-xl" style={{color:'white',fontSize: '1.5rem'}}>
           UMA Metković
         </Link>
       </div>
