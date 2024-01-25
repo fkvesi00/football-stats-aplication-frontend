@@ -24,11 +24,10 @@ function Klub() {
       return filteredData;
     };
   
-    // Set filteredTable instead of tablica
-    setFilteredTable(filterTableByTeamId(tablica, id));
+    // Use the functional update form of setFilteredTable
+    setFilteredTable(prevFilteredTable => filterTableByTeamId(tablica, id));
     console.log(filteredTable);
-  }, [tablica, id]);  // Include tablica and id in the dependency array
-  
+
   //ucitaj raspored tima i njegove igrace, cinimo to pomocu id kluba, koji se nalazi u parametru stranice
   useEffect(()=>{
     const fetchData = async () => {
