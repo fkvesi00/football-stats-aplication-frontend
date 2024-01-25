@@ -8,26 +8,8 @@ function Klub() {
   const [igraci, setIgraci] = useState([]);
   const [utakmice, setUtakmice] = useState([])
   const [tablica, setTablica] = useState([])
-  const [filteredTable, setFilteredTable] = useState([]);  
   const {id} = useParams();
   
-  useEffect(() => {
-    const filterTableByTeamId = (tableData, teamId) => {
-      // Ensure that tableData is an array and has elements
-      if (!Array.isArray(tableData) || tableData.length === 0) {
-        return [];
-      }
-  
-      // Use filter to keep only the information related to the provided teamId
-      const filteredData = tableData.filter((club) => club.id === teamId);
-  
-      return filteredData;
-    };
-  
-    // Use the functional update form of setFilteredTable
-    setFilteredTable(prevFilteredTable => filterTableByTeamId(tablica, id));
-    console.log(filteredTable);
-  }, [tablica, id])
 
   //ucitaj raspored tima i njegove igrace, cinimo to pomocu id kluba, koji se nalazi u parametru stranice
   useEffect(()=>{
@@ -60,7 +42,10 @@ function Klub() {
     
       setIgraci(json1);
       setUtakmice(json3);
-      setTablica(json4);
+      if (json4) {
+        const filteredData = json4.filter((club) => club.id === Number(id));
+        setTablica(filteredData);
+      }
       
     }
    fetchData()
@@ -140,6 +125,7 @@ function Klub() {
   return (
     <div>
       <div style={{ textAlign: 'center' }}>
+        <>{console.log(tablica)}</>
   <div className='header'>Igraci</div>
 </div>
 <div className='flex justify-center flex-wrap' >
