@@ -57,7 +57,7 @@ useEffect(() => {
   const filtertablica= tablica.filter((klub => klub.teamid !== id))
   setTablicaKluba(filtertablica)
   console.log(tablicaKluba)
-},[tablica,id])
+},[tablica,id,tablicaKluba])
 
 
  const listaIgraca = igraci.map((igrac, i) => {
