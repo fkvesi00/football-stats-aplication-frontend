@@ -26,11 +26,11 @@ function Klub() {
     // Use the filter function and update state inside the useEffect hook
     setTablica(filterTableByTeamId(tablica, id));
   
-    
+    // Log the updated tablica
     console.log(tablica);
   
-    
-  }, [id, tablica]);
+    // Add dependencies if needed
+  }, [id]); // Only include id as a dependency
 
   //ucitaj raspored tima i njegove igrace, cinimo to pomocu id kluba, koji se nalazi u parametru stranice
   useEffect(()=>{
