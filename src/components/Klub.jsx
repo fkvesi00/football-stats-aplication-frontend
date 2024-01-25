@@ -54,8 +54,9 @@ function Klub() {
 
 
 useEffect(() => {
-  tablicaKluba=tablica.filter((klub => klub.teamid !== id))
-  setTablicaKluba(tablicaKluba)
+  const filtertablica= tablica.filter((klub => klub.teamid !== id))
+  setTablicaKluba(filtertablica)
+  console.log(tablicaKluba)
 },[tablica])
 
 
