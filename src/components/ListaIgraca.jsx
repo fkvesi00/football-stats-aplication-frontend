@@ -40,14 +40,14 @@ function ListaIgraca() {
 
     return (
       <div data-theme='garden'>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '10vh' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <input
         placeholder="Search player..."
         onChange={onSearchChange}
         type="text"
         style={{
-          padding: '5px',
-          margin:'0',
+          padding: '7px',
+          margin:'3px',
           border: '2px solid #ccc',
           borderRadius: '5px',
           boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
