@@ -9,7 +9,8 @@ function Klub() {
   const [utakmice, setUtakmice] = useState([])
   const [tablica, setTablica] = useState([])
   const {id} = useParams();
-  const [tablicaKluba, setTablicaKluba] = useState([])
+  
+  tablica ? console.log(tablica) : ''
   
 
 
@@ -53,11 +54,6 @@ function Klub() {
 },[id])
 
 
-useEffect(() => {
-  const filtertablica= tablica.filter((klub => klub.teamid !== id))
-  setTablicaKluba(filtertablica)
-  console.log(tablicaKluba)
-},[tablica,id,tablicaKluba])
 
 
  const listaIgraca = igraci.map((igrac, i) => {
