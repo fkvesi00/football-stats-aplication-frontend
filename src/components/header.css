@@ -1,8 +1,30 @@
 .header {
-    font-size: 36px;
-    font-weight: bold;
-    text-align: center;
-    color: #192478;
-    text-shadow: 2px 2px #70dee8;
-  }
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #192478;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+  /* Adjust styles for small screens (e.g., phones) */
+  .header {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Adjust styles for medium screens (e.g., tablets) */
+  .header {
+    font-size: 30px;
+  }
+}
+
+/* Add more media queries as needed for larger screens */
+@media screen and (min-width: 1025px) {
+  /* Default styles for larger screens (e.g., PCs) */
+  .header {
+    font-size: 36px;
+  }
+}
