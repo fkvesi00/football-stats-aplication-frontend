@@ -97,9 +97,16 @@ const matchFormat = utakmica => {
 
 //u sljedece dvije linije nalazimo utakmice koje su odigrane i koje ce se odigrati
 const matchesplayed = matches.filter(utakmica => utakmica.score !== null)
-console.log(matchesplayed)
-matchesplayed.sort((a,b) => b.matchid - a.match_id)
-console.log(matchesplayed)
+const compareByDate = (a, b) => {
+  const dateA = new Date(a.date);
+  const dateB = new Date(b.date);
+
+  return dateA - dateB;
+};
+
+// Sort the array by date
+const mathesPlayedSorted = matches.sort(compareByDate);
+console.log(mathesPlayedSorted)
 const matchesToPlay = matches.filter(utakmica => utakmica.score === null)
 //console.log(matchesToPlay)
 //console.log(matchesplayed)
@@ -127,7 +134,7 @@ const teamMatches = (teams, allMatches) => {
   return arrayOfArrays;
 };
 
-  const allGamesByClub = teamMatches(klubovi,matchesplayed)
+  const allGamesByClub = teamMatches(klubovi,mathesPlayedSorted)
   
   
   allGamesByClub.forEach(club =>{
@@ -213,7 +220,7 @@ const teamMatches = (teams, allMatches) => {
             element={
               <>
                 <StandingsTable tablica={sortedStats} />
-                <Utakmice utakmice={matchesplayed} />
+                <Utakmice utakmice={mathesPlayedSorted} />
                 <Raspored raspored={matchesToPlay} />
               </>
             }
