@@ -9,6 +9,7 @@ function NavBar({ klubovi }) {
 
   const containerStyle = {
     marginBottom: '8px',
+    padding:'10px'
   };
 
   const rowStyle = {
