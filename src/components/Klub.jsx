@@ -10,7 +10,9 @@ function Klub() {
   const [tablica, setTablica] = useState([])
   const {id} = useParams();
   
-  tablica ? console.log(tablica) : ''
+  if(tablica){
+    console.log(tablica)
+  }
   
 
 
