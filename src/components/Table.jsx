@@ -13,7 +13,7 @@ function Table({rank,name,played,w,d,l,gf,ga,points,id}) {
 <td className='p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>
         <Link to={`klub/${id}`} className="flex items-center">
           <img src={logo} alt={`Logo for ${name}`} width="30" height="30" className="mr-2 rounded-full" />
-          <span>{name}</span>
+          <span style={{fontWeight: "bold"}}>{name}</span>
         </Link>
       </td>
     <td className='text-center p-1 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{played}</td>
