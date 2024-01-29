@@ -131,9 +131,9 @@ function Klub() {
   const matchesplayed = matches.filter(utakmica => utakmica.score !== null)
   const matchesToPlay = matches.filter(utakmica => utakmica.score == null)
   //console.log(matchesplayed)
-  const playerStatistic = playerStats.map(player => {
+  const playerStatistic = playerStats.map((player,i) => {
     const {playerid, playername, appearances, goals} = player
-    return <IgraciTimaStatistika playerid={playerid} playerName={playername} app={appearances} goals={goals}/>
+    return <IgraciTimaStatistika counter={i} playerid={playerid} playerName={playername} app={appearances} goals={goals}/>
   })
 
   
@@ -148,6 +148,7 @@ function Klub() {
       <table className="table table-compact mx-auto" style={{width:"60%"}} data-theme='night' >
             <thead>
               <tr>
+                <th style={{borderRight: "1px solid black", textAlign:'center'}}>#</th>
                 <th style={{borderRight: "1px solid black", textAlign:'center'}}>Ime</th> 
                 <th style={{borderRight: "1px solid black", textAlign:'center'}}>Golovi</th>  
                 <th style={{borderRight: "1px solid black", textAlign:'center'}}>Nastupi</th> 
