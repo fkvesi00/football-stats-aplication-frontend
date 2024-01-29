@@ -6,8 +6,9 @@ import Utakmice from './Utakmice';
 function Klub() {
   
   const [igraci, setIgraci] = useState([]);
-  const [utakmice, setUtakmice] = useState([])
-  const [tablica, setTablica] = useState([])
+  const [utakmice, setUtakmice] = useState([]);
+  const [tablica, setTablica] = useState([]);
+  const [playerStats, setPlayerStats] = useState([]);
   const {id} = useParams();
   
 
@@ -23,6 +24,15 @@ function Klub() {
         })
       })
 
+      const playerStats = await fetch('https://www.umadomena.com/pga',{ 
+        method:'post',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          teamid:Number(id),
+          seasonid:1
+        })
+      });
+
       const utakmice = await fetch('https://www.umadomena.com/clubs/games',{ 
         method:'post',
         headers:{'Content-Type':'application/json'},
@@ -37,10 +47,12 @@ function Klub() {
       });
       
       const json1 = await igraci.json();
+      const json2 = await playerStats.json()
       const json3 = await utakmice.json();
       const json4 = await tablica.json()
     
       setIgraci(json1);
+      setPlayerStats(json2);
       setUtakmice(json3);
       if (Array.isArray(json4?.table)) {
         const filteredData = json4.table.filter((club) => club.id === Number(id));
@@ -125,6 +137,7 @@ function Klub() {
     <div>
       <div style={{ textAlign: 'center' }}>
         <>{console.log(tablica)}</>
+        <>{console.log(playerStats)}</>
   <div className='header'>Igraci</div>
 </div>
 <div className='flex justify-center flex-wrap' >
