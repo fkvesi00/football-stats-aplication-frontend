@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Raspored from './Raspored';
 import Utakmice from './Utakmice';
+import IgracStatistika from './IgracStatistika';
 
 function Klub() {
   
@@ -130,7 +131,10 @@ function Klub() {
   const matchesplayed = matches.filter(utakmica => utakmica.score !== null)
   const matchesToPlay = matches.filter(utakmica => utakmica.score == null)
   //console.log(matchesplayed)
-  
+  const playerStatistic = playerStats.map(player => {
+    const {playerid, playername, apperances, goals} = playerStats
+    return <IgracStatistika playerid={playerid} playerName={playername} app={apperances} goals={goals}/>
+  })
 
   
   return (
@@ -143,6 +147,9 @@ function Klub() {
 <div className='flex justify-center flex-wrap' >
       {listaIgraca}
     </div>
+    <>
+    {playerStatistic}
+    </>
       <Raspored raspored={matchesToPlay} />
       <Utakmice utakmice={matchesplayed} />
     </div>
