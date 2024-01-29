@@ -149,8 +149,8 @@ function Klub() {
             <thead>
               <tr>
                 <th style={{borderRight: "1px solid black", textAlign:'center'}}>Ime</th> 
-                <th style={{borderRight: "1px solid black", textAlign:'center'}}>App</th>  
-                <th style={{borderRight: "1px solid black", textAlign:'center'}}>Golovi</th> 
+                <th style={{borderRight: "1px solid black", textAlign:'center'}}>Golovi</th>  
+                <th style={{borderRight: "1px solid black", textAlign:'center'}}>Nastupi</th> 
               </tr>
             </thead> 
             <tbody>
