@@ -132,8 +132,8 @@ function Klub() {
   const matchesToPlay = matches.filter(utakmica => utakmica.score == null)
   //console.log(matchesplayed)
   const playerStatistic = playerStats.map(player => {
-    const {playerid, playername, apperances, goals} = player
-    return <IgraciTimaStatistika playerid={playerid} playerName={playername} app={apperances} goals={goals}/>
+    const {playerid, playername, appearances, goals} = player
+    return <IgraciTimaStatistika playerid={playerid} playerName={playername} app={appearances} goals={goals}/>
   })
 
   
