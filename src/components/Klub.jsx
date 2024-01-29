@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import Raspored from './Raspored';
 import Utakmice from './Utakmice';
 import IgracStatistika from './IgracStatistika';
+import IgraciTimaStatistika from './IgraciTimaStatistika';
 
 function Klub() {
   
@@ -133,7 +134,7 @@ function Klub() {
   //console.log(matchesplayed)
   const playerStatistic = playerStats.map(player => {
     const {playerid, playername, apperances, goals} = playerStats
-    return <IgracStatistika playerid={playerid} playerName={playername} app={apperances} goals={goals}/>
+    return <IgraciTimaStatistika playerid={playerid} playerName={playername} app={apperances} goals={goals}/>
   })
 
   
