@@ -145,11 +145,22 @@ function Klub() {
   <div className='header'>Igraci</div>
 </div>
 <div className='flex justify-center flex-wrap' >
-      {listaIgraca}
+      <table className="table table-compact mx-auto" style={{width:"60%"}} data-theme='night' >
+            <thead>
+              <tr>
+                <th style={{borderRight: "1px solid black", textAlign:'center'}}>Ime</th> 
+                <th style={{borderRight: "1px solid black", textAlign:'center'}}>App</th>  
+                <th style={{borderRight: "1px solid black", textAlign:'center'}}>Golovi</th> 
+              </tr>
+            </thead> 
+            <tbody>
+              {playerStatistic}
+            </tbody> 
+          </table>
     </div>
-    <>
-    {playerStatistic}
-    </>
+    <div className='flex justify-center flex-wrap' >
+    {listaIgraca}
+    </div>
       <Raspored raspored={matchesToPlay} />
       <Utakmice utakmice={matchesplayed} />
     </div>
