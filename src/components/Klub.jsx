@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import Raspored from './Raspored';
 import Utakmice from './Utakmice';
 import IgraciTimaStatistika from './IgraciTimaStatistika';
+import KlubInformacije from './KlubInformacije';
 
 function Klub() {
   
@@ -140,8 +141,7 @@ function Klub() {
   return (
     <div>
       <div style={{ textAlign: 'center' }}>
-        <>{console.log(tablica)}</>
-        <>{console.log(playerStats)}</>
+       <KlubInformacije id={id}/>
   <div className='header'>Igraci</div>
 </div>
 <div className='flex justify-center flex-wrap'>
