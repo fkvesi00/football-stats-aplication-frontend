@@ -6,6 +6,8 @@ function NavBarClub() {
         color: 'white',
         fontFamily: 'Lucida Console, Monaco, monospace',
         backgroundColor: '#5a0960',
+        margin:'7px',
+        padding:'7px'
       };
     
       const rowStyle = {
@@ -14,7 +16,7 @@ function NavBarClub() {
         justifyContent: 'center',
       };
   return (
-    <div className="bg-base-100 mb" data-theme="fantasy">
+    <div className="bg-base-100 mb" data-theme="garden">
      <div style={rowStyle}>
         <ul className="menu menu-horizontal px-1" style={{textAlign:'center'}}>
           <li><Link to='/' style={textStyle}>Raspored</Link></li>
