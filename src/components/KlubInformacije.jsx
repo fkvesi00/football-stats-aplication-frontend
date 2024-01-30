@@ -6,15 +6,16 @@ function KlubInformacije({id}) {
     <>
     <div className="border p-4 rounded-lg max-w-md mx-auto my-8 flex flex-col items-center md:flex-row md:items-start md:justify-center md:text-left">
       {/* Left Column (Logo) */}
-      <div className="mb-4 md:mb-0 md:mr-4">
+      <div className="mb-4 md:mb-0 md:mr-8">
         {/* Include your club logo here */}
-        <img src={logo} alt="Club Logo" className="w-16 h-auto md:w-24" />
+        <img src={logo} alt="Club Logo" className="w-40 h-auto md:w-40" />
       </div>
 
       {/* Right Column (Club Information) */}
       <div>
         <div className="mb-2">
-          <strong>Name of Club:</strong> Your Club Name
+          <strong>Name of Club:</strong> 
+          <p>Your Club Name</p>
         </div>
         <div className="mb-2">
           <strong>Coach:</strong> Coach Name
@@ -33,7 +34,6 @@ function KlubInformacije({id}) {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
-    
     </>
   );
 }
