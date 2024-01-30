@@ -14,24 +14,30 @@ function KlubInformacije({id}) {
       {/* Right Column (Club Information) */}
       <div>
         <div className="mb-2">
-          <strong>Name of Club:</strong> 
-          <p>Your Club Name</p>
+          <strong>Naziv kluba:</strong> 
+          <h2>Your Club Name</h2>
         </div>
         <div className="mb-2">
-          <strong>Coach:</strong> Coach Name
+          <strong>Voditelj:</strong> 
+          <p>Coach Name</p>
         </div>
         <div className="mb-2">
-          <strong>Number of Players:</strong> 25 {/* Replace with the actual number */}
+          <strong>Media:</strong> 
+          <p>www.instagram.com</p> {/* Replace with the actual number */}
         </div>
         <div className="mb-2">
-          <strong>Number of Trophies:</strong> 10 {/* Replace with the actual number */}
+          <strong>Osvojene lige:</strong> 
+          <p>4</p> {/* Replace with the actual number */}
+        </div>
+        <div className="mb-2">
+          <strong>Trenutna pozicija: #6</strong> 
         </div>
       </div>
       </div>
       {/* Text about the Club */}
       <div className="text-center mt-4">
         <p className="text-sm">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          U ovom odjelku mozemo napisati neke okvirne informacije o ovom klubu. Opisni tekst moze se odnosti na igrace, tim navijace nesto saljivo i informativno.
         </p>
       </div>
     </>
