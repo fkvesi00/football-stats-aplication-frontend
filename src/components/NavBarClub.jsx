@@ -7,11 +7,6 @@ function NavBarClub() {
         fontFamily: 'Lucida Console, Monaco, monospace',
       };
     
-      const containerStyle = {
-        marginBottom: '8px',
-        padding:'10px'
-      };
-    
       const rowStyle = {
         display: 'flex',
         alignItems: 'center',

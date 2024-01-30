@@ -14,7 +14,7 @@ function KlubInformacije({id}) {
       {/* Right Column (Club Information) */}
       <div>
         <div className="mb-2">
-          <h2>Your Club Name</h2>
+          <h2 className="text-2xl font-bold">Your Club</h2>
         </div>
         <div className="mb-2">
           <strong>Voditelj:</strong> 
