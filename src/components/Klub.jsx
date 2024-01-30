@@ -148,37 +148,47 @@ function Klub() {
 
   return (
     <div>
-      <div style={{ textAlign: 'center' }}>
-        {console.log(tablica)}
-       <KlubInformacije id={id}/>
-       <NavBarClub handleClick={handleClick}/>
-  <div className='header'>Igraci</div>
-</div>
-<div className='flex justify-center flex-wrap'>
-  <table className="table table-compact mx-auto rounded-lg shadow-lg" style={{width: "60%", backgroundColor: "#556B2F", color: "white"}} data-theme='night'>
-    <thead>
-      <tr>
-        <th style={{borderRight: "1px solid black", textAlign: 'center'}}>#
-        </th>
-        <th style={{borderRight: "1px solid black", textAlign: 'center'}}>Ime
-        </th>
-        <th style={{borderRight: "1px solid black", textAlign: 'center'}}>Golovi
-        </th>
-        <th style={{borderRight: "1px solid black", textAlign: 'center'}}>Nastupi
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      {playerStatistic}
-    </tbody>
-  </table>
-</div>
-    <div className='flex justify-center flex-wrap' >
-    {listaIgraca}
+    <div style={{ textAlign: 'center' }}>
+      {console.log(tablica)}
+      <KlubInformacije id={id}/>
+      <NavBarClub handleClick={handleClick}/>
+  
+      {display === 'raspored' && <Raspored raspored={matchesToPlay} />}
+      {display === 'Utakmice' && <Utakmice utakmice={matchesplayed} />}
+      {display === 'Igrači' && (
+        <>
+          <div className='header'>Igraci</div>
+          <div className='flex justify-center flex-wrap'>{listaIgraca}</div>
+        </>
+      )}
+      {display === 'Statistika' && (
+        <div className='flex justify-center flex-wrap'>
+          <table className="table table-compact mx-auto rounded-lg shadow-lg" style={{ width: "60%", backgroundColor: "#556B2F", color: "white" }} data-theme='night'>
+            <thead>
+              <tr>
+                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>#
+                </th>
+                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Ime
+                </th>
+                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Golovi
+                </th>
+                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Nastupi
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {playerStatistic}
+            </tbody>
+          </table>
+        </div>
+      )}
+      {display === 'Galerija' && (
+        <>
+          {/* Your Galerija component goes here */}
+        </>
+      )}
     </div>
-      <Raspored raspored={matchesToPlay} />
-      <Utakmice utakmice={matchesplayed} />
-    </div>
+  </div>
   )
 }
 
