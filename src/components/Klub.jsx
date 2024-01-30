@@ -144,21 +144,25 @@ function Klub() {
         <>{console.log(playerStats)}</>
   <div className='header'>Igraci</div>
 </div>
-<div className='flex justify-center flex-wrap' >
-      <table className="table table-compact mx-auto" style={{width:"60%"}} data-theme='night' >
-            <thead>
-              <tr>
-                <th style={{borderRight: "1px solid black", textAlign:'center'}}>#</th>
-                <th style={{borderRight: "1px solid black", textAlign:'center'}}>Ime</th> 
-                <th style={{borderRight: "1px solid black", textAlign:'center'}}>Golovi</th>  
-                <th style={{borderRight: "1px solid black", textAlign:'center'}}>Nastupi</th> 
-              </tr>
-            </thead> 
-            <tbody>
-              {playerStatistic}
-            </tbody> 
-          </table>
-    </div>
+<div className='flex justify-center flex-wrap'>
+  <table className="table table-compact mx-auto rounded-lg shadow-lg" style={{width: "60%", backgroundColor: "#556B2F", color: "white"}} data-theme='night'>
+    <thead>
+      <tr>
+        <th style={{borderRight: "1px solid black", textAlign: 'center'}}>#
+        </th>
+        <th style={{borderRight: "1px solid black", textAlign: 'center'}}>Ime
+        </th>
+        <th style={{borderRight: "1px solid black", textAlign: 'center'}}>Golovi
+        </th>
+        <th style={{borderRight: "1px solid black", textAlign: 'center'}}>Nastupi
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {playerStatistic}
+    </tbody>
+  </table>
+</div>
     <div className='flex justify-center flex-wrap' >
     {listaIgraca}
     </div>

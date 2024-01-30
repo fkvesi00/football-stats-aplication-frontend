@@ -3,10 +3,10 @@ import React from 'react'
 function IgraciTimaStatistika({counter,playerid, playerName, app, goals}) {
   return (
     <tr data-theme='fantasy' style={{padding:'10px'}} >
-        <td style={{borderRight: "1px solid black", textAlign:'center'}}>{counter+1}</td>
-        <td style={{borderRight: "1px solid black", textAlign:'center'}}>{playerName}</td>
-        <td style={{borderRight: "1px solid black", textAlign:'center'}}>{goals}</td>
-        <td style={{borderRight: "1px solid black", textAlign:'center'}}>{app}</td>
+        <td style={{borderRight: "1px solid black", textAlign:'center', fontFamily: 'Lucida Console, Monaco, monospace'}}>{counter+1}</td>
+        <td style={{borderRight: "1px solid black", textAlign: 'center', fontFamily: 'Lucida Console, Monaco, monospace', backgroundColor: 'OliveDrab', color: 'white'}}>{playerName}</td>
+        <td style={{borderRight: "1px solid black", textAlign:'center', fontFamily: 'Lucida Console, Monaco, monospace'}}>{goals}</td>
+        <td style={{borderRight: "1px solid black", textAlign:'center', fontFamily: 'Lucida Console, Monaco, monospace'}}>{app}</td>
     </tr>
   )
 }
