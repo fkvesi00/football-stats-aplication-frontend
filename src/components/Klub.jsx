@@ -13,7 +13,7 @@ function Klub() {
   const [tablica, setTablica] = useState([]);
   const [playerStats, setPlayerStats] = useState([]);
   const {id} = useParams();
-  const [display, setDisplay] = ('raspored')
+  //const [display, setDisplay] = ('raspored')
   
 
   //ucitaj raspored tima i njegove igrace, cinimo to pomocu id kluba, koji se nalazi u parametru stranice
@@ -142,7 +142,7 @@ function Klub() {
   
   const handleClick = (target) => {
     console.log(target)
-    console.log(display)
+    
   }
 
 
