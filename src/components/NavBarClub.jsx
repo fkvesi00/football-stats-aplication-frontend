@@ -18,7 +18,7 @@ function NavBarClub() {
   return (
     <div className="bg-base-100 mb" data-theme="garden">
      <div style={rowStyle}>
-        <ul className="menu menu-horizontal px-1" style={{textAlign:'center'}}>
+        <ul className="menu menu-horizontal px-1" style={{textAlign:'center', justifyContent:'center'}}>
           <li><Link to='/' style={textStyle}>Raspored</Link></li>
           <li><Link to='/' style={textStyle}>Utakmice</Link></li>
           <li><Link to='/' style={textStyle}>Igrači</Link></li>
