@@ -4,6 +4,7 @@ import Raspored from './Raspored';
 import Utakmice from './Utakmice';
 import IgraciTimaStatistika from './IgraciTimaStatistika';
 import KlubInformacije from './KlubInformacije';
+import NavBarClub from './NavBarClub';
 
 function Klub() {
   
@@ -143,6 +144,7 @@ function Klub() {
       <div style={{ textAlign: 'center' }}>
         {console.log(tablica)}
        <KlubInformacije id={id}/>
+       <NavBarClub />
   <div className='header'>Igraci</div>
 </div>
 <div className='flex justify-center flex-wrap'>
