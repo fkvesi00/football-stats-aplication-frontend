@@ -141,7 +141,7 @@ function Klub() {
 
   
   const handleClick = (target) => {
-    setDisplay(target)
+    setDisplay(`'${target}'`)
     console.log(display)
   }
 
