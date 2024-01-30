@@ -3,6 +3,7 @@ import React from 'react';
 function KlubInformacije({id}) {
   const logo = `/images/${id}.jpg`
   return (
+    <>
     <div className="border p-4 rounded-lg max-w-md mx-auto my-8 flex flex-col items-center md:flex-row md:items-start md:justify-center md:text-left">
       {/* Left Column (Logo) */}
       <div className="mb-4 md:mb-0 md:mr-4">
@@ -25,14 +26,15 @@ function KlubInformacije({id}) {
           <strong>Number of Trophies:</strong> 10 {/* Replace with the actual number */}
         </div>
       </div>
-
+      </div>
       {/* Text about the Club */}
       <div className="text-center mt-4">
         <p className="text-sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
-    </div>
+    
+    </>
   );
 }
 
