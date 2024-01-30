@@ -5,6 +5,7 @@ function NavBarClub() {
     const textStyle = {
         color: 'white',
         fontFamily: 'Lucida Console, Monaco, monospace',
+        backgroundColor: '#5a0960',
       };
     
       const rowStyle = {
