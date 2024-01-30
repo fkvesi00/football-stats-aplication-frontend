@@ -23,6 +23,7 @@ function NavBarClub() {
           <li><Link to='/' style={textStyle}>Utakmice</Link></li>
           <li><Link to='/' style={textStyle}>Igrači</Link></li>
           <li><Link to='/' style={textStyle}>Igrači statistika</Link></li>
+          <li><Link to='/' style={textStyle}>Galerija</Link></li>
         </ul>
       </div>
     </div>
