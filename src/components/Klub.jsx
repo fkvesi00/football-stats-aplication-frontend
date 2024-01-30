@@ -141,6 +141,7 @@ function Klub() {
   return (
     <div>
       <div style={{ textAlign: 'center' }}>
+        {console.log(tablica)}
        <KlubInformacije id={id}/>
   <div className='header'>Igraci</div>
 </div>
