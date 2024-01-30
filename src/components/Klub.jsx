@@ -13,6 +13,7 @@ function Klub() {
   const [tablica, setTablica] = useState([]);
   const [playerStats, setPlayerStats] = useState([]);
   const {id} = useParams();
+  const [display, setDisplay] = ('raspored')
   
 
   //ucitaj raspored tima i njegove igrace, cinimo to pomocu id kluba, koji se nalazi u parametru stranice
@@ -139,12 +140,18 @@ function Klub() {
   })
 
   
+  const handleClick = (target) => {
+    setDisplay(target)
+    console.log(target)
+  }
+
+
   return (
     <div>
       <div style={{ textAlign: 'center' }}>
         {console.log(tablica)}
        <KlubInformacije id={id}/>
-       <NavBarClub />
+       <NavBarClub handleClick={handleClick}/>
   <div className='header'>Igraci</div>
 </div>
 <div className='flex justify-center flex-wrap'>

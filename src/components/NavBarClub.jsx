@@ -1,7 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-function NavBarClub() {
+function NavBarClub({handleClick}) {
     const textStyle = {
         color: 'white',
         fontFamily: 'Lucida Console, Monaco, monospace',
@@ -19,11 +18,11 @@ function NavBarClub() {
     <div className="bg-base-100 mb" data-theme="garden">
      <div style={rowStyle}>
         <ul className="menu menu-horizontal px-1" style={{textAlign:'center', justifyContent:'center'}}>
-          <li><Link to='/' style={textStyle}>Raspored</Link></li>
-          <li><Link to='/' style={textStyle}>Utakmice</Link></li>
-          <li><Link to='/' style={textStyle}>Igrači</Link></li>
-          <li><Link to='/' style={textStyle}>Igrači statistika</Link></li>
-          <li><Link to='/' style={textStyle}>Galerija</Link></li>
+          <li><div style={textStyle} onClick={()=> handleClick('Raspored')}>Raspored</div></li>
+          <li><div style={textStyle} onClick={()=> handleClick('Utakmice')}>Utakmice</div></li>
+          <li><div style={textStyle} onClick={()=> handleClick('Igrači')}>Igrači</div></li>
+          <li><div style={textStyle} onClick={()=> handleClick('Statistika')}>Statistika</div></li>
+          <li><div style={textStyle} onClick={()=> handleClick('Galerija')}>Galerija</div></li>
         </ul>
       </div>
     </div>
