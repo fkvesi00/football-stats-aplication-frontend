@@ -4,7 +4,7 @@ function NavBarClub({handleClick}) {
     const textStyle = {
         color: 'white',
         fontFamily: 'Lucida Console, Monaco, monospace',
-        backgroundColor:'#cc0000',
+        backgroundColor:'#003366',
         margin:'7px',
         padding:'7px'
       };
