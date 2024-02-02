@@ -6,7 +6,7 @@ import IgraciTimaStatistika from './IgraciTimaStatistika';
 import KlubInformacije from './KlubInformacije';
 import NavBarClub from './NavBarClub';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFutbol } from '@fortawesome/free-solid-svg-icons';
+import { faFutbol,faUser } from '@fortawesome/free-solid-svg-icons';
 
 function Klub() {
   
@@ -170,7 +170,8 @@ function Klub() {
               <tr>
                 <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>#
                 </th>
-                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Ime
+                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>
+                <FontAwesomeIcon icon={faUser} />
                 </th>
                 <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>
                 <FontAwesomeIcon icon={faFutbol} />
