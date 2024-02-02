@@ -16,8 +16,8 @@ function NavBarClub({handleClick}) {
   return (
     <div className="bg-base-100 m-10" data-theme="garden">
      <div style={rowStyle}>
-        <ul className="menu menu-horizontal px-1" style={{textAlign:'center', justifyContent:'center'}} data-theme="night">
-          <li><div className="btn btn-ghost" style={textStyle} onClick={()=> handleClick('Raspored')}>Raspored</div></li>
+        <ul className="menu menu-horizontal px-1" style={{textAlign:'center', justifyContent:'center'}} >
+          <li><div className="btn btn-ghost" style={textStyle} onClick={()=> handleClick('Raspored')} data-theme="night">Raspored</div></li>
           <li><div className="btn btn-ghost" style={textStyle} onClick={()=> handleClick('Utakmice')}>Utakmice</div></li>
           <li><div className="btn btn-ghost" style={textStyle} onClick={()=> handleClick('Igrači')}>Igrači</div></li>
           <li><div className="btn btn-ghost" style={textStyle} onClick={()=> handleClick('Statistika')}>Statistika</div></li>
