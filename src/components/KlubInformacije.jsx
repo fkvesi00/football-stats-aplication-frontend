@@ -4,7 +4,7 @@ function KlubInformacije({id}) {
   const logo = `/images/${id}.jpg`
   return (
     <>
-    <div className="border p-4 rounded-lg max-w-md mx-auto my-8 flex flex-col items-center md:flex-row md:items-start md:justify-center md:text-left" data-theme="fantasy">
+    <div className="border p-4 rounded-lg max-w-md mx-auto my-8 flex flex-col items-center md:flex-row md:items-start md:justify-center md:text-left m-5" data-theme="fantasy">
       {/* Left Column (Logo) */}
       <div className="mb-4 md:mb-0 md:mr-8">
         {/* Include your club logo here */}
