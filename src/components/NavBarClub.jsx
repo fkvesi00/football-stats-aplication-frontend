@@ -13,12 +13,12 @@ function NavBarClub({handleClick}) {
         alignItems: 'center',
         justifyContent: 'center',
       };
-      
+
   return (
     <div className="bg-base-100 m-10" data-theme="garden">
      <div style={rowStyle}>
         <ul className="menu menu-horizontal px-1" style={{textAlign:'center', justifyContent:'center'}} >
-          <li ><div data-theme="night" className="btn btn-ghost" style={textStyle} onClick={()=> handleClick('Raspored')} >Raspored</div></li>
+          <li data-theme="night"><div className="btn btn-ghost" style={textStyle} onClick={()=> handleClick('Raspored')} >Raspored</div></li>
           <li data-theme="night"><div className="btn btn-ghost" style={textStyle} onClick={()=> handleClick('Utakmice')}>Utakmice</div></li>
           <li data-theme="night"><div className="btn btn-ghost" style={textStyle} onClick={()=> handleClick('Igrači')}>Igrači</div></li>
           <li data-theme="night"><div className="btn btn-ghost" style={textStyle} onClick={()=> handleClick('Statistika')}>Statistika</div></li>
