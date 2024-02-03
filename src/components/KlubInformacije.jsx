@@ -4,8 +4,8 @@ import clubsData from './clubsInfo.js'
 function KlubInformacije({id}) {
 
   const targetClub = clubsData.filter(club => club.id === Number(id));
-
-  console.log(targetClub)
+  const treneri = Object.values(targetClub.coach) 
+  console.log(treneri)
 
   const logo = `/images/${id}.jpg`
   return (
@@ -20,7 +20,7 @@ function KlubInformacije({id}) {
       {/* Right Column (Club Information) */}
       <div>
         <div className="mb-2">
-          <h2 className="text-2xl font-bold">Your Club</h2>
+          <h2 className="text-2xl font-bold">{targetClub.name}</h2>
         </div>
         <div className="mb-2">
           <strong>Voditelj:</strong> 
