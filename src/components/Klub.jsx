@@ -22,7 +22,7 @@ function Klub() {
   //ucitaj raspored tima i njegove igrace, cinimo to pomocu id kluba, koji se nalazi u parametru stranice
   useEffect(()=>{
     const fetchData = async () => {
-      console.log(clubsData)
+      
       const igraci = await fetch("https://www.umadomena.com/players/clubPlayers",{ 
         method:'post',
         headers:{'Content-Type':'application/json'},
@@ -146,6 +146,7 @@ function Klub() {
   const handleClick = (target) => {
     setDisplay(target)
     console.log(display)
+    console.log(clubsData)
   }
 
 
