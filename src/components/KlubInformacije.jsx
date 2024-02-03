@@ -35,7 +35,7 @@ function KlubInformacije({id, tablica}) {
         </div>
         <div className="mb-2">
           <strong>Trenutna pozicija: #</strong> 
-          {console.log(tablica[0].clubStats.rank+1)}
+          {console.log(tablica)}
         </div>
       </div>
       </div>
