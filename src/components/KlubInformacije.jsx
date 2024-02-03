@@ -36,7 +36,7 @@ function KlubInformacije({ id, tablica }) {
             {targetClub[0].name && <h2 className="text-2xl font-bold">{targetClub[0].name}</h2>}
           </div>
           <div className="mb-2">
-            <strong>Voditelj:</strong>
+            <strong>Voditelj/i:</strong>
             <p>{divTreneri}</p>
           </div>
           <div className="mb-2">
