@@ -1,6 +1,14 @@
 import React from 'react';
+import clubsData from './clubsInfo.js'
 
 function KlubInformacije({id}) {
+
+    const targetClub = clubsData.filter(club => {
+      return club.id !== id
+    })
+
+  console.log(targetClub)
+
   const logo = `/images/${id}.jpg`
   return (
     <div className='mx-10'>
