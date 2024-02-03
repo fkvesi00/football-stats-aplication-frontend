@@ -25,10 +25,6 @@ function KlubInformacije({id}) {
           <p>www.instagram.com</p> {/* Replace with the actual number */}
         </div>
         <div className="mb-2">
-          <strong>Osvojene lige:</strong> 
-          <p>4</p> {/* Replace with the actual number */}
-        </div>
-        <div className="mb-2">
           <strong>Trenutna pozicija: #6</strong> 
         </div>
       </div>
