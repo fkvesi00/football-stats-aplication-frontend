@@ -34,7 +34,8 @@ function KlubInformacije({id, tablica}) {
           <p>www.instagram.com</p> {/* Replace with the actual number */}
         </div>
         <div className="mb-2">
-          <strong>Trenutna pozicija: #{tablica.clubStats.rank+1}</strong> 
+          <strong>Trenutna pozicija: #</strong> 
+          {console.log(tablica)}
         </div>
       </div>
       </div>
