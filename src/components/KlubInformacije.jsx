@@ -5,7 +5,10 @@ function KlubInformacije({id, tablica}) {
 
   const targetClub = clubsData.filter(club => club.id === Number(id));
   const treneri = Object.values(targetClub[0].coach) 
-  console.log(treneri)
+  
+  const divTreneri = treneri.map(trener => {
+    return <div>{trener}</div>
+  })
 
   const logo = `/images/${id}.jpg`
   return (
@@ -24,14 +27,14 @@ function KlubInformacije({id, tablica}) {
         </div>
         <div className="mb-2">
           <strong>Voditelj:</strong> 
-          <p>Coach Name</p>
+          <p>{divTreneri}</p>
         </div>
         <div className="mb-2">
           <strong>Media:</strong> 
           <p>www.instagram.com</p> {/* Replace with the actual number */}
         </div>
         <div className="mb-2">
-          <strong>Trenutna pozicija: #{tablica.rank+1}</strong> 
+          <strong>Trenutna pozicija: #{tablica.clubStats.rank+1}</strong> 
         </div>
       </div>
       </div>
