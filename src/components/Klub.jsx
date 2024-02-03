@@ -153,7 +153,7 @@ function Klub() {
     <div style={{ textAlign: 'center' }}>    
       <KlubInformacije id={id}/>
       <NavBarClub handleClick={handleClick}/>
-  
+      {console.log(tablica)}
       {display === 'Raspored' && <Raspored raspored={matchesToPlay} />}
       {display === 'Utakmice' && <Utakmice utakmice={matchesplayed} />}
       {display === 'Igrači' && (
