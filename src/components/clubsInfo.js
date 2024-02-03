@@ -27,7 +27,7 @@ const clubsData = [
     }},
     {"id": 6, "name": 'MNK ŠKRAPA MOMIĆI', "coach": {
         1:'Alen Mušan',
-        2:'Ivan Plećaš"Dundo"',
+        2:'Ivan Plećaš "Dundo"',
         3:'Tonći Jerković'
     }},
     {"id": 7, "name": 'MNK CRNI PUT pekarstvo Metkovka', "coach": {
@@ -37,10 +37,10 @@ const clubsData = [
     }},
     {"id": 8, "name": 'MRŠAVI PSI KOLJBABIĆ GRADNJA', "coach": {
         1:'David Jelavić',
-        2:'Ivan "Anton"Peko'
+        2:'Ivan "Anton" Peko'
     }},
     {"id": 9, "name": 'MNK PRUD', "coach": {
-        1:'Ivan Volarević"Dundo"',
+        1:'Ivan Volarević "Dundo"',
         2:'Petar Vuletić'
     }},
     {"id": 10, "name": 'MNK NEUM', "coach": null},
