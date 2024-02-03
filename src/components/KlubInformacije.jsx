@@ -1,10 +1,10 @@
 import React from 'react';
 import clubsData from './clubsInfo.js'
 
-function KlubInformacije({id}) {
+function KlubInformacije({id, tablica}) {
 
   const targetClub = clubsData.filter(club => club.id === Number(id));
-  const treneri = Object.values(targetClub.coach) 
+  const treneri = Object.values(targetClub[0].coach) 
   console.log(treneri)
 
   const logo = `/images/${id}.jpg`
@@ -31,7 +31,7 @@ function KlubInformacije({id}) {
           <p>www.instagram.com</p> {/* Replace with the actual number */}
         </div>
         <div className="mb-2">
-          <strong>Trenutna pozicija: #6</strong> 
+          <strong>Trenutna pozicija: #{tablica.rank+1}</strong> 
         </div>
       </div>
       </div>
