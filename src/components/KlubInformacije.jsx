@@ -39,13 +39,13 @@ function KlubInformacije({ id, tablica }) {
             <strong>Media:</strong>
             <p>www.instagram.com</p> {/* Replace with the actual number */}
           </div>
-          <div className="mb-2">
+          {/* <div className="mb-2">
             {tablica[0] ? (
               <strong>Trenutna pozicija: #{tablica[0].rank + 1}</strong>
             ) : (
               <></>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
       {/* Text about the Club */}
