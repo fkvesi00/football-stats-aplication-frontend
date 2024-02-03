@@ -14,6 +14,7 @@ import ListaUtakmica from "./components/ListaUtakmica";
 import IgracStatistika from "./components/IgracStatistika";
 import SignIn from "./components/adminPage/SignIn";
 import AdminPage from "./components/adminPage/AdminPage";
+import Statistika from "./components/Statistika";
 function App() {
   const [klubovi, setKlubovi] = useState([]);
    const [raspored, setRaspored] = useState([]);
@@ -233,6 +234,7 @@ const teamMatches = (teams, allMatches) => {
           <Route exact path={`/igrac/:id`} element={<IgracStatistika />} />
           <Route exact path={'/signIn'} element={<SignIn />} />
           <Route exact path={'/adminPage'} element={<AdminPage />} />
+          <Route exact path={'/statstika'} element={<Statistika />} />
         </Routes>
       )}
       <Footer />
