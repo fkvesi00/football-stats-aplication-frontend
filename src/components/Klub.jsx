@@ -7,6 +7,7 @@ import KlubInformacije from './KlubInformacije';
 import NavBarClub from './NavBarClub';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbol,faUser } from '@fortawesome/free-solid-svg-icons';
+import {clubsData} from './clubsinfo.js'
 
 function Klub() {
   
@@ -21,7 +22,7 @@ function Klub() {
   //ucitaj raspored tima i njegove igrace, cinimo to pomocu id kluba, koji se nalazi u parametru stranice
   useEffect(()=>{
     const fetchData = async () => {
-      
+      console.log(clubsData)
       const igraci = await fetch("https://www.umadomena.com/players/clubPlayers",{ 
         method:'post',
         headers:{'Content-Type':'application/json'},
