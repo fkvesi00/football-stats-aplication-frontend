@@ -93,7 +93,7 @@ const matchFormat = utakmica => {
 };
   
   const matches = matchFormat(raspored)
-  //console.log(raspored)
+
 
 
 //u sljedece dvije linije nalazimo utakmice koje su odigrane i koje ce se odigrati
@@ -107,10 +107,9 @@ const compareByDate = (a, b) => {
 
 // Sort the array by date
 const mathesPlayedSorted = matchesplayed.sort(compareByDate);
-console.log(mathesPlayedSorted)
+
 const matchesToPlay = matches.filter(utakmica => utakmica.score === null)
-//console.log(matchesToPlay)
-//console.log(matchesplayed)
+
 //ovdje cemo stvorit legendarni objekt sa teamid i teamname i svim utakmicama tog tima
 const teamMatches = (teams, allMatches) => {
   const arrayOfArrays = [];
