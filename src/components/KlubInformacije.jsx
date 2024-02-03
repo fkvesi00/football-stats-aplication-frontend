@@ -14,10 +14,10 @@ function KlubInformacije({ id, tablica }) {
   const divTreneri = treneri
   ? treneri.map((trener, index) => (
       <div key={index} style={{ fontFamily: 'Times New Roman, serif' }}>
-        {trener || <div>/</div>}
+        {trener}
       </div>
     ))
-  : null;
+  : <div>/</div>;
 
   const logo = `/images/${id}.jpg`;
 
