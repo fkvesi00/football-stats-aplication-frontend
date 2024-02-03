@@ -7,7 +7,7 @@ import KlubInformacije from './KlubInformacije';
 import NavBarClub from './NavBarClub';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbol,faUser } from '@fortawesome/free-solid-svg-icons';
-import clubsData from './clubsinfo.js'
+import clubsData from './clubinfo.js'
 
 function Klub() {
   
