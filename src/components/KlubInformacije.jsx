@@ -33,7 +33,7 @@ function KlubInformacije({ id, tablica }) {
           </div>
           <div className="mb-2">
             <strong>Voditelj:</strong>
-            <p>{divTreneri}</p>
+            <p style={{fontFamily: 'Lucida Console, Monaco, monospace'}}>{divTreneri}</p>
           </div>
           <div className="mb-2">
             <strong>Media:</strong>
