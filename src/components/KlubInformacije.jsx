@@ -12,7 +12,7 @@ function KlubInformacije({ id, tablica }) {
   const treneri = Object.values(targetClub[0].coach);
 
   const divTreneri = treneri.map((trener, index) => {
-    return <div key={index} style={{fontFamily: 'Lucida Console, Monaco, monospace'}}>{trener}</div>;
+    return <div key={index} style={{fontFamily: 'Times New Roman, serif'}}>{trener}</div>;
   });
 
   const logo = `/images/${id}.jpg`;
