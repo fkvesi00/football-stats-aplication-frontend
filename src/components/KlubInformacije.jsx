@@ -53,11 +53,11 @@ function KlubInformacije({ id, tablica }) {
         </div>
       </div>
       {/* Text about the Club */}
-      <div className="text-center mt-4">
+{/*       <div className="text-center mt-4">
         <p className="text-sm">
-          U ovom odjelku možemo napisati neke okvirne informacije o ovom klubu. Opisni tekst može se odnositi na igrače, tim, navijače, nešto šaljivo i informativno.
+          
         </p>
-      </div>
+      </div> */}
     </div>
   );
 }
