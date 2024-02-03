@@ -7,7 +7,7 @@ import KlubInformacije from './KlubInformacije';
 import NavBarClub from './NavBarClub';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbol,faUser } from '@fortawesome/free-solid-svg-icons';
-import clubsData from './clubsInfo.js'
+
 
 function Klub() {
   
@@ -136,7 +136,7 @@ function Klub() {
   //u sljedece dvije linije nalazimo utakmice koje su odigrane i koje ce se odigrati
   const matchesplayed = matches.filter(utakmica => utakmica.score !== null)
   const matchesToPlay = matches.filter(utakmica => utakmica.score == null)
-  //console.log(matchesplayed)
+
   const playerStatistic = playerStats.map((player,i) => {
     const {playerid, playername, appearances, goals} = player
     return <IgraciTimaStatistika counter={i} playerid={playerid} playerName={playername} app={appearances} goals={goals}/>
@@ -145,15 +145,12 @@ function Klub() {
   
   const handleClick = (target) => {
     setDisplay(target)
-    console.log(display)
-    console.log(clubsData)
   }
 
 
   return (
     <div>
-    <div style={{ textAlign: 'center' }}>
-      {console.log(tablica)}
+    <div style={{ textAlign: 'center' }}>    
       <KlubInformacije id={id}/>
       <NavBarClub handleClick={handleClick}/>
   

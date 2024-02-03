@@ -3,9 +3,7 @@ import clubsData from './clubsInfo.js'
 
 function KlubInformacije({id}) {
 
-    const targetClub = clubsData.filter(club => {
-      return club.id !== id
-    })
+  const targetClub = clubsData.filter(club => club.id === id);
 
   console.log(targetClub)
 
