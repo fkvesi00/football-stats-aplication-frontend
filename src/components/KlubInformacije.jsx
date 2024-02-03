@@ -9,11 +9,15 @@ function KlubInformacije({ id, tablica }) {
     return <div>Club not found</div>;
   }
 
-  const treneri = Object.values(targetClub[0].coach);
+  const treneri = targetClub[0].coach ? Object.values(targetClub[0].coach) : null;
 
-  const divTreneri = treneri.map((trener, index) => {
-    return <div key={index} style={{fontFamily: 'Times New Roman, serif'}}>{trener}</div>;
-  });
+  const divTreneri = treneri
+  ? treneri.map((trener, index) => (
+      <div key={index} style={{ fontFamily: 'Times New Roman, serif' }}>
+        {trener || <div>/</div>}
+      </div>
+    ))
+  : null;
 
   const logo = `/images/${id}.jpg`;
 
