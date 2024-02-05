@@ -11,32 +11,30 @@ function Strijelci({statistika}) {
       })
 
   return (
-    <div>
-        <div className='flex justify-center flex-wrap'>
-          <table className="table table-compact mx-auto rounded-lg shadow-lg" style={{ width: "60%", backgroundColor: "#556B2F", color: "white" }} data-theme='night'>
-            <thead>
-              <tr>
-                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>#
-                </th>
-                <th style={{ borderRight: "1px solid black", textAlign: 'left' }}>
-                <FontAwesomeIcon icon={faUser} />
-                </th>
-                <th style={{ borderRight: "1px solid black", textAlign: 'left'}}>
-                    Tim
-                </th>
-                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>
-                <FontAwesomeIcon icon={faFutbol} />
-                </th>
-                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Nastupi
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {playerStatistic}
-            </tbody>
-          </table>
-        </div>
-    </div>
+<div className='flex justify-center flex-wrap'>
+  <div className="overflow-x-auto">
+    <table className="w-full table-compact mx-auto rounded-lg shadow-lg bg-green-700 text-white" data-theme='night'>
+      <thead>
+        <tr>
+          <th className="sticky left-0 z-10 bg-green-700">#</th>
+          <th className="sticky left-0 z-10 bg-green-700">
+            <FontAwesomeIcon icon={faUser} />
+          </th>
+          <th>
+            Tim
+          </th>
+          <th>
+            <FontAwesomeIcon icon={faFutbol} />
+          </th>
+          <th>Nastupi</th>
+        </tr>
+      </thead>
+      <tbody>
+        {playerStatistic}
+      </tbody>
+    </table>
+  </div>
+</div>
   )
 }
 
