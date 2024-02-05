@@ -27,6 +27,7 @@ function Statistika() {
   
   return (
     <div>
+        <h2 className="text-2xl font-bold m-5 text-green-700">Ljestvica strijelaca</h2>
         <Strijelci statistika={statistika}/>
     </div>
   )

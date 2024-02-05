@@ -39,7 +39,7 @@ const Strijelci = ({ statistika }) => {
   ));
 
   return (
-    <div className='flex justify-center flex-wrap'>
+    <div className='flex justify-center flex-wrap m-5'>
       <style>{mobileStyles}</style>
       <div className={tableContainerStyles}>
         <table className={tableStyles} data-theme='night'>
