@@ -46,8 +46,8 @@ function ListaIgraca() {
         onChange={onSearchChange}
         type="text"
         style={{
-          padding: '7px',
-          margin:'3px',
+          padding: '5px',
+          margin:'7px',
           border: '2px solid #ccc',
           borderRadius: '5px',
           boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
