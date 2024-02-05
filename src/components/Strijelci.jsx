@@ -1,41 +1,65 @@
-import React from 'react'
-import StrijelciTable from './StrijelciTable'
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFutbol,faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faFutbol } from '@fortawesome/free-solid-svg-icons';
 
-function Strijelci({statistika}) {
+const tableContainerStyles = "overflow-x-auto";
+const tableStyles = "w-full table-compact mx-auto rounded-lg shadow-lg bg-green-700 text-white";
+const stickyHeaderStyles = "sticky left-0 z-10 bg-green-700";
 
-    const playerStatistic = statistika.map((player,i) => {
-        const {playerid, playername, appearances, goals, teamname} = player
-        return <StrijelciTable counter={i} playerid={playerid} playerName={playername} app={appearances} goals={goals} teamName={teamname}/>
-      })
+const mobileStyles = `
+  @media (max-width: 600px) {
+    .${tableContainerStyles} {
+      overflow-x: auto;
+    }
+
+    .${tableStyles} {
+      width: 100%;
+    }
+
+    .${stickyHeaderStyles} {
+      position: relative !important;
+      background-color: #556B2F;
+      color: white;
+    }
+  }
+`;
+
+const Strijelci = ({ statistika }) => {
+  const playerStatistic = statistika.map((player, i) => (
+    <StrijelciTable
+      key={player.playerid}
+      counter={i}
+      playerid={player.playerid}
+      playerName={player.playername}
+      app={player.appearances}
+      goals={player.goals}
+      teamName={player.teamname}
+    />
+  ));
 
   return (
-<div className='flex justify-center flex-wrap'>
-  <div className="overflow-x-auto">
-    <table className="w-full table-compact mx-auto rounded-lg shadow-lg bg-green-700 text-white" data-theme='night'>
-      <thead>
-        <tr>
-          <th className="sticky left-0 z-10 bg-green-700">#</th>
-          <th className="sticky left-0 z-10 bg-green-700">
-            <FontAwesomeIcon icon={faUser} />
-          </th>
-          <th>
-            Tim
-          </th>
-          <th>
-            <FontAwesomeIcon icon={faFutbol} />
-          </th>
-          <th>Nastupi</th>
-        </tr>
-      </thead>
-      <tbody>
-        {playerStatistic}
-      </tbody>
-    </table>
-  </div>
-</div>
-  )
-}
+    <div className='flex justify-center flex-wrap'>
+      <style>{mobileStyles}</style>
+      <div className={tableContainerStyles}>
+        <table className={tableStyles} data-theme='night'>
+          <thead>
+            <tr>
+              <th className={stickyHeaderStyles}>#</th>
+              <th className={stickyHeaderStyles}>
+                <FontAwesomeIcon icon={faUser} />
+              </th>
+              <th>Tim</th>
+              <th>
+                <FontAwesomeIcon icon={faFutbol} />
+              </th>
+              <th>Nastupi</th>
+            </tr>
+          </thead>
+          <tbody>{playerStatistic}</tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
 
-export default Strijelci
+export default Strijelci;
