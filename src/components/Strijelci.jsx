@@ -18,8 +18,11 @@ function Strijelci({statistika}) {
               <tr>
                 <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>#
                 </th>
-                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>
+                <th style={{ borderRight: "1px solid black", textAlign: 'left' }}>
                 <FontAwesomeIcon icon={faUser} />
+                </th>
+                <th style={{ borderRight: "1px solid black", textAlign: 'left'}}>
+                    Tim
                 </th>
                 <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>
                 <FontAwesomeIcon icon={faFutbol} />
