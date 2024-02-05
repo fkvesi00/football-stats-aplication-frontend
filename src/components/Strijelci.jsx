@@ -1,4 +1,5 @@
 import React from 'react';
+import StrijelciTable from './StrijelciTable';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faFutbol } from '@fortawesome/free-solid-svg-icons';
 
