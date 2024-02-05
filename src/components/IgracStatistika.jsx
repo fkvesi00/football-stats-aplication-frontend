@@ -91,9 +91,6 @@ function IgracStatistika() {
            
            <div style ={{display: "flex",  justifyContent: "center",  alignItems: "center"}}>
                {player1}
-               {console.log(igrac)}
-               {console.log(nastupi)}
-               {console.log(golovi)}
            </div>
         
         <div className="overflow-x-auto w-full my-10 ">

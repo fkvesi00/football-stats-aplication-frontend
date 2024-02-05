@@ -1,5 +1,6 @@
 import React from 'react'
 import{useState,useEffect} from 'react'
+import Strijelci from './Strijelci';
 
 function Statistika() {
     const [statistika, setStatistika] = useState([]);
@@ -26,7 +27,7 @@ function Statistika() {
   
   return (
     <div>
-        AAAA {console.log(statistika)}
+        <Strijelci statistika={statistika}/>
     </div>
   )
 }
