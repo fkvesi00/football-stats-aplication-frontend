@@ -16,6 +16,7 @@ function NavBar({ klubovi }) {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    textAlign:'center'
   };
 
   return (
@@ -29,7 +30,7 @@ function NavBar({ klubovi }) {
 
       {/* Second Row */}
       <div style={rowStyle}>
-        <ul className="menu menu-horizontal px-1" style={{textAlign:'center'}}>
+        <ul className="menu menu-horizontal px-1" style={rowStyle}>
           <li><Link to='/klubovi' style={textStyle}>Klubovi</Link></li>
           <li><Link to='/igraci' style={textStyle}>Igrači</Link></li>
           <li><Link to='/statstika' style={textStyle}>Statistika</Link></li>
