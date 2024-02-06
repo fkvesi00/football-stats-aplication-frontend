@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Card from './Card'
 import './about.css'
 
 
@@ -8,7 +7,7 @@ function About() {
   const text= `Web aplikacija koja pruža informacije i statistiku o malonogometnoj ligi koja se igra na području Metkovića pod nazivom UMA-Metković`
 
   return (
-    <Card>
+    <div>
         <div className="about">
             <h1 style={{textAlign:'center', margin:'10px'}}>UMA Metković</h1>
             <img src="/images/0.jpg" alt="About" />
@@ -22,7 +21,7 @@ function About() {
             </p>
         </div>
         
-    </Card>
+    </div>
   )
 }
 

@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Card from './Card'
 import './about.css'
 
 function Kup() {
     return (
-        <Card>
+        <div>
             <div className="about">
                 <h1>U izradi</h1>
                 <p>
@@ -13,7 +12,7 @@ function Kup() {
                 </p>
             </div>
             
-        </Card>
+        </div>
       )
 }
 
