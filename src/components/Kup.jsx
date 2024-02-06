@@ -1,0 +1,21 @@
+import React from 'react'
+import './about.css'
+
+function Kup() {
+    return (
+        <Card>
+            <div className="about">
+                <h1>Kup je trenutno u izradi</h1>
+
+    
+    
+                <p>
+                    <Link to='/'>Back to home</Link>
+                </p>
+            </div>
+            
+        </Card>
+      )
+}
+
+export default Kup

@@ -234,6 +234,8 @@ const teamMatches = (teams, allMatches) => {
           <Route exact path={'/signIn'} element={<SignIn />} />
           <Route exact path={'/adminPage'} element={<AdminPage />} />
           <Route exact path={'/statstika'} element={<Statistika />} />
+          <Route exact path={'/about'} element={<About />} />
+          <Route exact path={'/kup'} element={<About />} />
         </Routes>
       )}
       <Footer />
