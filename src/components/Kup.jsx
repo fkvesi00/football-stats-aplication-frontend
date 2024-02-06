@@ -7,7 +7,7 @@ function Kup() {
     return (
         <Card>
             <div className="about">
-                <h1>Kup je trenutno u izradi</h1>
+                <h1>U izradi</h1>
                 <p>
                     <Link to='/'>Back to home</Link>
                 </p>
