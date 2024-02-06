@@ -10,12 +10,13 @@ function About() {
   return (
     <Card>
         <div className="about">
-            <h1 style={{textAlign:'center', margin:'5px'}}>UMA Metković</h1>
+            <h1 style={{textAlign:'center', margin:'10px'}}>UMA Metković</h1>
             <img src="/images/0.jpg" alt="About" />
-            <p style={{textAlign:'center', margin :'5px'}}>{text}</p>
+            <p style={{fontFamily:'"Times New Roman", Times, serif;', margin :'10px'}}>{text}</p>
             
             
-            <p>Vaersion: 1.0.0</p>
+            
+            <p>Version: 1.0.0</p>
             <p>
                 <Link to='/'>Back to home</Link>
             </p>
