@@ -169,10 +169,10 @@ function Klub() {
               <tr>
                 <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>#
                 </th>
-                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>
+                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Igrac
                 <FontAwesomeIcon icon={faUser} />
                 </th>
-                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>
+                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Golovi
                 <FontAwesomeIcon icon={faFutbol} />
                 </th>
                 <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Nastupi

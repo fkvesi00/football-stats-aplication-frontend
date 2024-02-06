@@ -34,8 +34,8 @@ function NavBar({ klubovi }) {
           <li><Link to='/klubovi' style={textStyle}>Klubovi</Link></li>
           <li><Link to='/igraci' style={textStyle}>Igrači</Link></li>
           <li><Link to='/statstika' style={textStyle}>Statistika</Link></li>
-          <li><Link to='/signIn' style={textStyle}>Sign In</Link></li>
           <li><Link to='/kup' style={textStyle}>Kup</Link></li>
+          <li><Link to='/signIn' style={textStyle}>Sign In</Link></li>
           <li><Link to='/about' style={textStyle}>About</Link></li>
         </ul>
       </div>
