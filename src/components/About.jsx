@@ -13,14 +13,14 @@ function About() {
         <img
             src="/images/0.jpg"
             alt="About"
-            style={{ maxWidth: '100%', maxHeight: '400px', height: 'auto', margin:'10px', padding:'10px' }}
+            style={{ maxWidth: '100%', maxHeight: '400px', height: 'auto', margin:'auto', padding:'10px' }}
           />
         </div>
         <p style={{ fontFamily: '"Times New Roman", Times, serif;', margin: '10px', padding:'5px' }}>{text}</p>
         
-        <p>Version: 1.0.0</p>
+        <p style={{ fontFamily: '"Times New Roman", Times, serif;', margin: '10px', padding:'5px' }}>Version: 1.0.0</p>
         
-        <p>
+        <p style={{ fontFamily: '"Times New Roman", Times, serif;', margin: '10px', padding:'5px' }}>
           <Link to="/">Back to home</Link>
         </p>
       </div>

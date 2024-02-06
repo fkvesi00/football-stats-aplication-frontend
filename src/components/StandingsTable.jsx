@@ -23,7 +23,7 @@ const StandingsTable = ({ tablica }) => {
   return (
     <div className="overflow-x-auto my-10 mr-1 ml-1 mt-5 mb-5 mx-auto max-w-[2/3]">
     <div className="header text-center mb-2 mt-2">
-     {'Tablica'} <FontAwesomeIcon icon={faTrophy} style={{ color: 'gold' }}/>
+     {'Ljestvica'} <FontAwesomeIcon icon={faTrophy} style={{ color: 'gold' }}/>
 </div>
     <table className="table-auto mx-auto" data-theme="night">
         <thead>
