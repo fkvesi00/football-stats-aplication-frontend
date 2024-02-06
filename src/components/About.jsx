@@ -11,6 +11,7 @@ function About() {
     <Card>
         <div className="about">
             <h1>UMA Metković</h1>
+            <img src="/images/0.jpg" alt="About" />
             <p>{text}</p>
             
             
