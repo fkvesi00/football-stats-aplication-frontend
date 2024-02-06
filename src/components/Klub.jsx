@@ -173,8 +173,7 @@ function Klub() {
                 <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>
                 <FontAwesomeIcon icon={faUser} />
                 </th>
-                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Golovi 
-                <FontAwesomeIcon icon={faFutbol} />
+                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Golovi <FontAwesomeIcon icon={faFutbol} />
                 </th>
                 <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Nastupi
                 </th>
