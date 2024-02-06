@@ -19,7 +19,6 @@ const mobileStyles = `
 
     .${stickyHeaderStyles} {
       position: relative !important;
-      background-color: #556B2F;
       color: white;
     }
   }
