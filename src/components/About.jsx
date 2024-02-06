@@ -9,8 +9,12 @@ function About() {
     <div>
       <div className="about">
         <h1 style={{ textAlign: 'center', margin: '10px', padding:'5px' }}>UMA Metković</h1>
-        <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: '100%', height: 'auto' }}>
-          <img src="/images/0.jpg" alt="About" style={{ maxWidth: '100%', height: 'auto',margin:'5px', padding:'5px'}} />
+        <div style={{ textAlign: 'center', margin: '0 auto', maxWidth: '100%', margin:'10px', padding:'10px' }}>
+        <img
+            src="/images/0.jpg"
+            alt="About"
+            style={{ maxWidth: '100%', maxHeight: '400px', height: 'auto', margin:'10px', padding:'10px' }}
+          />
         </div>
         <p style={{ fontFamily: '"Times New Roman", Times, serif;', margin: '10px', padding:'5px' }}>{text}</p>
         
