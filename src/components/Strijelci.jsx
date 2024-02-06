@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faFutbol } from '@fortawesome/free-solid-svg-icons';
 
 const tableContainerStyles = "overflow-x-auto";
-const tableStyles = "w-full table-compact mx-auto rounded-lg shadow-lg bg-green-700 text-white";
+const tableStyles = "w-full table-compact mx-auto rounded-lg shadow-lg text-white";
 const stickyHeaderStyles = "sticky left-0 z-10 bg-green-700";
 
 const mobileStyles = `
