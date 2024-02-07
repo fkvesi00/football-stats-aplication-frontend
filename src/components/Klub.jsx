@@ -161,7 +161,7 @@ function Klub() {
         </>
       )}
       {display === 'Statistika' && (
-   div className="flex justify-center flex-wrap m-5 p-5">
+   <div className="flex justify-center flex-wrap m-5 p-5">
    <div className="text-center" style={{ width: '100%' }}>
      <div className="header">Ljestvica strijelaca</div>
      <div className="table-container">
