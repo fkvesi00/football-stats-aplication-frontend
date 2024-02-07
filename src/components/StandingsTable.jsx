@@ -48,9 +48,14 @@ const StandingsTable = ({ tablica }) => {
             <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Pts</th>
           </tr>
         </thead>
-        <AnimatePresence>
-          <tbody className="divide-y divide-gray-300">{rows}</tbody>
-        </AnimatePresence>
+        <motion.tbody
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="divide-y divide-gray-300"
+        >
+          {rows}
+        </motion.tbody>
       </table>
     </div>
   );
