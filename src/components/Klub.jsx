@@ -71,11 +71,6 @@ function Klub() {
      
 },[id])
 
-useEffect(() => {
-  // Scroll to the top of the page when the component mounts
-  window.scrollTo(0, 0);
-}, []);
-
 
  const listaIgraca = igraci.map((igrac, i) => {
   const { playerid, playername } = igrac;
