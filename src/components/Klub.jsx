@@ -162,10 +162,10 @@ function Klub() {
       )}
       {display === 'Statistika' && (
      <div className='flex flex-col m-5 p-5'>
-     <div className="m-5 p-5">
+     <div className="m-5 p-5 justify-center">
        <h2 className="header">{'Ljestvica strijelaca'} <FontAwesomeIcon icon={faFutbol} style={{color:'black'}}/></h2>
      </div>
-     <div className="mx-auto sm:mx-2 lg:mx-auto xl:mx-auto sm:w-5/6 lg:w-4/6 xl:w-3/6">
+     <div className="mx-auto sm:mx-2 lg:mx-auto xl:mx-auto sm:w-5/6 lg:w-4/6 xl:w-3/6 justify-center">
        <table className="table table-compact rounded-lg shadow-lg text-center" style={{ backgroundColor: "#556B2F", color: "white" }} data-theme='night'>
          <thead>
            <tr>
