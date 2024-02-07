@@ -18,10 +18,10 @@ function NavBarClub({ handleClick }) {
       // Call handleClick function passed from parent component
       handleClick(section);
   
-      // Scroll to the <ul> element
-      const ulElement = document.querySelector('.menu-horizontal');
-      if (ulElement) {
-          ulElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Scroll to the parent <div> wrapping the <ul> element
+      const divElement = document.querySelector('.menu-container');
+      if (divElement) {
+          divElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
   };
 
