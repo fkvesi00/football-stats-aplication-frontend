@@ -24,22 +24,19 @@ function KlubInformacije({ id, tablica }) {
   return (
     <div className="mx-10">
        <div className="border p-4 rounded-lg max-w-md mx-auto my-8 flex flex-col items-center md:flex-row md:items-start md:justify-center md:text-left m-5" data-theme="fantasy">
-        <div className="mb-4 md:mb-0 md:mr-8"
+       <div className="mb-4 md:mb-0 md:mr-8 relative overflow-hidden rounded-xl"
   style={{
-    borderRadius: '10px',
-    padding: '20px',
-    backgroundColor: '#ffffff',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)',
     transition: 'box-shadow 0.3s ease',
-    overflow: 'hidden',
+    borderRadius: '20px',
   }}
 >
-  <div style={{ borderRadius: '10px', overflow: 'hidden' }}>
+  <div className="absolute inset-0 bg-gradient-to-b from-blue-500 to-blue-600"></div>
+  <div className="absolute inset-0 flex items-center justify-center">
     <img
       src={logo}
       alt="Club Logo"
-      className="w-40 h-auto md:w-40"
-      style={{ borderRadius: '10px 10px 0 0', objectFit: 'cover' }}
+      className="w-40 h-auto md:w-40 rounded-xl transform hover:scale-110 transition-transform duration-300"
     />
   </div>
 </div>
