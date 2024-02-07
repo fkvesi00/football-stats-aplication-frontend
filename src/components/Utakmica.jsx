@@ -2,13 +2,20 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-function Utakmica({ MatchID, Date,Time, HomeTeamID, HomeTeamScore, AwayTeamName, a_id, h_id }) {
+function Utakmica({ MatchID, Date, Time, HomeTeamID, HomeTeamScore, AwayTeamName, a_id, h_id }) {
   const h_logo = `/images/${h_id}.jpg`;
   const a_logo = `/images/${a_id}.jpg`;
 
   return (
-    <tr className="align-middle" data-theme="fantasy">
+    <motion.tr
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="align-middle"
+      data-theme="fantasy"
+    >
       <td className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{Date}</td>
       <td className="text-center">
         <div className="flex items-center  p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
@@ -29,7 +36,7 @@ function Utakmica({ MatchID, Date,Time, HomeTeamID, HomeTeamScore, AwayTeamName,
           <FontAwesomeIcon icon={faPlayCircle} />
         </Link>
       </td>
-    </tr>
+    </motion.tr>
   );
 }
 

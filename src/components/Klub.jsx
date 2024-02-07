@@ -7,6 +7,7 @@ import NavBarClub from './NavBarClub';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbol,faUser } from '@fortawesome/free-solid-svg-icons';
 import UtakmiceKluba from './UtakmiceKluba';
+import { motion } from 'framer-motion';
 
 
 function Klub() {
@@ -72,18 +73,19 @@ function Klub() {
 },[id])
 
 
- const listaIgraca = igraci.map((igrac, i) => {
+const listaIgraca = igraci.map((igrac, i) => {
   const { playerid, playername } = igrac;
-  //const birthDate = new Date(playerbirth);
-  //const today = new Date();
-  //const diffTime = Math.abs(today.getTime() - birthDate.getTime());
-  //const playerAge = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.25));
 
   return (
     <Link to={`/igrac/${playerid}`} key={i}>
-    <div key={i} className="bg-white p-2 m-2 border border-gray-300 rounded-md shadow-md">
-      <p className="text-lg font-semibold mb-1">{playername}</p>
-    </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="bg-white p-2 m-2 border border-gray-300 rounded-md shadow-md"
+      >
+        <p className="text-lg font-semibold mb-1">{playername}</p>
+      </motion.div>
     </Link>
   );
 });
