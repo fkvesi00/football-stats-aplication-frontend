@@ -162,7 +162,7 @@ function Klub() {
       )}
       {display === 'Statistika' && (
         <div className='flex justify-center flex-wrap m-5 p-5'>
-          <div className='header'>Ljestvica strijelaca</div>
+          <div className='header text-center'>Ljestvica strijelaca</div>
           <table className="table table-compact mx-auto rounded-lg shadow-lg" style={{ width: "60%", backgroundColor: "#556B2F", color: "white" }} data-theme='night'>
             <thead>
               <tr>
