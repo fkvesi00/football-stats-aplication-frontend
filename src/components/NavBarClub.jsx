@@ -19,7 +19,7 @@ function NavBarClub({ handleClick }) {
       handleClick(section);
   
       // Scroll to the parent <div> wrapping the <ul> element
-      const divElement = document.querySelector('.menu-container');
+      const divElement = document.querySelector('ul');
       if (divElement) {
           divElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
