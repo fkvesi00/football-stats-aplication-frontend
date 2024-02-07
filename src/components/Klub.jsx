@@ -161,29 +161,29 @@ function Klub() {
         </>
       )}
       {display === 'Statistika' && (
-        <div className='flex justify-center flex-wrap m-5 p-5'>
-        <div className='text-center'>
-          <div className='header'>Ljestvica strijelaca</div>
-          <table className="table table-compact mx-auto rounded-lg shadow-lg" style={{ width: "60%", backgroundColor: "#556B2F", color: "white" }} data-theme='night'>
-            <thead>
-              <tr>
-                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>#
-                </th>
-                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>
-                  <FontAwesomeIcon icon={faUser} />
-                </th>
-                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Golovi <FontAwesomeIcon icon={faFutbol} />
-                </th>
-                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Nastupi
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {playerStatistic}
-            </tbody>
-          </table>
-        </div>
-      </div>
+     <div className='flex justify-center flex-wrap m-5 p-5'>
+     <div className='text-center'>
+       <div className='header'>Ljestvica strijelaca</div>
+       <table className="table table-compact rounded-lg shadow-lg" style={{ maxWidth: "100%", width: "60%", backgroundColor: "#556B2F", color: "white" }} data-theme='night'>
+         <thead>
+           <tr>
+             <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>#
+             </th>
+             <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>
+               <FontAwesomeIcon icon={faUser} />
+             </th>
+             <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Golovi <FontAwesomeIcon icon={faFutbol} />
+             </th>
+             <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Nastupi
+             </th>
+           </tr>
+         </thead>
+         <tbody>
+           {playerStatistic}
+         </tbody>
+       </table>
+     </div>
+   </div>
       )}
       {display === 'Galerija' && (
         <>
