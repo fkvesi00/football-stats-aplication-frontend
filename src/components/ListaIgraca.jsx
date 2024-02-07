@@ -27,14 +27,24 @@ function ListaIgraca() {
       }
 
 
-  const listaIgraca = filterPlayer.map((igrac,i) => {
-    const {playerid,playername,playerbirth,playernationality,PlayerPhoto} = igrac;
-    const birthDate = new Date(playerbirth);
-    const today = new Date();
-    const diffTime = Math.abs(today.getTime() - birthDate.getTime());
-    const playerAge = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.25));
-    return <PlayerCard key={i} ime={playername} godine={playerAge} nacionalnost={playernationality} slika={PlayerPhoto} id={playerid}/>
- })
+      const listaIgraca = filterPlayer.map((igrac, i) => {
+        const { playerid, playername, playerbirth, playernationality, PlayerPhoto } = igrac;
+        const birthDate = new Date(playerbirth);
+        const today = new Date();
+        const diffTime = Math.abs(today.getTime() - birthDate.getTime());
+        const playerAge = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.25));
+      
+        return (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <PlayerCard ime={playername} godine={playerAge} nacionalnost={playernationality} slika={PlayerPhoto} id={playerid} />
+          </motion.div>
+        );
+      });
 
  
 
