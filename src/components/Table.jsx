@@ -8,7 +8,7 @@ function Table({ rank, name, played, w, d, l, gf, ga, points, id }) {
   return (
     <motion.tr
       initial={{ opacity: 0 }}
-      animate={{ opacity: 3 }}
+      animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       data-theme='fantasy'
       className='p-2 m-2'
