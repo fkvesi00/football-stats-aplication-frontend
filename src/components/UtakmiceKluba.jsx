@@ -1,7 +1,7 @@
 import React from 'react'
 import Utakmica from './Utakmica';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFutbol,faUser } from '@fortawesome/free-solid-svg-icons';
+import { faFutbol } from '@fortawesome/free-solid-svg-icons';
 
 function UtakmiceKluba({utakmice}) {
     const nizUtakmica = utakmice.map((utakmica,i)=>{
