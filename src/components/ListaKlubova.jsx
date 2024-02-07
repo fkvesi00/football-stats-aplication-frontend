@@ -1,5 +1,6 @@
 import React, { useEffect,useState } from 'react'
 import KlubCard from '../shared/KlubCard'
+import {motion} from 'framer-motion'
 import './header.css';
 import './animation.css'
 
@@ -35,9 +36,16 @@ function ListaKlubova() {
     fetchClubs();
   }, []);
 
-  const listaKlubova = clubs.map((klub, id) => {
-    return <KlubCard key={id} id={klub.teamid} ime={klub.teamname} logo={`/images/${klub.teamid}.jpg`} />;
-  });
+  const listaKlubova = clubs.map((klub, id) => (
+    <motion.div
+      key={id}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <KlubCard id={klub.teamid} ime={klub.teamname} logo={`/images/${klub.teamid}.jpg`} />
+    </motion.div>
+  ));
 
 
   const renderContent = (
