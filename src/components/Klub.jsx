@@ -161,32 +161,29 @@ function Klub() {
         </>
       )}
       {display === 'Statistika' && (
-     <div className='flex flex-col m-5 p-5'>
-     <div className="m-5 p-5 flex justify-center">
-       <h2 className="header">{'Ljestvica strijelaca'} <FontAwesomeIcon icon={faFutbol} style={{color:'black'}}/></h2>
-     </div>
-     <div className="mx-auto sm:mx-2 lg:mx-auto xl:mx-auto sm:w-5/6 lg:w-4/6 xl:w-3/6 flex justify-center">
-       <table className="table table-compact rounded-lg shadow-lg text-center" style={{ backgroundColor: "#556B2F", color: "white" }} data-theme='night'>
-         <thead>
-           <tr>
-             <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>#
-             </th>
-             <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>
-               <FontAwesomeIcon icon={faUser} />
-             </th>
-             <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Golovi <FontAwesomeIcon icon={faFutbol} />
-             </th>
-             <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Nastupi
-             </th>
-           </tr>
-         </thead>
-         <tbody>
-           {playerStatistic}
-         </tbody>
-       </table>
-     </div>
-   </div>
-   
+        <div className='flex flex-col flex-wrap m-5 p-5'>
+        <div className='text-center'>
+          <div className='header'>Ljestvica strijelaca</div>
+          <table className="table table-compact mx-auto rounded-lg shadow-lg" style={{ width: "60%", backgroundColor: "#556B2F", color: "white" }} data-theme='night'>
+            <thead>
+              <tr>
+                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>#
+                </th>
+                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>
+                  <FontAwesomeIcon icon={faUser} />
+                </th>
+                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Golovi <FontAwesomeIcon icon={faFutbol} />
+                </th>
+                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>Nastupi
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {playerStatistic}
+            </tbody>
+          </table>
+        </div>
+      </div>
       )}
       {display === 'Galerija' && (
         <>
