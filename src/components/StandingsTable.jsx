@@ -1,5 +1,5 @@
 import React from 'react';
-import {motion} from 'framer-motion'
+import {motion, AnimatePresence} from 'framer-motion'
 import Table from './Table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faTrophy   } from '@fortawesome/free-solid-svg-icons';
@@ -48,7 +48,9 @@ const StandingsTable = ({ tablica }) => {
             <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Pts</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-300">{rows}</tbody>
+        <AnimatePresence>
+          <tbody className="divide-y divide-gray-300">{rows}</tbody>
+        </AnimatePresence>
       </table>
     </div>
   );
