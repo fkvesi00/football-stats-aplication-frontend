@@ -26,7 +26,7 @@ function NavBarClub({ handleClick }) {
     };
 
     return (
-        <div className="bg-base-100 m-10">
+        <div className="bg-base-100 m-10" style={{backgroundColor: '#e0e0e0;'}}>
             <div style={rowStyle}>
                 <ul className="menu menu-horizontal px-1" style={{ textAlign: 'center', justifyContent: 'center' }} data-theme='dark'>
                     <li className="btn btn-ghost" style={textStyle} onClick={() => handleLiClick('Raspored')}>Raspored</li>
