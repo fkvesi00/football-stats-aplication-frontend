@@ -5,33 +5,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faTrophy   } from '@fortawesome/free-solid-svg-icons';
 
 const StandingsTable = ({ tablica }) => {
-  
-  const rows = (
-    <AnimatePresence>
-      {tablica.map((clubStats, i) => (
-        <motion.div 
-        key={i}
-        intial={{opacity:0}}
-        animate={{opacity:1}}
-        exit={{opacity:0}}
-        >
-        <Table
-          key={i}
-          rank={i + 1}
-          name={clubStats.name}
-          played={clubStats.won + clubStats.lost + clubStats.draw}
-          w={clubStats.won}
-          d={clubStats.draw}
-          l={clubStats.lost}
-          gf={clubStats.gf}
-          ga={clubStats.ga}
-          points={clubStats.points}
-          id={clubStats.id}
-        />
-        </motion.div>
-      ))}
-    </AnimatePresence>
-  );
+  const rows = tablica.map((clubStats, i) => (
+    <motion.tr
+      key={i}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <Table
+        rank={i + 1}
+        name={clubStats.name}
+        played={clubStats.won + clubStats.lost + clubStats.draw}
+        w={clubStats.won}
+        d={clubStats.draw}
+        l={clubStats.lost}
+        gf={clubStats.gf}
+        ga={clubStats.ga}
+        points={clubStats.points}
+        id={clubStats.id}
+      />
+    </motion.tr>
+  ));
+ 
+
   return (
     <div className="overflow-x-auto my-10 mr-1 ml-1 mt-5 mb-5 mx-auto max-w-[2/3]">
     <div className="header text-center mb-2 mt-2">
