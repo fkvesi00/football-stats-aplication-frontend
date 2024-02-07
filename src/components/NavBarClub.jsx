@@ -2,7 +2,7 @@ import React from 'react';
 
 function NavBarClub({ handleClick }) {
     const textStyle = {
-        color: 'white',
+        color: '#311432',
         fontFamily: 'Lucida Console, Monaco, monospace',
         margin: '7px',
         padding: '7px'
@@ -15,20 +15,20 @@ function NavBarClub({ handleClick }) {
     };
 
     const handleLiClick = (section) => {
-        // Call handleClick function passed from parent component
-        handleClick(section);
-
-        // Scroll the window to the top
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    };
+      // Call handleClick function passed from parent component
+      handleClick(section);
+  
+      // Scroll to the <ul> element
+      const ulElement = document.querySelector('.menu-horizontal');
+      if (ulElement) {
+          ulElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+  };
 
     return (
         <div className="m-10">
             <div style={rowStyle}>
-                <ul className="menu menu-horizontal px-1" style={{ textAlign: 'center', justifyContent: 'center' }} data-theme='dark'>
+                <ul className="menu menu-horizontal px-1" style={{ textAlign: 'center', justifyContent: 'center' }} data-theme='fantasy'>
                     <li className="btn btn-ghost" style={textStyle} onClick={() => handleLiClick('Raspored')}>Raspored</li>
                     <li className="btn btn-ghost" style={textStyle} onClick={() => handleLiClick('Utakmice')}>Utakmice</li>
                     <li className="btn btn-ghost" style={textStyle} onClick={() => handleLiClick('Igrači')}>Igrači</li>
