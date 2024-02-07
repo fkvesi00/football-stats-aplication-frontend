@@ -23,12 +23,25 @@ function KlubInformacije({ id, tablica }) {
 
   return (
     <div className="mx-10">
-          <div className="border rounded-lg max-w-md mx-auto my-8 flex flex-col items-center md:flex-row md:items-start md:justify-center md:text-left m-5 shadow-lg" style={{ background: 'linear-gradient(135deg, #FFFFFF 0%, #EAEAEA 100%)' }}>
-    {/* Left Column (Logo) */}
-    <div className="mb-4 md:mb-0 md:mr-8 p-4 bg-white rounded-lg flex justify-center items-center" style={{ minWidth: '160px', minHeight: '160px' }}>
-      {/* Include your club logo here */}
-      <img src={logo} alt="Club Logo" className="w-40 h-auto md:w-40" />
-    </div>
+            <div className="mb-4 md:mb-0 md:mr-8"
+  style={{
+    borderRadius: '10px',
+    padding: '20px',
+    backgroundColor: '#ffffff',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    transition: 'box-shadow 0.3s ease',
+    overflow: 'hidden',
+  }}
+>
+  <div style={{ borderRadius: '10px', overflow: 'hidden' }}>
+    <img
+      src={logo}
+      alt="Club Logo"
+      className="w-40 h-auto md:w-40"
+      style={{ borderRadius: '10px 10px 0 0', objectFit: 'cover' }}
+    />
+  </div>
+</div>
         {/* Right Column (Club Information) */}
         <div>
           <div className="mb-2">
