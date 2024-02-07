@@ -23,7 +23,8 @@ function KlubInformacije({ id, tablica }) {
 
   return (
     <div className="mx-10">
-            <div className="mb-4 md:mb-0 md:mr-8"
+       <div className="border p-4 rounded-lg max-w-md mx-auto my-8 flex flex-col items-center md:flex-row md:items-start md:justify-center md:text-left m-5" data-theme="fantasy">
+        <div className="mb-4 md:mb-0 md:mr-8"
   style={{
     borderRadius: '10px',
     padding: '20px',
