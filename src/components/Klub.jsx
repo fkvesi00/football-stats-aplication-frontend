@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Raspored from './Raspored';
-import Utakmice from './Utakmice';
 import IgraciTimaStatistika from './IgraciTimaStatistika';
 import KlubInformacije from './KlubInformacije';
 import NavBarClub from './NavBarClub';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbol,faUser } from '@fortawesome/free-solid-svg-icons';
+import UtakmiceKluba from './UtakmiceKluba';
 
 
 function Klub() {
@@ -153,7 +153,7 @@ function Klub() {
       <NavBarClub handleClick={handleClick}/>
   
       {display === 'Raspored' && <Raspored raspored={matchesToPlay} />}
-      {display === 'Utakmice' && <Utakmice utakmice={matchesplayed} />}
+      {display === 'Utakmice' && <UtakmiceKluba utakmice={matchesplayed} />}
       {display === 'Igrači' && (
         <>
           <div className='header'>Igraci</div>
