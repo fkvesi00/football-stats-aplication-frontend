@@ -25,8 +25,8 @@ function KlubInformacije({ id, tablica }) {
     <div className="mx-10">
       <div className="border p-4 rounded-lg max-w-md mx-auto my-8 flex flex-col items-center md:flex-row md:items-start md:justify-center md:text-left m-5" data-theme="fantasy">
         {/* Left Column (Logo) */}
-        <div className="mb-4 md:mb-0 md:mr-8">
-          {/* Include your club logo here */}
+        <div className="mb-4 md:mb-0 md:mr-8" style={{ transform: 'rotateY(30deg) rotateX(15deg) perspective(600px)' }}>
+           {/* Include your club logo here */}
           <img src={logo} alt="Club Logo" className="w-40 h-auto md:w-40" />
         </div>
 
