@@ -1,8 +1,8 @@
 import React from 'react';
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion';
 import Table from './Table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faTrophy   } from '@fortawesome/free-solid-svg-icons';
+import { faTrophy } from '@fortawesome/free-solid-svg-icons';
 
 const StandingsTable = ({ tablica }) => {
   const rows = tablica.map((clubStats, i) => (
@@ -26,14 +26,13 @@ const StandingsTable = ({ tablica }) => {
       />
     </motion.tr>
   ));
- 
 
   return (
     <div className="overflow-x-auto my-10 mr-1 ml-1 mt-5 mb-5 mx-auto max-w-[2/3]">
-    <div className="header text-center mb-2 mt-2">
-     {'Ljestvica'} <FontAwesomeIcon icon={faTrophy} style={{ color: 'gold' }}/>
-</div>
-    <table className="table-auto mx-auto" data-theme="night">
+      <div className="header text-center mb-2 mt-2">
+        {'Ljestvica'} <FontAwesomeIcon icon={faTrophy} style={{ color: 'gold' }}/>
+      </div>
+      <table className="table-auto mx-auto" data-theme="night">
         <thead>
           <tr>
             <th className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Rank</th>
@@ -48,14 +47,7 @@ const StandingsTable = ({ tablica }) => {
             <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Pts</th>
           </tr>
         </thead>
-        <motion.tbody
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="divide-y divide-gray-300"
-        >
-          {rows}
-        </motion.tbody>
+        <tbody className="divide-y divide-gray-300">{rows}</tbody>
       </table>
     </div>
   );
