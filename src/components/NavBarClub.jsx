@@ -12,6 +12,7 @@ function NavBarClub({ handleClick }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: '#e0e0e0;'
     };
 
     const handleLiClick = (section) => {
