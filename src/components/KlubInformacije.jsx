@@ -40,6 +40,7 @@ function KlubInformacije({ id, tablica }) {
     />
   </div>
 </div>
+
         {/* Right Column (Club Information) */}
         <div>
           <div className="mb-2">
