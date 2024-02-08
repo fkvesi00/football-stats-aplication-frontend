@@ -33,7 +33,6 @@ function NavBarClub({ handleClick }) {
                     <li className="btn btn-ghost" style={textStyle} onClick={() => handleLiClick('Utakmice')}>Utakmice</li>
                     <li className="btn btn-ghost" style={textStyle} onClick={() => handleLiClick('Igrači')}>Igrači</li>
                     <li className="btn btn-ghost" style={textStyle} onClick={() => handleLiClick('Statistika')}>Statistika</li>
-                    <li className="btn btn-ghost" style={textStyle} onClick={() => handleLiClick('Galerija')}>Galerija</li>
                 </ul>
             </div>
         </div>

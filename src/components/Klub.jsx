@@ -187,11 +187,6 @@ const listaIgraca = igraci.map((igrac, i) => {
         </div>
       </div>
       )}
-      {display === 'Galerija' && (
-        <>
-          {/* Your Galerija component goes here */}
-        </>
-      )}
     </div>
   </div>
   )

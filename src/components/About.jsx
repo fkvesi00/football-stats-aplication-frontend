@@ -8,8 +8,7 @@ function About() {
   return (
     <div>
       <div className="about">
-        <h1 style={{ textAlign: 'center', margin: '10px', padding:'5px' }}>UMA Metković</h1>
-        <div className="mb-4 md:mb-0 md:mr-8 flex justify-center items-center"
+        <div className="m5-4 md:mb-0 md:mr-8 flex justify-center items-center"
   style={{
     borderRadius: '10px',
     padding: '20px',
