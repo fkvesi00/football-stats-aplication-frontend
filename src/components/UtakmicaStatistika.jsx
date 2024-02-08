@@ -149,7 +149,7 @@ function UtakmicaStatistika() {
 
   return (
     <div>
-      <table className="table table-compact mx-auto mt-10 mb-10" style={{width:"60%"}} data-theme="light">
+      <table className="table table-compact mx-auto mt-10 mb-10" style={{width:"70%"}} data-theme="light">
       <tbody>
         {matches[0] ? <Rezultat matchID={matches[0].match_id} date={matches[0].date} time={matches[0].time}  
       homeTeamName= {matches[0].h_team}  score={matches[0].score} awayTeamName = {matches[0].a_team} a_id = {matches[0].a_id} h_id = {matches[0].h_id}
