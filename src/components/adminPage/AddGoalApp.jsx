@@ -186,8 +186,8 @@ function AddGoalApp() {
       </div >
       
       <div className="overflow-x-auto m-0 mb-10 mt-10" style={{ width: "100%" }}>
-  <div className="table-responsive" style={{ width: "100%", overflowX: "auto" }}>
-    <table className="table table-compact mx-auto" style={{ width: "100%" }} data-theme="dark">
+  <div className="table-responsive" style={{ width: "100%" }}>
+    <table className="table table-compact mx-auto" style={{ maxWidth: "100%", overflowX: "auto", tableLayout: "fixed" }} data-theme="dark">
         {/* head */}
         <thead>
           <tr>
