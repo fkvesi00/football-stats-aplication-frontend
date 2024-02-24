@@ -172,47 +172,50 @@ function AddGoalApp() {
     })
 
 
-  return (
-    <div style={{ width: "60%" }} className="flex flex-wrap justify-center mx-1 border border-solid border-black p-4 mb-10 mt-10 mx-auto">
-      <div className='header'>Edit game score and apperances</div>
-      <div className="overflow-x-auto m-0 mb-10 mt-10" style={{ width: "100%" }}>
-        <div className="border p-4 mb-4">
-        <button onClick={handlePrev} disabled={currentIndex === 0} className="bg-blue-500 text-white p-2 mr-2">
-          Previous
-        </button>
-        <button onClick={handleNext} disabled={currentIndex === nizRasporeda.length - 1} className="bg-blue-500 text-white p-2">
-          Next
-        </button>
-      </div >
-      
-      <div className="overflow-x-auto m-0 mb-10 mt-10" style={{ width: "100%" }}>
-  <div className="table-responsive" style={{ width: "100%" }}>
-    <table className="table table-compact mx-auto" style={{ maxWidth: "100%", overflowX: "auto", tableLayout: "fixed" }} data-theme="dark">
-        {/* head */}
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th style={{ textAlign: 'center' }}>Time</th>
-            <th style={{ textAlign: 'end' }}>Home Team</th>
-            <th></th>
-            <th>Away Team</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-         {nizRasporeda[currentIndex]}
-        </tbody>
-      </table>
+    return (
+      <div className="container mx-auto px-4">
+        <div className="border border-solid border-black p-4 mb-10 mt-10">
+          <div className='header text-center'>Edit game score and appearances</div>
+          <div className="overflow-x-auto mb-6 mt-6">
+            <div className="flex justify-center">
+              <button onClick={handlePrev} disabled={currentIndex === 0} className="bg-blue-500 text-white p-2 mr-2">
+                Previous
+              </button>
+              <button onClick={handleNext} disabled={currentIndex === nizRasporeda.length - 1} className="bg-blue-500 text-white p-2">
+                Next
+              </button>
+            </div>
+          </div>
+          <div className="overflow-x-auto">
+            <div className="table-responsive">
+              <table className="table mx-auto" style={{ maxWidth: "100%", tableLayout: "fixed" }} data-theme="dark">
+                {/* head */}
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th style={{ textAlign: 'center' }}>Time</th>
+                    <th style={{ textAlign: 'end' }}>Home Team</th>
+                    <th></th>
+                    <th>Away Team</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {nizRasporeda[currentIndex]}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <MyComponent homePlayers={playersOfHomeTeam} awayPlayers={playersOfAwayTeam} handleSelectChange={handleSelectChange} handleButtonClick={handleButtonClick} isVisible={isVisible} selectedValues={selectedValues}/>
+        </div>
+        <div className="text-center mt-4">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleSubmit}>
+            Submit
+          </button>
+        </div>
       </div>
-      <MyComponent homePlayers={playersOfHomeTeam} awayPlayers={playersOfAwayTeam} handleSelectChange={handleSelectChange} handleButtonClick={handleButtonClick} isVisible={isVisible} selectedValues={selectedValues}/>
-    </div>
-    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleSubmit}>
-  Submit
-</button>
-  </div>
-</div>
-  )
+    );
 }
 
 export default AddGoalApp
