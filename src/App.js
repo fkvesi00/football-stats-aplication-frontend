@@ -188,6 +188,9 @@ const teamMatches = (teams, allMatches) => {
       }
     }
   }
+    if(clubStats.id === 10){
+      clubStats.points -=3
+    }
     stats.push(clubStats)
   })
 
