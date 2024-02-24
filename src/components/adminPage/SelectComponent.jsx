@@ -8,7 +8,7 @@ const SelectComponent = ({ homePlayers, awayPlayers, selectedValues, handleSelec
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
       {selectedValues.map((selectedValue, index) => (
-        <div key={index} className="p-4 relative border border-gray-300">
+       <div key={index} className={`p-4 relative border border-gray-300 ${index === 13 ? 'border-black' : ''}`}>
           <select
             value={selectedValue.playerid || ''}
             onChange={(e) => handleChange(index, e, false)}
