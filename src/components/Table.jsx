@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Table({ rank, name, played, w, d, l, gf, ga, points, id }) {
   const logo = `/images/${id}.jpg`;
-  if(id === 10){
-    points -=6
-  }
+  
 
   return (
     <motion.tr
