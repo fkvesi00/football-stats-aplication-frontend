@@ -110,6 +110,8 @@ const compareByDate = (a, b) => {
 
 // Sort the array by date
 const mathesPlayedSorted = matchesplayed.sort(compareByDate);
+console.log(mathesPlayedSorted)
+
 
 const matchesToPlay = matches.filter(utakmica => utakmica.score === null)
 
