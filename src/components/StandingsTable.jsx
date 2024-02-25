@@ -17,6 +17,7 @@ const StandingsTable = ({ tablica }) => {
       ga={clubStats.ga}
       points={clubStats.points}
       id={clubStats.id}
+      className="pb-3"
     />
   ));
 
