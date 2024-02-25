@@ -18,7 +18,7 @@ function Table({ rank, name, played, w, d, l, gf, ga, points, id }) {
           {rank}
         </div>
       </td>
-      <td className='px-1 py-3 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>
+      <td className='px-1 py-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>
          <Link to={`klub/${id}`} className="flex items-center">
             <img src={logo} alt={`Logo for ${name}`} width="30" height="30" className="mr-2 rounded-full" />
             <span>{name} {id === 10 && <strong>(-6)</strong>}</span>
