@@ -8,7 +8,16 @@ function Raspored({ raspored }) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   
-  const nizRasporeda = raspored.sort((a,b) => a.match_id - b.match_id).map((raspored, i) => {
+  const nizRasporeda = raspored.sort((a, b) => {
+    // First, compare dates
+    const dateComparison = a.date.localeCompare(b.date);
+    if (dateComparison !== 0) {
+      return dateComparison; // If dates are different, return the comparison result
+    } else {
+      // If dates are equal, compare times
+      return a.time.localeCompare(b.time);
+    }
+  }).map((raspored, i) => {
     const birthDate = new Date(raspored.date);
     const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
     const formattedDate = birthDate.toLocaleDateString('hr-HR', options);
