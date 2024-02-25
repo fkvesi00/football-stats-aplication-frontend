@@ -46,8 +46,8 @@ const StandingsTable = ({ tablica }) => {
       <div className="text-center mt-5" style={{ fontFamily: 'Arial, sans-serif' }}>
         <div className="font-bold">Napomena:</div>
         <div className="ml-4 mt-2">
-          <div>MNK NEUM -6 bodova;</div>
-          <div>nedolazak na utakmicu dvaput zaredom, odustajanje od daljnjeg natjecanja.</div>
+          <div className='text-left'>MNK NEUM -6 bodova;</div>
+          <div className='text-left'>nedolazak na utakmicu dvaput zaredom, odustajanje od daljnjeg natjecanja.</div>
         </div>
       </div>
   
