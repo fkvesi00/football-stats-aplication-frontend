@@ -1,9 +1,8 @@
 import React,{useState} from 'react'
 import Utakmica from './Utakmica'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFutbol  } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faFutbol, faChevronRight, faChevronLeft  } from '@fortawesome/free-solid-svg-icons';
+
 
 function Utakmice({utakmice}) {
   const [currentPage, setCurrentPage] = useState(1);
