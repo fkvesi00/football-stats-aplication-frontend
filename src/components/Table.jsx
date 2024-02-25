@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 function Table({ rank, name, played, w, d, l, gf, ga, points, id }) {
   const logo = `/images/${id}.jpg`;
   
-
   return (
     <motion.tr
       initial={{ opacity: 0 }}
@@ -20,10 +19,10 @@ function Table({ rank, name, played, w, d, l, gf, ga, points, id }) {
         </div>
       </td>
       <td className='p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>
-        <Link to={`klub/${id}`} className="flex items-center">
-          <img src={logo} alt={`Logo for ${name}`} width="30" height="30" className="mr-2 rounded-full" />
-          <span >{name}</span>
-        </Link>
+         <Link to={`klub/${id}`} className="flex items-center">
+            <img src={logo} alt={`Logo for ${name}`} width="30" height="30" className="mr-2 rounded-full" />
+            <span>{name} {id === 10 && <strong>(-6)</strong>}</span>
+          </Link>
       </td>
       <td className='text-center p-1 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{played}</td>
       <td className='text-center p-1 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{w}</td>
