@@ -43,7 +43,7 @@ const StandingsTable = ({ tablica }) => {
         <tbody className="divide-y divide-gray-300">{rows}</tbody>
       </table>
   
-      <div className="text-left mt-5">
+      <div className="text-center mt-5" style={{ fontFamily: 'Arial, sans-serif' }}>
         <div className="font-bold">Napomena:</div>
         <div className="ml-4 mt-2">
           <div>MNK NEUM -6 bodova;</div>
@@ -51,7 +51,7 @@ const StandingsTable = ({ tablica }) => {
         </div>
       </div>
   
-      <div className="text-left mt-5">
+      <div className="text-center mt-5" style={{ fontFamily: 'Arial, sans-serif' }}>
         <div className="font-bold">Napomena:</div>
         <div className="ml-4 mt-2">
           <div>glavno mjerilo na kraju prvenstva za ekipe sa istim brojem bodova,</div>
