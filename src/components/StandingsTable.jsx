@@ -22,10 +22,10 @@ const StandingsTable = ({ tablica }) => {
 
   return (
     <div className="overflow-x-auto my-10 mr-1 ml-1 mt-5 mb-5 mx-auto max-w-[2/3]">
-    <div className="header text-center mb-2 mt-2">
-     {'Ljestvica'} <FontAwesomeIcon icon={faTrophy} style={{ color: 'gold' }}/>
-</div>
-    <table className="table-auto mx-auto" data-theme="night">
+      <div className="header text-center mb-2 mt-2">
+        {'Ljestvica'} <FontAwesomeIcon icon={faTrophy} style={{ color: 'gold' }}/>
+      </div>
+      <table className="table-auto mx-auto" data-theme="night">
         <thead>
           <tr>
             <th className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Rank</th>
@@ -42,6 +42,22 @@ const StandingsTable = ({ tablica }) => {
         </thead>
         <tbody className="divide-y divide-gray-300">{rows}</tbody>
       </table>
+  
+      <div className="text-left mt-5">
+        <div className="font-bold">Napomena:</div>
+        <div className="ml-4 mt-2">
+          <div>MNK NEUM -6 bodova;</div>
+          <div>nedolazak na utakmicu dvaput zaredom, odustajanje od daljnjeg natjecanja.</div>
+        </div>
+      </div>
+  
+      <div className="text-left mt-5">
+        <div className="font-bold">Napomena:</div>
+        <div className="ml-4 mt-2">
+          <div>glavno mjerilo na kraju prvenstva za ekipe sa istim brojem bodova,</div>
+          <div>prvo je međusobni ogled a potom ukupna gol razlika.</div>
+        </div>
+      </div>
     </div>
   );
 };

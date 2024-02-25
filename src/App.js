@@ -23,7 +23,7 @@ function App() {
    const [raspored, setRaspored] = useState([]);
    const stats = []
    const [loading, setLoading] = useState(true);
-
+  
   useEffect(() => {
     // Simulating an asynchronous operation with a 1-second delay
     const delay = setTimeout(() => {
@@ -190,7 +190,7 @@ const teamMatches = (teams, allMatches) => {
   }
     if(clubStats.id === 10){
       clubStats.points -=6
-      clubStats.name = 'MNK Neum (-6)'
+      clubStats.name = 'MNK Neum <strong>(-6)</strong>'
     }
     stats.push(clubStats)
   })
