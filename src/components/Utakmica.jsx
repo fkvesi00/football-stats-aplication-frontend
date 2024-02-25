@@ -31,7 +31,7 @@ function Utakmica({ MatchID, Date, Time, HomeTeamID, HomeTeamScore, AwayTeamName
         <div className='p-1'>{HomeTeamScore[0]}</div>
         <div className='p-1'>{HomeTeamScore[2]}</div>
       </td>
-      <td className="text-center p-2">
+      <td className="text-center p-1">
         <Link to={`/utakmica/${MatchID}`} >
           <button className='btn btn-ghost p-2'>
             <FontAwesomeIcon icon={faArrowRight} />
