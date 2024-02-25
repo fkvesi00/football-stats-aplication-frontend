@@ -14,18 +14,18 @@ function Table({ rank, name, played, w, d, l, gf, ga, points, id }) {
       className='p-2 m-2'
     >
       <td className='bg-neutral text-white w-3 h-3 rounded-full text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>
-        <div className="flex items-center justify-center p-2">
+        <div className="flex items-center justify-center p-2 pb-4">
           {rank}
         </div>
       </td>
-      <td className='p-1 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>
+      <td className='p-1 pb-4 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>
          <Link to={`klub/${id}`} className="flex items-center">
             <img src={logo} alt={`Logo for ${name}`} width="30" height="30" className="mr-2 rounded-full" />
             <span>{name} {id === 10 && <strong>(-6)</strong>}</span>
           </Link>
       </td>
-      <td className='text-center p-1 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{played}</td>
-      <td className='text-center p-1 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{w}</td>
+      <td className='text-center p-1 pb-4 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{played}</td>
+      <td className='text-center p-1 pb-4 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{w}</td>
       <td className='text-center p-1 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{d}</td>
       <td className='text-center p-1 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'>{l}</td>
       <td className='text-center p-1 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl '>({gf}:{ga})</td>
