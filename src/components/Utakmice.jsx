@@ -37,9 +37,6 @@ function Utakmice({utakmice}) {
       <div className="flex gap-4 justify-center p-3">
         <h2 className="header">{'Utakmice'} <FontAwesomeIcon icon={faFutbol} style={{color:'black'}}/></h2>
       </div>
-      <div className="flex gap-4 justify-center p-2">
-        <h3 className="text-lg font-semibold text-gray-600">Kolo {currentPage}</h3>
-      </div>
       <div className="table-responsive">
       <table className="table table-compact mx-auto m-2 p-2 sm:w-6/7 md:w-6/7 lg:w-2/3 " data-theme="dark">
           <thead>
