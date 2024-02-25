@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlayCircle } from '@fortawesome/free-regular-svg-icons';
+import { faArrowRight } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -31,9 +31,9 @@ function Utakmica({ MatchID, Date, Time, HomeTeamID, HomeTeamScore, AwayTeamName
         <div className='p-1'>{HomeTeamScore[0]}</div>
         <div className='p-1'>{HomeTeamScore[2]}</div>
       </td>
-      <td className="text-center">
+      <td className="text-center p-2">
         <Link to={`/utakmica/${MatchID}`}>
-          <FontAwesomeIcon icon={faPlayCircle} />
+          <FontAwesomeIcon icon={faArrowRight} />
         </Link>
       </td>
     </motion.tr>
