@@ -190,7 +190,6 @@ const teamMatches = (teams, allMatches) => {
   }
     if(clubStats.id === 10){
       clubStats.points -=6
-      clubStats.name = 'MNK Neum <strong>(-6)</strong>'
     }
     stats.push(clubStats)
   })
