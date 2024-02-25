@@ -2,6 +2,8 @@ import React,{useState} from 'react'
 import Utakmica from './Utakmica'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbol  } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 function Utakmice({utakmice}) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -56,7 +58,7 @@ function Utakmice({utakmice}) {
           onClick={handlePrevPage}
           disabled={currentPage === 1}
         >
-          Prev
+          <FontAwesomeIcon icon={faChevronLeft} />
         </button>
         <span className="text-gray-700">{`Page ${currentPage} of ${totalPages}`}</span>
         <button
@@ -64,7 +66,7 @@ function Utakmice({utakmice}) {
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
         >
-          Next
+          <FontAwesomeIcon icon={faChevronRight} />
         </button>
       </div>
     </div>
