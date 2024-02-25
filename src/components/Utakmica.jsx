@@ -32,8 +32,10 @@ function Utakmica({ MatchID, Date, Time, HomeTeamID, HomeTeamScore, AwayTeamName
         <div className='p-1'>{HomeTeamScore[2]}</div>
       </td>
       <td className="text-center p-2">
-        <Link to={`/utakmica/${MatchID}`} className="ghosted-button">
-          <FontAwesomeIcon icon={faArrowRight} />
+        <Link to={`/utakmica/${MatchID}`} >
+          <button className='btn btn-ghost p-2'>
+            <FontAwesomeIcon icon={faArrowRight} />
+          </button>
         </Link>
       </td>
     </motion.tr>
