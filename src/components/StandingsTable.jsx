@@ -34,8 +34,7 @@ const StandingsTable = ({ tablica }) => {
             <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">W</th>
             <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">D</th>
             <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">L</th>
-            <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">GF</th>
-            <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">GA</th>
+            <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">+-</th>
             <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl hidden sm:table-cell">±</th>
             <th className="p-2 text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">Pts</th>
           </tr>
