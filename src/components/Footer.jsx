@@ -12,9 +12,10 @@ function Footer() {
       </div>
       <div className="flex justify-center items-center flex-col"> {/* Centered container with flex-direction: column */}
     <p className="mb-2">Sponsored by:</p>  
+   
     <a href="https://www.facebook.com/Boogiemtk" className="link link-hover text-blue-600 underline flex items-center">
-    <FontAwesomeIcon icon={faFacebook} className="text-blue-600 mr-1" />
-  Boogie Metković
+    
+     Boogie Metković
 </a> {/* mb-2 adds margin-bottom for spacing */}
     <div className="p-2"> {/* Adjust padding for frame */}
         <img src="/images/boogie1.png" alt="Sponsor Logo" className="h-auto max-w-full max-h-15" /> {/* Adjust max height */}
