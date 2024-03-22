@@ -9,10 +9,12 @@ function Footer() {
         <button className="link link-hover">Jobs</button>
         <button className="link link-hover">Press kit</button>
       </div>
+      <div style="display: flex; justify-content: center;">
+        <p>Sponsored by:</p>
+      </div>
       <div className="flex items-center justify-center"> {/* Centered container */}
-      <p>Sponsored by:</p>
         <div className="p-2"> {/* Adjust padding for frame */}
-          <img src="/images/boogie.png" alt="Sponsor Logo" className="h-auto max-w-full max-h-10 mr-4" /> {/* Adjust max height */}
+          <img src="/images/boogie1.png" alt="Sponsor Logo" className="h-auto max-w-full max-h-15 mr-4" /> {/* Adjust max height */}
         </div>
       </div>
       <div>
