@@ -8,7 +8,8 @@ function Footer() {
         <button className="link link-hover">Contact: fkvesi00@fesb.hr</button>
       </div>
       <div className="flex justify-center items-center flex-col"> {/* Centered container with flex-direction: column */}
-    <p className="mb-2">Sponsored by: <a href="https://www.facebook.com/Boogiemtk"></a></p> {/* mb-2 adds margin-bottom for spacing */}
+    <p className="mb-2">Sponsored by:</p>  
+    <a href="https://www.facebook.com/Boogiemtk"></a> {/* mb-2 adds margin-bottom for spacing */}
     <div className="p-2"> {/* Adjust padding for frame */}
         <img src="/images/boogie1.png" alt="Sponsor Logo" className="h-auto max-w-full max-h-15" /> {/* Adjust max height */}
     </div>
