@@ -14,7 +14,7 @@ function Footer() {
     <p className="mb-2">Sponsored by:</p>  
    
     <a href="https://www.facebook.com/Boogiemtk" className="link link-hover text-blue-600 underline flex items-center">
-    
+    <FontAwesomeIcon icon={faFacebook} className="text-blue-600 mr-1" />
      Boogie Metković
 </a> {/* mb-2 adds margin-bottom for spacing */}
     <div className="p-2"> {/* Adjust padding for frame */}
