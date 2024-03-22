@@ -9,7 +9,7 @@ function Footer() {
         <button className="link link-hover">Jobs</button>
         <button className="link link-hover">Press kit</button>
       </div>
-      <div style="display: flex; justify-content: center;">
+      <div className="flex justify-center">
         <p>Sponsored by:</p>
       </div>
       <div className="flex items-center justify-center"> {/* Centered container */}
