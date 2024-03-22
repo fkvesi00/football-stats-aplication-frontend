@@ -4,19 +4,15 @@ function Footer() {
   return (
     <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
       <div className="grid grid-flow-col gap-4">
-        <button className="link link-hover">About us</button>
-        <button className="link link-hover">Contact</button>
-        <button className="link link-hover">Jobs</button>
-        <button className="link link-hover">Press kit</button>
+        <a href="https://www.facebook.com/umametkovic" className="link link-hover">Facebook</a>
+        <button className="link link-hover">Contact: fkvesi00@fesb.hr</button>
       </div>
-      <div className="flex justify-center">
-        <p>Sponsored by:</p>
-      </div>
-      <div className="flex items-center justify-center"> {/* Centered container */}
-        <div className="p-2"> {/* Adjust padding for frame */}
-          <img src="/images/boogie1.png" alt="Sponsor Logo" className="h-auto max-w-full max-h-15 mr-4" /> {/* Adjust max height */}
-        </div>
-      </div>
+      <div className="flex justify-center items-center flex-col"> {/* Centered container with flex-direction: column */}
+    <p className="mb-2">Sponsored by: <a href="https://www.facebook.com/Boogiemtk"></a></p> {/* mb-2 adds margin-bottom for spacing */}
+    <div className="p-2"> {/* Adjust padding for frame */}
+        <img src="/images/boogie1.png" alt="Sponsor Logo" className="h-auto max-w-full max-h-15" /> {/* Adjust max height */}
+    </div>
+</div>
       <div>
         <div className="grid grid-flow-col gap-4">
           <button>
