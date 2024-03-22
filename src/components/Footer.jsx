@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
   return (
@@ -11,9 +13,7 @@ function Footer() {
       <div className="flex justify-center items-center flex-col"> {/* Centered container with flex-direction: column */}
     <p className="mb-2">Sponsored by:</p>  
     <a href="https://www.facebook.com/Boogiemtk" className="link link-hover text-blue-600 underline flex items-center">
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
-    <path fill-rule="evenodd" d="M0 12c0-6.627 5.373-12 12-12s12 5.373 12 12c0 6.75-5.438 12.212-12.188 12h-1.188v-8.203h2.688l.375-3.125h-3.063V9.156c0-.875.375-1.75 2.188-1.75h2.438v-3h-3.688C7.875 5.406 7 7.313 7 9.25v1.625H4v3.125h3v8.203C5.437 24.212 0 18.75 0 12z"/>
-  </svg>
+    <FontAwesomeIcon icon={faFacebook} className="text-blue-600 mr-1" />
   Boogie Metković
 </a> {/* mb-2 adds margin-bottom for spacing */}
     <div className="p-2"> {/* Adjust padding for frame */}
