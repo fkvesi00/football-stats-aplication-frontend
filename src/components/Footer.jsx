@@ -9,6 +9,10 @@ function Footer() {
         <button className="link link-hover">Jobs</button>
         <button className="link link-hover">Press kit</button>
       </div>
+      <div className="flex items-center justify-center"> {/* Centered container */}
+        <img src="/images/boogie.png" alt="Sponsor Logo" className="h-auto max-w-full max-h-10 mr-4" /> {/* Adjust max height */}
+        <p>Sponsored by Benit</p>
+      </div>
       <div>
         <div className="grid grid-flow-col gap-4">
           <button>
