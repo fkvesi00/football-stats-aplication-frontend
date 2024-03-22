@@ -11,9 +11,9 @@ function Footer() {
       <div className="flex justify-center items-center flex-col"> {/* Centered container with flex-direction: column */}
     <p className="mb-2">Sponsored by:</p>  
     <a href="https://www.facebook.com/Boogiemtk" className="link link-hover text-blue-600 underline flex items-center">
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
-    <path d="M10 1a9 9 0 0 0-9 9c0 4.968 4.032 9 9 9 4.968 0 9-4.032 9-9a9 9 0 0 0-9-9zm1.594 13.388l-.917-4.744H7.55V8.604h1.127V7.202c0-1.186.626-2.324 2.381-2.324h1.517v1.85h-1.273c-.272 0-.629.1-.629.678v1.493h2.126l-.164 2.042h-1.962v4.744h-2.36z"/>
-</svg>
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+    <path fill-rule="evenodd" d="M0 12c0-6.627 5.373-12 12-12s12 5.373 12 12c0 6.75-5.438 12.212-12.188 12h-1.188v-8.203h2.688l.375-3.125h-3.063V9.156c0-.875.375-1.75 2.188-1.75h2.438v-3h-3.688C7.875 5.406 7 7.313 7 9.25v1.625H4v3.125h3v8.203C5.437 24.212 0 18.75 0 12z"/>
+  </svg>
   Boogie Metković
 </a> {/* mb-2 adds margin-bottom for spacing */}
     <div className="p-2"> {/* Adjust padding for frame */}
