@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Raspored from './Raspored';
 import IgraciTimaStatistika from './IgraciTimaStatistika';
 import KlubInformacije from './KlubInformacije';
@@ -7,8 +7,7 @@ import NavBarClub from './NavBarClub';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbol,faUser } from '@fortawesome/free-solid-svg-icons';
 import UtakmiceKluba from './UtakmiceKluba';
-
-import IgraciKluba from './IgraciKluba';
+import { motion } from 'framer-motion';
 
 
 function Klub() {
@@ -81,8 +80,20 @@ useEffect(() => {
 const listaIgraca = igraci.map((igrac, i) => {
   const { playerid, playername } = igrac;
 
-  return <IgraciKluba key={i} playerid={playerid} playerName={playername} />
-})
+  return (
+    <Link to={`/igrac/${playerid}`} key={i}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="bg-white p-2 m-2 border border-gray-300 rounded-md shadow-md"
+      >
+        <p className="text-lg font-semibold mb-1">{playername}</p>
+      </motion.div>
+    </Link>
+  );
+});
+
 
   //ovdje cemo napravit finalnu verziju kako bi match trebao izgledat(H h_s : a_s A time date)
   const matchFormat = utakmica => {
@@ -150,28 +161,10 @@ const listaIgraca = igraci.map((igrac, i) => {
       {display === 'Raspored' && <Raspored raspored={matchesToPlay} />}
       {display === 'Utakmice' && <UtakmiceKluba utakmice={matchesplayed} />}
       {display === 'Igrači' && (
-        <div className='flex flex-col m-2 p-2'>
-        <div className='text-center'>
+        <>
           <div className='header'>Igraci</div>
-          <table className="table table-compact mx-auto rounded-lg shadow-lg" style={{ width: "60%", backgroundColor: "#556B2F", color: "white" }} data-theme='night'>
-            <thead>
-              <tr>
-                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>#
-                </th>
-                <th style={{ borderRight: "1px solid black", textAlign: 'left' }}>
-                  <FontAwesomeIcon icon={faUser} />
-                </th>
-                <th>
-                  
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {listaIgraca}
-            </tbody>
-          </table>
-        </div>
-      </div>
+          <div className='flex justify-center flex-wrap'>{listaIgraca}</div>
+        </>
       )}
       {display === 'Statistika' && (
         <div className='flex flex-col m-2 p-2'>
