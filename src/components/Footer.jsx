@@ -6,8 +6,8 @@ function Footer() {
   return (
     <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
       <div className="grid grid-flow-col gap-4">
-      <FontAwesomeIcon icon={faFacebook} className="text-blue-600 mr-1" />
-      <a href="https://www.facebook.com/umametkovic" className="link link-hover text-blue-600 underline">UMA Metkovic
+      <a href="https://www.facebook.com/umametkovic" className="link link-hover text-blue-600 underline">
+      <FontAwesomeIcon icon={faFacebook} className="text-blue-600 mr-1" />UMA Metkovic
       </a>
         <button className="link link-hover">Contact: fkvesi00@fesb.hr</button>
       </div>
