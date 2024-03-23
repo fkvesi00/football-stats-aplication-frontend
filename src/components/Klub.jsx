@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Raspored from './Raspored';
 import IgraciTimaStatistika from './IgraciTimaStatistika';
 import KlubInformacije from './KlubInformacije';
@@ -7,7 +7,8 @@ import NavBarClub from './NavBarClub';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbol,faUser } from '@fortawesome/free-solid-svg-icons';
 import UtakmiceKluba from './UtakmiceKluba';
-import { motion } from 'framer-motion';
+
+import IgraciKluba from './IgraciKluba';
 
 
 function Klub() {
@@ -80,20 +81,8 @@ useEffect(() => {
 const listaIgraca = igraci.map((igrac, i) => {
   const { playerid, playername } = igrac;
 
-  return (
-    <Link to={`/igrac/${playerid}`} key={i}>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="bg-white p-2 m-2 border border-gray-300 rounded-md shadow-md"
-      >
-        <p className="text-lg font-semibold mb-1">{playername}</p>
-      </motion.div>
-    </Link>
-  );
-});
-
+  return <IgraciKluba key={i} playerid={playerid} playerName={playername} />
+})
 
   //ovdje cemo napravit finalnu verziju kako bi match trebao izgledat(H h_s : a_s A time date)
   const matchFormat = utakmica => {
