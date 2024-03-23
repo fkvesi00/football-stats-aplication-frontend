@@ -150,10 +150,25 @@ const listaIgraca = igraci.map((igrac, i) => {
       {display === 'Raspored' && <Raspored raspored={matchesToPlay} />}
       {display === 'Utakmice' && <UtakmiceKluba utakmice={matchesplayed} />}
       {display === 'Igrači' && (
-        <>
+        <div className='flex flex-col m-2 p-2'>
+        <div className='text-center'>
           <div className='header'>Igraci</div>
-          <div className='flex justify-center flex-wrap'>{listaIgraca}</div>
-        </>
+          <table className="table table-compact mx-auto rounded-lg shadow-lg" style={{ width: "60%", backgroundColor: "#556B2F", color: "white" }} data-theme='night'>
+            <thead>
+              <tr>
+                <th style={{ borderRight: "1px solid black", textAlign: 'center' }}>#
+                </th>
+                <th style={{ borderRight: "1px solid black", textAlign: 'left' }}>
+                  <FontAwesomeIcon icon={faUser} />
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {listaIgraca}
+            </tbody>
+          </table>
+        </div>
+      </div>
       )}
       {display === 'Statistika' && (
         <div className='flex flex-col m-2 p-2'>
