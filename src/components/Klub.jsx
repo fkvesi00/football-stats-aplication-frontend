@@ -161,6 +161,9 @@ const listaIgraca = igraci.map((igrac, i) => {
                 <th style={{ borderRight: "1px solid black", textAlign: 'left' }}>
                   <FontAwesomeIcon icon={faUser} />
                 </th>
+                <th>
+                  
+                </th>
               </tr>
             </thead>
             <tbody>
