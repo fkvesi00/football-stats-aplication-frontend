@@ -42,27 +42,24 @@ const StandingsTable = ({ tablica }) => {
         <tbody className="divide-y divide-gray-300">{rows}</tbody>
       </table>
   
-      <div className="flex-container" style={{ display: 'flex', justifyContent: 'center' }}>
-  <div className="text-center mt-5" style={{ fontFamily: 'Arial, sans-serif', flex: '1', marginRight: '5px' }}>
-    <div className="font-bold">Napomena:</div>
-    <div className="ml-4 mt-2">
-      <div>MNK NEUM -6 bodova;</div>
-      <div>Nedolazak na utakmicu dvaput zaredom,</div>
-      <div>odustajanje od daljnjeg natjecanja.</div>
-    </div>
-  </div>
-
-  <div className="text-center mt-5" style={{ fontFamily: 'Arial, sans-serif', flex: '1', marginLeft: '5px' }}>
-    <div className="font-bold">Napomena:</div>
-    <div className="ml-4 mt-2">
-      <div>Glavno mjerilo na kraju prvenstva</div>
-      <div>za ekipe sa istim brojem bodova,</div> 
-      <div>prvo je međusobni ogled a</div>
-      <div>potom ukupna gol razlika.</div>
-    </div>
-  </div>
-</div>
-
+      <div className="text-center mt-5" style={{ fontFamily: 'Arial, sans-serif' }}>
+        <div className="font-bold">Napomena:</div>
+        <div className="ml-4 mt-2">
+          <div>MNK NEUM -6 bodova;</div>
+          <div>Nedolazak na utakmicu dvaput zaredom,</div>
+          <div>odustajanje od daljnjeg natjecanja.</div>
+        </div>
+      </div>
+  
+      <div className="text-center mt-5" style={{ fontFamily: 'Arial, sans-serif' }}>
+        <div className="font-bold">Napomena:</div>
+        <div className="ml-4 mt-2">
+          <div>Glavno mjerilo na kraju prvenstva</div>
+          <div>za ekipe sa istim brojem bodova,</div> 
+          <div>prvo je međusobni ogled a</div>
+          <div>potom ukupna gol razlika.</div>
+        </div>
+      </div>
     </div>
   );
 };
