@@ -42,7 +42,7 @@ const StandingsTable = ({ tablica }) => {
         <tbody className="divide-y divide-gray-300">{rows}</tbody>
       </table>
   
-      <div className="flex-container" style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <div className="flex-container" style={{ display: 'flex', justifyContent: 'center' }}>
   <div className="text-center mt-5" style={{ fontFamily: 'Arial, sans-serif', flex: '1', marginRight: '5px' }}>
     <div className="font-bold">Napomena:</div>
     <div className="ml-4 mt-2">
