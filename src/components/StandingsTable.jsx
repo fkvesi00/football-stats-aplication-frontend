@@ -43,7 +43,7 @@ const StandingsTable = ({ tablica }) => {
       </table>
   
       <div className="flex-container" style={{ display: 'flex', justifyContent: 'space-between' }}>
-  <div className="text-center mt-5" style={{ fontFamily: 'Arial, sans-serif', flex: '1' }}>
+  <div className="text-center mt-5" style={{ fontFamily: 'Arial, sans-serif', flex: '1', marginRight: '5px' }}>
     <div className="font-bold">Napomena:</div>
     <div className="ml-4 mt-2">
       <div>MNK NEUM -6 bodova;</div>
@@ -52,7 +52,7 @@ const StandingsTable = ({ tablica }) => {
     </div>
   </div>
 
-  <div className="text-center mt-5" style={{ fontFamily: 'Arial, sans-serif', flex: '1' }}>
+  <div className="text-center mt-5" style={{ fontFamily: 'Arial, sans-serif', flex: '1', marginLeft: '5px' }}>
     <div className="font-bold">Napomena:</div>
     <div className="ml-4 mt-2">
       <div>Glavno mjerilo na kraju prvenstva</div>
