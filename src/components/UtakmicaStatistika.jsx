@@ -169,6 +169,7 @@ function UtakmicaStatistika() {
       </tr>
     </thead>
     <tbody>
+      <tr></tr>
       <tr style={{fontFamily: "Impact, sans-serif;"}}>{
         matches[0] ? <td>{matches[0].h_team}</td> : <></>
         }
