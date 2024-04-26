@@ -139,7 +139,7 @@ const teamMatches = (teams, allMatches) => {
   return arrayOfArrays;
 };
 
-  const allGamesByClub = teamMatches(klubovi,mathesPlayedSorted)
+  const allGamesByClub = teamMatches(klubovi, mathesPlayedSorted)
   
   
   allGamesByClub.forEach(club =>{
@@ -204,7 +204,7 @@ const teamMatches = (teams, allMatches) => {
       const clubB = b.gf - b.ga
       const clubA = a.gf - a.ga
       // If points are the same, sort by gf in ascending order
-      return clubB - clubA;
+      return clubA - clubB;
     }
   });
   sortedStats.map((club,i) => club.rank=i)
