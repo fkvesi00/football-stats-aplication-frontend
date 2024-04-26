@@ -163,6 +163,7 @@ function UtakmicaStatistika() {
     {/* head */}
     <thead>
       <tr>
+        <th style={{textAlign:'left',fontFamily: "Impact, sans-serif;"}}> klub</th>
         <th style={{textAlign:'center',fontFamily: "Impact, sans-serif;"}}> Igrac</th>
         <th style={{textAlign:'center',fontFamily: "Impact, sans-serif;"}}>  Gol </th>
       </tr>
