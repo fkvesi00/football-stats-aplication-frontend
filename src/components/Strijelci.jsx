@@ -49,10 +49,10 @@ const Strijelci = ({ statistika }) => {
                 <FontAwesomeIcon icon={faUser} />
               </th>
               <th>Tim</th>
+              <th>Nastupi</th>
               <th>
                 <FontAwesomeIcon icon={faFutbol} />
               </th>
-              <th>Nastupi</th>
             </tr>
           </thead>
           <tbody>{playerStatistic}</tbody>
