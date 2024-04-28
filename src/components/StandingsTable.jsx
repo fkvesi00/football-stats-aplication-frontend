@@ -54,10 +54,10 @@ const StandingsTable = ({ tablica }) => {
       <div className="text-center mt-5" style={{ fontFamily: 'Arial, sans-serif' }}>
         <div className="font-bold">Napomena:</div>
         <div className="ml-4 mt-2">
-          <div>Glavno mjerilo na kraju prvenstva</div>
-          <div>za ekipe sa istim brojem bodova,</div> 
-          <div>prvo je međusobni ogled a</div>
-          <div>potom ukupna gol razlika.</div>
+          <div>Međusobni ogled glavno mjerilo</div>
+          <div>za dvije momčadi sa istim brojem bodova</div> 
+          <div>*za drugo i treće mjesto:</div>
+          <div>AMNK OPUZEN - MNK VID 2:0/0:0</div>
         </div>
       </div>
     </div>
