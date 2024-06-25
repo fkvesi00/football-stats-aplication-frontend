@@ -1,5 +1,5 @@
 import React from 'react';
-import Table from '../Table';
+import Table from './Table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faTrophy   } from '@fortawesome/free-solid-svg-icons';
 

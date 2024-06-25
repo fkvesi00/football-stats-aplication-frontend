@@ -1,7 +1,7 @@
 import React from 'react'
 import {motion} from 'framer-motion'
 import {useState, useEffect} from 'react'
-import PlayerCard from '../shared/PlayerCard'
+import PlayerCard from '../../shared/PlayerCard'
 
 function ListaIgraca() {
   

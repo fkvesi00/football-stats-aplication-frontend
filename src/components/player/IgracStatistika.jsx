@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import IgracTable from './IgracTable';
-import PlayerCard from '../shared/PlayerCard';
+import PlayerCard from '../../shared/PlayerCard';
 
 function IgracStatistika() {
     const {id} = useParams();

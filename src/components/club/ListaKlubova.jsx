@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react'
-import KlubCard from '../shared/KlubCard'
+import KlubCard from '../../shared/KlubCard'
 import {motion} from 'framer-motion'
 import './header.css';
 import './animation.css'

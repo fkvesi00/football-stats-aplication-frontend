@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function NavBar({ klubovi }) {
+function NavBar() {
   const textStyle = {
     color: 'white',
     fontFamily: 'Lucida Console, Monaco, monospace',
