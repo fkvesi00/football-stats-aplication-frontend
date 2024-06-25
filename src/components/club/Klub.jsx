@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Raspored from './Raspored';
-import IgraciTimaStatistika from './IgraciTimaStatistika';
+import Raspored from '../match/Raspored';
+import IgraciTimaStatistika from '../player/IgraciTimaStatistika';
 import KlubInformacije from './KlubInformacije';
-import NavBarClub from './NavBarClub';
+import NavBarClub from '../layout/NavBarClub';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbol,faUser } from '@fortawesome/free-solid-svg-icons';
-import UtakmiceKluba from './UtakmiceKluba';
+import UtakmiceKluba from '../UtakmiceKluba';
 import { motion } from 'framer-motion';
 
 

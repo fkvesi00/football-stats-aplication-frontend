@@ -1,8 +1,8 @@
 import React from 'react'
 import {  useParams } from 'react-router-dom';
 import{useState,useEffect} from 'react'
-import Rezultat from './Rezultat';
-import PlayerTable from './PlayerTable';
+import Rezultat from '../Rezultat';
+import PlayerTable from '../player/PlayerTable';
 
 function UtakmicaStatistika() {
   const {id} = useParams();

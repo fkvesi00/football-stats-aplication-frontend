@@ -1,21 +1,21 @@
 import { HashRouter  as Router,Routes,Route } from "react-router-dom";
 import{useState,useEffect} from 'react'
 import { AuthProvider } from "./components/context/AuthContext";
-import StandingsTable from "./components/StandingsTable";
-import NavBar from "./components/NavBar";
+import StandingsTable from "./components/table/StandingsTable";
+import NavBar from "./components/layout/NavBar";
 import Klub from "./components/Klub";
 import Footer from "./components/Footer";
-import Raspored from "./components/Raspored";
-import Utakmice from "./components/Utakmice";
+import Raspored from "./components/match/Raspored";
+import Utakmice from "./components/match/Utakmice";
 import ListaKlubova from "./components/ListaKlubova";
 import ListaIgraca from "./components/ListaIgraca";
-import UtakmicaStatistika from "./components/UtakmicaStatistika";
-import ListaUtakmica from "./components/ListaUtakmica";
+import UtakmicaStatistika from "./components/match/UtakmicaStatistika";
+import ListaUtakmica from "./components/match/ListaUtakmica";
 import IgracStatistika from "./components/IgracStatistika";
-import SignIn from "./components/adminPage/SignIn";
+import SignIn from "./pages/SignIn";
 import AdminPage from "./components/adminPage/AdminPage";
-import Statistika from "./components/Statistika";
-import Kup from "./components/Kup";
+import Statistika from "./components/stats/Statistika";
+import Kup from "./pages/Kup";
 import About from "./components/About";
 
 function App() {

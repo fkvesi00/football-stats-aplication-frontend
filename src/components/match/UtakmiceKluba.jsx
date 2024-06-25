@@ -1,5 +1,5 @@
 import React from 'react'
-import Utakmica from './Utakmica';
+import Utakmica from './match/Utakmica';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbol } from '@fortawesome/free-solid-svg-icons';
 

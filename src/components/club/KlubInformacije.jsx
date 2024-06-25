@@ -1,5 +1,5 @@
 import React from 'react';
-import clubsData from './clubsInfo.js';
+import clubsData from '../clubsInfo.js';
 
 function KlubInformacije({ id, tablica }) {
   const targetClub = clubsData.filter((club) => club.id === Number(id));
