@@ -6,7 +6,7 @@ import KlubInformacije from './KlubInformacije';
 import NavBarClub from '../layout/NavBarClub';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbol,faUser } from '@fortawesome/free-solid-svg-icons';
-import UtakmiceKluba from '../UtakmiceKluba';
+import UtakmiceKluba from '../match/UtakmiceKluba';
 import { motion } from 'framer-motion';
 
 
