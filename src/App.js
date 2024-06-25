@@ -3,20 +3,20 @@ import{useState,useEffect} from 'react'
 import { AuthProvider } from "./components/context/AuthContext";
 import StandingsTable from "./components/table/StandingsTable";
 import NavBar from "./components/layout/NavBar";
-import Klub from "./components/Klub";
-import Footer from "./components/Footer";
+import Klub from "./components/club/Klub";
+import Footer from "./components/layout/Footer";
 import Raspored from "./components/match/Raspored";
 import Utakmice from "./components/match/Utakmice";
-import ListaKlubova from "./components/ListaKlubova";
-import ListaIgraca from "./components/ListaIgraca";
+import ListaKlubova from "./components/club/ListaKlubova";
+import ListaIgraca from "./components/player/ListaIgraca";
 import UtakmicaStatistika from "./components/match/UtakmicaStatistika";
 import ListaUtakmica from "./components/match/ListaUtakmica";
-import IgracStatistika from "./components/IgracStatistika";
+import IgracStatistika from "./components/player/IgracStatistika";
 import SignIn from "./pages/SignIn";
 import AdminPage from "./components/adminPage/AdminPage";
 import Statistika from "./components/stats/Statistika";
 import Kup from "./pages/Kup";
-import About from "./components/About";
+import About from "./pages/About";
 
 function App() {
   const [klubovi, setKlubovi] = useState([]);
