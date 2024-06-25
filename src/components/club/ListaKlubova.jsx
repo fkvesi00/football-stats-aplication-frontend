@@ -1,8 +1,8 @@
 import React, { useEffect,useState } from 'react'
 import KlubCard from '../../shared/KlubCard'
 import {motion} from 'framer-motion'
-import './header.css';
-import './animation.css'
+import '../layout/header.css';
+import '../layout/animation.css'
 
 function ListaKlubova() {
   const [clubs, setClubs] = useState([]);
