@@ -17,6 +17,7 @@ import AdminPage from "./components/adminPage/AdminPage";
 import Statistika from "./components/stats/Statistika";
 import Kup from "./pages/Kup";
 import About from "./pages/About";
+import { ClubProvider } from "./context/clubContext/ClubContext";
 
 function App() {
   const [klubovi, setKlubovi] = useState([]);
@@ -212,6 +213,7 @@ const teamMatches = (teams, allMatches) => {
 
   return (
     <AuthProvider>
+      <ClubProvider>
       <Router>
         <NavBar />
       {loading ? (
@@ -248,6 +250,7 @@ const teamMatches = (teams, allMatches) => {
       )}
       <Footer />
       </Router>
+      </ClubProvider>
     </AuthProvider>
   );
 }

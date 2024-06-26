@@ -1,39 +1,21 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect, useContext } from 'react'
 import KlubCard from '../../shared/KlubCard'
+import ClubContext from '../../context/clubContext/ClubContext';
 import {motion} from 'framer-motion'
 import '../layout/header.css';
 import '../layout/animation.css'
 
 function ListaKlubova() {
-  const [clubs, setClubs] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const {clubs, loading, fetchClubs, setLoading} = useContext(ClubContext)
   
   useEffect(() => {
-    // Simulating an asynchronous operation with a 1-second delay
-    const delay = setTimeout(() => {
+
+    const delay = setTimeout(async () => {
+      await fetchClubs();
       setLoading(false);
     }, 200);
 
-    // Cleanup function to clear the timeout if the component unmounts
     return () => clearTimeout(delay);
-  }, []);
-
-  useEffect(() => {
-    const fetchClubs = async () => {
-      const clubsResponse = await fetch("https://www.umadomena.com/clubs", {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
-      });
-  
-      const clubsJSON = await clubsResponse.json();
-  
-      // Update the logo property with the Netlify function endpoint
-      
-  
-      setClubs(clubsJSON);
-    };
-  
-    fetchClubs();
   }, []);
 
   const listaKlubova = clubs.map((klub, id) => (
