@@ -1,6 +1,4 @@
 import {createContext, useState} from 'react'
-import KlubCard from '../../shared/KlubCard'
-import {motion} from 'framer-motion'
 
 const ClubContext = createContext()
 
