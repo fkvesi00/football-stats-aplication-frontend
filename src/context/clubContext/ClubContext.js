@@ -1,4 +1,6 @@
 import {createContext, useState} from 'react'
+import KlubCard from '../../shared/KlubCard'
+import {motion} from 'framer-motion'
 
 const ClubContext = createContext()
 
@@ -13,14 +15,10 @@ export const ClubProvider =  ({children})  => {
       });
   
       const clubsJSON = await clubsResponse.json();
-  
-      // Update the logo property with the Netlify function endpoint
-      
-  
+    
       setClubs(clubsJSON);
     };
   
-
 
   return <ClubContext.Provider value={{
     clubs,
