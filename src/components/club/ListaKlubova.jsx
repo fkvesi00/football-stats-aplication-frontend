@@ -9,14 +9,14 @@ function ListaKlubova() {
   const {clubs, loading, fetchClubs, setLoading} = useContext(ClubContext)
   
   useEffect(() => {
-
     const delay = setTimeout(async () => {
       await fetchClubs();
       setLoading(false);
     }, 200);
-
+  
     return () => clearTimeout(delay);
   }, []);
+  
 
   const listaKlubova = clubs.map((klub, id) => (
     <motion.div
