@@ -1,6 +1,6 @@
 import {useContext} from 'react'
 import {motion} from 'framer-motion'
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import PlayerCard from '../../shared/PlayerCard'
 import PlayerContext from '../../context/playersContext/PlayerContext'
 import { calculatePlayerAge } from '../../context/playersContext/PlayerActions'
