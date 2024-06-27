@@ -1,24 +1,16 @@
-import React from 'react'
+import {useContext} from 'react'
 import {motion} from 'framer-motion'
 import {useState, useEffect} from 'react'
 import PlayerCard from '../../shared/PlayerCard'
+import PlayerContext from '../../context/playersContext/PlayerContext'
+import { calculatePlayerAge } from '../../context/playersContext/PlayerActions'
 
 function ListaIgraca() {
-  
-    const [igraci, setIgraci] = useState([])
+    const {players} = useContext(PlayerContext)
+    
     const [input, setInput] = useState('')
 
-    useEffect(()=>{
-        fetch("https://www.umadomena.com/players",{ 
-          method:'get',
-          headers:{'Content-Type':'application/json'}
-        })
-        .then(res => res.json())
-        .then(data => setIgraci(data))
-      }, [])
-  
-
-      const filterPlayer = igraci.filter(el => {
+      const filterPlayer = players.filter(el => {
         return el.playername.toLowerCase().includes(input.toLocaleLowerCase());
       })
 
@@ -29,10 +21,7 @@ function ListaIgraca() {
 
       const listaIgraca = filterPlayer.map((igrac, i) => {
         const { playerid, playername, playerbirth, playernationality, PlayerPhoto } = igrac;
-        const birthDate = new Date(playerbirth);
-        const today = new Date();
-        const diffTime = Math.abs(today.getTime() - birthDate.getTime());
-        const playerAge = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.25));
+        const playerAge = calculatePlayerAge(playerbirth);
       
         return (
           <motion.div
