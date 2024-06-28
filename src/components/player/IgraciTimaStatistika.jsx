@@ -2,14 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 function IgraciTimaStatistika({ counter, playerName, app, goals }) {
-  // Split player name by spaces into an array of words
   const words = playerName.split(' ');
-
-  // Check if the player name exceeds a certain length
-  const maxLength = 18; // You can adjust this value as needed
+  const maxLength = 18; 
   const isNameTooLong = playerName.length > maxLength;
 
-  // If the name is too long, wrap the last word in a new row
   const playerNameContent = isNameTooLong
     ? <>
         {words.slice(0, -1).join(' ')}<br/>{words.slice(-1)}

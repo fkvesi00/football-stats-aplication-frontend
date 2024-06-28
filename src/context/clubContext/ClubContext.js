@@ -1,28 +1,41 @@
 import {createContext, useState} from 'react'
-
+import { fetchClubs, fetchPlayersOfClub, fetchPlayerStats, fetchMatchesOfClub } from './ClubActions';
+import { matchFormat } from '../matchContext/MatchesActions';
 const ClubContext = createContext()
 
 export const ClubProvider =  ({children})  => {
     const [clubs, setClubs] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [playersOfClub, setPlayersOfClub] = useState([]);
+    const [matchesOfClub, setMatchesOfClub] = useState([]);
+    const [playerStats, setPlayerStats] = useState([]);
 
-    const fetchClubs = async () => {
-      const clubsResponse = await fetch("https://www.umadomena.com/clubs", {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
-      });
-  
-      const clubsJSON = await clubsResponse.json();
-    
-      setClubs(clubsJSON);
+    const loadClubs = async () => {
+      const clubsData = await fetchClubs();
+      setClubs(clubsData);
     };
   
+    const fetchClubsPlayersAndMatches = async (teamID) => {
+      const [players, stats, matches] = await Promise.all([
+        fetchPlayersOfClub(teamID),
+        fetchPlayerStats(teamID),
+        fetchMatchesOfClub(teamID)
+      ]);
+      setPlayersOfClub(players);
+      setPlayerStats(stats);
+      setMatchesOfClub(matchFormat(matches));
+    };
+
 
   return <ClubContext.Provider value={{
     clubs,
     loading,
+    playersOfClub,
+    matchesOfClub,
+    playerStats,
     setLoading,
-    fetchClubs
+    loadClubs,
+    fetchClubsPlayersAndMatches
   }}>
     {children}
   </ClubContext.Provider>

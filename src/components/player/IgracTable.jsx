@@ -2,8 +2,6 @@ import React from "react"
 
 function IgracTable({sezona, tim , app, goals}) {
    
-    
-   
     return (
         <tr data-theme='fantasy' style={{padding:'5px', margin:'7px'}} >
           <td style={{borderRight: "1px solid black", textAlign:'center'}}>{sezona}</td>

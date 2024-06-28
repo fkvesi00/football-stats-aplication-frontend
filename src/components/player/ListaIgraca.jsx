@@ -7,7 +7,6 @@ import { calculatePlayerAge } from '../../context/playersContext/PlayerActions'
 
 function ListaIgraca() {
     const {players} = useContext(PlayerContext)
-    
     const [input, setInput] = useState('')
 
       const filterPlayer = players.filter(el => {

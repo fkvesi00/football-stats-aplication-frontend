@@ -1,7 +1,7 @@
 import React from 'react';
 import clubsData from './clubsInfo.js';
 
-function KlubInformacije({ id, tablica }) {
+function KlubInformacije({ id }) {
   const targetClub = clubsData.filter((club) => club.id === Number(id));
 
   if (!targetClub.length) {
@@ -50,27 +50,14 @@ function KlubInformacije({ id, tablica }) {
           </div>
           <div className="mb-2">
             <strong>Voditelj/i:</strong>
-            <p>{divTreneri}</p>
+            <div>{divTreneri}</div>
           </div>
           <div className="mb-2">
             <strong>Media:</strong>
-            <p>www.instagram.com</p> {/* Replace with the actual number */}
+            <p>www.instagram.com</p> {/* Replace with the actual  */}
           </div>
-          {/* <div className="mb-2">
-            {tablica[0] ? (
-              <strong>Trenutna pozicija: #{tablica[0].rank + 1}</strong>
-            ) : (
-              <></>
-            )}
-          </div> */}
         </div>
       </div>
-      {/* Text about the Club */}
-{/*       <div className="text-center mt-4">
-        <p className="text-sm">
-          
-        </p>
-      </div> */}
     </div>
   );
 }

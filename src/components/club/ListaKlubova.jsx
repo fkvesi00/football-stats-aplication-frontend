@@ -6,11 +6,11 @@ import '../layout/header.css';
 import '../layout/animation.css';
 
 function ListaKlubova() {
-  const { clubs, loading, fetchClubs, setLoading } = useContext(ClubContext);
+  const { clubs, loading, loadClubs, setLoading } = useContext(ClubContext);
   
   useEffect(() => {
     const delay = setTimeout(async () => {
-      await fetchClubs();
+      await loadClubs();
       setLoading(false);
     }, 200);
     // eslint-disable-next-line react-hooks/exhaustive-deps
