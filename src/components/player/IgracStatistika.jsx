@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom';
 
 import IgracTable from './IgracTable';
