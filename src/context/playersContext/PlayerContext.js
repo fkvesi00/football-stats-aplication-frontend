@@ -1,35 +1,49 @@
 import {createContext, useEffect, useState} from 'react'
+import {
+  fetchPlayers,
+  fetchPlayerAppearances,
+  fetchPlayerInfo,
+  fetchPlayerGoals,
+  calculatePlayerAge} from './PlayerActions'
 
 const PlayerContext = createContext()
 
-export const PlayerProvider = ({children}) =>{
-    const [players, setPlayers] = useState([])
+export const PlayerProvider = ({ children }) => {
+  const [players, setPlayers] = useState([]);
+  const [appearances, setAppearances] = useState([]);
+  const [player, setPlayer] = useState([]);
+  const [goals, setGoals] = useState([]);
 
+  const loadPlayers = async () => {
+    await fetchPlayers(setPlayers);
+  };
 
-    const fetchPlayers = async () => {
-        try {
-          const response = await fetch("https://www.umadomena.com/players", { 
-            method: 'GET',
-            headers: { 'Content-Type': 'application/json' }
-          });
-          const data = await response.json();
-          setPlayers(data)
-        } catch (error) {
-          console.error('Error fetching players:', error);
-          return [];
-        }
-      };
+  const loadPlayerData = async (playerID) => {
+    const [info, apps, playerGoals] = await Promise.all([
+      fetchPlayerInfo(playerID),
+      fetchPlayerAppearances(playerID),
+      fetchPlayerGoals(playerID)
+    ]);
+    setPlayer(info);
+    setAppearances(apps);
+    setGoals(playerGoals);
+  };
 
-      useEffect(() => {
-        fetchPlayers();
-      }, []);
-
-    return <PlayerContext.Provider value={{
+  return (
+    <PlayerContext.Provider
+      value={{
         players,
-        
-    }}>
-        {children}
+        player,
+        appearances,
+        goals,
+        loadPlayers,
+        loadPlayerData,
+        calculatePlayerAge
+      }}
+    >
+      {children}
     </PlayerContext.Provider>
-}
+  );
+};
 
-export default PlayerContext
+export default PlayerContext;

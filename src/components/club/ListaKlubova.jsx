@@ -1,7 +1,8 @@
-import React, { useEffect, useContext } from 'react';
-import ClubContext from '../../context/clubContext/ClubContext';
-import KlubCard from '../../shared/KlubCard'; // Assuming KlubCard is imported from correct path
+import { useEffect, useContext } from 'react';
 import { motion } from 'framer-motion';
+
+import ClubContext from '../../context/clubContext/ClubContext';
+import KlubCard from '../../shared/KlubCard'; // Replace with correct path if needed
 import '../layout/header.css';
 import '../layout/animation.css';
 

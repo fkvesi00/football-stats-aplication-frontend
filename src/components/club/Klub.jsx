@@ -1,14 +1,15 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFutbol, faUser } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
+
+import ClubContext from '../../context/clubContext/ClubContext';
 import Raspored from '../match/Raspored';
+import UtakmiceKluba from '../match/UtakmiceKluba';
 import IgraciTimaStatistika from '../player/IgraciTimaStatistika';
 import KlubInformacije from './KlubInformacije';
 import NavBarClub from '../layout/NavBarClub';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFutbol,faUser } from '@fortawesome/free-solid-svg-icons';
-import UtakmiceKluba from '../match/UtakmiceKluba';
-import { motion } from 'framer-motion';
-import ClubContext from '../../context/clubContext/ClubContext';
 
 function Klub() {
   const {id} = useParams();

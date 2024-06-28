@@ -1,12 +1,11 @@
-import {useContext} from 'react'
+import {useContext, useState} from 'react'
 import {motion} from 'framer-motion'
-import {useState} from 'react'
+
 import PlayerCard from '../../shared/PlayerCard'
 import PlayerContext from '../../context/playersContext/PlayerContext'
-import { calculatePlayerAge } from '../../context/playersContext/PlayerActions'
 
 function ListaIgraca() {
-    const {players} = useContext(PlayerContext)
+    const {players, calculatePlayerAge} = useContext(PlayerContext)
     const [input, setInput] = useState('')
 
       const filterPlayer = players.filter(el => {
