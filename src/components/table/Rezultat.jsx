@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Rezultat = ({ matchID, date, time, homeTeamName, score, awayTeamName, a_id, h_id }) => {
+const Rezultat = ({ date, time, homeTeamName, score, awayTeamName, a_id, h_id }) => {
     const h_logo = `/images/${h_id}.jpg`;
     const a_logo = `/images/${a_id}.jpg`;
 

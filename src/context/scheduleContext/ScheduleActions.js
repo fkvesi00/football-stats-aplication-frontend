@@ -1,0 +1,38 @@
+export const fetchGamesBySeason = async (setRaspored) => {
+    try {
+        const response = await fetch("https://www.umadomena.com/matchesBySeason", {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                id: 1
+            })
+        });
+
+        const data = await response.json();
+        setRaspored(data);
+    } catch (error) {
+        console.error('Error fetching games by season:', error);
+    }
+};
+
+export const sortAndFormatSchedule = (raspored) => {
+    return raspored.sort((a, b) => {
+      const dateComparison = a.date.localeCompare(b.date);
+      if (dateComparison !== 0) {
+        return dateComparison;
+      } else {
+        return a.time.localeCompare(b.time);
+      }
+    }).map((game, i) => {
+      const birthDate = new Date(game.date);
+      const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
+      const formattedDate = birthDate.toLocaleDateString('hr-HR', options);
+      return {
+        key: i,
+        date: formattedDate,
+        time: game.time,
+        home: game.h_team,
+        away: game.a_team
+      };
+    });
+  };

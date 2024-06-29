@@ -1,34 +1,19 @@
 import React from 'react'
-import{useState,useEffect} from 'react'
+import{useContext,useEffect} from 'react'
 import Strijelci from './Strijelci';
+import StasContext from '../../context/statsContext/StatsContext';
 
 function Statistika() {
-    const [statistika, setStatistika] = useState([]);
-
+    const {scorers, loadScorers} = useContext(StasContext)
+    
     useEffect(()=>{
-        const fetchData = async () => {
-
-        const statistika = await fetch("https://www.umadomena.com/scorers",{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({
-          seasonid:1
-          })
-        })
-      
-          const jsonStatistika = await statistika.json();
-     
-          setStatistika(jsonStatistika)
-        }
-    
-    fetchData()
-    
+      loadScorers()
     },[])
   
   return (
     <div className="flex flex-col items-center justify-center">
         <h2 className="text-2xl font-bold m-5 text-black-700 text-center text-center" >Ljestvica strijelaca</h2>
-        <Strijelci statistika={statistika}/>
+        <Strijelci statistika={scorers}/>
     </div>
   )
 }

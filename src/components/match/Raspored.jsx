@@ -3,43 +3,29 @@ import '../layout/header.css';
 import Rasporedcic from './Rasporedcic';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar  } from '@fortawesome/free-solid-svg-icons';
+import {sortAndFormatSchedule} from '../../context/scheduleContext/ScheduleActions'
 
 function Raspored({ raspored }) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   
-  const nizRasporeda = raspored.sort((a, b) => {
-    // First, compare dates
-    const dateComparison = a.date.localeCompare(b.date);
-    if (dateComparison !== 0) {
-      return dateComparison; // If dates are different, return the comparison result
-    } else {
-      // If dates are equal, compare times
-      return a.time.localeCompare(b.time);
-    }
-  }).map((raspored, i) => {
-    const birthDate = new Date(raspored.date);
-    const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
-    const formattedDate = birthDate.toLocaleDateString('hr-HR', options);
-    return (
-      <Rasporedcic
-        key={i}
-        date={formattedDate}
-        time={raspored.time}
-        home={raspored.h_team}
-        away={raspored.a_team}
-      />
-    );
-  });
+  const formattedSchedule = sortAndFormatSchedule(raspored).map((raspored) => (
+    <Rasporedcic
+      key={raspored.key}
+      date={raspored.date}
+      time={raspored.time}
+      home={raspored.home}
+      away={raspored.away}
+    />
+  ));
 
-  
 
-  const totalGames = nizRasporeda.length;
+  const totalGames = formattedSchedule.length;
   const totalPages = Math.ceil(totalGames / itemsPerPage);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentGames = nizRasporeda.slice(startIndex, endIndex);
+  const currentGames = formattedSchedule.slice(startIndex, endIndex);
 
   const handlePrevPage = () => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));

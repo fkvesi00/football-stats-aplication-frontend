@@ -1,6 +1,6 @@
 import { HashRouter  as Router,Routes,Route } from "react-router-dom";
 import{useState,useEffect} from 'react'
-import { AuthProvider } from "./components/context/AuthContext";
+import { AuthProvider } from "./context/authContext/AuthContext";
 import StandingsTable from "./components/table/StandingsTable";
 import NavBar from "./components/layout/NavBar";
 import Klub from "./components/club/Klub";
@@ -19,6 +19,8 @@ import Kup from "./pages/Kup";
 import About from "./pages/About";
 import { ClubProvider } from "./context/clubContext/ClubContext";
 import { PlayerProvider} from './context/playersContext/PlayerContext'
+import { StasProvider } from "./context/statsContext/StatsContext";
+import { ScheduleProvider } from "./context/scheduleContext/ScheduleContext";
 
 function App() {
   const [klubovi, setKlubovi] = useState([]);
@@ -216,6 +218,8 @@ const teamMatches = (teams, allMatches) => {
     <AuthProvider>
       <ClubProvider>
         <PlayerProvider>
+          <StasProvider>
+            <ScheduleProvider>
       <Router>
         <NavBar />
       {loading ? (
@@ -252,6 +256,8 @@ const teamMatches = (teams, allMatches) => {
       )}
       <Footer />
       </Router>
+         </ScheduleProvider>
+        </StasProvider>
        </PlayerProvider>
       </ClubProvider>
     </AuthProvider>
