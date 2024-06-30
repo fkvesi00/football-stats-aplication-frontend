@@ -35,8 +35,8 @@ export const MatchProvider = ({ children }) => {
     
     useEffect(() => {
         if (players.length > 0 && formattedMatch) {
-            const homeTeam = players.filter(player => player.teamid == formattedMatch.h_id);
-            const awayTeam = players.filter(player => player.teamid == formattedMatch.a_id);
+            const homeTeam = players.filter(player => player.teamid === formattedMatch.h_id);
+            const awayTeam = players.filter(player => player.teamid === formattedMatch.a_id);
             setHomePlayers(homeTeam);
             setAwayplayers(awayTeam);
         }
