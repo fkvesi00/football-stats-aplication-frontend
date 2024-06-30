@@ -29,24 +29,18 @@ function UtakmicaStatistika() {
 
   return (
     <div>
-      <table className="table table-compact mx-auto mt-10 mb-10" style={{ width: "70%" }} data-theme="light">
-        <tbody>
-          {match.length > 0 ? (
+      <div className="table table-compact mx-auto mt-10 mb-10" style={{ width: "70%" }} data-theme="light">
               <Rezultat
-                matchID={match[0].match_id}
-                date={match[0].date}
-                time={match[0].time}
-                homeTeamName={match[0].h_team}
-                score={match[0].score}
-                awayTeamName={match[0].a_team}
-                a_id={match[0].a_id}
-                h_id={match[0].h_id}
+                matchID={match.match_id}
+                date={match.date}
+                time={match.time}
+                homeTeamName={match.h_team}
+                score={match.score}
+                awayTeamName={match.a_team}
+                a_id={match.a_id}
+                h_id={match.h_id}
               />
-          ) : (
-            <tr></tr>
-          )}
-        </tbody>
-      </table>
+      </div>
 
       <div className="overflow-x-auto mt-10 mb-10">
         <table className="table table-compact mx-auto" style={{ width: "70%" }} data-theme="retro">
@@ -58,11 +52,11 @@ function UtakmicaStatistika() {
           </thead>
           <tbody>
             <tr style={{ fontFamily: "Impact, sans-serif" }}>
-              {match.length > 0 ? <td colSpan={2}>{match[0].h_team}</td> : <></>}
+              {match.length > 0 ? <td colSpan={2}>{match.h_team}</td> : <></>}
             </tr>
             {renderTeamRows(homePlayers)}
             <tr style={{ fontFamily: "Impact, sans-serif" }}>
-              {match.length > 0 ? <td colSpan={2}>{match[0].a_team}</td> : <></>}
+              {match.length > 0 ? <td colSpan={2}>{match.a_team}</td> : <></>}
             </tr>
             {renderTeamRows(awayPlayers)}
           </tbody>

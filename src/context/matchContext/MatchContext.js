@@ -29,14 +29,14 @@ export const MatchProvider = ({ children }) => {
     useEffect(() => {
         if (match && match.length > 0) { 
             const formatted = matchFormat(match);
-            setFormattedMatch(formatted);
+            setFormattedMatch(formatted[0]);
         }
     }, [match]); 
     
     useEffect(() => {
-        if (players.length > 0 && formattedMatch[0]) {
-            const homeTeam = players.filter(player => player.teamid == formattedMatch[0].h_id);
-            const awayTeam = players.filter(player => player.teamid == formattedMatch[0].a_id);
+        if (players.length > 0 && formattedMatch) {
+            const homeTeam = players.filter(player => player.teamid == formattedMatch.h_id);
+            const awayTeam = players.filter(player => player.teamid == formattedMatch.a_id);
             setHomePlayers(homeTeam);
             setAwayplayers(awayTeam);
         }
