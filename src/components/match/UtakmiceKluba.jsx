@@ -2,15 +2,13 @@ import React from 'react'
 import Utakmica from './Utakmica';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbol } from '@fortawesome/free-solid-svg-icons';
+import { formatMatchDate } from '../../context/matchContext/MatchesActions';
 
 function UtakmiceKluba({utakmice}) {
-    const nizUtakmica = utakmice.map((utakmica,i)=>{
-    
-        //console.log(utakmica)
-        const birthDate = new Date(utakmica.date);
-        const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
-        const formattedDate = birthDate.toLocaleDateString('hr-HR', options);
-        return <Utakmica key={i} MatchID={utakmica.match_id} Date={formattedDate} Time={utakmica.time}  
+    const formattedSchedule = utakmice.map((utakmica,i)=>{
+      const formattedDate = formatMatchDate(utakmica.date)
+        
+      return <Utakmica key={utakmica.match_id} MatchID={utakmica.match_id} Date={formattedDate} Time={utakmica.time}  
         HomeTeamID= {utakmica.h_team}  HomeTeamScore={utakmica.score} AwayTeamName = {utakmica.a_team} a_id = {utakmica.a_id} h_id = {utakmica.h_id}
         />
       })
@@ -30,7 +28,7 @@ function UtakmiceKluba({utakmice}) {
               <th className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ textAlign: 'center' }}>Link</th>
             </tr>
           </thead>
-          <tbody>{nizUtakmica}</tbody>
+          <tbody>{formattedSchedule}</tbody>
         </table>
       </div>
       <div className="flex justify-center items-center mt-4">

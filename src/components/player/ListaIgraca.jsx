@@ -1,13 +1,17 @@
-import {useContext, useState} from 'react'
+import {useContext, useEffect, useState} from 'react'
 import {motion} from 'framer-motion'
 
 import PlayerCard from '../../shared/PlayerCard'
 import PlayerContext from '../../context/playersContext/PlayerContext'
 
 function ListaIgraca() {
-    const {players, calculatePlayerAge} = useContext(PlayerContext)
+    const {players, calculatePlayerAge, loadPlayers} = useContext(PlayerContext)
     const [input, setInput] = useState('')
 
+      useEffect(() => {
+        loadPlayers()
+      },[])
+    
       const filterPlayer = players.filter(el => {
         return el.playername.toLowerCase().includes(input.toLocaleLowerCase());
       })

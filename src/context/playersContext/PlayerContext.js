@@ -15,7 +15,8 @@ export const PlayerProvider = ({ children }) => {
   const [goals, setGoals] = useState([]);
 
   const loadPlayers = async () => {
-    await fetchPlayers(setPlayers);
+    const players = await fetchPlayers();
+    setPlayers(players)
   };
 
   const loadPlayerData = async (playerID) => {

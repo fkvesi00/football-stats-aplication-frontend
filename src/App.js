@@ -21,6 +21,7 @@ import { ClubProvider } from "./context/clubContext/ClubContext";
 import { PlayerProvider} from './context/playersContext/PlayerContext'
 import { StasProvider } from "./context/statsContext/StatsContext";
 import { ScheduleProvider } from "./context/scheduleContext/ScheduleContext";
+import { MatchProvider } from "./context/matchContext/MatchContext";
 
 function App() {
   const [klubovi, setKlubovi] = useState([]);
@@ -114,7 +115,7 @@ const compareByDate = (a, b) => {
 
 // Sort the array by date
 const mathesPlayedSorted = matchesplayed.sort(compareByDate);
-console.log(mathesPlayedSorted)
+
 
 
 const matchesToPlay = matches.filter(utakmica => utakmica.score === null)
@@ -220,6 +221,7 @@ const teamMatches = (teams, allMatches) => {
         <PlayerProvider>
           <StasProvider>
             <ScheduleProvider>
+              <MatchProvider>
       <Router>
         <NavBar />
       {loading ? (
@@ -256,6 +258,7 @@ const teamMatches = (teams, allMatches) => {
       )}
       <Footer />
       </Router>
+          </MatchProvider>
          </ScheduleProvider>
         </StasProvider>
        </PlayerProvider>

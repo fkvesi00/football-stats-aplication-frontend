@@ -1,38 +1,64 @@
+export const fetchGameById = async (id) => {
+  const response = await fetch("https://www.umadomena.com/matches/id",{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      matchID:Number(id)
+    })
+  })
+  return response.json();
+}
+
+
+export const fetchPlayersInMatch = async (id) => {
+  const response = await fetch("https://www.umadomena.com/teamPlayerMatch/getApp", {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ matchID: Number(id) })
+  });
+  return response.json();
+};
+
+export const fetchGoalsInMatch = async (id) => {
+  const response = await fetch("https://www.umadomena.com/goals/matchGoals", {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ matchID: Number(id) })
+  });
+  return response.json();
+};
+
 export const matchFormat = (utakmica) => {
-    const result = [];
-    
-    utakmica.forEach((utakmica2, j) => {
-      let match = {};
-      
-      for (let i = j + 1; i < utakmica.length; i++) {
-        if (utakmica2.matchid === utakmica[i].matchid) {
-          if (utakmica2.home) {
-            match = {
+  const matches = {};
+
+  utakmica.forEach((utakmica2) => {
+      if (!matches[utakmica2.matchid]) {
+          matches[utakmica2.matchid] = {
               match_id: utakmica2.matchid,
-              date: utakmica2.date,
+              date: formatMatchDate(utakmica2.date),
               time: utakmica2.time,
-              h_team: utakmica2.teamname,
-              h_id: utakmica2.teamid,
               score: utakmica2.score,
-              a_team: utakmica[i].teamname,
-              a_id: utakmica[i].teamid
-            };
+              h_team: utakmica2.home ? utakmica2.teamname : null,
+              h_id: utakmica2.home ? utakmica2.teamid : null,
+              a_team: !utakmica2.home ? utakmica2.teamname : null,
+              a_id: !utakmica2.home ? utakmica2.teamid : null
+          };
+      } else {
+          if (utakmica2.home) {
+              matches[utakmica2.matchid].h_team = utakmica2.teamname;
+              matches[utakmica2.matchid].h_id = utakmica2.teamid;
           } else {
-            match = {
-              date: utakmica2.date,
-              time: utakmica2.time,
-              h_team: utakmica[i].teamname,
-              h_id: utakmica[i].teamid,
-              score: utakmica2.score,
-              a_team: utakmica2.teamname,
-              a_id: utakmica2.teamid
-            };
+              matches[utakmica2.matchid].a_team = utakmica2.teamname;
+              matches[utakmica2.matchid].a_id = utakmica2.teamid;
           }
-          
-          result.push(match);
-        }
       }
-    });
-    
-    return result;
+  });
+
+  return Object.values(matches);
+};
+
+  export const formatMatchDate = (dateString) => {
+    const matchDate = new Date(dateString);
+    const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
+    return matchDate.toLocaleDateString('hr-HR', options);
   };

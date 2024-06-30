@@ -12,19 +12,13 @@ export const calculatePlayerAge = (playerbirth) => {
     return Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365.25));
   };
 
-  export const fetchPlayers = async (setPlayers) => {
-    try {
+  export const fetchPlayers = async () => {
       const response = await fetch("https://www.umadomena.com/players", {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
       });
-      const data = await response.json();
-      setPlayers(data);
-    } catch (error) {
-      console.error('Error fetching players:', error);
-      return [];
-    }
-  };
+      return response.json();    
+  }
 
 export const fetchPlayerAppearances = async (playerID) => {
   const response = await fetch("https://www.umadomena.com/players/playerApp", {

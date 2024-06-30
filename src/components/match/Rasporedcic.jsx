@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { motion } from 'framer-motion';
 
-function Rasporedcic({ time, date, home, away, id }) {
+function Rasporedcic({ time, date, home, away }) {
   return (
     <motion.tr
       initial={{ opacity: 0 }}
@@ -9,13 +9,14 @@ function Rasporedcic({ time, date, home, away, id }) {
       exit={{ opacity: 0 }}
       className="align-middle"
       data-theme="fantasy"
+      style={{ fontFamily: 'Arial, Helvetica, sans-serif' }} // Set fontFamily once here
     >
-      <td className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{date}</td>
+      <td className="p-1 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">{date}</td>
       <td className="text-center p-3">{time}</td>
       <td className="text-center">
-        <div className="p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{home}</div>
-        <div className="p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>vs</div>
-        <div className="p-1" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>{away}</div>
+        <div className="p-1">{home}</div>
+        <div className="p-1">vs</div>
+        <div className="p-1">{away}</div>
       </td>
     </motion.tr>
   );
