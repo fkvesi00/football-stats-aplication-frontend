@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import IgracTable from './IgracTable';
 import PlayerCard from '../../shared/PlayerCard';
 import { mergeAppearancesWithGoals, formatPlayer } from '../../context/playersContext/PlayerActions.js'
+import PlayerContext from '../../context/playersContext/PlayerContext.js';
 
 function IgracStatistika() {
     const {id} = useParams();
