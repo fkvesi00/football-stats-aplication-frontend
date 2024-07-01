@@ -1,5 +1,5 @@
 import { HashRouter  as Router,Routes,Route } from "react-router-dom";
-import{useState,useEffect} from 'react'
+import{useState,useEffect, useContext} from 'react'
 import { AuthProvider } from "./context/authContext/AuthContext";
 import StandingsTable from "./components/table/StandingsTable";
 import NavBar from "./components/layout/NavBar";
@@ -17,7 +17,7 @@ import AdminPage from "./components/adminPage/AdminPage";
 import Statistika from "./components/stats/Statistika";
 import Kup from "./pages/Kup";
 import About from "./pages/About";
-import { ClubProvider } from "./context/clubContext/ClubContext";
+import  { ClubProvider } from "./context/clubContext/ClubContext";
 import { PlayerProvider} from './context/playersContext/PlayerContext'
 import { StasProvider } from "./context/statsContext/StatsContext";
 import { ScheduleProvider } from "./context/scheduleContext/ScheduleContext";
@@ -28,7 +28,7 @@ function App() {
    const [raspored, setRaspored] = useState([]);
    const stats = []
    const [loading, setLoading] = useState(true);
-  
+
   useEffect(() => {
     // Simulating an asynchronous operation with a 1-second delay
     const delay = setTimeout(() => {
@@ -238,14 +238,14 @@ const teamMatches = (teams, allMatches) => {
             element={
               <>
                 <StandingsTable tablica={sortedStats} />
-                <Utakmice utakmice={mathesPlayedSorted} />
-                <Raspored raspored={matchesToPlay} />
+                <Utakmice />
+                <Raspored />
               </>
             }
           />
           <Route exact path={`/utakmice`} element={<ListaUtakmica />} />
           <Route exact path={`/utakmica/:id`} element={<UtakmicaStatistika />} />
-          <Route exact path={`/klub/:id`} element={<Klub clubRanks={sortedStats} />} />
+          <Route exact path={`/klub/:id`} element={<Klub />} />
           <Route exact path={`/klubovi`} element={<ListaKlubova />} />
           <Route exact path={`/igraci`} element={<ListaIgraca />} />
           <Route exact path={`/igrac/:id`} element={<IgracStatistika />} />

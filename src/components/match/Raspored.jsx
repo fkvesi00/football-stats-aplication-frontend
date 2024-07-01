@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import '../layout/header.css';
 import Rasporedcic from './Rasporedcic';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 import { sortAndFormatSchedule } from '../../context/scheduleContext/ScheduleActions';
 import Pagination from '../calculations/Paganation';
+import ScheduleContext from '../../context/scheduleContext/ScheduleContext';
 
 function Raspored({ raspored }) {
+  const {schedule, loadGamesBySeason} = useContext(ScheduleContext);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
+  
 
-  const formattedSchedule = sortAndFormatSchedule(raspored).map((rasporedItem) => (
+  useEffect(() => {
+    loadGamesBySeason()
+  },[])
+
+  const allSchedule = schedule.filter(utakmica => utakmica.score === null)
+
+  const formattedSchedule = sortAndFormatSchedule(allSchedule).map((rasporedItem) => (
     <Rasporedcic
       key={rasporedItem.key}
       date={rasporedItem.date}

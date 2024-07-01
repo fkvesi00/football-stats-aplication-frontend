@@ -1,21 +1,27 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Utakmica from './Utakmica';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbol } from '@fortawesome/free-solid-svg-icons';
-import Pagination from '../calculations/Paganation';
-import { formatMatchDate } from '../../context/matchContext/MatchesActions'; 
+import Pagination from '../calculations/Paganation'; 
+import MatchContext from '../../context/matchContext/MatchContext';
 
-function Utakmice({ utakmice }) {
+function Utakmice() {
+  const {allMatches, loadAllMatches} = useContext(MatchContext)
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
+  
+  useEffect(()=> {
+    loadAllMatches()
+  },[])
 
-  const formattedMatches = utakmice.map((utakmica, i) => {
-    const formattedDate = formatMatchDate(utakmica.date)
+  const matchesplayed = allMatches.filter(utakmica => utakmica.score !== null)
+
+  const formattedMatches = matchesplayed.map((utakmica, i) => {
     return (
       <Utakmica
         key={i}
         MatchID={utakmica.match_id}
-        Date={formattedDate}
+        Date={utakmica.date}
         Time={utakmica.time}
         HomeTeamID={utakmica.h_team}
         HomeTeamScore={utakmica.score}

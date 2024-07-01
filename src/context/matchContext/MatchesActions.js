@@ -1,3 +1,15 @@
+export const fetchAllMatches = async () => {
+  const response = await fetch("https://www.umadomena.com/matches/allMatches",{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      seasonID:1
+    })
+  })
+
+  return response.json()
+}
+
 export const fetchGameById = async (id) => {
   const response = await fetch("https://www.umadomena.com/matches/id",{
     method:'POST',

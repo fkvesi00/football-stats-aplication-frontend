@@ -1,18 +1,13 @@
-export const fetchGamesBySeason = async (setRaspored) => {
-    try {
-        const response = await fetch("https://www.umadomena.com/matchesBySeason", {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                id: 1
-            })
-        });
+export const fetchGamesBySeason = async () => {
+  const response = await fetch("https://www.umadomena.com/matches/allMatches",{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      seasonID:1
+    })
+  })
 
-        const data = await response.json();
-        setRaspored(data);
-    } catch (error) {
-        console.error('Error fetching games by season:', error);
-    }
+  return response.json()
 };
 
 export const sortAndFormatSchedule = (raspored) => {

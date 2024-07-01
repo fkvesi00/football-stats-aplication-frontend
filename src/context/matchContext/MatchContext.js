@@ -1,15 +1,22 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { fetchGameById, fetchPlayersInMatch, fetchGoalsInMatch, matchFormat } from './MatchesActions';
+import { fetchAllMatches ,fetchGameById, fetchPlayersInMatch, fetchGoalsInMatch, matchFormat } from './MatchesActions';
 
 const MatchContext = createContext();
 
 export const MatchProvider = ({ children }) => {
+    const [allMatches, setAllMatches] = useState([])
     const [match, setMatch] = useState(null);
     const [formattedMatch, setFormattedMatch] = useState({});
     const [players, setPlayers] = useState([]);
     const [homePlayers, setHomePlayers] = useState([]);
     const [awayPlayers, setAwayplayers] = useState([]);
     const [goals, setGoals] = useState([]);
+
+    const loadAllMatches = async() => {
+        const allMatches = await fetchAllMatches()
+
+        setAllMatches(matchFormat(allMatches))
+    }
 
     const loadData = async (id) => {
         try {
@@ -43,7 +50,7 @@ export const MatchProvider = ({ children }) => {
     }, [formattedMatch, players]);
     
     return (
-        <MatchContext.Provider value={{ match: formattedMatch, homePlayers, awayPlayers, goals, loadData }}>
+        <MatchContext.Provider value={{allMatches, match: formattedMatch, homePlayers, awayPlayers, goals, loadAllMatches,loadData }}>
             {children}
         </MatchContext.Provider>
     );

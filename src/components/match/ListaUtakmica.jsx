@@ -6,13 +6,13 @@ import { matchFormat } from '../../context/matchContext/MatchesActions';
 import ScheduleContext from '../../context/scheduleContext/ScheduleContext';
 
 function ListaUtakmica() {
-      const {raspored, loadGamesBySeason} = useContext(ScheduleContext)
+      const {schedule, loadGamesBySeason} = useContext(ScheduleContext)
       
       useEffect(() => {
         loadGamesBySeason()
       },[])
 
-      const matches = matchFormat(raspored)
+      const matches = matchFormat(schedule)
       
       //u sljedece dvije linije nalazimo utakmice koje su odigrane i koje ce se odigrati
       const matchesplayed = matches.filter(utakmica => utakmica.score !== null)
