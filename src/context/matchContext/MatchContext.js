@@ -40,7 +40,7 @@ export const MatchProvider = ({ children }) => {
             setHomePlayers(homeTeam);
             setAwayplayers(awayTeam);
         }
-    }, [formattedMatch, players]); // Only re-run the effect if formattedMatch or players change
+    }, [formattedMatch, players]);
     
     return (
         <MatchContext.Provider value={{ match: formattedMatch, homePlayers, awayPlayers, goals, loadData }}>

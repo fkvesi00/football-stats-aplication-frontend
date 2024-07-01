@@ -1,4 +1,4 @@
-import Table from "../table/Table"
+/* import Table from "../table/Table"
 
 function Points({clubStats}) {
  
@@ -32,3 +32,4 @@ function Points({clubStats}) {
 }
 
 export default Points
+ */
