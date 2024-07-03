@@ -1,5 +1,5 @@
 import { HashRouter  as Router,Routes,Route } from "react-router-dom";
-import{useState,useEffect, useContext} from 'react'
+import{useState,useEffect} from 'react'
 import { AuthProvider } from "./context/authContext/AuthContext";
 import StandingsTable from "./components/table/StandingsTable";
 import NavBar from "./components/layout/NavBar";
