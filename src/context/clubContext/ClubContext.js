@@ -1,19 +1,28 @@
-import {createContext, useState} from 'react'
+import {createContext, useReducer, useState} from 'react'
 import { fetchClubs, fetchPlayersOfClub, fetchPlayerStats, fetchMatchesOfClub, teamMatches } from './ClubActions';
 import { matchFormat } from '../matchContext/MatchesActions';
+import ClubReducer from './ClubReducer';
+
 const ClubContext = createContext()
 
 export const ClubProvider =  ({children})  => {
-    const [clubs, setClubs] = useState([]);
     const [loading, setLoading] = useState(true);
     const [playersOfClub, setPlayersOfClub] = useState([]);
     const [matchesOfClub, setMatchesOfClub] = useState([]);
     const [playerStats, setPlayerStats] = useState([]);
-    const [allGamesByClub, setAllGamesByClub] = useState([])
+
+    const initialState = {
+      clubs: []
+    }
+    
+    const [state, dispatch] = useReducer(ClubReducer, initialState)
 
     const loadClubs = async () => {
       const clubsData = await fetchClubs();
-      setClubs(clubsData);
+      dispatch({
+        type: 'GET_CLUBS',
+        payload: clubsData
+      })
     };
   
     const fetchClubsPlayersAndMatches = async (teamID) => {
@@ -29,7 +38,7 @@ export const ClubProvider =  ({children})  => {
 
 
   return <ClubContext.Provider value={{
-    clubs,
+    clubs: state.clubs,
     loading,
     playersOfClub,
     matchesOfClub,
