@@ -1,5 +1,5 @@
 import {createContext, useState} from 'react'
-import { fetchClubs, fetchPlayersOfClub, fetchPlayerStats, fetchMatchesOfClub } from './ClubActions';
+import { fetchClubs, fetchPlayersOfClub, fetchPlayerStats, fetchMatchesOfClub, teamMatches } from './ClubActions';
 import { matchFormat } from '../matchContext/MatchesActions';
 const ClubContext = createContext()
 
@@ -9,6 +9,7 @@ export const ClubProvider =  ({children})  => {
     const [playersOfClub, setPlayersOfClub] = useState([]);
     const [matchesOfClub, setMatchesOfClub] = useState([]);
     const [playerStats, setPlayerStats] = useState([]);
+    const [allGamesByClub, setAllGamesByClub] = useState([])
 
     const loadClubs = async () => {
       const clubsData = await fetchClubs();
@@ -35,7 +36,8 @@ export const ClubProvider =  ({children})  => {
     playerStats,
     setLoading,
     loadClubs,
-    fetchClubsPlayersAndMatches
+    fetchClubsPlayersAndMatches,
+    teamMatches
   }}>
     {children}
   </ClubContext.Provider>

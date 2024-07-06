@@ -33,3 +33,26 @@ export const fetchPlayersOfClub = async (teamID) => {
     });
     return response.json();
   };
+
+  export const teamMatches = (teams, allMatches) => {
+    const teamsAndTheirMatches = [];
+  
+    teams.forEach((team) => {
+      const matchesOfTeam = allMatches.reduce((accumulator, match) => {
+        if (team.teamid === match.a_id || team.teamid === match.h_id) {
+          accumulator.push(match);
+        }
+        return accumulator;
+      }, []);
+  
+      const object = {
+        id: team.teamid,
+        name: team.teamname,
+        matches: matchesOfTeam,
+      };
+  
+      teamsAndTheirMatches.push(object);
+    });
+  
+    return teamsAndTheirMatches;
+  };

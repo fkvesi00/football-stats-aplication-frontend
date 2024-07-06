@@ -1,23 +1,30 @@
 import { createContext, useState } from "react";
-import {fetchScorers} from './StatsActions'
+import {fetchScorers, calculateTable} from './StatsActions'
 
-const StasContext = createContext()
+const StatsContext = createContext()
 
-export const StasProvider = ({children}) =>{
+export const StatsProvider = ({children}) =>{
     const [scorers, setScorers] = useState([]);
+    const [table, setTable] = useState([])
 
     const loadScorers = async () => {
         await fetchScorers(setScorers)
     }
 
+    const loadTable = (allGamesByClub) => {
+        setTable(calculateTable(allGamesByClub))
+    }
+    
     return (
-        <StasContext.Provider value={{
+        <StatsContext.Provider value={{
             scorers,
-            loadScorers
+            table,
+            loadScorers,
+            loadTable
         }}>
             {children}
-        </StasContext.Provider>
+        </StatsContext.Provider>
     )
 }
 
-export default StasContext
+export default StatsContext

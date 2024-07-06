@@ -27,11 +27,11 @@ function About() {
     />
   </div>
 </div>
-        <p style={{ fontFamily: '"Times New Roman", Times, serif;', margin: '10px', padding:'5px' }}>{text}</p>
+        <p style={{ fontFamily: '"Times New Roman", Times, serif', margin: '10px', padding:'5px' }}>{text}</p>
         
-        <p style={{ fontFamily: '"Times New Roman", Times, serif;', margin: '10px', padding:'5px' }}>Verzija: 1.0</p>
+        <p style={{ fontFamily: '"Times New Roman", Times, serif', margin: '10px', padding:'5px' }}>Verzija: 1.0</p>
         
-        <p style={{ fontFamily: '"Times New Roman", Times, serif;', margin: '10px', padding:'5px' }}>
+        <p style={{ fontFamily: '"Times New Roman", Times, serif', margin: '10px', padding:'5px' }}>
           <Link to="/">Back to home</Link>
         </p>
       </div>

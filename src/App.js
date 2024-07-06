@@ -19,7 +19,7 @@ import Kup from "./pages/Kup";
 import About from "./pages/About";
 import  { ClubProvider } from "./context/clubContext/ClubContext";
 import { PlayerProvider} from './context/playersContext/PlayerContext'
-import { StasProvider } from "./context/statsContext/StatsContext";
+import { StatsProvider } from "./context/statsContext/StatsContext";
 import { ScheduleProvider } from "./context/scheduleContext/ScheduleContext";
 import { MatchProvider } from "./context/matchContext/MatchContext";
 
@@ -42,18 +42,16 @@ function App() {
     <AuthProvider>
       <ClubProvider>
         <PlayerProvider>
-          <StasProvider>
+          <StatsProvider>
             <ScheduleProvider>
               <MatchProvider>
       <Router>
         <NavBar />
       {loading ? (
-        // Loading spinner component
         <div className="loader-container">
           <div className="loader"></div>
         </div>
       ) : (
-        // Your content once loading is complete
         <Routes>
           <Route
             exact
@@ -83,7 +81,7 @@ function App() {
       </Router>
           </MatchProvider>
          </ScheduleProvider>
-        </StasProvider>
+        </StatsProvider>
        </PlayerProvider>
       </ClubProvider>
     </AuthProvider>
