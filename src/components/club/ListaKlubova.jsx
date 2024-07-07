@@ -1,4 +1,4 @@
-import { useEffect, useContext } from 'react';
+import { useEffect, useContext, useState } from 'react';
 import { motion } from 'framer-motion';
 
 import ClubContext from '../../context/clubContext/ClubContext';
@@ -7,8 +7,9 @@ import '../layout/header.css';
 import '../layout/animation.css';
 
 function ListaKlubova() {
-  const { clubs, loading, loadClubs, setLoading } = useContext(ClubContext);
-  
+  const { clubs, loadClubs } = useContext(ClubContext);
+  const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     const delay = setTimeout(async () => {
       await loadClubs();

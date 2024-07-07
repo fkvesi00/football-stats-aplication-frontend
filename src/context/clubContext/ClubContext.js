@@ -1,4 +1,4 @@
-import {createContext, useReducer, useState} from 'react'
+import {createContext, useReducer} from 'react'
 import { fetchClubs, fetchPlayersOfClub, fetchPlayerStats, fetchMatchesOfClub, teamMatches } from './ClubActions';
 import { matchFormat } from '../matchContext/MatchesActions';
 import ClubReducer from './ClubReducer';
@@ -6,13 +6,11 @@ import ClubReducer from './ClubReducer';
 const ClubContext = createContext()
 
 export const ClubProvider =  ({children})  => {
-    const [loading, setLoading] = useState(true);
-    const [playersOfClub, setPlayersOfClub] = useState([]);
-    const [matchesOfClub, setMatchesOfClub] = useState([]);
-    const [playerStats, setPlayerStats] = useState([]);
-
     const initialState = {
-      clubs: []
+      clubs: [],
+      playersOfClub: [],
+      matchesOfClub: [],
+      playerStats: []
     }
     
     const [state, dispatch] = useReducer(ClubReducer, initialState)
@@ -31,19 +29,26 @@ export const ClubProvider =  ({children})  => {
         fetchPlayerStats(teamID),
         fetchMatchesOfClub(teamID)
       ]);
-      setPlayersOfClub(players);
-      setPlayerStats(stats);
-      setMatchesOfClub(matchFormat(matches));
+      dispatch({
+        type: 'GET_PLAYERS_OF_CLUB',
+        payload: players
+      })
+      dispatch({
+        type: 'GET_MATCHES_OF_CLUB',
+        payload: matchFormat(matches)
+      })
+      dispatch({
+        type: 'GET_CLUB_PLAYERS_APPERANCES_AND_GOALS',
+        payload: stats
+      })
     };
 
 
   return <ClubContext.Provider value={{
     clubs: state.clubs,
-    loading,
-    playersOfClub,
-    matchesOfClub,
-    playerStats,
-    setLoading,
+    playersOfClub:state.playersOfClub,
+    matchesOfClub:state.matchesOfClub,
+    playerStats: state.playerStats,
     loadClubs,
     fetchClubsPlayersAndMatches,
     teamMatches
