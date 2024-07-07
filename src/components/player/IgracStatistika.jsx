@@ -8,13 +8,13 @@ import PlayerContext from '../../context/playersContext/PlayerContext.js';
 
 function IgracStatistika() {
     const {id} = useParams();
-    const {player, appearances, goals, loadPlayerData } = useContext(PlayerContext);
+    const {player, app, goals, loadPlayerData } = useContext(PlayerContext);
   
     useEffect(() => {
       loadPlayerData(id);
     }, [id, loadPlayerData]);
   
-    const mergedArray = mergeAppearancesWithGoals(appearances, goals);
+    const mergedArray = mergeAppearancesWithGoals(app, goals);
 
     const rows = mergedArray.map((mergedArray, i) => {
       const { seasonname, teamname, app, goals: mergedGoals } = mergedArray;

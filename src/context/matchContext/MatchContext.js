@@ -1,5 +1,6 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useReducer } from 'react';
 import { fetchAllMatches ,fetchGameById, fetchPlayersInMatch, fetchGoalsInMatch, matchFormat } from './MatchesActions';
+import MatchReducer from './MatchReducer';
 
 const MatchContext = createContext();
 
@@ -11,6 +12,16 @@ export const MatchProvider = ({ children }) => {
     const [homePlayers, setHomePlayers] = useState([]);
     const [awayPlayers, setAwayplayers] = useState([]);
     const [goals, setGoals] = useState([]);
+
+    const initialState = {
+        allMatches: [],
+        match: null,
+        formattedMatch: {},
+        players: [],
+        homePlayers: [],
+        awayPlayers: [],
+        goals: []
+    }
 
     const loadAllMatches = async() => {
         const allMatches = await fetchAllMatches()

@@ -1,4 +1,4 @@
-export const fetchScorers = async setScorers => {
+export const fetchScorers = async () => {
     const statistika = await fetch("https://www.umadomena.com/scorers",{
         method:'POST',
         headers:{'Content-Type':'application/json'},
@@ -7,9 +7,7 @@ export const fetchScorers = async setScorers => {
           })
         })
       
-        const jsonStatistika = await statistika.json();
-     
-        setScorers(jsonStatistika)
+        return statistika.json();
 }
 
 export const calculateTable = allGamesByClub => {

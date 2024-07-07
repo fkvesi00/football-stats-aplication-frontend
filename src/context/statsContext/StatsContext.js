@@ -1,24 +1,38 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useReducer } from "react";
 import {fetchScorers, calculateTable} from './StatsActions'
+import StatsReducer from "./StatsReducer";
 
 const StatsContext = createContext()
 
 export const StatsProvider = ({children}) =>{
-    const [scorers, setScorers] = useState([]);
-    const [table, setTable] = useState([])
+
+    const initialState = {
+        scorers: [],
+        table: []
+    }
+
+    const [state, dispatch] = useReducer(StatsReducer, initialState)
 
     const loadScorers = async () => {
-        await fetchScorers(setScorers)
+        const scorers = await fetchScorers()
+
+        dispatch({
+            type:'GET_TOP20_SCORERS',
+            payload: scorers
+        })
     }
 
     const loadTable = (allGamesByClub) => {
-        setTable(calculateTable(allGamesByClub))
+        dispatch({
+            type:'SET_TABLE',
+            payload: calculateTable(allGamesByClub)
+        })
     }
     
     return (
         <StatsContext.Provider value={{
-            scorers,
-            table,
+            scorers: state.scorers,
+            table: state.table,
             loadScorers,
             loadTable
         }}>

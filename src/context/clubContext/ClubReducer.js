@@ -1,5 +1,5 @@
 const ClubReducer = (state, action) => {
-    switch(action.type){
+    switch (action.type){
         case 'GET_CLUBS':
             return {
                 ...state,
