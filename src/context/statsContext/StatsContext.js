@@ -1,4 +1,4 @@
-import { createContext, useState, useReducer } from "react";
+import { createContext, useReducer } from "react";
 import {fetchScorers, calculateTable} from './StatsActions'
 import StatsReducer from "./StatsReducer";
 
