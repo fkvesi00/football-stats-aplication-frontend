@@ -58,7 +58,8 @@ export const PlayerProvider = ({ children }) => {
         goals: state.goals,
         loadPlayers,
         loadPlayerData,
-        calculatePlayerAge
+        calculatePlayerAge,
+        dispatch
       }}
     >
       {children}

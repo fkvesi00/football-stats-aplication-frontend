@@ -12,17 +12,23 @@ function ListaKlubova() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const delay = setTimeout(async () => {
-      const fetchedClubs = await fetchClubs()
-      dispatch({
-        type:'GET_CLUBS',
-        payload: fetchedClubs
-      })
-      setLoading(false);
-    }, 200);
+    const loadClubs = async () => {
+      try {
+        const fetchedClubs = await fetchClubs();
+        dispatch({
+          type: 'GET_CLUBS',
+          payload: fetchedClubs,
+        });
+      } catch (error) {
+        console.error('Error fetching clubs:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadClubs();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    return () => clearTimeout(delay);
-  }, []);
+  }, [dispatch]);
 
 
   const renderContent = (

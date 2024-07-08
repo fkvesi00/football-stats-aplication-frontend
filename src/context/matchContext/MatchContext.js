@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useReducer } from 'react';
+import React, { createContext, useEffect, useReducer } from 'react';
 import { fetchAllMatches ,fetchGameById, fetchPlayersInMatch, fetchGoalsInMatch, matchFormat } from './MatchesActions';
 import MatchReducer from './MatchReducer';
 

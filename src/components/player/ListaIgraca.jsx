@@ -3,14 +3,32 @@ import {motion} from 'framer-motion'
 
 import PlayerCard from '../../shared/PlayerCard'
 import PlayerContext from '../../context/playersContext/PlayerContext'
+import {fetchPlayers, calculatePlayerAge} from '../../context/playersContext/PlayerActions'
 
 function ListaIgraca() {
-    const {players, calculatePlayerAge, loadPlayers} = useContext(PlayerContext)
+    const {players, dispatch} = useContext(PlayerContext)
     const [input, setInput] = useState('')
+    const [loading, setLoading] = useState(true)
 
-      useEffect(() => {
-        loadPlayers()
-      },[])
+    useEffect(() => {
+      const loadPlayers = async () => {
+        try {
+          const fetchedPlayers = await fetchPlayers();
+          dispatch({
+            type: 'GET_ALL_PLAYERS',
+            payload: fetchedPlayers,
+          });
+        } catch (error) {
+          console.error('Error fetching players:', error);
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      loadPlayers();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [dispatch]);
+    
     
       const filterPlayer = players.filter(el => {
         return el.playername.toLowerCase().includes(input.toLocaleLowerCase());
@@ -37,9 +55,13 @@ function ListaIgraca() {
         );
       });
 
+      const LoadingSpinner = () => (
+        <div className="loader-container">
+          <div className="loader"></div>
+        </div>
+      );
  
-
-    return (
+      return loading ? <LoadingSpinner /> : (
       <div data-theme='garden'>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <input
