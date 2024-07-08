@@ -51,7 +51,8 @@ export const ClubProvider =  ({children})  => {
     playerStats: state.playerStats,
     loadClubs,
     fetchClubsPlayersAndMatches,
-    teamMatches
+    teamMatches,
+    dispatch
   }}>
     {children}
   </ClubContext.Provider>

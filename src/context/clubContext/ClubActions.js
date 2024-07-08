@@ -4,7 +4,7 @@ export const fetchClubs = async () => {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' }
     });
-    return response.json();
+    return response.json()
   };
 
 export const fetchPlayersOfClub = async (teamID) => {
