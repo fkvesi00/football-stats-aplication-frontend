@@ -1,19 +1,12 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useReducer } from 'react';
 import { fetchAllMatches ,fetchGameById, fetchPlayersInMatch, fetchGoalsInMatch, matchFormat } from './MatchesActions';
+import MatchReducer from './MatchReducer';
 
 
 const MatchContext = createContext();
 
 export const MatchProvider = ({ children }) => {
-    const [allMatches, setAllMatches] = useState([])
-    const [match, setMatch] = useState(null);
-    const [formattedMatch, setFormattedMatch] = useState({});
-    const [players, setPlayers] = useState([]);
-    const [homePlayers, setHomePlayers] = useState([]);
-    const [awayPlayers, setAwayplayers] = useState([]);
-    const [goals, setGoals] = useState([]);
-
-/*     const initialState = {
+     const initialState = {
         allMatches: [],
         match: null,
         formattedMatch: {},
@@ -21,12 +14,17 @@ export const MatchProvider = ({ children }) => {
         homePlayers: [],
         awayPlayers: [],
         goals: []
-    } */
+    }
+
+    const [state, dispatch] = useReducer(MatchReducer, initialState)
 
     const loadAllMatches = async() => {
         const allMatches = await fetchAllMatches()
 
-        setAllMatches(matchFormat(allMatches))
+        dispatch({
+            type: 'GET_ALL_MATCHES',
+            payload: matchFormat(allMatches)
+        })
     }
 
     const loadData = async (id) => {
@@ -35,9 +33,18 @@ export const MatchProvider = ({ children }) => {
             const playerData = await fetchPlayersInMatch(id);
             const goalData = await fetchGoalsInMatch(id);
     
-            setMatch(matchData);
-            setPlayers(playerData);
-            setGoals(goalData);
+            dispatch({
+                type: 'GET_MATCH_BY_ID',
+                payload: matchData
+            })
+            dispatch({
+                type: 'GET_PLAYERS_IN_MATCH',
+                payload: playerData
+            })
+            dispatch({
+                type: 'GET_GOALS_IN_MATCH',
+                payload: goalData
+            })
         } catch (error) {
             console.error('Error fetching match data:', error);
         }
@@ -45,23 +52,21 @@ export const MatchProvider = ({ children }) => {
     
 
     useEffect(() => {
-        if (match && match.length > 0) { 
-            const formatted = matchFormat(match);
-            setFormattedMatch(formatted[0]);
+        if (state.match && state.match.length > 0) { 
+            const formatted = matchFormat(state.match);
+            state.formattedMatch = formatted[0];
         }
-    }, [match]); 
+    }, [state.match]); 
     
     useEffect(() => {
-        if (players.length > 0 && formattedMatch) {
-            const homeTeam = players.filter(player => player.teamid === formattedMatch.h_id);
-            const awayTeam = players.filter(player => player.teamid === formattedMatch.a_id);
-            setHomePlayers(homeTeam);
-            setAwayplayers(awayTeam);
+        if (state.players.length > 0 && state.formattedMatch) {
+            state.homePlayers= state.players.filter(player => player.teamid === state.formattedMatch.h_id);
+            state.awayPlayers = state.players.filter(player => player.teamid === state.formattedMatch.a_id);
         }
-    }, [formattedMatch, players]);
+    }, [state.formattedMatch, state.players]);
     
     return (
-        <MatchContext.Provider value={{allMatches, match: formattedMatch, homePlayers, awayPlayers, goals, loadAllMatches,loadData }}>
+        <MatchContext.Provider value={{allMatches: state.allMatches, match: state.formattedMatch, homePlayers: state.homePlayers, awayPlayers: state.awayPlayers, goals: state.goals, loadAllMatches,loadData }}>
             {children}
         </MatchContext.Provider>
     );
