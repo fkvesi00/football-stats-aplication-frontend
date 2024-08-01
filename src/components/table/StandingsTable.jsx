@@ -5,16 +5,45 @@ import {  faTrophy   } from '@fortawesome/free-solid-svg-icons';
 import MatchContext from '../../context/matchContext/MatchContext';
 import ClubContext from '../../context/clubContext/ClubContext';
 import StatsContext from '../../context/statsContext/StatsContext';
+import { fetchClubs } from '../../context/clubContext/ClubActions';
+import { fetchAllMatches, matchFormat } from '../../context/matchContext/MatchesActions';
+import { calculateTable } from '../../context/statsContext/StatsActions';
 
 const StandingsTable = () => {
-  const {allMatches, loadAllMatches} = useContext(MatchContext)
-  const {clubs, loadClubs, teamMatches} = useContext(ClubContext)
-  const {table, loadTable} = useContext(StatsContext)
+  const {allMatches, dispatch: matchDispatch} = useContext(MatchContext)
+  const {clubs, teamMatches, dispatch: clubDispatch} = useContext(ClubContext)
+  const {table, dispatch: statsDispatch} = useContext(StatsContext)
   const [allGamesByClub, setAllGamesByClub] = useState([])
-  useEffect(()=> {
-    loadAllMatches()
-    loadClubs()
-  },[])
+  
+  useEffect(() => {
+    const loadAllMatches = async () => {
+      try {
+        const allMatches = await fetchAllMatches();
+        matchDispatch({
+          type: 'GET_ALL_MATCHES',
+          payload: matchFormat(allMatches),
+        });
+      } catch (error) {
+        console.error('Error fetching all matches', error);
+      }
+    };
+
+    const loadClubs = async () => {
+      try {
+        const clubsData = await fetchClubs();
+        clubDispatch({
+          type: 'GET_CLUBS',
+          payload: clubsData,
+        });
+      } catch (error) {
+        console.error('Error fetching clubs', error);
+      }
+    };
+
+    loadAllMatches();
+    loadClubs();
+  }, [matchDispatch, clubDispatch]);
+  
 
   useEffect(() => {
     if (allMatches.length > 0 && clubs.length > 0) {
@@ -27,7 +56,10 @@ const StandingsTable = () => {
 
   useEffect(() => {
     if (allGamesByClub.length > 0) {
-      loadTable(allGamesByClub);
+      statsDispatch({
+        type:'SET_TABLE',
+        payload: calculateTable(allGamesByClub)
+    })
     }
   }, [allGamesByClub]); 
 

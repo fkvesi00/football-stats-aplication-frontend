@@ -5,14 +5,39 @@ import IgracTable from './IgracTable';
 import PlayerCard from '../../shared/PlayerCard';
 import { mergeAppearancesWithGoals, formatPlayer } from '../../context/playersContext/PlayerActions.js'
 import PlayerContext from '../../context/playersContext/PlayerContext.js';
+import { fetchPlayerInfo, fetchPlayerAppearances, fetchPlayerGoals} from '../../context/playersContext/PlayerActions.js';
 
 function IgracStatistika() {
     const {id} = useParams();
-    const {player, app, goals, loadPlayerData } = useContext(PlayerContext);
+    const {player, app, goals, dispatch } = useContext(PlayerContext);
   
     useEffect(() => {
-      loadPlayerData(id);
-    }, [id, loadPlayerData]);
+      const loadPlayerData = async (playerID) => {
+        try {
+            const player = await fetchPlayerInfo(playerID)
+            dispatch({
+              type:'GET_PLAYER',
+              payload: player
+            })
+            
+            const app = await fetchPlayerAppearances(playerID)
+            dispatch({
+              type: 'GET_PLAYER_APP',
+              payload: app
+            })
+            
+            const playerGoals = await fetchPlayerGoals(playerID)
+            dispatch({
+              type: 'GET_PLAYER_GOALS',
+              payload: playerGoals
+            })
+        } catch (error) {
+          console.error('Error fetching player data', error)
+        }
+        
+      };
+      loadPlayerData(id)
+    }, [id]);
   
     const mergedArray = mergeAppearancesWithGoals(app, goals);
 

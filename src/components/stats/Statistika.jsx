@@ -2,13 +2,25 @@ import React from 'react'
 import{useContext,useEffect} from 'react'
 import Strijelci from './Strijelci';
 import StasContext from '../../context/statsContext/StatsContext';
+import { fetchScorers } from '../../context/statsContext/StatsActions';
 
 function Statistika() {
-    const {scorers, loadScorers} = useContext(StasContext)
+    const {scorers, dispatch} = useContext(StasContext)
     
     useEffect(()=>{
-      loadScorers()
-    },[])
+      const loadScorers = async () => {
+        try {
+          const scorers = await fetchScorers()
+          dispatch({
+              type:'GET_TOP20_SCORERS',
+              payload: scorers
+          })
+        } catch (error) {
+          console.error('Error fetching scorers', error)
+        } 
+    }
+    loadScorers()
+  },[])
   
   return (
     <div className="flex flex-col items-center justify-center">

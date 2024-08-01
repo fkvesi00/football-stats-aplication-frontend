@@ -1,9 +1,6 @@
 import {createContext, useReducer} from 'react'
 import {
   fetchPlayers,
-  fetchPlayerAppearances,
-  fetchPlayerInfo,
-  fetchPlayerGoals,
   calculatePlayerAge} from './PlayerActions'
 import PlayerReducer from './PlayerReducer';
 
@@ -28,26 +25,6 @@ export const PlayerProvider = ({ children }) => {
     })
   };
 
-  const loadPlayerData = async (playerID) => {
-    const [player, app, playerGoals] = await Promise.all([
-      fetchPlayerInfo(playerID),
-      fetchPlayerAppearances(playerID),
-      fetchPlayerGoals(playerID)
-    ]);
-    
-    dispatch({
-      type:'GET_PLAYER',
-      payload: player
-    })
-    dispatch({
-      type: 'GET_PLAYER_APP',
-      payload: app
-    })
-    dispatch({
-      type: 'GET_PLAYER_GOALS',
-      payload: playerGoals
-    })
-  };
 
   return (
     <PlayerContext.Provider
@@ -57,7 +34,6 @@ export const PlayerProvider = ({ children }) => {
         app: state.app,
         goals: state.goals,
         loadPlayers,
-        loadPlayerData,
         calculatePlayerAge,
         dispatch
       }}
