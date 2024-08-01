@@ -1,5 +1,4 @@
 import { createContext, useReducer } from "react";
-import {calculateTable} from './StatsActions'
 import StatsReducer from "./StatsReducer";
 
 const StatsContext = createContext()
