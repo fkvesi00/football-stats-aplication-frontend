@@ -1,6 +1,4 @@
 import { createContext, useReducer } from 'react'
-import { fetchGamesBySeason } from './ScheduleActions';
-import { matchFormat } from '../matchContext/MatchesActions';
 import ScheduleReducer from './ScheduleRedcuer';
 
 const ScheduleContext = createContext()

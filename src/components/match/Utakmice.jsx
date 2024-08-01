@@ -4,15 +4,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbol } from '@fortawesome/free-solid-svg-icons';
 import Pagination from '../calculations/Paganation'; 
 import MatchContext from '../../context/matchContext/MatchContext';
+import { fetchAllMatches, matchFormat } from '../../context/matchContext/MatchesActions';
 
 function Utakmice() {
-  const {allMatches, loadAllMatches} = useContext(MatchContext)
+  const {allMatches, dispatch} = useContext(MatchContext)
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   
-  useEffect(()=> {
-    loadAllMatches()
-  },[])
+  useEffect(() => {
+    const loadAllMatches = async () => {
+      try {
+        const allMatches = await fetchAllMatches();
+        dispatch({
+          type: 'GET_ALL_MATCHES',
+          payload: matchFormat(allMatches)
+        });
+      } catch (error) {
+        console.error('Error fetching match data:', error);
+      }
+    };
+  
+    loadAllMatches();
+  }, []);
+  
 
   const matchesplayed = allMatches.filter(utakmica => utakmica.score !== null)
 
