@@ -30,6 +30,7 @@ function IgracStatistika() {
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
           {playerFormatted && (
             <PlayerCard
+              key={playerFormatted.playerid}
               ime={playerFormatted.playername}
               godine={playerFormatted.playerAge}
               nacionalnost={playerFormatted.playernationality}

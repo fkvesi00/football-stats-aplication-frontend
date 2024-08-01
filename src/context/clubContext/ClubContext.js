@@ -1,6 +1,5 @@
 import {createContext, useReducer} from 'react'
-import { fetchClubs, fetchPlayersOfClub, fetchPlayerStats, fetchMatchesOfClub, teamMatches } from './ClubActions';
-import { matchFormat } from '../matchContext/MatchesActions';
+import { fetchClubs, teamMatches } from './ClubActions';
 import ClubReducer from './ClubReducer';
 
 const ClubContext = createContext()
@@ -22,27 +21,6 @@ export const ClubProvider =  ({children})  => {
         payload: clubsData
       })
     };
-  
-    const fetchClubsPlayersAndMatches = async (teamID) => {
-      const [players, stats, matches] = await Promise.all([
-        fetchPlayersOfClub(teamID),
-        fetchPlayerStats(teamID),
-        fetchMatchesOfClub(teamID)
-      ]);
-      dispatch({
-        type: 'GET_PLAYERS_OF_CLUB',
-        payload: players
-      })
-      dispatch({
-        type: 'GET_MATCHES_OF_CLUB',
-        payload: matchFormat(matches)
-      })
-      dispatch({
-        type: 'GET_CLUB_PLAYERS_APPERANCES_AND_GOALS',
-        payload: stats
-      })
-    };
-
 
   return <ClubContext.Provider value={{
     clubs: state.clubs,
@@ -50,7 +28,6 @@ export const ClubProvider =  ({children})  => {
     matchesOfClub:state.matchesOfClub,
     playerStats: state.playerStats,
     loadClubs,
-    fetchClubsPlayersAndMatches,
     teamMatches,
     dispatch
   }}>

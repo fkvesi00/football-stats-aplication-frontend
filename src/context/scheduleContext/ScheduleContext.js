@@ -11,18 +11,10 @@ export const ScheduleProvider = ({children}) => {
     }
     
     const [state, dispatch] = useReducer(ScheduleReducer, initialState)
-
-    const loadGamesBySeason = async () => {
-        const scheduleBySeason = await fetchGamesBySeason()
-
-        dispatch({
-            type: 'GET_SCHEDULE',
-            payload: matchFormat(scheduleBySeason)
-        })
-    }
+    
     return <ScheduleContext.Provider value={{
         schedule: state.schedule,
-        loadGamesBySeason
+        dispatch
     }}>
         {children}
     </ScheduleContext.Provider>

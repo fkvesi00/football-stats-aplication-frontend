@@ -5,6 +5,9 @@ import { faFutbol, faUser } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 
 import ClubContext from '../../context/clubContext/ClubContext';
+import {fetchPlayersOfClub, fetchPlayerStats, fetchMatchesOfClub} from '../../context/clubContext/ClubActions';
+import { matchFormat } from '../../context/matchContext/MatchesActions';
+
 import Raspored from '../match/Raspored';
 import UtakmiceKluba from '../match/UtakmiceKluba';
 import IgraciTimaStatistika from '../player/IgraciTimaStatistika';
@@ -15,11 +18,32 @@ function Klub() {
   const {id} = useParams();
   const [display, setDisplay] = useState('Raspored')
   
-  const {playersOfClub, matchesOfClub, playerStats, fetchClubsPlayersAndMatches} = useContext(ClubContext)
+  const {playersOfClub, matchesOfClub, playerStats, dispatch} = useContext(ClubContext)
 
   //ucitaj raspored tima i njegove igrace, cinimo to pomocu id kluba, koji se nalazi u parametru stranice
   useEffect(()=>{
-    fetchClubsPlayersAndMatches(id)
+    const fetchClubPlayersAndMatches = async (id) => {
+      try {
+        const players = await fetchPlayersOfClub(id)
+        dispatch({
+          type: 'GET_PLAYERS_OF_CLUB',
+          payload: players
+        })
+        const matches = await fetchMatchesOfClub(id)
+        dispatch({
+          type: 'GET_MATCHES_OF_CLUB',
+          payload: matchFormat(matches)
+        })
+        const stats = await fetchPlayerStats(id)
+        dispatch({
+          type: 'GET_CLUB_PLAYERS_APPERANCES_AND_GOALS',
+          payload: stats
+        })
+      } catch (error) {
+        console.error("Error fetching ", error)
+      }
+    }
+    fetchClubPlayersAndMatches(id)
   },[id])
 
 useEffect(() => {
@@ -51,7 +75,7 @@ const listaIgraca = playersOfClub.map((igrac, i) => {
 
   const playerStatistic = playerStats.map((player,i) => {
     const {playerid, playername, appearances, goals} = player
-    return <IgraciTimaStatistika counter={i} playerid={playerid} playerName={playername} app={appearances} goals={goals}/>
+    return <IgraciTimaStatistika key={playerid} counter={i} playerid={playerid} playerName={playername} app={appearances} goals={goals}/>
   })
 
   

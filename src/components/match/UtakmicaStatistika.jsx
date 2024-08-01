@@ -3,15 +3,42 @@ import { useParams } from 'react-router-dom';
 import MatchContext from '../../context/matchContext/MatchContext';
 import Rezultat from '../table/Rezultat';
 import PlayerTable from '../player/PlayerTable';
+import {fetchGameById, fetchPlayersInMatch, fetchGoalsInMatch} from '../../context/matchContext/MatchesActions'
 
 function UtakmicaStatistika() {
   const { id } = useParams();
-  const { match, homePlayers, awayPlayers, goals, loadData } = useContext(MatchContext);
+  const { match, goals, homePlayers, awayPlayers, dispatch } = useContext(MatchContext);
 
   useEffect(() => {
-    loadData(id);
+    const loadMatchData = async () => {
+      try {
+        const playerData = await fetchPlayersInMatch(id);
+        dispatch({
+          type: 'GET_PLAYERS_IN_MATCH',
+          payload: playerData
+        });
+  
+        const matchData = await fetchGameById(id);
+        dispatch({
+          type: 'GET_MATCH_BY_ID',
+          payload: matchData
+        });
+  
+        const goalData = await fetchGoalsInMatch(id);
+        dispatch({
+          type: 'GET_GOALS_IN_MATCH',
+          payload: goalData
+        });
+      } catch (error) {
+        console.error('Error fetching match data:', error);
+      }
+    };
+  
+    loadMatchData();
   }, [id]);
-
+  
+    
+   
   const renderTeamRows = (team) => {
     return team.map((player, index) => {
       const playerGoals = goals.filter(goal => goal.playerid === player.playerid).length;

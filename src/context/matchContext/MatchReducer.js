@@ -20,6 +20,23 @@ const MatchReducer = (state, action) =>{
                 ...state,
                 goals: action.payload
             }
+        case 'SET_FORMATTED_MATCH':
+            return {
+                ...state,
+                formattedMatch: action.payload,
+            };
+            
+        case 'SET_HOME_PLAYERS':
+            return {
+                ...state,
+                homePlayers: action.payload,
+            };
+            
+        case 'SET_AWAY_PLAYERS':
+            return {
+                ...state,
+                awayPlayers: action.payload,
+            };
         default: return state
     }
 }

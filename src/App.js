@@ -9,7 +9,6 @@ import Utakmice from "./components/match/Utakmice";
 import ListaKlubova from "./components/club/ListaKlubova";
 import ListaIgraca from "./components/player/ListaIgraca";
 import UtakmicaStatistika from "./components/match/UtakmicaStatistika";
-import ListaUtakmica from "./components/match/ListaUtakmica";
 import IgracStatistika from "./components/player/IgracStatistika";
 import SignIn from "./pages/SignIn";
 import AdminPage from "./components/adminPage/AdminPage";
@@ -43,7 +42,6 @@ function App() {
                           </>
                         }
                       />
-                      <Route exact path={`/utakmice`} element={<ListaUtakmica />} />
                       <Route exact path={`/utakmica/:id`} element={<UtakmicaStatistika />} />
                       <Route exact path={`/klub/:id`} element={<Klub />} />
                       <Route exact path={`/klubovi`} element={<ListaKlubova />} />

@@ -6,14 +6,23 @@ import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 import { sortAndFormatSchedule } from '../../context/scheduleContext/ScheduleActions';
 import Pagination from '../calculations/Paganation';
 import ScheduleContext from '../../context/scheduleContext/ScheduleContext';
+import { matchFormat } from '../../context/matchContext/MatchesActions';
+import { fetchGamesBySeason } from '../../context/scheduleContext/ScheduleActions';
 
-function Raspored({ raspored }) {
-  const {schedule, loadGamesBySeason} = useContext(ScheduleContext);
+function Raspored( ) {
+  const {schedule, dispatch} = useContext(ScheduleContext);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   
-
   useEffect(() => {
+    const loadGamesBySeason = async () => {
+      const scheduleBySeason = await fetchGamesBySeason()
+
+      dispatch({
+          type: 'GET_SCHEDULE',
+          payload: matchFormat(scheduleBySeason)
+      })
+    }
     loadGamesBySeason()
   },[])
 

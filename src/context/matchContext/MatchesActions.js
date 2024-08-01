@@ -75,20 +75,3 @@ export const matchFormat = (utakmica) => {
     return matchDate.toLocaleDateString('hr-HR', options);
   };
 
-
-  export const  compareMatchesByDate = (a, b) => {
-    const dateA = new Date(a.date);
-    const dateB = new Date(b.date);
-  
-    return dateB - dateA;
-  };
-
-  export const matchesplayed = (allMatches) => allMatches.filter(utakmica => utakmica.score !== null)
-
-  export const matchesSortedByDate = (matchesplayed) => matchesplayed.sort(compareMatchesByDate);
-
-  export const a = (allMatches) => {
-    const final = matchesplayed(matchesSortedByDate(allMatches))
-
-    return final
-  }
