@@ -13,13 +13,13 @@ import IgracStatistika from "./components/player/IgracStatistika";
 import SignIn from "./pages/SignIn";
 import AdminPage from "./components/adminPage/AdminPage";
 import Statistika from "./components/stats/Statistika";
-import Kup from "./pages/Kup";
 import About from "./pages/About";
 import { ClubProvider } from "./context/clubContext/ClubContext";
 import { PlayerProvider} from './context/playersContext/PlayerContext'
 import { StatsProvider } from "./context/statsContext/StatsContext";
 import { ScheduleProvider } from "./context/scheduleContext/ScheduleContext";
 import { MatchProvider } from "./context/matchContext/MatchContext";
+import Cup from "./components/cup/Cup";
 
 function App() {
   return (
@@ -51,7 +51,7 @@ function App() {
                       <Route exact path={'/adminPage'} element={<AdminPage />} />
                       <Route exact path={'/statstika'} element={<Statistika />} />
                       <Route exact path={'/about'} element={<About />} />
-                      <Route exact path={'/galerija'} element={<Kup />} />
+                      <Route exact path={'/galerija'} element={<Cup />} />
                     </Routes>
                   <Footer />
                 </Router>
