@@ -18,17 +18,17 @@ function CupMatch({ date, team1, team1Score, team1Code, team1Flag, team2, team2S
                     <tbody className="tournament-bracket__content">
                         <tr className={`tournament-bracket__team ${team1Score > team2Score ? 'tournament-bracket__team--winner' : ''}`}>
                             <td className="tournament-bracket__country">
-                                <abbr className="tournament-bracket__code" title={team1}> {team1Code} </abbr>
+                                <abbr className="tournament-bracket__code" title={team1}>{team1Code}</abbr>
                             </td>
                             <td className="tournament-bracket__score">
-                                <span className="tournament-bracket__number"> {team1Score} </span>
+                                <span className="tournament-bracket__number">{team1Score}</span>
                             </td>
                             <td className="tournament-bracket__separator">:</td>
                             <td className="tournament-bracket__score">
-                                <span className="tournament-bracket__number"> {team2Score} </span>
+                                <span className="tournament-bracket__number">{team2Score}</span>
                             </td>
                             <td className="tournament-bracket__country">
-                                <abbr className="tournament-bracket__code" title={team2}> {team2Code} </abbr>
+                                <abbr className="tournament-bracket__code" title={team2}>{team2Code}</abbr>
                             </td>
                         </tr>
                     </tbody>
