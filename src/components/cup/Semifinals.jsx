@@ -8,25 +8,25 @@ function Semifinals() {
             <ul className="tournament-bracket__list">
                 <CupMatch
                     date="1998-02-20"
-                    team1="Canada"
+                    team1="Klada"
                     team1Score={3}
-                    team1Code="CAN"
-                    team1Flag="ca"
-                    team2="Czech Republic"
+                    team1Code="KLA"
+                    team1Flag=""
+                    team2="Opuzen"
                     team2Score={2}
-                    team2Code="CZE"
-                    team2Flag="cz"
+                    team2Code="OPZ"
+                    team2Flag=""
                 />
                 <CupMatch
                     date="1998-02-20"
-                    team1="Finland"
+                    team1="Vid"
                     team1Score={4}
-                    team1Code="FIN"
-                    team1Flag="fi"
-                    team2="Russia"
-                    team2Score={3}
-                    team2Code="RUS"
-                    team2Flag="ru"
+                    team1Code="VID"
+                    team1Flag=""
+                    team2="Sv. Nikola"
+                    team2Score={5}
+                    team2Code="SVN"
+                    team2Flag=""
                 />
             </ul>
         </div>

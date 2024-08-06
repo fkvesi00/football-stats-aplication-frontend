@@ -7,48 +7,48 @@ function Quarterfinals() {
           <h3 className="tournament-bracket__round-title">Quarterfinals</h3>
           <ul className="tournament-bracket__list">
             <CupMatch
-              date="1998-02-18"
-              team1="Canada"
-              team1Score={4}
-              team1Code="CAN"
-              team1Flag="ca"
-              team2="Kazakhstan"
-              team2Score={1}
-              team2Code="KAZ"
-              team2Flag="kz"
-            />
-            <CupMatch
-              date="1998-02-18"
-              team1="Czech Republic"
-              team1Score={4}
-              team1Code="CZE"
-              team1Flag="cz"
-              team2="USA"
-              team2Score={1}
-              team2Code="USA"
-              team2Flag="us"
-            />
-            <CupMatch
-              date="1998-02-18"
-              team1="Finland"
+              date="29.01.2024"
+              team1="Klada"
               team1Score={2}
-              team1Code="FIN"
-              team1Flag="fi"
-              team2="Sweden"
+              team1Code="KLA"
+              team1Flag=""
+              team2="Mrsavi psi"
               team2Score={1}
-              team2Code="SWE"
-              team2Flag="se"
+              team2Code="MRP"
+              team2Flag=""
             />
             <CupMatch
-              date="1998-02-18"
-              team1="Russia"
+              date="29.01.2024"
+              team1="Crni put"
               team1Score={4}
-              team1Code="RUS"
-              team1Flag="ru"
-              team2="Belarus"
+              team1Code="CRP"
+              team1Flag=""
+              team2="Opuzen"
+              team2Score={5}
+              team2Code="OPZ"
+              team2Flag=""
+            />
+            <CupMatch
+              date="29.01.2024"
+              team1="Škrapa"
+              team1Score={4}
+              team1Code="ŠKM"
+              team1Flag=""
+              team2="Vid"
+              team2Score={6}
+              team2Code="VID"
+              team2Flag=""
+            />
+            <CupMatch
+              date="29.01.2024"
+              team1="Sv. Nikola"
+              team1Score={2}
+              team1Code="SVN"
+              team1Flag=""
+              team2="Sv. Roko Podrujinca"
               team2Score={1}
-              team2Code="BLR"
-              team2Flag="by"
+              team2Code="SVR"
+              team2Flag=""
             />
           </ul>
         </div>

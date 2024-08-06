@@ -8,14 +8,14 @@ function Finals() {
             <ul className="tournament-bracket__list">
                 <CupMatch
                     date="1998-02-22"
-                    team1="Canada"
+                    team1="Klada"
                     team1Score={2}
-                    team1Code="CAN"
-                    team1Flag="ca"
-                    team2="Finland"
+                    team1Code="KLA"
+                    team1Flag=""
+                    team2="Sv. Nikola"
                     team2Score={3}
-                    team2Code="FIN"
-                    team2Flag="fi"
+                    team2Code="SVN"
+                    team2Flag=""
                 />
             </ul>
         </div>

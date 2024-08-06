@@ -8,14 +8,14 @@ function BronzeMatch() {
             <ul className="tournament-bracket__list">
                 <CupMatch
                     date="2024-08-06"
-                    team1="Canada"
-                    team1Score={2}
-                    team1Code="CAN"
-                    team1Flag="ca"
-                    team2="USA"
-                    team2Score={1}
-                    team2Code="USA"
-                    team2Flag="us"
+                    team1="Opuzem"
+                    team1Score={4}
+                    team1Code="OPZ"
+                    team1Flag=""
+                    team2="Sv. Roko Podrujnica"
+                    team2Score={3}
+                    team2Code="SVR"
+                    team2Flag=""
                 />
             </ul>
         </div>

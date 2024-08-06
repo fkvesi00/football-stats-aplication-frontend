@@ -7,92 +7,92 @@ function EightFinals() {
             <h3 className="tournament-bracket__round-title">Eight Finals</h3>
             <ul className="tournament-bracket__list">
                 <CupMatch
-                    date="1998-02-16"
-                    team1="Brazil"
-                    team1Score={3}
-                    team1Code="BRA"
+                    date="22.01.2024"
+                    team1="Klada"
+                    team1Score={null}
+                    team1Code="KLA"
                     team1Flag="br"
-                    team2="Norway"
-                    team2Score={1}
-                    team2Code="NOR"
-                    team2Flag="no"
+                    team2="slobodan"
+                    team2Score={null}
+                    team2Code="/"
+                    team2Flag=""
                 />
                 <CupMatch
-                    date="1998-02-16"
-                    team1="Italy"
+                    date="22.01.2024"
+                    team1="Neum"
                     team1Score={2}
-                    team1Code="ITA"
+                    team1Code="NEU"
                     team1Flag="it"
-                    team2="Chile"
-                    team2Score={0}
-                    team2Code="CHI"
+                    team2="Mrsavi psi"
+                    team2Score={5}
+                    team2Code="MRP"
                     team2Flag="cl"
                 />
                 <CupMatch
-                    date="1998-02-17"
-                    team1="Germany"
-                    team1Score={1}
-                    team1Code="GER"
+                    date="22.01.2024"
+                    team1="Crni put"
+                    team1Score={4}
+                    team1Code="CRP"
                     team1Flag="de"
-                    team2="South Africa"
-                    team2Score={0}
-                    team2Code="ZAF"
+                    team2="Doljani"
+                    team2Score={1}
+                    team2Code="DOLJ"
                     team2Flag="za"
                 />
                 <CupMatch
-                    date="1998-02-17"
-                    team1="Spain"
-                    team1Score={2}
-                    team1Code="ESP"
-                    team1Flag="es"
-                    team2="Nigeria"
-                    team2Score={1}
-                    team2Code="NGA"
-                    team2Flag="ng"
+                    date="22.01.2024"
+                    team1="slobodan"
+                    team1Score={null}
+                    team1Code="/"
+                    team1Flag=""
+                    team2="Opuzen"
+                    team2Score={null}
+                    team2Code="OPZ"
+                    team2Flag=""
                 />
                 <CupMatch
-                    date="1998-02-18"
-                    team1="England"
-                    team1Score={2}
-                    team1Code="ENG"
+                    date="22.01.2024"
+                    team1="Škrapa"
+                    team1Score={null}
+                    team1Code="ŠKM"
                     team1Flag="gb"
-                    team2="Japan"
-                    team2Score={0}
-                    team2Code="JPN"
-                    team2Flag="jp"
+                    team2="slobodan"
+                    team2Score={null}
+                    team2Code="/"
+                    team2Flag=""
                 />
                 <CupMatch
-                    date="1998-02-18"
-                    team1="France"
-                    team1Score={3}
-                    team1Code="FRA"
-                    team1Flag="fr"
-                    team2="USA"
-                    team2Score={1}
-                    team2Code="USA"
-                    team2Flag="us"
-                />
-                <CupMatch
-                    date="1998-02-19"
-                    team1="Netherlands"
+                    date="22.01.2024"
+                    team1="Ispod strehe"
                     team1Score={2}
-                    team1Code="NED"
-                    team1Flag="nl"
-                    team2="Iran"
-                    team2Score={0}
-                    team2Code="IRN"
-                    team2Flag="ir"
+                    team1Code="ISS"
+                    team1Flag=""
+                    team2="Vid"
+                    team2Score={3}
+                    team2Code="VID"
+                    team2Flag=""
                 />
                 <CupMatch
-                    date="1998-02-19"
-                    team1="Portugal"
-                    team1Score={1}
-                    team1Code="POR"
-                    team1Flag="pt"
-                    team2="Morocco"
+                    date="22.01.2024"
+                    team1="Sv. Nikola"
+                    team1Score={3}
+                    team1Code="SVN"
+                    team1Flag=""
+                    team2="Prud"
                     team2Score={1}
-                    team2Code="MAR"
-                    team2Flag="ma"
+                    team2Code="PRD"
+                    team2Flag=""
+                />
+                <CupMatch
+                    date="22.01.2024"
+                    team1="slobodan"
+                    team1Score={null}
+                    team1Code="/"
+                    team1Flag=""
+                    team2="Sv. Roko Podrujnica"
+                    team2Score={null}
+                    team2Code="SVR"
+                    team2Flag=""
                 />
             </ul>
         </div>
