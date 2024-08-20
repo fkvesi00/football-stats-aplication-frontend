@@ -305,3 +305,29 @@ h2 {
 .tournament-bracket__bold {
   font-weight: bold;
 }
+
+@media (max-width: 600px) {
+  .tournament-bracket__match {
+      padding: 0.9em; /* Slightly reduce padding */
+      font-size: 0.9em; /* Scale down font size by 10% */
+  }
+
+  .tournament-bracket__country,
+  .tournament-bracket__score,
+  .tournament-bracket__separator {
+      font-size: 0.9em; /* Scale down font size by 10% */
+  }
+
+  .tournament-bracket__item {
+      padding: 1.8% 0; /* Reduce vertical padding */
+      width: 90%; /* Adjust width to scale down the component */
+  }
+  
+  .tournament-bracket__table {
+      width: 100%; /* Ensure the table takes full width of the component */
+  }
+
+  .tournament-bracket__number {
+      font-size: 1em; /* Keep the score number slightly larger */
+  }
+}
