@@ -8,25 +8,21 @@ function Semifinals() {
             <ul className="tournament-bracket__list">
                 <CupMatch
                     date="29.04.2024"
-                    team1="OPUZEN"
+                    team1ID={5}
                     team1Score={7}
                     team1Code="OPUZEN"
-                    team1Flag=""
-                    team2="MRSAVI PSI"
+                    team2ID={8}
                     team2Score={3}
                     team2Code="MRSAVI PSI"
-                    team2Flag=""
                 />
                 <CupMatch
                     date="29.04.2024"
-                    team1="VID"
+                    team1ID={3}
                     team1Score={3}
                     team1Code="VID"
-                    team1Flag=""
-                    team2="PRUD"
+                    team2ID={9}
                     team2Score={1}
                     team2Code="PRUD"
-                    team2Flag=""
                 />
             </ul>
         </div>

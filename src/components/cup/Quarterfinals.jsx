@@ -8,47 +8,39 @@ function Quarterfinals() {
           <ul className="tournament-bracket__list">
             <CupMatch
               date="29.01.2024"
-              team1="Klada"
+              team1ID={2}
               team1Score={2}
               team1Code="KLADA"
-              team1Flag=""
-              team2="Mrsavi psi"
+              team2ID={8}
               team2Score={5}
               team2Code="MRSAVI PSI"
-              team2Flag=""
             />
             <CupMatch
               date="29.01.2024"
-              team1="OPUZEN"
+              team1ID={5}
               team1Score={6}
               team1Code="OPUZEN"
-              team1Flag=""
-              team2="CRNI PUT"
+              team2ID={7}
               team2Score={4}
               team2Code="CRNI PUT"
-              team2Flag=""
             />
             <CupMatch
               date="29.01.2024"
-              team1="ŠKRAPA"
+              team1ID={6}
               team1Score={2}
               team1Code="ŠKRAPA"
-              team1Flag=""
-              team2="VID"
+              team2ID={3}
               team2Score={4}
               team2Code="VID"
-              team2Flag=""
             />
             <CupMatch
               date="29.01.2024"
-              team1="PRUD"
+              team1ID={9}
               team1Score={10}
               team1Code="PRUD"
-              team1Flag=""
-              team2="Sv. Roko Podrujinca"
+              team2ID={4}
               team2Score={11}
               team2Code="SV. R. PODRUJNICA"
-              team2Flag=""
             />
           </ul>
         </div>

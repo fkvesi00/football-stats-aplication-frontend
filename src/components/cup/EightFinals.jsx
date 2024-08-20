@@ -8,91 +8,75 @@ function EightFinals() {
             <ul className="tournament-bracket__list">
                 <CupMatch
                     date="22.01.2024"
-                    team1="Klada"
+                    team1ID={2}
                     team1Score={null}
                     team1Code="KLADA"
-                    team1Flag="br"
-                    team2="slobodan"
+                    team2ID={null}
                     team2Score={null}
                     team2Code="/"
-                    team2Flag=""
                 />
                 <CupMatch
                     date="22.01.2024"
-                    team1="Neum"
+                    team1ID={10}
                     team1Score={0}
                     team1Code="NEUM"
-                    team1Flag="it"
-                    team2="MRŠAVI PSI"
+                    team2ID={8}
                     team2Score={3}
                     team2Code="MRSAVI PSI"
-                    team2Flag="cl"
                 />
                 <CupMatch
                     date="22.01.2024"
-                    team1="Crni put"
+                    team1ID={7}
                     team1Score={3}
                     team1Code="CRNI PUT"
-                    team1Flag="de"
-                    team2="Doljani"
+                    team2ID={12}
                     team2Score={2}
                     team2Code="DOLJANI"
-                    team2Flag="za"
                 />
                 <CupMatch
                     date="22.01.2024"
-                    team1="slobodan"
+                    team1ID={null}
                     team1Score={null}
                     team1Code="/"
-                    team1Flag=""
-                    team2="OPUZEN"
+                    team2ID={5}
                     team2Score={null}
                     team2Code="OPUZEN"
-                    team2Flag=""
                 />
                 <CupMatch
                     date="22.01.2024"
-                    team1="Škrapa"
+                    team1ID={6}
                     team1Score={null}
                     team1Code="ŠKRAPA"
-                    team1Flag="gb"
-                    team2="slobodan"
+                    team2ID={null}
                     team2Score={null}
                     team2Code="/"
-                    team2Flag=""
                 />
                 <CupMatch
                     date="22.01.2024"
-                    team1="Ispod strehe"
+                    team1ID={11}
                     team1Score={1}
                     team1Code="ISPOD STREHE"
-                    team1Flag=""
-                    team2="VID"
+                    team2ID={3}
                     team2Score={2}
                     team2Code="VID"
-                    team2Flag=""
                 />
                 <CupMatch
                     date="22.01.2024"
-                    team1="Sv. Nikola"
+                    team1ID={1}
                     team1Score={0}
                     team1Code="SV. NIKOLA"
-                    team1Flag=""
-                    team2="Prud"
+                    team2ID={9}
                     team2Score={5}
                     team2Code="PRUD"
-                    team2Flag=""
                 />
                 <CupMatch
                     date="22.01.2024"
-                    team1="slobodan"
+                    team1ID={null}
                     team1Score={null}
                     team1Code="/"
-                    team1Flag=""
-                    team2="Sv. Roko Podrujnica"
+                    team2ID={4}
                     team2Score={null}
                     team2Code="Sv. R. PODRUJNICA"
-                    team2Flag=""
                 />
             </ul>
         </div>
