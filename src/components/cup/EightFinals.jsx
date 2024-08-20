@@ -4,13 +4,13 @@ import CupMatch from './CupMatch';
 function EightFinals() {
     return (
         <div className="tournament-bracket__round tournament-bracket__round--eightfinals">
-            <h3 className="tournament-bracket__round-title">Eight Finals</h3>
+            <h3 className="tournament-bracket__round-title">OSMINA FINALA</h3>
             <ul className="tournament-bracket__list">
                 <CupMatch
                     date="22.01.2024"
                     team1="Klada"
                     team1Score={null}
-                    team1Code="KLA"
+                    team1Code="KLADA"
                     team1Flag="br"
                     team2="slobodan"
                     team2Score={null}
@@ -20,23 +20,23 @@ function EightFinals() {
                 <CupMatch
                     date="22.01.2024"
                     team1="Neum"
-                    team1Score={2}
-                    team1Code="NEU"
+                    team1Score={0}
+                    team1Code="NEUM"
                     team1Flag="it"
-                    team2="Mrsavi psi"
-                    team2Score={5}
-                    team2Code="MRP"
+                    team2="MRŠAVI PSI"
+                    team2Score={3}
+                    team2Code="MRSAVI PSI"
                     team2Flag="cl"
                 />
                 <CupMatch
                     date="22.01.2024"
                     team1="Crni put"
-                    team1Score={4}
-                    team1Code="CRP"
+                    team1Score={3}
+                    team1Code="CRNI PUT"
                     team1Flag="de"
                     team2="Doljani"
-                    team2Score={1}
-                    team2Code="DOLJ"
+                    team2Score={2}
+                    team2Code="DOLJANI"
                     team2Flag="za"
                 />
                 <CupMatch
@@ -45,16 +45,16 @@ function EightFinals() {
                     team1Score={null}
                     team1Code="/"
                     team1Flag=""
-                    team2="Opuzen"
+                    team2="OPUZEN"
                     team2Score={null}
-                    team2Code="OPZ"
+                    team2Code="OPUZEN"
                     team2Flag=""
                 />
                 <CupMatch
                     date="22.01.2024"
                     team1="Škrapa"
                     team1Score={null}
-                    team1Code="ŠKM"
+                    team1Code="ŠKRAPA"
                     team1Flag="gb"
                     team2="slobodan"
                     team2Score={null}
@@ -64,23 +64,23 @@ function EightFinals() {
                 <CupMatch
                     date="22.01.2024"
                     team1="Ispod strehe"
-                    team1Score={2}
-                    team1Code="ISS"
+                    team1Score={1}
+                    team1Code="ISPOD STREHE"
                     team1Flag=""
-                    team2="Vid"
-                    team2Score={3}
+                    team2="VID"
+                    team2Score={2}
                     team2Code="VID"
                     team2Flag=""
                 />
                 <CupMatch
                     date="22.01.2024"
                     team1="Sv. Nikola"
-                    team1Score={3}
-                    team1Code="SVN"
+                    team1Score={0}
+                    team1Code="SV. NIKOLA"
                     team1Flag=""
                     team2="Prud"
-                    team2Score={1}
-                    team2Code="PRD"
+                    team2Score={5}
+                    team2Code="PRUD"
                     team2Flag=""
                 />
                 <CupMatch
@@ -91,7 +91,7 @@ function EightFinals() {
                     team1Flag=""
                     team2="Sv. Roko Podrujnica"
                     team2Score={null}
-                    team2Code="SVR"
+                    team2Code="Sv. R. PODRUJNICA"
                     team2Flag=""
                 />
             </ul>

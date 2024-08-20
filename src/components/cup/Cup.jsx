@@ -14,7 +14,7 @@ function Cup() {
             <EightFinals />
             <Quarterfinals />
             <Semifinals />
-            <BronzeMatch />
+            {/*<BronzeMatch />*/}
             <Finals/>
             {/* You can add other rounds like Semifinals, Bronze, and Gold here */}
           </div>

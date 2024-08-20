@@ -4,28 +4,28 @@ import CupMatch from './CupMatch';
 function Semifinals() {
     return (
         <div className="tournament-bracket__round tournament-bracket__round--semifinals">
-            <h3 className="tournament-bracket__round-title">Semifinals</h3>
+            <h3 className="tournament-bracket__round-title">POLUFINALE</h3>
             <ul className="tournament-bracket__list">
                 <CupMatch
-                    date="1998-02-20"
-                    team1="Klada"
-                    team1Score={3}
-                    team1Code="KLA"
+                    date="29.04.2024"
+                    team1="OPUZEN"
+                    team1Score={7}
+                    team1Code="OPUZEN"
                     team1Flag=""
-                    team2="Opuzen"
-                    team2Score={2}
-                    team2Code="OPZ"
+                    team2="MRSAVI PSI"
+                    team2Score={3}
+                    team2Code="MRSAVI PSI"
                     team2Flag=""
                 />
                 <CupMatch
-                    date="1998-02-20"
-                    team1="Vid"
-                    team1Score={4}
+                    date="29.04.2024"
+                    team1="VID"
+                    team1Score={3}
                     team1Code="VID"
                     team1Flag=""
-                    team2="Sv. Nikola"
-                    team2Score={5}
-                    team2Code="SVN"
+                    team2="PRUD"
+                    team2Score={1}
+                    team2Code="PRUD"
                     team2Flag=""
                 />
             </ul>

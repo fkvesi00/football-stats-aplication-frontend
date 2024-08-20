@@ -2,6 +2,10 @@ import React from 'react';
 import './cup.css';
 
 function CupMatch({ date, team1, team1Score, team1Code, team1Flag, team2, team2Score, team2Code, team2Flag }) {
+    // Determine the winner
+    const team1IsWinner = team1Score > team2Score;
+    const team2IsWinner = team2Score > team1Score;
+
     return (
         <li className="tournament-bracket__item">
             <div className="tournament-bracket__match" tabIndex="0">
@@ -16,18 +20,18 @@ function CupMatch({ date, team1, team1Score, team1Code, team1Flag, team2, team2S
                         </tr>
                     </thead>
                     <tbody className="tournament-bracket__content">
-                        <tr className={`tournament-bracket__team ${team1Score > team2Score ? 'tournament-bracket__team--winner' : ''}`}>
-                            <td className="tournament-bracket__country">
+                        <tr className={`tournament-bracket__team ${team1IsWinner ? 'tournament-bracket__team--winner' : ''}`}>
+                            <td className={`tournament-bracket__country ${team1IsWinner ? 'tournament-bracket__bold' : ''}`}>
                                 <abbr className="tournament-bracket__code" title={team1}>{team1Code}</abbr>
                             </td>
-                            <td className="tournament-bracket__score">
+                            <td className={`tournament-bracket__score ${team1IsWinner ? 'tournament-bracket__bold' : ''}`}>
                                 <span className="tournament-bracket__number">{team1Score}</span>
                             </td>
                             <td className="tournament-bracket__separator">:</td>
-                            <td className="tournament-bracket__score">
+                            <td className={`tournament-bracket__score ${team2IsWinner ? 'tournament-bracket__bold' : ''}`}>
                                 <span className="tournament-bracket__number">{team2Score}</span>
                             </td>
-                            <td className="tournament-bracket__country">
+                            <td className={`tournament-bracket__country ${team2IsWinner ? 'tournament-bracket__bold' : ''}`}>
                                 <abbr className="tournament-bracket__code" title={team2}>{team2Code}</abbr>
                             </td>
                         </tr>
