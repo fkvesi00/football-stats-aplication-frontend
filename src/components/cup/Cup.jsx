@@ -4,7 +4,6 @@ import Semifinals from './Semifinals';
 import './cup.css'
 import Finals from './Finals';
 import EightFinals from './EightFinals';
-import BronzeMatch from './BronzeMatch';
 
 function Cup() {
     return (
