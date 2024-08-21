@@ -8,7 +8,8 @@ function AddGame() {
         Time: '',
         Home: '',
         Score: '',
-        Away: ''
+        Away: '',
+        tournamentID: '',
       });
 
   
@@ -74,6 +75,10 @@ function AddGame() {
          <div className="w-full md:w-1/5 mb-2 md:mb-0 text-center border p-1">
           <label htmlFor="time">Time:</label>
           <input type="time" id="time" name="time" className="w-full" onChange={(e) => handleInputChange('Time', e.target.value)}/>
+        </div>
+        <div className="w-full md:w-1/5 mb-2 md:mb-0 text-center border p-1">
+          <label htmlFor="tournamentID">tournament ID</label>
+          <input type="number" id="tournamentID" name="tournamentID" className="w-full" onChange={(e) => handleInputChange('tournamentID', e.target.value)} />
         </div>
         <button type="submit" className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" >
           Submit
