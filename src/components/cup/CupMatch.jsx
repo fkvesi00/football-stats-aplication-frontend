@@ -22,7 +22,7 @@ function CupMatch({ date, team1ID, team1Score, team1Code, team2ID, team2Score, t
                 <tbody className="tournament-bracket__content">
                     <tr className={`tournament-bracket__team ${team1IsWinner ? 'tournament-bracket__team--winner' : ''}`}>
                         <td className={`tournament-bracket__country ${team1IsWinner ? 'tournament-bracket__bold' : ''}`}>
-                                <img src={`/images/${team1ID}.jpg`} alt={`${team1Code} logo`} width="25" height="25" style={{ display: 'block', margin: '0 auto' }}  className="tournament-bracket__logo" />
+                                <img src={`/images/${team1ID}.jpg`} alt={'/'} width="25" height="25" style={{ display: 'block', margin: '0 auto' }}  className="tournament-bracket__logo" />
                                 <abbr className="tournament-bracket__code" title={team1Code}>{team1Code}</abbr>
                         </td>
                         <td className={`tournament-bracket__score ${team1IsWinner ? 'tournament-bracket__bold' : ''}`}>
@@ -33,7 +33,7 @@ function CupMatch({ date, team1ID, team1Score, team1Code, team2ID, team2Score, t
                             <span className="tournament-bracket__number">{team2Score}</span>
                         </td>
                         <td className={`tournament-bracket__country ${team2IsWinner ? 'tournament-bracket__bold' : ''}`}>
-                                <img src={`/images/${team2ID}.jpg`} alt={`${team2Code} logo`} style={{ display: 'block', margin: '0 auto' }}  width="25" height="25" className="tournament-bracket__logo" />
+                                <img src={`/images/${team2ID}.jpg`} alt={`/`} style={{ display: 'block', margin: '0 auto' }}  width="25" height="25" className="tournament-bracket__logo" />
                                 <abbr className="tournament-bracket__code" title={team2Code}>{team2Code}</abbr>
                         </td>
                     </tr>

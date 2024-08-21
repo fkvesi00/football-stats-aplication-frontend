@@ -8,7 +8,7 @@ import EightFinals from './EightFinals';
 function Cup() {
     return (
         <div className="container">
-          <h1>UMA KUP</h1>
+          <h1>KUP</h1>
           <div className="tournament-bracket tournament-bracket--rounded">
             <EightFinals />
             <Quarterfinals />
