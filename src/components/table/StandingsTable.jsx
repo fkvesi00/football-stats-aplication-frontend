@@ -5,13 +5,13 @@ import {  faTrophy   } from '@fortawesome/free-solid-svg-icons';
 import MatchContext from '../../context/matchContext/MatchContext';
 import ClubContext from '../../context/clubContext/ClubContext';
 import StatsContext from '../../context/statsContext/StatsContext';
-import { fetchClubs } from '../../context/clubContext/ClubActions';
+import { fetchClubs,teamMatches } from '../../context/clubContext/ClubActions';
 import { fetchAllMatches, matchFormat } from '../../context/matchContext/MatchesActions';
 import { calculateTable } from '../../context/statsContext/StatsActions';
 
 const StandingsTable = () => {
   const {allMatches, dispatch: matchDispatch} = useContext(MatchContext)
-  const {clubs, teamMatches, dispatch: clubDispatch} = useContext(ClubContext)
+  const {clubs, dispatch: clubDispatch} = useContext(ClubContext)
   const {table, dispatch: statsDispatch} = useContext(StatsContext)
   const [allGamesByClub, setAllGamesByClub] = useState([])
   
