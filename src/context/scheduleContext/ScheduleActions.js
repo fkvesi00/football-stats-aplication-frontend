@@ -5,12 +5,12 @@ export const fetchGamesBySeason = async () => {
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({
       seasonID:1,
-      tournamenid:1
+      tournamentid:1
     })
   })
 
   return response.json()
-};
+}
 
 export const sortAndFormatSchedule = (raspored) => {
     return raspored.sort((a, b) => {
