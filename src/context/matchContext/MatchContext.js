@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useReducer } from 'react';
-import { fetchAllMatches, matchFormat } from './MatchesActions';
+import { matchFormat } from './MatchesActions';
 import MatchReducer from './MatchReducer';
 
 
