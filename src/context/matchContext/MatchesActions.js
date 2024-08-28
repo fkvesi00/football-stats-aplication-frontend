@@ -3,7 +3,8 @@ export const fetchAllMatches = async () => {
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({
-      seasonID:1
+      seasonID:1,
+      tournamentid:1
     })
   })
 

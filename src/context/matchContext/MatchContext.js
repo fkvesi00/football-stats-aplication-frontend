@@ -18,15 +18,6 @@ export const MatchProvider = ({ children }) => {
 
     const [state, dispatch] = useReducer(MatchReducer, initialState)
 
-    const loadAllMatches = async() => {
-        const allMatches = await fetchAllMatches()
-
-        dispatch({
-            type: 'GET_ALL_MATCHES',
-            payload: matchFormat(allMatches)
-        })
-    }
-
     useEffect(() => {
         if (state.match && state.match.length > 0) {
             const formatted = matchFormat(state.match);
@@ -54,7 +45,7 @@ export const MatchProvider = ({ children }) => {
     }, [state.formattedMatch, state.players]);
     
     return (
-        <MatchContext.Provider value={{allMatches: state.allMatches, match: state.formattedMatch, homePlayers: state.homePlayers, awayPlayers: state.awayPlayers, goals: state.goals, loadAllMatches, dispatch }}>
+        <MatchContext.Provider value={{allMatches: state.allMatches, match: state.formattedMatch, homePlayers: state.homePlayers, awayPlayers: state.awayPlayers, goals: state.goals, dispatch }}>
             {children}
         </MatchContext.Provider>
     );

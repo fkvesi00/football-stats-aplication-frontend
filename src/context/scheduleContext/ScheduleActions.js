@@ -1,9 +1,11 @@
+//promjeni u dohvati sve ligaske utakmice npr. fetchLeaugeGaemsBySeason
 export const fetchGamesBySeason = async () => {
   const response = await fetch("https://www.umadomena.com/matches/allMatches",{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({
-      seasonID:1
+      seasonID:1,
+      tournamenid:1
     })
   })
 
