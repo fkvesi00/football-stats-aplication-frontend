@@ -5,7 +5,7 @@ import {  faTrophy   } from '@fortawesome/free-solid-svg-icons';
 import MatchContext from '../../context/matchContext/MatchContext';
 import ClubContext from '../../context/clubContext/ClubContext';
 import StatsContext from '../../context/statsContext/StatsContext';
-import { fetchClubs,teamMatches } from '../../context/clubContext/ClubActions';
+import { fetchClubsBySeason,teamMatches } from '../../context/clubContext/ClubActions';
 import { fetchAllMatches, matchFormat } from '../../context/matchContext/MatchesActions';
 import { calculateTable } from '../../context/statsContext/StatsActions';
 
@@ -14,11 +14,12 @@ const StandingsTable = () => {
   const {clubs, dispatch: clubDispatch} = useContext(ClubContext)
   const {table, dispatch: statsDispatch} = useContext(StatsContext)
   const [allGamesByClub, setAllGamesByClub] = useState([])
-  
+  const [seasonid, setseasonid] = useState(1)
+
   useEffect(() => {
     const loadAllMatches = async () => {
       try {
-        const allMatches = await fetchAllMatches();
+        const allMatches = await fetchAllMatches(seasonId);
         matchDispatch({
           type: 'GET_ALL_MATCHES',
           payload: matchFormat(allMatches),
@@ -30,7 +31,7 @@ const StandingsTable = () => {
 
     const loadClubs = async () => {
       try {
-        const clubsData = await fetchClubs();
+        const clubsData = await fetchClubsBySeason(seasonid);
         clubDispatch({
           type: 'GET_CLUBS',
           payload: clubsData,

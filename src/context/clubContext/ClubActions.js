@@ -7,6 +7,15 @@ export const fetchClubs = async () => {
     return response.json()
   };
 
+export const fetchClubsBySeason = async (seasonid) => {
+ const response = await fetch('https://www.umadomena.com/clubs/season', {
+  method:'POST',
+  headers: {'Content-Type' : 'application/json'},
+  body: JSON.stringify({seasonid})
+ });
+ return response.json()
+}
+
 export const fetchPlayersOfClub = async (teamID) => {
     const response = await fetch("https://www.umadomena.com/players/clubPlayers", {
       method: 'post',
