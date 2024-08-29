@@ -10,7 +10,7 @@ function Utakmice() {
   const {allMatches, dispatch} = useContext(MatchContext)
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
-  const [seasonid, setSeasonid] = useState(1)
+  const seasonid = 1
   
   useEffect(() => {
     const loadAllMatches = async () => {

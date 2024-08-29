@@ -14,7 +14,7 @@ const StandingsTable = () => {
   const {clubs, dispatch: clubDispatch} = useContext(ClubContext)
   const {table, dispatch: statsDispatch} = useContext(StatsContext)
   const [allGamesByClub, setAllGamesByClub] = useState([])
-  const [seasonid, setseasonid] = useState(1)
+  const seasonid = 1
 
   useEffect(() => {
     const loadAllMatches = async () => {
