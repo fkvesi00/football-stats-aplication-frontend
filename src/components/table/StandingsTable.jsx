@@ -19,7 +19,7 @@ const StandingsTable = () => {
   useEffect(() => {
     const loadAllMatches = async () => {
       try {
-        const allMatches = await fetchAllMatches(seasonId);
+        const allMatches = await fetchAllMatches(seasonid);
         matchDispatch({
           type: 'GET_ALL_MATCHES',
           payload: matchFormat(allMatches),
