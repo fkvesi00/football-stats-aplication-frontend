@@ -20,8 +20,11 @@ import { StatsProvider } from "./context/statsContext/StatsContext";
 import { ScheduleProvider } from "./context/scheduleContext/ScheduleContext";
 import { MatchProvider } from "./context/matchContext/MatchContext";
 import Cup from "./components/cup/Cup";
+import { useState } from "react";
 
 function App() {
+  const [seasonid, setSeasonid] = useState(1)
+  
   return (
     <AuthProvider>
       <ClubProvider>
@@ -30,26 +33,26 @@ function App() {
             <ScheduleProvider>
               <MatchProvider>
                 <Router>
-                  <NavBar />
+                  <NavBar seasonid={seasonid} setSeasonid={setSeasonid}/>
                     <Routes>
                       <Route
                         exact path='/'
                         element={
                           <>
-                            <StandingsTable />
-                            <Utakmice />
-                            <Raspored />
+                            <StandingsTable key={`StandingsTable-${seasonid}`} seasonid={seasonid}/>
+                            <Utakmice key={`Utakmice-${seasonid}`} seasonid={seasonid}/>
+                            <Raspored key={`Raspored-${seasonid}`} seasonid={seasonid}/>
                           </>
                         }
                       />
                       <Route exact path={`/utakmica/:id`} element={<UtakmicaStatistika />} />
                       <Route exact path={`/klub/:id`} element={<Klub />} />
-                      <Route exact path={`/klubovi`} element={<ListaKlubova />} />
-                      <Route exact path={`/igraci`} element={<ListaIgraca />} />
+                      <Route exact path={`/klubovi`} element={<ListaKlubova seasonid={seasonid}/>} />
+                      <Route exact path={`/igraci`} element={<ListaIgraca seasonid={seasonid}/>} />
                       <Route exact path={`/igrac/:id`} element={<IgracStatistika />} />
                       <Route exact path={'/signIn'} element={<SignIn />} />
                       <Route exact path={'/adminPage'} element={<AdminPage />} />
-                      <Route exact path={'/statstika'} element={<Statistika />} />
+                      <Route exact path={'/statstika'} element={<Statistika seasonid={seasonid}/>} />
                       <Route exact path={'/about'} element={<About />} />
                       <Route exact path={'/galerija'} element={<Cup />} />
                     </Routes>

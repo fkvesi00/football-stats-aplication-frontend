@@ -6,11 +6,11 @@ import Pagination from '../calculations/Paganation';
 import MatchContext from '../../context/matchContext/MatchContext';
 import { fetchAllMatches, matchFormat } from '../../context/matchContext/MatchesActions';
 
-function Utakmice() {
+function Utakmice({seasonid}) {
   const {allMatches, dispatch} = useContext(MatchContext)
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
-  const seasonid = 1
+  
   
   useEffect(() => {
     const loadAllMatches = async () => {

@@ -9,12 +9,12 @@ import { fetchClubsBySeason,teamMatches } from '../../context/clubContext/ClubAc
 import { fetchAllMatches, matchFormat } from '../../context/matchContext/MatchesActions';
 import { calculateTable } from '../../context/statsContext/StatsActions';
 
-const StandingsTable = () => {
+const StandingsTable = ({seasonid}) => {
   const {allMatches, dispatch: matchDispatch} = useContext(MatchContext)
   const {clubs, dispatch: clubDispatch} = useContext(ClubContext)
   const {table, dispatch: statsDispatch} = useContext(StatsContext)
   const [allGamesByClub, setAllGamesByClub] = useState([])
-  const seasonid = 1
+  
 
   useEffect(() => {
     const loadAllMatches = async () => {

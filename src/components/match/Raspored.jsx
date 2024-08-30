@@ -9,11 +9,10 @@ import ScheduleContext from '../../context/scheduleContext/ScheduleContext';
 import { matchFormat } from '../../context/matchContext/MatchesActions';
 import { fetchGamesBySeason } from '../../context/scheduleContext/ScheduleActions';
 
-function Raspored( ) {
+function Raspored({seasonid}) {
   const {schedule, dispatch} = useContext(ScheduleContext);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
-  const seasonid = 1
   
   useEffect(() => {
     const loadGamesBySeason = async () => {

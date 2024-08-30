@@ -1,7 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function NavBar() {
+function NavBar({seasonid,setSeasonid}) {
+  const handleSeasonChange = (event) => {
+    const selectedValue = event.target.value;
+    if (selectedValue === "2023/24") {
+      setSeasonid(1);
+    } else if (selectedValue === "2024/25") {
+      setSeasonid(2);
+    }
+  };
   const textStyle = {
     color: 'white',
     fontFamily: 'Lucida Console, Monaco, monospace',
@@ -31,6 +39,13 @@ function NavBar() {
       {/* Second Row */}
       <div style={rowStyle}>
         <ul className="menu menu-horizontal px-1" style={rowStyle}>
+          <li>
+          <select value={seasonid === 1 ? "2023/24" : "2024/25"} onChange={handleSeasonChange}>
+            <option value="2023/24">Sezona 2023/24</option>
+            <option value="2024/25">Sezona 2024/25</option>
+          </select>
+          </li>
+          <li><Link to='/klubovi' style={textStyle}>Klubovi</Link></li>
           <li><Link to='/klubovi' style={textStyle}>Klubovi</Link></li>
           <li><Link to='/igraci' style={textStyle}>Igrači</Link></li>
           <li><Link to='/statstika' style={textStyle}>Statistika</Link></li>
