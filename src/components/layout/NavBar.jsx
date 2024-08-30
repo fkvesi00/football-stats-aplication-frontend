@@ -27,6 +27,7 @@ function NavBar({seasonid,setSeasonid}) {
     textAlign:'center'
   };
 
+  
   return (
     <div className="bg-base-100 mb" data-theme="night">
       {/* First Row */}
@@ -40,12 +41,11 @@ function NavBar({seasonid,setSeasonid}) {
       <div style={rowStyle}>
         <ul className="menu menu-horizontal px-1" style={rowStyle}>
           <li>
-          <select value={seasonid === 1 ? "2023/24" : "2024/25"} onChange={handleSeasonChange}>
+          <select value={seasonid === 1 ? "2023/24" : "2024/25"} onChange={handleSeasonChange}  >
             <option value="2023/24">Sezona 2023/24</option>
             <option value="2024/25">Sezona 2024/25</option>
           </select>
           </li>
-          <li><Link to='/klubovi' style={textStyle}>Klubovi</Link></li>
           <li><Link to='/klubovi' style={textStyle}>Klubovi</Link></li>
           <li><Link to='/igraci' style={textStyle}>Igrači</Link></li>
           <li><Link to='/statstika' style={textStyle}>Statistika</Link></li>
