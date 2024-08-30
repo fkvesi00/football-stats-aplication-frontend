@@ -35,17 +35,16 @@ function NavBar({seasonid,setSeasonid}) {
         <Link to='/' className="btn btn-ghost normal-case text-xl" style={{color:'white',fontSize: '1.5rem'}}>
           UMA Metković
         </Link>
+        <select value={seasonid === 1 ? "2023/24" : "2024/25"} onChange={handleSeasonChange}  >
+            <option value="2023/24">2023/24</option>
+            <option value="2024/25">2024/25</option>
+        </select>
       </div>
 
       {/* Second Row */}
       <div style={rowStyle}>
+        
         <ul className="menu menu-horizontal px-1" style={rowStyle}>
-          <li>
-          <select value={seasonid === 1 ? "2023/24" : "2024/25"} onChange={handleSeasonChange}  >
-            <option value="2023/24">Sezona 2023/24</option>
-            <option value="2024/25">Sezona 2024/25</option>
-          </select>
-          </li>
           <li><Link to='/klubovi' style={textStyle}>Klubovi</Link></li>
           <li><Link to='/igraci' style={textStyle}>Igrači</Link></li>
           <li><Link to='/statstika' style={textStyle}>Statistika</Link></li>
