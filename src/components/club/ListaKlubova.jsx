@@ -2,19 +2,19 @@ import { useEffect, useContext, useState } from 'react';
 import { motion } from 'framer-motion';
 
 import ClubContext from '../../context/clubContext/ClubContext';
-import {fetchClubs} from '../../context/clubContext/ClubActions'
+import {fetchClubsBySeason} from '../../context/clubContext/ClubActions'
 import KlubCard from '../../shared/KlubCard'; // Replace with correct path if needed
 import '../layout/header.css';
 import '../layout/animation.css';
 
-function ListaKlubova() {
+function ListaKlubova({seasonid}) {
   const { clubs, dispatch } = useContext(ClubContext);
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const loadClubs = async () => {
       try {
-        const fetchedClubs = await fetchClubs();
+        const fetchedClubs = await fetchClubsBySeason(seasonid);
         dispatch({
           type: 'GET_CLUBS',
           payload: fetchedClubs,

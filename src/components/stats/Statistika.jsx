@@ -4,13 +4,13 @@ import Strijelci from './Strijelci';
 import StasContext from '../../context/statsContext/StatsContext';
 import { fetchScorers } from '../../context/statsContext/StatsActions';
 
-function Statistika() {
+function Statistika({seasonid}) {
     const {scorers, dispatch} = useContext(StasContext)
     
     useEffect(()=>{
       const loadScorers = async () => {
         try {
-          const scorers = await fetchScorers()
+          const scorers = await fetchScorers(seasonid)
           dispatch({
               type:'GET_TOP20_SCORERS',
               payload: scorers
@@ -22,12 +22,16 @@ function Statistika() {
     loadScorers()
   },[])
   
-  return (
+  return scorers && scorers.length > 0? (
     <div className="flex flex-col items-center justify-center">
-        <h2 className="text-2xl font-bold m-5 text-black-700 text-center text-center" >Ljestvica strijelaca</h2>
-        <Strijelci statistika={scorers}/>
+      <h2 className="text-2xl font-bold m-5 text-black-700 text-center">
+        Ljestvica strijelaca
+      </h2>
+      <Strijelci statistika={scorers} />
     </div>
-  )
+  ) : (
+    <h1>Nema strijelaca za ovu sezonu</h1> // Fixed the string to "No scorers"
+  );
 }
 
 export default Statistika

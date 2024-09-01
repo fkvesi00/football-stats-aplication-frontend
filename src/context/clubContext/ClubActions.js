@@ -16,29 +16,38 @@ export const fetchClubsBySeason = async (seasonid) => {
  return response.json()
 }
 
-export const fetchPlayersOfClub = async (teamID) => {
+export const fetchPlayersOfClub = async (teamID, seasonid) => {
     const response = await fetch("https://www.umadomena.com/players/clubPlayers", {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ teamID: Number(teamID) })
+      body: JSON.stringify({ 
+        teamID: Number(teamID), 
+        seasonid,
+      })
     });
     return response.json();
   };
   
-  export const fetchPlayerStats = async (teamID) => {
+  export const fetchPlayerStats = async (teamID, seasonid) => {
     const response = await fetch('https://www.umadomena.com/pga', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ teamid: Number(teamID), seasonid: 1 })
+      body: JSON.stringify({ 
+        teamid: Number(teamID),
+        seasonid, 
+      })
     });
     return response.json();
   };
   
-  export const fetchMatchesOfClub = async (teamID) => {
+  export const fetchMatchesOfClub = async (teamID, seasonid) => {
     const response = await fetch('https://www.umadomena.com/clubs/games', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ teamID: Number(teamID) })
+      body: JSON.stringify({ 
+        teamID: Number(teamID), 
+        seasonid,
+      })
     });
     return response.json();
   };

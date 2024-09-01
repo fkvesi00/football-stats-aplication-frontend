@@ -14,7 +14,7 @@ import IgraciTimaStatistika from '../player/IgraciTimaStatistika';
 import KlubInformacije from './KlubInformacije';
 import NavBarClub from '../layout/NavBarClub';
 
-function Klub() {
+function Klub({sesaonid}) {
   const {id} = useParams();
   const [display, setDisplay] = useState('Raspored')
   
@@ -22,19 +22,19 @@ function Klub() {
 
   //ucitaj raspored tima i njegove igrace, cinimo to pomocu id kluba, koji se nalazi u parametru stranice
   useEffect(()=>{
-    const fetchClubPlayersAndMatches = async (id) => {
+    const fetchClubPlayersAndMatches = async (id, seasonid) => {
       try {
-        const players = await fetchPlayersOfClub(id)
+        const players = await fetchPlayersOfClub(id, seasonid)
         dispatch({
           type: 'GET_PLAYERS_OF_CLUB',
           payload: players
         })
-        const matches = await fetchMatchesOfClub(id)
+        const matches = await fetchMatchesOfClub(id, seasonid)
         dispatch({
           type: 'GET_MATCHES_OF_CLUB',
           payload: matchFormat(matches)
         })
-        const stats = await fetchPlayerStats(id)
+        const stats = await fetchPlayerStats(id, seasonid)
         dispatch({
           type: 'GET_CLUB_PLAYERS_APPERANCES_AND_GOALS',
           payload: stats

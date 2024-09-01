@@ -46,9 +46,9 @@ function App() {
                         }
                       />
                       <Route exact path={`/utakmica/:id`} element={<UtakmicaStatistika />} />
-                      <Route exact path={`/klub/:id`} element={<Klub />} />
-                      <Route exact path={`/klubovi`} element={<ListaKlubova seasonid={seasonid}/>} />
-                      <Route exact path={`/igraci`} element={<ListaIgraca seasonid={seasonid}/>} />
+                      <Route exact path={`/klub/:id`} element={<Klub seasonid={seasonid} />} />
+                      <Route exact path={`/klubovi`} element={<ListaKlubova seasonid={seasonid} />} />
+                      <Route exact path={`/igraci`} element={<ListaIgraca seasonid={seasonid} />} />
                       <Route exact path={`/igrac/:id`} element={<IgracStatistika />} />
                       <Route exact path={'/signIn'} element={<SignIn />} />
                       <Route exact path={'/adminPage'} element={<AdminPage />} />

@@ -1,9 +1,9 @@
-export const fetchScorers = async () => {
+export const fetchScorers = async (seasonid) => {
     const statistika = await fetch("https://www.umadomena.com/scorers",{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
-          seasonid:1
+          seasonid,
           })
         })
       

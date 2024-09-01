@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 function Rasporedcic({ time, date, home, away }) {
-  return (
+  return home(
     <motion.tr
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

@@ -1,7 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useLocation  } from 'react-router-dom';
 
 function NavBar({seasonid,setSeasonid}) {
+  const location = useLocation();
+
   const handleSeasonChange = (event) => {
     const selectedValue = event.target.value;
     if (selectedValue === "2023/24") {
@@ -35,10 +37,13 @@ function NavBar({seasonid,setSeasonid}) {
         <Link to='/' className="btn btn-ghost normal-case text-xl" style={{color:'white',fontSize: '1.5rem'}}>
           UMA Metković
         </Link>
-        <select value={seasonid === 1 ? "2023/24" : "2024/25"} onChange={handleSeasonChange}  >
+        {/* Conditionally render the select only on the root page */}
+        {location.pathname === '/' && (
+          <select value={seasonid === 1 ? "2023/24" : "2024/25"} onChange={handleSeasonChange}>
             <option value="2023/24">2023/24</option>
             <option value="2024/25">2024/25</option>
-        </select>
+          </select>
+        )}
       </div>
 
       {/* Second Row */}
