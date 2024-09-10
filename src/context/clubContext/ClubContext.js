@@ -1,29 +1,36 @@
-import {createContext, useReducer} from 'react'
+import { createContext, useReducer } from 'react';
 import ClubReducer from './ClubReducer';
 
-const ClubContext = createContext()
+// Create ClubContext
+const ClubContext = createContext();
 
-export const ClubProvider =  ({children})  => {
-    const initialState = {
-      clubs: [],
-      playersOfClub: [],
-      matchesOfClub: [],
-      playerStats: []
-    }
-    
-    const [state, dispatch] = useReducer(ClubReducer, initialState)
+// ClubProvider component to wrap around children components
+export const ClubProvider = ({ children }) => {
+  
+  // Define the initial state
+  const initialState = {
+    clubs: [],
+    playersOfClub: [],
+    matchesOfClub: [],
+    playerStats: []
+  };
+  
+  // Set up reducer with initial state
+  const [state, dispatch] = useReducer(ClubReducer, initialState);
 
+  return (
+    <ClubContext.Provider 
+      value={{
+        clubs: state.clubs,
+        playersOfClub: state.playersOfClub,
+        matchesOfClub: state.matchesOfClub,
+        playerStats: state.playerStats,
+        dispatch
+      }}
+    >
+      {children}
+    </ClubContext.Provider>
+  );
+};
 
-
-  return <ClubContext.Provider value={{
-    clubs: state.clubs,
-    playersOfClub:state.playersOfClub,
-    matchesOfClub:state.matchesOfClub,
-    playerStats: state.playerStats,
-    dispatch
-  }}>
-    {children}
-  </ClubContext.Provider>
-}
-
-export default ClubContext
+export default ClubContext;

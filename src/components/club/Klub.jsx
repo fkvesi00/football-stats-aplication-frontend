@@ -6,15 +6,14 @@ import { motion } from 'framer-motion';
 
 import ClubContext from '../../context/clubContext/ClubContext';
 import {fetchPlayersOfClub, fetchPlayerStats, fetchMatchesOfClub} from '../../context/clubContext/ClubActions';
-import { matchFormat } from '../../context/matchContext/MatchesActions';
 
-import Raspored from '../match/Raspored';
 import UtakmiceKluba from '../match/UtakmiceKluba';
 import IgraciTimaStatistika from '../player/IgraciTimaStatistika';
 import KlubInformacije from './KlubInformacije';
 import NavBarClub from '../layout/NavBarClub';
+import RasporedKluba from '../match/RasporedKluba';
 
-function Klub({sesaonid}) {
+function Klub({seasonid}) {
   const {id} = useParams();
   const [display, setDisplay] = useState('Raspored')
   
@@ -32,7 +31,7 @@ function Klub({sesaonid}) {
         const matches = await fetchMatchesOfClub(id, seasonid)
         dispatch({
           type: 'GET_MATCHES_OF_CLUB',
-          payload: matchFormat(matches)
+          payload: matches
         })
         const stats = await fetchPlayerStats(id, seasonid)
         dispatch({
@@ -43,8 +42,8 @@ function Klub({sesaonid}) {
         console.error("Error fetching ", error)
       }
     }
-    fetchClubPlayersAndMatches(id)
-  },[id])
+    fetchClubPlayersAndMatches(id, seasonid)
+  },[id,seasonid])
 
 useEffect(() => {
   // Scroll to the top of the screen when the component mounts
@@ -90,7 +89,7 @@ const listaIgraca = playersOfClub.map((igrac, i) => {
       <KlubInformacije id={id} />
       <NavBarClub handleClick={handleClick}/>
   
-      {display === 'Raspored' && <Raspored raspored={matchesToPlay} />}
+      {display === 'Raspored' && <RasporedKluba raspored={matchesToPlay} />}
       {display === 'Utakmice' && <UtakmiceKluba utakmice={matchesplayed} />}
       {display === 'Igrači' && (
         <>

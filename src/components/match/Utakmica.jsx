@@ -4,7 +4,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-function Utakmica({ MatchID, Date, HomeTeamID, HomeTeamScore, AwayTeamName, a_id, h_id }) {
+function Utakmica({ MatchID, Date, HomeTeamID, score, AwayTeamName, a_id, h_id }) {
   const h_logo = `/images/${h_id}.jpg`;
   const a_logo = `/images/${a_id}.jpg`;
 
@@ -29,8 +29,8 @@ function Utakmica({ MatchID, Date, HomeTeamID, HomeTeamScore, AwayTeamName, a_id
         </div>
       </td>
       <td className="text-center p-1 text-sm sm:text-m md:text-base lg:text-lg xl:text-lg 2xl:text-xl" style={{ backgroundColor: '#130F2A', fontWeight: 'bold', color: 'white' }}>
-        <div className='p-1'>{HomeTeamScore[0]}</div>
-        <div className='p-1'>{HomeTeamScore[2]}</div>
+        <div className='p-1'>{score ? score[0] : ' '}</div>
+        <div className='p-1'>{score ? score[2] : ' '}</div>
       </td>
       <td className="text-center p-1">
         <Link to={`/utakmica/${MatchID}`}>

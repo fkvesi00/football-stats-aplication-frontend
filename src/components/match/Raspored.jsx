@@ -9,7 +9,7 @@ import ScheduleContext from '../../context/scheduleContext/ScheduleContext';
 import { matchFormat } from '../../context/matchContext/MatchesActions';
 import { fetchGamesBySeason } from '../../context/scheduleContext/ScheduleActions';
 
-function Raspored({seasonid}) {
+function Raspored({seasonid }) {
   const {schedule, dispatch} = useContext(ScheduleContext);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;

@@ -39,7 +39,7 @@ function Utakmice({seasonid}) {
         Date={utakmica.date}
         Time={utakmica.time}
         HomeTeamID={utakmica.h_team}
-        HomeTeamScore={utakmica.score}
+        score={utakmica.score}
         AwayTeamName={utakmica.a_team}
         a_id={utakmica.a_id}
         h_id={utakmica.h_id}
