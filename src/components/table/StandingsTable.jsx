@@ -70,7 +70,10 @@ const StandingsTable = ({seasonid}) => {
     } else {
       const clubB = b.gf - b.ga;
       const clubA = a.gf - a.ga;
-      return clubA - clubB;
+      if(seasonid===1){
+        return clubA - clubB;
+      }
+      return clubB - clubA
     }
   });
 
@@ -93,7 +96,7 @@ const StandingsTable = ({seasonid}) => {
   return (
     <div className="overflow-x-auto my-10 mr-1 ml-1 mt-5 mb-5 mx-auto max-w-[2/3]">
       <div className="header text-center mb-2 mt-2">
-        {'Ljestvica'} <FontAwesomeIcon icon={faTrophy} style={{ color: 'gold' }}/>
+        {'Ljestvica'} <FontAwesomeIcon icon={faTrophy} style={{ color: 'gold' }} />
       </div>
       <table className="table-auto mx-auto" data-theme="night">
         <thead>
@@ -111,27 +114,32 @@ const StandingsTable = ({seasonid}) => {
         </thead>
         <tbody className="divide-y divide-gray-300">{rows}</tbody>
       </table>
-  
-      <div className="text-center mt-5" style={{ fontFamily: 'Arial, sans-serif' }}>
-        <div className="font-bold">Napomena:</div>
-        <div className="ml-4 mt-2">
-          <div>MNK NEUM -6 bodova;</div>
-          <div>Nedolazak na utakmicu dvaput zaredom,</div>
-          <div>odustajanje od daljnjeg natjecanja.</div>
-        </div>
-      </div>
-  
-      <div className="text-center mt-5" style={{ fontFamily: 'Arial, sans-serif' }}>
-        <div className="font-bold">Napomena:</div>
-        <div className="ml-4 mt-2">
-          <div>Međusobni ogled glavno mjerilo</div>
-          <div>za dvije momčadi sa istim brojem bodova</div> 
-          <div>*za drugo i treće mjesto:</div>
-          <div>AMNK OPUZEN - MNK VID 2:0/0:0</div>
-        </div>
-      </div>
+
+      {seasonid === 1 && (
+        <>
+          <div className="text-center mt-5" style={{ fontFamily: 'Arial, sans-serif' }}>
+            <div className="font-bold">Napomena:</div>
+            <div className="ml-4 mt-2">
+              <div>MNK NEUM -6 bodova;</div>
+              <div>Nedolazak na utakmicu dvaput zaredom,</div>
+              <div>odustajanje od daljnjeg natjecanja.</div>
+            </div>
+          </div>
+
+          <div className="text-center mt-5" style={{ fontFamily: 'Arial, sans-serif' }}>
+            <div className="font-bold">Napomena:</div>
+            <div className="ml-4 mt-2">
+              <div>Međusobni ogled glavno mjerilo</div>
+              <div>za dvije momčadi sa istim brojem bodova</div> 
+              <div>*za drugo i treće mjesto:</div>
+              <div>AMNK OPUZEN - MNK VID 2:0/0:0</div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
+
 
 export default StandingsTable;

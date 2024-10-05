@@ -23,7 +23,7 @@ import Cup from "./components/cup/Cup";
 import { useState } from "react";
 
 function App() {
-  const [seasonid, setSeasonid] = useState(1)
+  const [seasonid, setSeasonid] = useState(2)
   
   return (
     <AuthProvider>
