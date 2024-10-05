@@ -6,7 +6,7 @@ function AddPlayerToClub() {
   const [formData, setFormData] = useState({
     playerid: '',
     teamid: '',
-    seasonid: 1,
+    seasonid: 2,
   });
 
   useEffect(() => {
