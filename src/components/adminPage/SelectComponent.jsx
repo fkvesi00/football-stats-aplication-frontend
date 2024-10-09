@@ -16,7 +16,7 @@ const SelectComponent = ({ homePlayers, awayPlayers, selectedValues, handleSelec
             className="w-full p-2 border border-gray-300 rounded"
           >
             <option value="">Select a player</option>
-            {(index < 14 ? homePlayers : awayPlayers).map((value) => (
+            {(index < 14 ? (Array.isArray(homePlayers) ? homePlayers : []) : (Array.isArray(awayPlayers) ? awayPlayers : [])).map((value) => (
               <option key={value.playerid} value={value.playerid}>
                 {value.playername}
               </option>
