@@ -3,6 +3,7 @@ import GamesToModify from './GamesToModify'
 import MyComponent from './MyComponent';
 
 function AddGoalApp() {
+    const seasonid = 2
     const [matches, setMatches] = useState([]);
     const [matchid, setMatchid] = useState('');
     const [homeTeamid, setHomeTeamid] = useState('');
@@ -54,6 +55,7 @@ function AddGoalApp() {
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
                 teamID: Number(matchesSnapshot[currentIndexSnapshot].h_id),
+                seasonid,
               }),
             });
       
@@ -62,6 +64,7 @@ function AddGoalApp() {
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
                 teamID: Number(matchesSnapshot[currentIndexSnapshot].a_id),
+                seasonid,
               }),
             });
       
