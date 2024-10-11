@@ -70,12 +70,19 @@ const StandingsTable = ({seasonid}) => {
     } else {
       const clubB = b.gf - b.ga;
       const clubA = a.gf - a.ga;
-      if(seasonid===1){
-        return clubA - clubB;
+      
+      if (clubA !== clubB) {
+        if (seasonid === 1) {
+          return clubA - clubB;
+        }
+        return clubB - clubA;
+      } else {
+        // If clubA and clubB are equal, sort by the number of goals scored (gf)
+        return b.gf - a.gf;
       }
-      return clubB - clubA
     }
   });
+  
 
   const rows = sortedStats.map((clubStats, i) => (
     <Table
