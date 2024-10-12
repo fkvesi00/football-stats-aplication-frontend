@@ -21,12 +21,9 @@ export const sortAndFormatSchedule = (raspored) => {
         return a.time.localeCompare(b.time);
       }
     }).map((game, i) => {
-      const birthDate = new Date(game.date);
-      const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
-      const formattedDate = birthDate.toLocaleDateString('hr-HR', options);
       return {
         key: i,
-        date: formattedDate,
+        date: game.date,
         time: game.time,
         home: game.h_team,
         away: game.a_team

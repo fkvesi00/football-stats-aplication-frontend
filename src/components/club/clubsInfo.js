@@ -52,7 +52,8 @@ const clubsData = [
     {"id": 12, "name": 'MNK DOLJANI', "coach": {
         1:'Ante Palameta',
         2:'Pavo Dujmović'
-    }}
+    }},
+    {"id": 13, "name": 'Bobovište', "coach": null},
   ];
   
   export default clubsData;
