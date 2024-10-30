@@ -6,33 +6,34 @@ import Pagination from '../calculations/Paganation';
 import MatchContext from '../../context/matchContext/MatchContext';
 import { fetchAllMatches, matchFormat } from '../../context/matchContext/MatchesActions';
 
-function Utakmice({seasonid}) {
-  const {allMatches, dispatch} = useContext(MatchContext)
+function Utakmice({ seasonid }) {
+  const { allMatches, dispatch } = useContext(MatchContext);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
-  
-  
+
+  // Set items per page conditionally based on seasonid
+  const itemsPerPage = seasonid === 2 ? 5 : 6;
+
   useEffect(() => {
     const loadAllMatches = async () => {
       try {
         const allMatches = await fetchAllMatches(seasonid);
         dispatch({
           type: 'GET_ALL_MATCHES',
-          payload: matchFormat(allMatches)
+          payload: matchFormat(allMatches),
         });
       } catch (error) {
         console.error('Error fetching match data:', error);
       }
     };
-  
+
     loadAllMatches();
-  }, []);
-  
+  }, [seasonid, dispatch]);
 
-  const matchesplayed = allMatches.filter(utakmica => utakmica.score !== null)
-
-  const formattedMatches = matchesplayed.map((utakmica, i) => {
-    return (
+  // Filter, reverse, and format matches
+  const formattedMatches = allMatches
+    .filter(utakmica => utakmica.score !== null)
+    .reverse()
+    .map((utakmica, i) => (
       <Utakmica
         key={i}
         MatchID={utakmica.match_id}
@@ -44,22 +45,22 @@ function Utakmice({seasonid}) {
         a_id={utakmica.a_id}
         h_id={utakmica.h_id}
       />
-    );
-  });
+    ));
 
+  // Pagination logic
   const totalGames = formattedMatches.length;
   const totalPages = Math.ceil(totalGames / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentGames = formattedMatches.slice(startIndex, endIndex);
 
-  const handlePrevPage = () => {
-    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-  };
+  // Reset to the first page if seasonid changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [seasonid]);
 
-  const handleNextPage = () => {
-    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
-  };
+  const handlePrevPage = () => setCurrentPage(prevPage => Math.max(prevPage - 1, 1));
+  const handleNextPage = () => setCurrentPage(prevPage => Math.min(prevPage + 1, totalPages));
 
   return (
     <div className="overflow-x-auto m-0 mt-10 mb-10">
