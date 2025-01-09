@@ -15,7 +15,7 @@ import RasporedKluba from '../match/RasporedKluba';
 
 function Klub({seasonid}) {
   const {id} = useParams();
-  const [display, setDisplay] = useState('Raspored')
+  const [display, setDisplay] = useState('Utakmice')
   
   const {playersOfClub, matchesOfClub, playerStats, dispatch} = useContext(ClubContext)
 
@@ -87,7 +87,7 @@ const listaIgraca = playersOfClub.map((igrac, i) => {
     <div>
     <div style={{ textAlign: 'center' }}>    
       <KlubInformacije id={id} />
-      <NavBarClub handleClick={handleClick}/>
+      <NavBarClub handleClick={handleClick} target={display} />
   
       {display === 'Raspored' && <RasporedKluba raspored={matchesToPlay} />}
       {display === 'Utakmice' && <UtakmiceKluba utakmice={matchesplayed} />}
