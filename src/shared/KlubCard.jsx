@@ -14,7 +14,7 @@ function KlubCard({ id, ime, logo }) {
           <img src={logo} alt="logo" style={{ maxHeight: "100%", maxWidth: "100%" }} />
         </figure>
         <h2 className="card-title text-center mt-4">{ime}</h2>
-        <p className="text-center text-gray-600 mt-2">Pritisni za detalje kluba</p>
+        <p className="text-center text-gray-600 mt-2 font-serif italic">Pritisni za detalje kluba</p>
       </div>
     </Link>
   );
