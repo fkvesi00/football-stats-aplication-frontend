@@ -60,7 +60,7 @@ function Footer() {
         </div>
       </div>
       <div>
-        <p>Copyright © 2024 - All right reserved by Kvesić Filip</p>
+        <p>Copyright © 2025 - All right reserved by Kvesić Filip</p>
       </div>
     </footer>
   );

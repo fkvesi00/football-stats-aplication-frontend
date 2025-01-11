@@ -10,8 +10,7 @@ function PlayerCard({ime,godine,nacionalnost,slika,id}) {
     <figure style={{height:"150px"}}><img src={imgPath} alt="" /></figure>
     <div className="card-body">
       <h2 className="card-title">{ime}</h2>
-      <p>Godina: {godine}</p>
-      <p>Nacionalnost: {nacionalnost}</p>
+      <p className="text-center text-gray-600 mt-2 font-serif italic">Pritisni za detalje igraca</p>
     </div>
     
   </div>
