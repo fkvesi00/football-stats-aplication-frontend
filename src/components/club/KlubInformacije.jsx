@@ -3,6 +3,7 @@ import clubsData from './clubsInfo.js';
 
 function KlubInformacije({ id }) {
   const targetClub = clubsData.filter((club) => club.id === Number(id));
+  const logo = `/images/${id}.jpg`;
 
   if (!targetClub.length) {
     // Handle the case where the club with the specified ID is not found
@@ -18,8 +19,6 @@ function KlubInformacije({ id }) {
       </div>
     ))
   : <div>/</div>;
-
-  const logo = `/images/${id}.jpg`;
 
   return (
     <div className="mx-10">

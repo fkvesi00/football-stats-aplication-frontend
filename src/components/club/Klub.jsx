@@ -12,10 +12,13 @@ import IgraciTimaStatistika from '../player/IgraciTimaStatistika';
 import KlubInformacije from './KlubInformacije';
 import NavBarClub from '../layout/NavBarClub';
 import RasporedKluba from '../match/RasporedKluba';
+import KlubSlikaEkipe from './KlubSlikaEkipe';
 
 function Klub({seasonid}) {
   const {id} = useParams();
   const [display, setDisplay] = useState('Utakmice')
+  const logo = `/images/slike_ekipe/${id}.jpg`;
+  console.log(logo)
   
   const {playersOfClub, matchesOfClub, playerStats, dispatch} = useContext(ClubContext)
 
@@ -87,6 +90,7 @@ const listaIgraca = playersOfClub.map((igrac, i) => {
     <div>
     <div style={{ textAlign: 'center' }}>    
       <KlubInformacije id={id} />
+      {logo && <KlubSlikaEkipe logo={logo} />}
       <NavBarClub handleClick={handleClick} target={display} />
   
       {display === 'Raspored' && <RasporedKluba raspored={matchesToPlay} />}
