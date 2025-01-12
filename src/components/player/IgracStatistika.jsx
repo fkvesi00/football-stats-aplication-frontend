@@ -2,10 +2,10 @@ import { useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom';
 
 import IgracTable from './IgracTable';
-import PlayerCard from '../../shared/PlayerCard';
 import { mergeAppearancesWithGoals, formatPlayer } from '../../context/playersContext/PlayerActions.js'
 import PlayerContext from '../../context/playersContext/PlayerContext.js';
 import { fetchPlayerInfo, fetchPlayerAppearances, fetchPlayerGoals} from '../../context/playersContext/PlayerActions.js';
+import PlayerCard2 from '../../shared/PlayerCard2.jsx';
 
 function IgracStatistika() {
     const {id} = useParams();
@@ -54,7 +54,7 @@ function IgracStatistika() {
       <div>
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
           {playerFormatted && (
-            <PlayerCard
+            <PlayerCard2
               key={playerFormatted.playerid}
               ime={playerFormatted.playername}
               godine={playerFormatted.playerAge}
