@@ -8,6 +8,9 @@ function Utakmica({ MatchID, Date, HomeTeamID, score, AwayTeamName, a_id, h_id }
   const h_logo = `/images/${h_id}.jpg`;
   const a_logo = `/images/${a_id}.jpg`;
 
+  // Override score for matchid === 452
+  const adjustedScore = MatchID === 452 ? '10' + score.slice(1) : score;
+  
   return (
     <motion.tr
       initial={{ opacity: 0 }}
@@ -29,8 +32,8 @@ function Utakmica({ MatchID, Date, HomeTeamID, score, AwayTeamName, a_id, h_id }
         </div>
       </td>
       <td className="text-center p-1 text-sm sm:text-m md:text-base lg:text-lg xl:text-lg 2xl:text-xl" style={{ backgroundColor: '#130F2A', fontWeight: 'bold', color: 'white' }}>
-        <div className='p-1'>{score ? score[0] : ' '}</div>
-        <div className='p-1'>{score ? score[2] : ' '}</div>
+        <div className='p-1'>{adjustedScore ? adjustedScore.split(':')[0] : ' '}</div>
+        <div className='p-1'>{adjustedScore ? adjustedScore.split(':')[1] : ' '}</div>
       </td>
       <td className="text-center p-1">
         <Link to={`/utakmica/${MatchID}`}>
