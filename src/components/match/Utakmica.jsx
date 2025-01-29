@@ -9,7 +9,12 @@ function Utakmica({ MatchID, Date, HomeTeamID, score, AwayTeamName, a_id, h_id }
   const a_logo = `/images/${a_id}.jpg`;
 
   // Override score for matchid === 452
-  const adjustedScore = MatchID === 452 ? '10' + score.slice(1) : score;
+  let adjustedScore = score;
+  if (MatchID === 452) {
+    adjustedScore = '10' + score.slice(1);
+  } else if (MatchID === 458) {
+    adjustedScore = '11' + score.slice(1);
+  }
   
   return (
     <motion.tr

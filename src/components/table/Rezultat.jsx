@@ -4,7 +4,12 @@ const Rezultat = ({ matchID, date, time, homeTeamName, score, awayTeamName, a_id
     const h_logo = `/images/${h_id}.jpg`;
     const a_logo = `/images/${a_id}.jpg`;
     
-    const adjustedScore = matchID === 452 ? '10:3' : score;
+    let adjustedScore = score;
+    if (matchID === 452) {
+      adjustedScore = '10' + score.slice(1);
+    } else if (matchID === 458) {
+      adjustedScore = '11' + score.slice(1);
+    }
     return (
         <div className="flex flex-row sm:flex-row md:flex-row lg:flex-row xl:flex-row items-center justify-between">
             <div className="text-center mb-2 p-4">
