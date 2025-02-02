@@ -19,6 +19,7 @@ import { PlayerProvider} from './context/playersContext/PlayerContext'
 import { StatsProvider } from "./context/statsContext/StatsContext";
 import { ScheduleProvider } from "./context/scheduleContext/ScheduleContext";
 import { MatchProvider } from "./context/matchContext/MatchContext";
+import Cup2 from "./components/cup2/Cup2";
 import Cup from "./components/cup/Cup";
 import { useState } from "react";
 
@@ -55,6 +56,7 @@ function App() {
                       <Route exact path={'/statstika'} element={<Statistika seasonid={seasonid}/>} />
                       <Route exact path={'/about'} element={<About />} />
                       <Route exact path={'/galerija'} element={<Cup />} />
+                      <Route exact path={'/galerija2'} element={<Cup2 />} />
                     </Routes>
                   <Footer />
                 </Router>
