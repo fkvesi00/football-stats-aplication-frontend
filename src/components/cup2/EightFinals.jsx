@@ -13,7 +13,7 @@ function EightFinals() {
                     team1Code="VID"
                     team2ID={null}
                     team2Score={null}
-                    team2Code=""
+                    team2Code="slobodan"
                 />
                 <CupMatch
                     date="03.02.2025"
@@ -31,13 +31,13 @@ function EightFinals() {
                     team1Code="ISPOD STREHE"
                     team2ID={null}
                     team2Score={null}
-                    team2Code=""
+                    team2Code="slobodan"
                 />
                 <CupMatch
                     date="03.02.2025"
                     team1ID={null}
                     team1Score={null}
-                    team1Code=""
+                    team1Code="slobodan"
                     team2ID={8}
                     team2Score={null}
                     team2Code="MRŠAVI PSI"
@@ -49,7 +49,7 @@ function EightFinals() {
                     team1Code="PRUD"
                     team2ID={null}
                     team2Score={null}
-                    team2Code=""
+                    team2Code="slobodan"
                 />
                 <CupMatch
                     date="03.02.2025"
@@ -73,7 +73,7 @@ function EightFinals() {
                     date="03.02.2025"
                     team1ID={null}
                     team1Score={null}
-                    team1Code=""
+                    team1Code="slobodan"
                     team2ID={5}
                     team2Score={null}
                     team2Code="OPUZEN"

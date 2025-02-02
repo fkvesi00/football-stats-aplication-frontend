@@ -6,6 +6,8 @@ function CupMatch({ date, team1ID, team1Score, team1Code, team2ID, team2Score, t
     const team1IsWinner = team1Score > team2Score;
     const team2IsWinner = team2Score > team1Score;
 
+
+
     return (
         <li className="tournament-bracket__item">
         <div className="tournament-bracket__match" tabIndex="0">
