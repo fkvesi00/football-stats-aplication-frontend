@@ -61,13 +61,13 @@ h2 {
 }
 
 .tournament-bracket {
-    display: flex;
-    flex-direction: row; /* Always row for horizontal layout */
-    overflow-x: auto;
-    background-color: #c0b8b8; /* Slightly lighter dark gray */
-    padding: 20px;
-    border-radius: 10px;
-  }
+  display: flex;
+  flex-direction: row; /* Always row for horizontal layout */
+  background-color: #c0b8b8; /* Slightly lighter dark gray */
+  padding: 20px;
+  border-radius: 10px;
+}
+
   
   .tournament-bracket__round {
     display: flex;
