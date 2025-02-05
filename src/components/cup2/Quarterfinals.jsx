@@ -11,33 +11,33 @@ function Quarterfinals() {
               team1ID={3}
               team1Score={null}
               team1Code="VID"
-              team2ID={null}
+              team2ID={2}
               team2Score={null}
-              team2Code=""
+              team2Code="KLADA"
             />
             <CupMatch
               date="10.02.2025"
               team1ID={11}
-              team1Score={null}
+              team1Score={11}
               team1Code="ISPOD STREHE"
-              team2ID={null}
+              team2ID={8}
               team2Score={null}
-              team2Code=""
+              team2Code="MRŠAVI PSI"
             />
             <CupMatch
               date="10.02.2025"
               team1ID={9}
               team1Score={null}
               team1Code="PRUD"
-              team2ID={null}
+              team2ID={13}
               team2Score={null}
-              team2Code=""
+              team2Code="BOBOVIŠTE"
             />
             <CupMatch
               date="10.02.2025"
-              team1ID={null}
+              team1ID={7}
               team1Score={null}
-              team1Code=""
+              team1Code="CRNI PUT"
               team2ID={5}
               team2Score={null}
               team2Code="OPUZEN"

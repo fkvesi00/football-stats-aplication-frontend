@@ -18,10 +18,10 @@ function EightFinals() {
                 <CupMatch
                     date="03.02.2025"
                     team1ID={1}
-                    team1Score={null}
+                    team1Score={1}
                     team1Code="SV. NIKOLA"
                     team2ID={2}
-                    team2Score={null}
+                    team2Score={4}
                     team2Code="KLADA"
                 />
                 <CupMatch
@@ -54,19 +54,19 @@ function EightFinals() {
                 <CupMatch
                     date="03.02.2025"
                     team1ID={6}
-                    team1Score={null}
+                    team1Score={0}
                     team1Code="ŠKRAPA"
                     team2ID={13}
-                    team2Score={null}
+                    team2Score={2}
                     team2Code="BOBOVIŠTE"
                 />
                 <CupMatch
                     date="03.02.2025"
                     team1ID={4}
-                    team1Score={null}
+                    team1Score={2}
                     team1Code="PODRUJNICA"
                     team2ID={7}
-                    team2Score={null}
+                    team2Score={5}
                     team2Code="CRNI PUT"
                 />
                 <CupMatch
