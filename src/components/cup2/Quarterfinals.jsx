@@ -18,7 +18,7 @@ function Quarterfinals() {
             <CupMatch
               date="10.02.2025"
               team1ID={11}
-              team1Score={11}
+              team1Score={null}
               team1Code="ISPOD STREHE"
               team2ID={8}
               team2Score={null}
